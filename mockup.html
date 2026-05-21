@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Urban Pots — Redesign Mockup v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+
+/* ─── TOKENS (Spaceful-inspired warm palette) ─────────────────── */
+:root {
+  --c-bg:         #F7F7F3;       /* Spaceful's exact background */
+  --c-dark:       #1C1A18;       /* near-black, warm toned */
+  --c-brown:      #7F593E;       /* Spaceful body text brown */
+  --c-brown-dark: #5C3D27;       /* deeper brown for headings */
+  --c-stone:      #C9B99A;       /* warm stone accent */
+  --c-sage:       #7A8C5E;       /* Urban Pots brand sage */
+  --c-cream-2:    #EDE8E1;       /* Spaceful secondary bg */
+  --c-white:      #FFFFFF;
+  --c-border:     rgba(127,89,62,0.14);
+  --font-head:    'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Inter', Helvetica, sans-serif;
+  --nav-h:        68px;
+  --max-w:        1280px;
+  --ease:         cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ─── RESET ───────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--c-bg);
+  color: var(--c-brown);       /* warm brown, like Spaceful */
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+
+/* ─── UTILITY ─────────────────────────────────────────────────── */
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 clamp(1.5rem, 4vw, 4rem); }
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c-sage);
+}
+.gsap-hidden { opacity: 0; transform: translateY(24px); }
+.arrow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-brown-dark);
+  border-bottom: 1px solid var(--c-brown-dark);
+  padding-bottom: 2px;
+  transition: gap 0.25s var(--ease), color 0.2s;
+}
+.arrow-link:hover { gap: 1rem; color: var(--c-sage); border-color: var(--c-sage); }
+.arrow-link--light { color: rgba(255,255,255,0.85); border-color: rgba(255,255,255,0.4); }
+.arrow-link--light:hover { color: var(--c-stone); border-color: var(--c-stone); }
+
+/* ─── MOCKUP BANNER ────────────────────────────────────────────── */
+.mockup-banner {
+  background: var(--c-sage);
+  color: #fff;
+  text-align: center;
+  padding: 0.6rem 1rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 9999;
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+/* ─── NAV ─────────────────────────────────────────────────────── */
+.site-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-h);
+  z-index: 100;
+  transition: background 0.4s var(--ease);
+}
+.site-nav.scrolled {
+  background: rgba(247,247,243,0.96);
+  border-bottom: 1px solid var(--c-border);
+  backdrop-filter: blur(12px);
+}
+.site-nav .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo img {
+  height: 32px;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s;
+}
+.site-nav.scrolled .nav-logo img { filter: none; }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+.nav-links a {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: rgba(255,255,255,0.8);
+  transition: color 0.2s;
+}
+.site-nav.scrolled .nav-links a { color: var(--c-brown); }
+.nav-links a:hover { color: var(--c-sage) !important; }
+.nav-cta {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.3rem;
+  background: var(--c-dark);
+  color: #fff;
+  border-radius: 2px;
+  transition: background 0.2s, transform 0.2s;
+}
+.site-nav.scrolled .nav-cta { background: var(--c-dark); }
+.nav-cta:hover { background: var(--c-brown-dark); transform: translateY(-1px); }
+
+/* ─── HERO ────────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: clamp(3rem, 6vw, 6rem);
+  overflow: hidden;
+}
+.hero__bg {
+  position: absolute; inset: 0;
+  background-image: url('https://www.urbanpots.com.au/cdn/shop/files/3d4b103a-ef37-42e6-9690-867543cbd071_1200x.jpg?v=1758677890');
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.04);
+  transition: transform 9s var(--ease);
+}
+.hero__bg.loaded { transform: scale(1); }
+.hero__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(12,10,8,0.15) 0%,
+    rgba(12,10,8,0.55) 60%,
+    rgba(12,10,8,0.82) 100%
+  );
+}
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+}
+.hero__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-stone);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+}
+.hero__label::before {
+  content: '';
+  width: 24px; height: 1px;
+  background: var(--c-stone);
+}
+.hero__h1 {
+  font-family: var(--font-head);
+  font-size: clamp(3.2rem, 7.5vw, 7rem);
+  font-weight: 600;
+  line-height: 0.95;            /* very tight, Spaceful-style */
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+}
+.hero__h1 em { font-style: italic; font-weight: 300; color: var(--c-stone); }
+.hero__sub {
+  font-size: clamp(0.9rem, 1.4vw, 1rem);
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  max-width: 460px;
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+}
+.hero__actions { display: flex; align-items: center; gap: 2rem; opacity: 0; }
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.8rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s var(--ease);
+}
+.btn-pill--stone { background: var(--c-stone); color: var(--c-dark); }
+.btn-pill--stone:hover { background: #D9C9AA; transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,0.2); }
+.btn-pill--sage  { background: var(--c-sage);  color: #fff; }
+.btn-pill--sage:hover  { background: #8A9E6E; transform: translateY(-2px); }
+.btn-pill--dark  { background: var(--c-dark);  color: #fff; }
+.btn-pill--dark:hover  { background: #333; transform: translateY(-2px); }
+.hero__scroll {
+  position: absolute;
+  bottom: 2.5rem; right: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  z-index: 2;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.scroll-line {
+  width: 1px; height: 44px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+  animation: pulse 2.2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100% { opacity: 0.3; } 50% { opacity: 0.9; } }
+
+/* ─── TRUST BAR ───────────────────────────────────────────────── */
+.trust-bar {
+  background: var(--c-dark);
+  padding: 4rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.trust-bar__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  divide-gap: 1px;
+  gap: 0;
+}
+.trust-item {
+  text-align: center;
+  padding: 0 2rem;
+  border-right: 1px solid rgba(255,255,255,0.07);
+}
+.trust-item:last-child { border-right: none; }
+.trust-item__num {
+  font-family: var(--font-head);
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-weight: 300;
+  color: var(--c-stone);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+.trust-item__label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ─── METHODOLOGY (Spaceful-inspired split) ───────────────────── */
+.methodology {
+  padding: clamp(4rem, 8vw, 8rem) 0;
+  background: var(--c-bg);
+}
+.methodology__top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: end;
+  margin-bottom: 5rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid var(--c-border);
+}
+.methodology__top h2 {
+  font-family: var(--font-head);
+  font-size: clamp(2.6rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--c-brown-dark);
+}
+.methodology__top h2 em { font-style: italic; font-weight: 300; color: var(--c-sage); }
+.methodology__right { padding-bottom: 0.5rem; }
+.methodology__right p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--c-brown);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+.methodology__steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+.method-step { border-top: 1px solid var(--c-border); padding-top: 1.5rem; }
+.method-step__num {
+  font-family: var(--font-head);
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: var(--c-stone);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+.method-step__icon {
+  width: 40px; height: 40px;
+  margin-bottom: 1rem;
+  opacity: 0.45;
+}
+.method-step h3 {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-brown-dark);
+  margin-bottom: 0.75rem;
+}
+.method-step p {
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: var(--c-brown);
+  line-height: 1.75;
+}
+
+/* ─── CUSTOM PLANTERS (full-bleed split like Spaceful work section) */
+.custom-feature {
+  background: var(--c-dark);
+}
+.custom-feature__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 700px;
+}
+.custom-feature__img {
+  position: relative;
+  overflow: hidden;
+}
+.custom-feature__img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 7s var(--ease);
+}
+.custom-feature__img:hover img { transform: scale(1.04); }
+.custom-feature__img-caption {
+  position: absolute;
+  bottom: 1.5rem; left: 1.5rem;
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.custom-feature__body {
+  padding: clamp(3rem, 5vw, 5rem) clamp(2rem, 4vw, 4.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px solid rgba(255,255,255,0.05);
+}
+.custom-feature__body .eyebrow { color: var(--c-stone); margin-bottom: 1.25rem; }
+.custom-feature__body h2 {
+  font-family: var(--font-head);
+  font-size: clamp(2.4rem, 4vw, 3.5rem);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+.custom-feature__body h2 em { font-style: italic; font-weight: 300; color: var(--c-stone); }
+.custom-feature__body > p {
+  font-size: 0.92rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.8;
+  max-width: 400px;
+  margin-bottom: 2.5rem;
+}
+.spec-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 2.5rem;
+}
+.spec-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.65);
+}
+.spec-list li::before {
+  content: '';
+  width: 16px; height: 1px;
+  background: var(--c-stone);
+  margin-top: 0.6em;
+  flex-shrink: 0;
+}
+
+/* ─── MATERIALS ───────────────────────────────────────────────── */
+.materials { padding: clamp(4rem, 8vw, 8rem) 0; background: var(--c-cream-2); }
+.section-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: end;
+  margin-bottom: 3.5rem;
+}
+.section-head h2 {
+  font-family: var(--font-head);
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--c-brown-dark);
+}
+.section-head h2 em { font-style: italic; font-weight: 300; color: var(--c-sage); }
+.section-head p {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--c-brown);
+  line-height: 1.8;
+}
+.section-head--center { grid-template-columns: 1fr; text-align: center; }
+.section-head--center p { max-width: 520px; margin: 0 auto; }
+.materials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5px;          /* razor-thin gap, Spaceful style */
+  background: var(--c-border);
+  border: 1.5px solid var(--c-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.material-card { background: var(--c-bg); overflow: hidden; }
+.material-card:hover .material-card__img { transform: scale(1.04); }
+.material-card__img-wrap { overflow: hidden; }
+.material-card__img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease);
+}
+.material-card__body { padding: 1.75rem 1.75rem 2.25rem; }
+.material-card__tag {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-sage);
+  margin-bottom: 0.6rem;
+}
+.material-card h3 {
+  font-family: var(--font-head);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--c-brown-dark);
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+}
+.material-card p {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--c-brown);
+  line-height: 1.75;
+}
+
+/* ─── WORK GRID (Spaceful full-bleed style) ──────────────────── */
+.work { padding: clamp(4rem, 8vw, 8rem) 0; background: var(--c-bg); }
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  gap: 1rem;
+}
+.work-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.work-item--large { grid-column: span 8; grid-row: span 2; min-height: 520px; }
+.work-item--small { grid-column: span 4; min-height: 250px; }
+.work-item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s var(--ease);
+}
+.work-item:hover img { transform: scale(1.04); }
+.work-item__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(28,26,24,0.72) 0%, transparent 45%);
+  opacity: 0;
+  transition: opacity 0.35s;
+}
+.work-item:hover .work-item__overlay { opacity: 1; }
+.work-item__caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 1.5rem;
+  transform: translateY(6px);
+  transition: transform 0.35s var(--ease);
+}
+.work-item:hover .work-item__caption { transform: translateY(0); }
+.work-item__label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 0.25rem;
+}
+.work-item__title {
+  font-family: var(--font-head);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #fff;
+}
+
+/* ─── LOCALLY MADE ────────────────────────────────────────────── */
+.locally-made {
+  position: relative;
+  min-height: 580px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.locally-made__bg {
+  position: absolute; inset: 0;
+  background-image: url('https://www.urbanpots.com.au/cdn/shop/files/IMG_9620.jpg?v=1759288045');
+  background-size: cover;
+  background-position: center;
+}
+.locally-made__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, rgba(28,26,24,0.9) 0%, rgba(28,26,24,0.5) 55%, transparent 100%);
+}
+.locally-made__content {
+  position: relative; z-index: 2;
+  max-width: 560px;
+  padding: 5rem 0;
+}
+.locally-made__content .eyebrow { color: var(--c-stone); margin-bottom: 1.25rem; }
+.locally-made__content h2 {
+  font-family: var(--font-head);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+.locally-made__content h2 em { font-style: italic; font-weight: 300; color: var(--c-stone); }
+.locally-made__content p {
+  font-size: 0.92rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.8;
+  margin-bottom: 1.75rem;
+}
+.craft-points { list-style: none; margin-bottom: 2.5rem; display: flex; flex-direction: column; gap: 0.7rem; }
+.craft-points li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.65);
+}
+.craft-points li::before { content: ''; width: 18px; height: 1px; background: var(--c-stone); flex-shrink: 0; }
+
+/* ─── TESTIMONIALS ───────────────────────────────────────────── */
+.testimonials { padding: clamp(4rem, 8vw, 8rem) 0; background: var(--c-cream-2); }
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--c-border);
+  border: 1px solid var(--c-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.testimonial-card {
+  background: var(--c-bg);
+  padding: 2.5rem;
+  position: relative;
+}
+.placeholder-note {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  background: #FEF3C7;
+  color: #92400E;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+.stars { display: flex; gap: 3px; margin-bottom: 1.25rem; }
+.star { width: 12px; height: 12px; background: #F59E0B; clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%); }
+.testimonial-card__quote {
+  font-family: var(--font-head);
+  font-size: 1.15rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.65;
+  color: var(--c-brown-dark);
+  margin-bottom: 1.75rem;
+}
+.author { display: flex; align-items: center; gap: 0.75rem; }
+.author__avatar {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--c-stone);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  flex-shrink: 0;
+}
+.author__name { font-size: 0.8rem; font-weight: 600; color: var(--c-brown-dark); }
+.author__role { font-size: 0.7rem; color: var(--c-brown); margin-top: 2px; }
+.google-source {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 0.72rem;
+  color: var(--c-brown);
+  opacity: 0.7;
+}
+.google-g { width: 18px; height: 18px; border-radius: 50%; background: #4285F4; display: flex; align-items: center; justify-content: center; font-size: 0.62rem; font-weight: 700; color: #fff; }
+
+/* ─── SPLINE PLACEHOLDER ────────────────────────────────────────── */
+.spline-zone {
+  background: var(--c-dark);
+  padding: 5rem 0;
+}
+.spline-placeholder {
+  border: 1px dashed rgba(201,185,154,0.3);
+  border-radius: 4px;
+  padding: 4rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.spline-placeholder__icon { font-size: 2.5rem; opacity: 0.4; }
+.spline-placeholder h3 {
+  font-family: var(--font-head);
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--c-stone);
+}
+.spline-placeholder p {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.35);
+  max-width: 420px;
+  line-height: 1.75;
+}
+
+/* ─── CTA STRIP ─────────────────────────────────────────────────── */
+.cta-strip {
+  background: var(--c-sage);
+  padding: 5rem 0;
+}
+.cta-strip__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.cta-strip h2 {
+  font-family: var(--font-head);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  line-height: 0.95;
+  color: #fff;
+}
+.cta-strip h2 em { font-style: italic; font-weight: 300; }
+.cta-strip p { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-top: 1rem; font-weight: 300; line-height: 1.75; }
+.cta-strip__actions { display: flex; flex-direction: column; gap: 1.25rem; justify-content: center; }
+
+/* ─── FOOTER ─────────────────────────────────────────────────── */
+.site-footer { background: #111; color: rgba(255,255,255,0.55); padding: 5rem 0 2.5rem; }
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1fr;
+  gap: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 2rem;
+}
+.footer-brand__logo { height: 28px; filter: brightness(0) invert(0.6); margin-bottom: 1rem; }
+.footer-brand__tagline {
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--c-stone);
+  margin-bottom: 0.75rem;
+}
+.footer-brand p { font-size: 0.82rem; font-weight: 300; line-height: 1.75; max-width: 270px; }
+.footer-social { display: flex; gap: 0.75rem; margin-top: 1.5rem; }
+.footer-social a {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.3);
+  transition: all 0.2s;
+}
+.footer-social a:hover { border-color: var(--c-stone); color: var(--c-stone); }
+.footer-col h4 {
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  margin-bottom: 1.25rem;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+.footer-col ul li a { font-size: 0.82rem; font-weight: 300; transition: color 0.2s; }
+.footer-col ul li a:hover { color: var(--c-stone); }
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.7rem;
+}
+.footer-bottom a { transition: color 0.2s; }
+.footer-bottom a:hover { color: var(--c-stone); }
+
+/* ─── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .methodology__top, .custom-feature__grid, .cta-strip__inner, .footer-top { grid-template-columns: 1fr; }
+  .materials-grid, .testimonials-grid { grid-template-columns: 1fr; }
+  .methodology__steps { grid-template-columns: repeat(3, 1fr); }
+  .work-item--large { grid-column: span 12; }
+  .work-item--small { grid-column: span 6; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .trust-bar__grid { grid-template-columns: repeat(2, 1fr); }
+  .trust-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 1.5rem; }
+  .methodology__steps { grid-template-columns: 1fr; }
+  .section-head { grid-template-columns: 1fr; }
+  .work-item--small { grid-column: span 12; }
+  .footer-top { grid-template-columns: 1fr; gap: 2.5rem; }
+  .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- MOCKUP BANNER -->
+<div class="mockup-banner">
+  ✦ DESIGN MOCKUP v2 — Sowah Studio × Urban Pots &nbsp;·&nbsp; Spaceful-inspired warm palette &nbsp;·&nbsp; Testimonials are placeholders &nbsp;·&nbsp; Spline 3D scene to be built
+</div>
+
+<!-- NAV -->
+<nav class="site-nav scrolled" id="siteNav">
+  <div class="container">
+    <a href="#" class="nav-logo">
+      <img src="https://cdn.shopify.com/s/files/1/0748/4152/2498/files/urban_pots_logo__sage_150.png?v=1684274691" alt="Urban Pots" />
+    </a>
+    <div class="nav-links">
+      <a href="#">Shop</a>
+      <a href="#">Custom Planters</a>
+      <a href="#">Projects</a>
+      <a href="#">Materials</a>
+      <a href="#">About</a>
+    </div>
+    <a href="#" class="nav-cta">Get a Quote</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__bg" id="heroBg"></div>
+  <div class="hero__overlay"></div>
+  <div class="container">
+    <div class="hero__content">
+      <p class="hero__label" id="heroLabel">Handcrafted in Western Sydney</p>
+      <h1 class="hero__h1" id="heroH1">
+        Spaces That<br><em>Demand</em><br>to Be Noticed
+      </h1>
+      <p class="hero__sub" id="heroSub">
+        Premium custom planter boxes for developers, architects, landscapers, and discerning homeowners. Manufactured locally in Western Sydney.
+      </p>
+      <div class="hero__actions" id="heroActions">
+        <a href="#" class="btn-pill btn-pill--stone">Explore Custom Planters</a>
+        <a href="#work" class="arrow-link arrow-link--light">View Projects →</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero__scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section class="trust-bar">
+  <div class="container">
+    <div class="trust-bar__grid">
+      <div class="trust-item gsap-hidden">
+        <div class="trust-item__num" data-count="500">0</div>
+        <div class="trust-item__label">Projects Delivered</div>
+      </div>
+      <div class="trust-item gsap-hidden">
+        <div class="trust-item__num" data-count="20">0</div>
+        <div class="trust-item__label">Years Manufacturing</div>
+      </div>
+      <div class="trust-item gsap-hidden">
+        <div class="trust-item__num" style="font-size:clamp(1.1rem,2vw,1.5rem);padding-top:.5rem">Western Sydney</div>
+        <div class="trust-item__label">Locally Made</div>
+      </div>
+      <div class="trust-item gsap-hidden">
+        <div class="trust-item__num" style="font-size:clamp(1.1rem,2vw,1.5rem);padding-top:.5rem">Nationwide</div>
+        <div class="trust-item__label">Sydney · Melbourne · Brisbane</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHODOLOGY (Spaceful-style split) -->
+<section class="methodology">
+  <div class="container">
+    <div class="methodology__top gsap-hidden">
+      <h2>Planters built<br>for <em>serious</em><br>projects</h2>
+      <div class="methodology__right">
+        <p>Urban Pots transforms your project brief into precision-manufactured planter boxes. Our integrated Consult, Design, Manufacture, Deliver model removes complexity and ensures you get exactly what you specified — on time, every time.</p>
+        <a href="#" class="arrow-link">Learn about our process →</a>
+      </div>
+    </div>
+    <div class="methodology__steps">
+      <div class="method-step gsap-hidden">
+        <div class="method-step__num">01</div>
+        <svg class="method-step__icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="4" y="4" width="32" height="32" rx="1"/><path d="M4 14h32M14 4v32"/></svg>
+        <h3>Consult</h3>
+        <p>We review your brief, site dimensions, and material requirements. Commercial or residential, we've handled projects of every scale.</p>
+      </div>
+      <div class="method-step gsap-hidden">
+        <div class="method-step__num">02</div>
+        <svg class="method-step__icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M8 32L20 8l12 24M13 22h14"/><circle cx="20" cy="8" r="2"/></svg>
+        <h3>Design</h3>
+        <p>Custom sizing, colour matching, and material selection. Primed and finished with 3 layers of Dulux paint to your exact specification.</p>
+      </div>
+      <div class="method-step gsap-hidden">
+        <div class="method-step__num">03</div>
+        <svg class="method-step__icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="4" y="12" width="32" height="20" rx="1"/><path d="M12 12V8a8 8 0 0116 0v4"/><path d="M20 22v4"/><circle cx="20" cy="21" r="2"/></svg>
+        <h3>Manufacture & Deliver</h3>
+        <p>Built in our Western Sydney yard. 2–8 week turnaround. Nationwide delivery — Sydney, Melbourne, Brisbane, Perth, Adelaide.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOM PLANTERS FEATURE -->
+<section class="custom-feature" id="custom">
+  <div class="custom-feature__grid">
+    <div class="custom-feature__img">
+      <img src="https://www.urbanpots.com.au/cdn/shop/files/Urbanpots_-_54_1200x.jpg?v=1758676406"
+           alt="Custom planter box" loading="lazy" />
+      <span class="custom-feature__img-caption">Custom Fibre Cement — Commercial Project</span>
+    </div>
+    <div class="custom-feature__body">
+      <p class="eyebrow gsap-hidden">Our Signature Service</p>
+      <h2 class="gsap-hidden">Bespoke Planter Boxes.<br><em>Built to Spec.</em></h2>
+      <p class="gsap-hidden">Every dimension. Every finish. Every deadline. Custom planter boxes for Australia's most demanding commercial and residential projects — manufactured in Western Sydney, delivered nationally.</p>
+      <ul class="spec-list gsap-hidden">
+        <li>Fibre cement, fibreglass & GRC options</li>
+        <li>Primed + 3 coats Dulux paint, any colour</li>
+        <li>Custom sizes — no project too large or complex</li>
+        <li>2–8 week turnaround from confirmed brief</li>
+        <li>Trusted by Sydney's leading developers</li>
+      </ul>
+      <div class="gsap-hidden">
+        <a href="#" class="arrow-link arrow-link--light">Start your custom quote →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MATERIALS -->
+<section class="materials" id="materials">
+  <div class="container">
+    <div class="section-head gsap-hidden">
+      <h2>Three <em>material</em><br>families</h2>
+      <p>Each with its own character, finish, and application. All custom-sized, primed, and finished in our Western Sydney workshop. GRC available on special request for prestige projects.</p>
+    </div>
+    <div class="materials-grid">
+      <div class="material-card gsap-hidden">
+        <div class="material-card__img-wrap">
+          <img class="material-card__img"
+               src="https://www.urbanpots.com.au/cdn/shop/files/cdeab9b6-40a0-4863-8a96-4b3992d02594_1200x.jpg?v=1758677744"
+               alt="Fibre Cement" loading="lazy" />
+        </div>
+        <div class="material-card__body">
+          <span class="material-card__tag">Standard</span>
+          <h3>Fibre Cement</h3>
+          <p>Durable, lightweight, architecturally clean. The workhorse of commercial installations — balconies, lobbies, large-scale residential.</p>
+        </div>
+      </div>
+      <div class="material-card gsap-hidden">
+        <div class="material-card__img-wrap">
+          <img class="material-card__img"
+               src="https://www.urbanpots.com.au/cdn/shop/files/d8ce80d0d3d5e79873da05216af0bff4_1200x.jpg?v=1758865110"
+               alt="Fibreglass" loading="lazy" />
+        </div>
+        <div class="material-card__body">
+          <span class="material-card__tag">Premium</span>
+          <h3>Fibreglass</h3>
+          <p>Unlimited colour matching, flawless smooth finish, exceptional longevity. The preferred choice of architects and luxury residential clients.</p>
+        </div>
+      </div>
+      <div class="material-card gsap-hidden">
+        <div class="material-card__img-wrap">
+          <img class="material-card__img"
+               src="https://www.urbanpots.com.au/cdn/shop/collections/Urban_pots_87_of_93_600x.jpg?v=1756447923"
+               alt="GRC" loading="lazy" />
+        </div>
+        <div class="material-card__body">
+          <span class="material-card__tag">On Request</span>
+          <h3>GRC — Glass Reinforced Concrete</h3>
+          <p>The prestige choice for heritage and hospitality projects. Combines concrete aesthetics with superior strength and design flexibility.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPLINE ZONE -->
+<section class="spline-zone">
+  <div class="container">
+    <div class="spline-placeholder">
+      <div class="spline-placeholder__icon">🧊</div>
+      <h3>Interactive 3D Planter Configurator</h3>
+      <p>A Spline 3D scene will live here — a rotatable, interactive planter box model showing materials and finishes. Built in spline.design, embedded as a &lt;spline-viewer&gt; web component. No competitor has this.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WORK / PROJECT GALLERY -->
+<section class="work" id="work">
+  <div class="container">
+    <div class="section-head gsap-hidden" style="margin-bottom:2.5rem">
+      <h2>Trusted by <em>Sydney</em><br>Developers</h2>
+      <p>From boutique residential installations to large-scale commercial developments — our planters are specified by the people who build Sydney.</p>
+    </div>
+    <div class="work-grid">
+      <div class="work-item work-item--large gsap-hidden">
+        <img src="https://www.urbanpots.com.au/cdn/shop/files/Screenshot_2025-09-29_at_8.22.00_pm_1200x.png?v=1759164065"
+             alt="Commercial project" loading="lazy" />
+        <div class="work-item__overlay"></div>
+        <div class="work-item__caption">
+          <div class="work-item__label">Commercial Development</div>
+          <div class="work-item__title">Custom Fibre Cement — Sydney CBD</div>
+        </div>
+      </div>
+      <div class="work-item work-item--small gsap-hidden">
+        <img src="https://www.urbanpots.com.au/cdn/shop/files/image0_1200x.jpg?v=1761812045"
+             alt="Urban install" loading="lazy" />
+        <div class="work-item__overlay"></div>
+        <div class="work-item__caption">
+          <div class="work-item__label">Landscaping</div>
+          <div class="work-item__title">Urban Install</div>
+        </div>
+      </div>
+      <div class="work-item work-item--small gsap-hidden">
+        <img src="https://www.urbanpots.com.au/cdn/shop/collections/Urban_pots_73_of_93_600x.jpg?v=1756432404"
+             alt="Residential" loading="lazy" />
+        <div class="work-item__overlay"></div>
+        <div class="work-item__caption">
+          <div class="work-item__label">Residential</div>
+          <div class="work-item__title">Fibreglass Custom</div>
+        </div>
+      </div>
+      <div class="work-item work-item--small gsap-hidden">
+        <img src="https://www.urbanpots.com.au/cdn/shop/files/Screenshot_2025-09-10_at_8.04.29_pm_1200x.png?v=1758642141"
+             alt="Developer project" loading="lazy" />
+        <div class="work-item__overlay"></div>
+        <div class="work-item__caption">
+          <div class="work-item__label">Developer Project</div>
+          <div class="work-item__title">Western Sydney</div>
+        </div>
+      </div>
+      <div class="work-item work-item--small gsap-hidden">
+        <img src="https://www.urbanpots.com.au/cdn/shop/collections/Urban_pots_6_of_93_600x.jpg?v=1756447708"
+             alt="Commercial lobby" loading="lazy" />
+        <div class="work-item__overlay"></div>
+        <div class="work-item__caption">
+          <div class="work-item__label">Commercial</div>
+          <div class="work-item__title">GRC Lobby Planters</div>
+        </div>
+      </div>
+      <div class="work-item work-item--small gsap-hidden">
+        <img src="https://www.urbanpots.com.au/cdn/shop/collections/Urban_pots_21_of_93_600x.jpg?v=1687499552"
+             alt="Large format" loading="lazy" />
+        <div class="work-item__overlay"></div>
+        <div class="work-item__caption">
+          <div class="work-item__label">Large Format</div>
+          <div class="work-item__title">Custom Collection</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:2.5rem;text-align:right" class="gsap-hidden">
+      <a href="#" class="arrow-link">See all projects →</a>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALLY MADE -->
+<section class="locally-made">
+  <div class="locally-made__bg"></div>
+  <div class="locally-made__overlay"></div>
+  <div class="container">
+    <div class="locally-made__content">
+      <p class="eyebrow gsap-hidden">Our Workshop</p>
+      <h2 class="gsap-hidden">Made in Our Yard,<br><em>Western Sydney</em></h2>
+      <p class="gsap-hidden">Every planter that leaves our yard is built by our team. We're a family business that takes personal responsibility for quality — not a warehouse that drops ships from overseas.</p>
+      <ul class="craft-points gsap-hidden">
+        <li>Handcrafted in our Western Sydney workshop</li>
+        <li>3 layers of Dulux paint, custom colour matched</li>
+        <li>Quality checked before every dispatch</li>
+        <li>2–8 week turnaround on all custom orders</li>
+      </ul>
+      <a href="#" class="arrow-link arrow-link--light gsap-hidden">About our process →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <div style="margin-bottom:3rem" class="gsap-hidden">
+      <p class="eyebrow" style="margin-bottom:0.75rem">What People Say</p>
+      <h2 style="font-family:var(--font-head);font-size:clamp(2.2rem,4vw,3.5rem);font-weight:700;line-height:0.95;color:var(--c-brown-dark);letter-spacing:-0.02em">
+        Trusted by builders,<br><em style="font-style:italic;font-weight:300;color:var(--c-sage)">loved by homeowners</em>
+      </h2>
+      <div class="google-source" style="margin-top:1rem">
+        <div class="google-g">G</div>
+        <span>Reviews from Google</span>
+      </div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card gsap-hidden">
+        <span class="placeholder-note">PLACEHOLDER</span>
+        <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <p class="testimonial-card__quote">"Urban Pots delivered custom fibre cement planters for our entire development on time and exactly to spec. Our landscaper was genuinely impressed. We'll be using them on every project going forward."</p>
+        <div class="author">
+          <div class="author__avatar">JM</div>
+          <div><div class="author__name">James Mitchell</div><div class="author__role">Property Developer, Sydney</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card gsap-hidden">
+        <span class="placeholder-note">PLACEHOLDER</span>
+        <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <p class="testimonial-card__quote">"As a landscaper I've sourced planters from all over and Urban Pots is in a different league. Custom sizing, the paint finish, the turnaround — everything is professional. My clients are always wowed."</p>
+        <div class="author">
+          <div class="author__avatar">SR</div>
+          <div><div class="author__name">Sarah Reynolds</div><div class="author__role">Senior Landscaper, North Shore</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card gsap-hidden">
+        <span class="placeholder-note">PLACEHOLDER</span>
+        <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <p class="testimonial-card__quote">"We specified Urban Pots fibreglass planters for a luxury residential project in Mosman. The finish, the colour match, the consistency across 40+ pieces — flawless. Team was incredibly professional."</p>
+        <div class="author">
+          <div class="author__avatar">AK</div>
+          <div><div class="author__name">Alex Kowalski</div><div class="author__role">Principal Architect, Eastern Suburbs</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<section class="cta-strip gsap-hidden">
+  <div class="container">
+    <div class="cta-strip__inner">
+      <div>
+        <h2>Ready to elevate<br><em>your project?</em></h2>
+        <p>Talk to our team about custom planters, bulk commercial orders, and developer specifications.</p>
+      </div>
+      <div class="cta-strip__actions">
+        <a href="mailto:info@urbanpots.com.au" class="btn-pill btn-pill--dark">Start a Custom Quote</a>
+        <a href="tel:0433132406" class="arrow-link arrow-link--light">Call 0433 132 406 →</a>
+        <div style="font-size:0.72rem;color:rgba(255,255,255,0.45);margin-top:0.5rem">Sydney Showroom — Tue to Sat, 9am–4pm</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="https://cdn.shopify.com/s/files/1/0748/4152/2498/files/urban_pots_logo__sage_150.png?v=1684274691"
+             alt="Urban Pots" class="footer-brand__logo" />
+        <p class="footer-brand__tagline">Your best space. Our planters.</p>
+        <p>An Australian family-owned planter manufacturer. Custom-built in Western Sydney. Trusted by developers, architects, and landscapers nationwide.</p>
+        <div class="footer-social">
+          <a href="#">IG</a>
+          <a href="#">FB</a>
+          <a href="#">LI</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#">Custom Planter Boxes</a></li>
+          <li><a href="#">Fibreglass Planters</a></li>
+          <li><a href="#">Fibre Cement</a></li>
+          <li><a href="#">GRC Planters</a></li>
+          <li><a href="#">Designer Pots</a></li>
+          <li><a href="#">All Collections</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Workshop</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Trade Account</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:0433132406">0433 132 406</a></li>
+          <li><a href="mailto:info@urbanpots.com.au">info@urbanpots.com.au</a></li>
+          <li><a href="#">Sydney Showroom</a></li>
+          <li><a href="#">Tue–Sat 9am–4pm</a></li>
+          <li><a href="#">Get Directions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Urban Pots Australia. All rights reserved.</span>
+      <span>
+        <a href="#">Privacy</a> &nbsp;·&nbsp;
+        <a href="#">Terms</a> &nbsp;·&nbsp;
+        Website by <a href="#" style="color:var(--c-stone)">Sowah Studio</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+// Nav scroll
+const nav = document.getElementById('siteNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+// Hero bg zoom
+setTimeout(() => document.getElementById('heroBg').classList.add('loaded'), 80);
+
+// Hero entrance
+gsap.timeline({ defaults: { ease: 'power3.out' } })
+  .to('#heroLabel',   { opacity: 1, y: 0, duration: 0.8, delay: 0.2 })
+  .to('#heroH1',      { opacity: 1, y: 0, duration: 1.1 }, '-=0.4')
+  .to('#heroSub',     { opacity: 1, y: 0, duration: 0.9 }, '-=0.5')
+  .to('#heroActions', { opacity: 1, y: 0, duration: 0.8 }, '-=0.4');
+
+// Scroll reveals
+gsap.utils.toArray('.gsap-hidden').forEach((el, i) => {
+  gsap.to(el, {
+    opacity: 1, y: 0,
+    duration: 0.75,
+    ease: 'power2.out',
+    scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
+    delay: (i % 4) * 0.07,
+  });
+});
+
+// Stat counters
+document.querySelectorAll('[data-count]').forEach(el => {
+  const target = +el.dataset.count;
+  ScrollTrigger.create({
+    trigger: el, start: 'top 85%', once: true,
+    onEnter() {
+      gsap.to({ v: 0 }, {
+        v: target, duration: 2, ease: 'power2.out',
+        onUpdate() { el.textContent = Math.round(this.targets()[0].v) + '+'; }
+      });
+    }
+  });
+});
+</script>
+</body>
+</html>
