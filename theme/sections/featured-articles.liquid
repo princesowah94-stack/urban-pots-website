@@ -1,0 +1,584 @@
+{% schema %}
+{
+  "name": "Featured Articles Masonry",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Featured Articles"
+    },
+    {
+      "type": "text",
+      "id": "section_subtext",
+      "label": "Section Subtext",
+      "default": "Browse the latest updates and stories from our blog"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Select Blog"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Articles Masonry",
+      "category": "Blog"
+    }
+  ]
+}
+{% endschema %}
+
+<section id="featured-articles" class="featured-articles grid-section">
+  <div class="featured-container">
+    <div class="section-header">
+      <h2>{{ section.settings.section_title }}</h2>
+      {% if section.settings.section_subtext != blank %}
+        <p class="section-subtext">{{ section.settings.section_subtext }}</p>
+      {% endif %}
+    </div>
+
+    {% if section.settings.blog != blank %}
+      <!-- Filters + Sort -->
+      <div class="filters-bar">
+        <div class="tag-filters desktop-only">
+          {% assign all_tags = blogs[section.settings.blog].all_tags %}
+          <button class="filter-pill active" data-tag="all">All</button>
+          {% for tag in all_tags %}
+            <button class="filter-pill" data-tag="{{ tag | handleize }}">{{ tag }}</button>
+          {% endfor %}
+        </div>
+
+        <!-- Mobile Dropdown for Tags -->
+        <div class="mobile-only tag-dropdown">
+          <label for="tagSelect">Filter by:</label>
+          <select id="tagSelect">
+            <option value="all">All</option>
+            {% for tag in blogs[section.settings.blog].all_tags %}
+              <option value="{{ tag | handleize }}">{{ tag }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="sort-filters">
+          <label for="sortArticles" class="sort-label">Sort By:</label>
+          <select id="sortArticles">
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+            <option value="az">A – Z</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Articles Grid -->
+      <div class="articles-grid" id="articlesGrid">
+        {% for article in blogs[section.settings.blog].articles %}
+         <div class="article-card"
+  data-tags="{% for tag in article.tags %}{{ tag | handleize }}{% unless forloop.last %},{% endunless %}{% endfor %}"
+  data-date="{{ article.published_at }}"
+  data-filtered="true">
+
+
+  <!-- Image -->
+  <div class="image-wrapper">
+    <a href="{{ article.url }}">
+      {% if article.image %}
+        <img src="{{ article.image | image_url: width: 800 }}" 
+             alt="{{ article.image.alt | escape }}"
+             class="article-image">
+      {% else %}
+        <img src="{{ 'no-image.png' | asset_url }}" 
+             alt="No image available" 
+             class="article-image">
+        {%- comment -%} Alternative: {{ 'image' | placeholder_svg_tag: 'article-image' }} {%- endcomment -%}
+      {% endif %}
+    </a>
+
+    <!-- Tags -->
+    {% if article.tags.size > 0 %}
+      <div class="image-tags">
+        {% assign shown_tags = article.tags | slice: 0, 3 %}
+        {% for tag in shown_tags %}
+          <span class="image-tag">{{ tag }}</span>
+        {% endfor %}
+        {% if article.tags.size > 3 %}
+          <span class="image-tag more">+{{ article.tags.size | minus: 3 }}</span>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- Content -->
+  <div class="article-content">
+    <!-- Date -->
+    <p class="article-date">{{ article.published_at | date: "%B %d, %Y" }}</p>
+
+    <!-- Title -->
+    <h3 class="article-title"><a href="{{ article.url }}">{{ article.title }}</a></h3>
+
+    <!-- Excerpt -->
+    {% assign sentences = article.excerpt | strip_html | split: '.' %}
+    {% assign limited_excerpt = '' %}
+
+    {% for sentence in sentences %}
+    {% if forloop.index <= 2 and sentence != '' %}
+        {% assign limited_excerpt = limited_excerpt | append: sentence | append: '.' %}
+    {% endif %}
+    {% endfor %}
+
+    <p class="article-excerpt">
+    {{ limited_excerpt | strip }}
+    {% if sentences.size > 2 %}…{% endif %}
+    </p>
+
+
+    <!-- Author -->
+    {% if article.user %}
+        <div class="article-author">
+        {% if article.user %}
+            {% if article.user.image %}
+            <img src="{{ article.user.image | image_url: width: 50, height: 50 }}" 
+                alt="{{ article.user.first_name }} {{ article.user.last_name }}">
+            {% else %}
+            {%- assign first_initial = article.user.first_name | slice: 0, 1 | upcase -%}
+            {%- assign last_initial = article.user.last_name | slice: 0, 1 | upcase -%}
+
+            {%- assign initials = first_initial | append: last_initial -%}
+            {%- assign colors = "#676D4B,#1E88E5,#8E24AA,#E53935,#00897B,#FDD835" | split: "," -%}
+            {%- assign index = initials.size | modulo: colors.size -%}
+            <div class="author-initials" style="background: {{ colors[index] }};">
+                {{ initials }}
+            </div>
+            {% endif %}
+            <span>{{ article.user.first_name }} {{ article.user.last_name }}</span>
+        {% else %}
+            {%- assign name_parts = article.author | split: ' ' -%}
+            {%- assign first_initial = name_parts[0] | slice: 0, 1 | upcase -%}
+            {%- assign last_initial = name_parts[1] | slice: 0, 1 | upcase -%}
+            {%- assign initials = first_initial | append: last_initial -%}
+            {%- assign colors = "#676D4B,#1E88E5,#8E24AA,#E53935,#00897B,#FDD835" | split: "," -%}
+            {%- assign index = initials.size | modulo: colors.size -%}
+            <div class="author-initials" style="background: {{ colors[index] }};">
+            {{ initials }}
+            </div>
+            <span>{{ article.author }}</span>
+        {% endif %}
+        </div>
+
+    {% else %}
+      <div class="article-author">
+        <img src="{{ 'default-author.png' | asset_url }}" alt="Default Author">
+        <span>{{ article.author }}</span>
+      </div>
+    {% endif %}
+
+    <!-- Read More -->
+    <div class="read-more">
+    <a href="{{ article.url }}">Read More →</a>
+    </div>
+
+  </div>
+</div>
+
+        {% endfor %}
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination" id="paginationControls"></div>
+    {% else %}
+      <p>No blog selected yet. Please choose one in the section settings.</p>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+.featured-articles { padding: 60px 0; }
+.featured-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+.section-header { text-align: left; margin-bottom: 2rem; }
+.section-header h2 { font-size: 2rem; margin-bottom: 0.5rem; }
+.section-subtext { font-size: 1.4rem; color: #666; }
+
+/* Filters + Sort */
+.filters-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.tag-filters { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.mobile-only { display: none; }
+
+.sort-filters {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+.sort-label {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  min-width: 90px; /* wider on desktop */
+  text-align: right;
+}
+
+/* Filters and sort dropdown uniform style */
+.tag-filters button,
+.sort-filters select,
+.mobile-only select {
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 8px 16px; /* same padding for consistent height */
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  color: #000;
+  line-height: 1.2;  /* keeps consistent vertical alignment */
+  height: 38px;      /* force same height across buttons & selects */
+}
+
+/* Hover + Active states */
+.tag-filters button:hover,
+.tag-filters button.active {
+  background: #676D4B;
+  color: #fff;
+  border-color: #676D4B;
+}
+
+.sort-filters select:hover,
+.mobile-only select:hover {
+  background: #fff;
+  color: #000;
+  border-color: #676D4B;
+}
+
+
+/* Grid */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.article-card {
+  background: #fff; border-radius: 10px; overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.article-card:hover { transform: translateY(-6px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+.image-wrapper { position: relative; aspect-ratio: 16/9; overflow: hidden; }
+.article-image { width: 100%; height: 100%; object-fit: cover; }
+
+/* Tags inside image */
+.image-tags {
+  position: absolute;
+  top: 10px; left: 10px;
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.image-tag {
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+}
+.image-tag.more { background: #676D4B; }
+
+/* Content */
+.article-content { padding: 1rem; }
+.article-title { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.article-excerpt { font-size: 1.4rem; color: #555; margin-bottom: 1rem; }
+.btn { padding: 0.5rem 1rem; border-radius: 6px; background: #333; color: #fff; font-size: 1.3rem; }
+.btn:hover { background: #111; }
+
+/* Pagination */
+.pagination {
+  display:flex; justify-content:center; align-items:center; gap:0.6rem;
+  font-size:1.4rem; flex-wrap:wrap; margin-top:2rem;
+}
+.pagination button {
+  border: 1px solid #ccc; 
+  background: none; 
+  padding: 0.4rem 0.9rem; 
+  border-radius: 20px;
+  cursor: pointer; 
+  font-size: 1.4rem; 
+  transition: all 0.3s ease;
+}
+.pagination button.active { background: #676D4B; color:#fff; border-color:#676D4B; }
+.pagination .arrow {
+  border-radius: 50%; width: 34px; height: 34px; display:flex; align-items:center; justify-content:center;
+  font-size:1.4rem; font-weight:bold;
+}
+.pagination button:disabled { background: #e0e0e0; color: #999; }
+.article-date {
+  font-size: 1.2rem;
+  color: #777;
+  margin-bottom: 0.3rem;
+}
+
+.article-author {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.article-author img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.article-author span {
+  font-size: 1.3rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.author-initials {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+.read-more {
+  text-align: right;
+  margin-top: 0.5rem;
+  padding:0px 20px 20px 20px;
+}
+
+.read-more a {
+  font-size: 1.3rem;
+  color: #676D4B;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.read-more a:hover {
+  color: #333;
+}
+
+
+/* Responsive */
+@media (max-width: 992px) {
+  .articles-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .articles-grid { grid-template-columns: 1fr; }
+
+  /* Filters + Sort stack vertically */
+  .filters-bar { 
+    flex-direction: column; 
+    align-items: stretch; 
+    gap: 1.5rem; 
+  }
+
+  /* Show labels on top for mobile */
+  .sort-filters, .mobile-only {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+   .sort-filters{
+    width: 100px;
+    }
+  .sort-label, .filter-label {
+    margin-bottom: 0.4rem;
+    min-width: auto;
+    text-align: left;
+    font-size: 1.3rem;
+  }
+
+  .sort-filters select, .mobile-only select {
+    width: 100%;
+  }
+
+  .desktop-only { display: none; }
+  .mobile-only { display: flex; }
+}
+</style>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const articles = Array.from(document.querySelectorAll(".article-card"));
+  const filterButtons = document.querySelectorAll(".filter-pill");
+  const tagSelect = document.getElementById("tagSelect");
+  const sortSelect = document.getElementById("sortArticles");
+  const grid = document.getElementById("articlesGrid");
+  const pagination = document.getElementById("paginationControls");
+
+  let currentPage = 1;
+  const perPage = 9;
+
+  // Parse article tags into arrays + log
+  articles.forEach(article => {
+    const rawTags = article.dataset.tags || "";
+    article.tagsArray = rawTags
+      .split(",")
+      .map(t => t.toLowerCase().trim())
+      .filter(Boolean);
+
+    console.log("Article:", article.querySelector(".article-title")?.innerText,
+      "| Raw tags:", rawTags,
+      "| Parsed tags:", article.tagsArray);
+
+    article.dataset.filtered = "true";
+  });
+
+  let selectedTags = ["all"];
+
+  function filterArticles(tags) {
+    const normalizedTags = tags.map(t => t.toLowerCase().trim());
+    console.log("Filtering by:", normalizedTags);
+
+    articles.forEach(article => {
+      if (normalizedTags.includes("all")) {
+        article.dataset.filtered = "true";
+      } else {
+        const hasMatch = article.tagsArray.some(tag =>
+          normalizedTags.includes(tag)
+        );
+        article.dataset.filtered = hasMatch ? "true" : "false";
+      }
+    });
+
+    currentPage = 1;
+    renderArticles();
+  }
+
+  function sortArticles(type) {
+    articles.sort((a, b) => {
+      if (type === "newest") return new Date(b.dataset.date) - new Date(a.dataset.date);
+      if (type === "oldest") return new Date(a.dataset.date) - new Date(b.dataset.date);
+      if (type === "az") return a.querySelector(".article-title").innerText
+        .localeCompare(b.querySelector(".article-title").innerText);
+      return 0;
+    });
+    renderArticles();
+  }
+
+  function renderArticles() {
+    const filtered = articles.filter(a => a.dataset.filtered === "true");
+    const totalPages = Math.ceil(filtered.length / perPage);
+
+    grid.innerHTML = "";
+
+    const start = (currentPage - 1) * perPage;
+    const end = currentPage * perPage;
+
+    filtered.slice(start, end).forEach(a => {
+      a.style.display = "block";
+      grid.appendChild(a);
+    });
+
+    renderPagination(totalPages);
+
+    console.log("Visible articles this page:", filtered.slice(start, end).map(a =>
+      a.querySelector(".article-title")?.innerText
+    ));
+  }
+
+  function renderPagination(totalPages) {
+    pagination.innerHTML = "";
+
+    const prevBtn = document.createElement("button");
+    prevBtn.classList.add("arrow");
+    prevBtn.innerHTML = "&#8592;";
+    prevBtn.disabled = currentPage === 1;
+    prevBtn.addEventListener("click", () => {
+      if (currentPage > 1) {
+        currentPage--;
+        renderArticles();
+      }
+    });
+    pagination.appendChild(prevBtn);
+
+    for (let i = 1; i <= totalPages; i++) {
+      const pageBtn = document.createElement("button");
+      pageBtn.textContent = i;
+      if (i === currentPage) pageBtn.classList.add("active");
+      pageBtn.addEventListener("click", () => {
+        currentPage = i;
+        renderArticles();
+      });
+      pagination.appendChild(pageBtn);
+    }
+
+    const nextBtn = document.createElement("button");
+    nextBtn.classList.add("arrow");
+    nextBtn.innerHTML = "&#8594;";
+    nextBtn.disabled = currentPage === totalPages || totalPages === 0;
+    nextBtn.addEventListener("click", () => {
+      if (currentPage < totalPages) {
+        currentPage++;
+        renderArticles();
+      }
+    });
+    pagination.appendChild(nextBtn);
+  }
+
+  // Desktop multi-tag
+  filterButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const tag = btn.dataset.tag.toLowerCase().trim();
+      console.log("Clicked tag:", tag);
+
+      if (tag === "all") {
+        selectedTags = ["all"];
+        filterButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+      } else {
+        selectedTags = selectedTags.filter(t => t !== "all");
+        btn.classList.toggle("active");
+        if (btn.classList.contains("active")) {
+          selectedTags.push(tag);
+        } else {
+          selectedTags = selectedTags.filter(t => t !== tag);
+        }
+        if (selectedTags.length === 0) {
+          selectedTags = ["all"];
+          document.querySelector('[data-tag="all"]').classList.add("active");
+        } else {
+          document.querySelector('[data-tag="all"]').classList.remove("active");
+        }
+      }
+
+      filterArticles(selectedTags);
+    });
+  });
+
+  // Mobile dropdown
+  if (tagSelect) {
+    tagSelect.addEventListener("change", () => {
+      const tag = tagSelect.value.toLowerCase().trim();
+      console.log("Dropdown tag selected:", tag);
+      selectedTags = tag === "all" ? ["all"] : [tag];
+      filterArticles(selectedTags);
+    });
+  }
+
+  if (sortSelect) {
+    sortSelect.addEventListener("change", () => {
+      console.log("Sorting:", sortSelect.value);
+      sortArticles(sortSelect.value);
+    });
+  }
+
+  renderArticles();
+});
+</script>

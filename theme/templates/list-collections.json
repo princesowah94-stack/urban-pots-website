@@ -1,0 +1,165 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "heading": {
+      "type": "heading-dynamic",
+      "disabled": true,
+      "settings": {
+        "parallax": false,
+        "bg_overlay": "#000000",
+        "bg_opacity": 54,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "padding_top_tb": 50,
+        "padding_bottom_tb": 50,
+        "padding_top_mb": 50,
+        "padding_bottom_mb": 50,
+        "bg_pos": "center center",
+        "bg_repeat": "no-repeat",
+        "bg_size": "cover",
+        "mgb": 50,
+        "mgb_tb": 50,
+        "mgb_mb": 50
+      }
+    },
+    "main": {
+      "type": "main-list-collections",
+      "blocks": {
+        "8b8e32c0-23d6-4b50-9356-1f707380d72f": {
+          "type": "collection",
+          "settings": {
+            "collection": "clothing",
+            "collection_title": "Women"
+          }
+        },
+        "2363b965-b170-4eef-beda-9fcbd426bb8a": {
+          "type": "collection",
+          "settings": {
+            "collection": "voka-fashion",
+            "collection_title": "Men"
+          }
+        },
+        "3cf3b5de-76cf-4462-96cd-12be5d86bd88": {
+          "type": "collection",
+          "settings": {
+            "collection": "clothing",
+            "collection_title": "Accessories"
+          }
+        }
+      },
+      "block_order": [
+        "8b8e32c0-23d6-4b50-9356-1f707380d72f",
+        "2363b965-b170-4eef-beda-9fcbd426bb8a",
+        "3cf3b5de-76cf-4462-96cd-12be5d86bd88"
+      ],
+      "disabled": true,
+      "settings": {
+        "cat_design": "11",
+        "title_cl": "#4d5959",
+        "title_cl_hover": "#4d5959",
+        "subtitle_cl": "#999999",
+        "count_cl": "#ffffff",
+        "border_cl": "#ffffff",
+        "display_type": "all",
+        "limit": 6,
+        "layout_des": "1",
+        "col_dk": "2",
+        "col_tb": "2",
+        "col_mb": "2",
+        "space_h_item": "30",
+        "space_v_item": "30",
+        "space_h_item_tb": "15",
+        "space_v_item_tb": "30",
+        "space_h_item_mb": "10",
+        "space_v_item_mb": "30",
+        "space_bottom": 15,
+        "space_bottom_tb": 15,
+        "space_bottom_mb": 15,
+        "border": false,
+        "item_pd": 0,
+        "item_rd": 5,
+        "img_effect": "zoom",
+        "b_effect": "none",
+        "image_ratio": "t4s_ratioadapt",
+        "image_size": "t4s_cover",
+        "image_position": "t4s_position_8",
+        "use_pagination": "default",
+        "enable_bar_lm": false,
+        "btn_icon": false,
+        "button_style": "default",
+        "btns_size": "large",
+        "btns_cl": "primary",
+        "button_effect": "fade",
+        "btn_pos": "t4s-text-center",
+        "pr_txt": "products",
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,80px,",
+        "pd": "",
+        "mg_tb": ",,50px,",
+        "pd_tb": "",
+        "mg_mb": ",,50px,",
+        "pd_mb": ""
+      }
+    },
+    "collection_showcase_gTQENL": {
+      "type": "collection-showcase",
+      "blocks": {
+        "collection_Kty9rk": {
+          "type": "collection",
+          "settings": {
+            "collection": "designer-lightweight",
+            "subtitle": " Lightweight & sleek for modern aesthetics"
+          }
+        },
+        "collection_WCMHAB": {
+          "type": "collection",
+          "settings": {
+            "collection": "atlantis-grc-series",
+            "subtitle": " Lightweight with a unique, weathered texture"
+          }
+        },
+        "collection_r98WhQ": {
+          "type": "collection",
+          "settings": {
+            "collection": "natural-grc-range",
+            "subtitle": "Heavyweight, robust, and timeless"
+          }
+        },
+        "collection_BwF3W9": {
+          "type": "collection",
+          "settings": {
+            "collection": "terrazzo-range",
+            "subtitle": " Lightweight with a classic, polished finish"
+          }
+        }
+      },
+      "block_order": [
+        "collection_Kty9rk",
+        "collection_WCMHAB",
+        "collection_r98WhQ",
+        "collection_BwF3W9"
+      ],
+      "name": "Collection Showcase",
+      "settings": {
+        "intro_text": "Discover our curated collection of high-quality planters, designed to suit a variety of indoor and outdoor spaces.",
+        "columns": 2,
+        "aspect_ratio": "1/1"
+      }
+    }
+  },
+  "order": [
+    "heading",
+    "main",
+    "collection_showcase_gTQENL"
+  ]
+}

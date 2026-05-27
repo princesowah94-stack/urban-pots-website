@@ -1,0 +1,377 @@
+{% if page.handle == 'trade' %}
+<section class="trade-banner" style="position: relative; text-align: center; top:0px">
+  {% if section.settings.hero_image %}
+    <div class="trade-image-wrapper">
+      <img 
+        src="{{ section.settings.hero_image | image_url: width: 2000 }}" 
+        alt="{{ section.settings.hero_heading | escape }}" 
+        class="trade-image"
+      >
+
+      <!-- ✅ Content inside wrapper -->
+      <div class="trade-banner-content">
+        {% if section.settings.hero_heading != blank %}
+          <h1 class="trade-banner-title">{{ section.settings.hero_heading }}</h1>
+        {% endif %}
+
+        {% if section.settings.hero_subheading != blank %}
+          <p class="trade-banner-text">{{ section.settings.hero_subheading }}</p>
+        {% endif %}
+
+        <div class="trade-banner-actions">
+          {% if section.settings.hero_primary_cta %}
+            {% assign primary_link = "#" %}
+            {% if section.settings.hero_primary_cta_link_type == "enquiry" %}
+              {% assign primary_link = "#enquiry-form-trade" %}
+            {% elsif section.settings.hero_primary_cta_link_type == "benefit" %}
+              {% assign primary_link = "#benefit-section" %}
+            {% elsif section.settings.hero_primary_cta_link_type == "page" %}
+              {% assign primary_link = section.settings.hero_primary_cta_page %}
+            {% endif %}
+            <a href="{{ primary_link }}" class="trade-btn trade-btn--primary">
+              {{ section.settings.hero_primary_cta }}
+            </a>
+          {% endif %}
+
+          {% if section.settings.hero_secondary_cta %}
+            {% assign secondary_link = "#" %}
+            {% if section.settings.hero_secondary_cta_link_type == "enquiry" %}
+              {% assign secondary_link = "#enquiry-form-trade" %}
+            {% elsif section.settings.hero_secondary_cta_link_type == "benefit" %}
+              {% assign secondary_link = "#benefit-section" %}
+            {% elsif section.settings.hero_secondary_cta_link_type == "page" %}
+              {% assign secondary_link = section.settings.hero_secondary_cta_page %}
+            {% endif %}
+            <a href="{{ secondary_link }}" class="trade-btn trade-btn--secondary">
+              {{ section.settings.hero_secondary_cta }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</section>
+
+<section class="trade-eligibility page-width">
+  <h2 class="trade-eligibility__heading">{{ section.settings.who_heading }}</h2>
+  <p class="trade-eligibility__intro">{{ section.settings.who_intro }}</p>
+  <div class="trade-eligibility__grid">
+    {% for block in section.blocks %}
+      <div class="trade-eligibility__card {% if block.settings.description == blank %}no-description{% endif %}">
+        <h3 class="trade-eligibility__role">{{ block.settings.role }}</h3>
+        {% if block.settings.description != blank %}
+          <p class="trade-eligibility__description">{{ block.settings.description }}</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<script>
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+      if (anchor.getAttribute('href').length > 1) {
+        e.preventDefault();
+        document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+{% endif %}
+
+<style>
+.trade-image-wrapper {
+  position: relative;
+  max-width: 1200px; /* 👈 limits image width */
+  margin: 0 auto;
+}
+
+.trade-image {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ✅ Removed hover zoom effect entirely */
+.trade-image:hover {
+  transform: none;
+}
+
+.trade-banner-content {
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  max-width: 800px;
+  padding: 20px;
+  z-index: 2;
+}
+
+.trade-banner-title {
+  font-family: "Times New Roman", serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.trade-banner-text {
+  font-size: 1.9rem;
+  margin: 0 auto 2rem;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.trade-banner-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.trade-btn {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1.5rem;
+}
+
+.trade-btn--primary {
+  background: #111;
+  color: #fff;
+}
+.trade-btn--primary:hover {
+  background: #fff;
+  color: #000;
+}
+
+.trade-btn--secondary {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+.trade-btn--secondary:hover {
+  background: #111;
+  color: #fff;
+  border-color: #000;
+}
+
+/* Eligibility section (unchanged) */
+.trade-eligibility {
+  padding: 5rem 1.5rem;
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.trade-eligibility__heading {
+  font-family: "Times New Roman", serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: #111;
+  margin-bottom: 1rem;
+}
+.trade-eligibility__intro {
+  font-size: 2.4rem;
+  color: #444;
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.trade-eligibility__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+.trade-eligibility__card {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+.trade-eligibility__card:hover {
+  border-color: #ccc;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+}
+.trade-eligibility__role {
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 0.75rem;
+}
+.trade-eligibility__description {
+  font-size: 1.5rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+  .trade-image { height: 40vh; }
+  .trade-banner-title { font-size: 2rem; }
+  .trade-banner-text { font-size: 1.3rem; }
+  .trade-btn { font-size: 1.2rem; }
+  .trade-eligibility__heading { font-size: 2.1rem; }
+  .trade-eligibility__intro { font-size: 1.2rem; }
+  .trade-eligibility__description { font-size: 1.2rem; }
+}
+</style>
+
+
+
+{% schema %}
+{
+  "name": "Trade Program (Full Page)",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay Opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 35,
+      "unit": "%"
+    },
+    {
+      "type": "text",
+      "id": "hero_heading",
+      "label": "Hero Heading",
+      "default": "Register for Trade Pricing"
+    },
+    {
+      "type": "textarea",
+      "id": "hero_subheading",
+      "label": "Hero Subheading",
+      "default": "Submit your trade enquiry today"
+    },
+    {
+      "type": "text",
+      "id": "hero_primary_cta",
+      "label": "Hero Primary Button Label",
+      "default": "Apply Now"
+    },
+    {
+      "type": "select",
+      "id": "hero_primary_cta_link_type",
+      "label": "Primary Button Target",
+      "default": "enquiry",
+      "options": [
+        {"value": "enquiry", "label": "Enquiry Form"},
+        {"value": "benefit", "label": "Benefit Section"},
+        {"value": "page", "label": "Select a Page"}
+      ]
+    },
+    {
+      "type": "url",
+      "id": "hero_primary_cta_page",
+      "label": "Primary Button Page URL",
+      "default": "/"
+    },
+    {
+      "type": "text",
+      "id": "hero_secondary_cta",
+      "label": "Hero Secondary Button Label",
+      "default": "Learn More"
+    },
+    {
+      "type": "select",
+      "id": "hero_secondary_cta_link_type",
+      "label": "Secondary Button Target",
+      "default": "benefit",
+      "options": [
+        {"value": "enquiry", "label": "Enquiry Form"},
+        {"value": "benefit", "label": "Benefit Section"},
+        {"value": "page", "label": "Select a Page"}
+      ]
+    },
+    {
+      "type": "url",
+      "id": "hero_secondary_cta_page",
+      "label": "Secondary Button Page URL",
+      "default": "/"
+    },
+    {
+      "type": "text",
+      "id": "who_heading",
+      "label": "Who Can Apply - Heading",
+      "default": "Who Can Apply"
+    },
+    {
+      "type": "textarea",
+      "id": "who_intro",
+      "label": "Who Can Apply - Intro",
+      "default": "Are you a qualified trade professional? Join our program to access exclusive pricing, dedicated support, and member-only benefits."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "eligibility",
+      "name": "Eligibility Role",
+      "settings": [
+        {
+          "type": "text",
+          "id": "role",
+          "label": "Role Title",
+          "default": "Designer"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Role Description",
+          "default": "Designers looking for trade discounts."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trade Program Full Page",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "eligibility",
+          "settings": {
+            "role": "Designer",
+            "description": "Designers looking for trade discounts."
+          }
+        },
+        {
+          "type": "eligibility",
+          "settings": {
+            "role": "Landscaper",
+            "description": "Professionals sourcing quality materials."
+          }
+        },
+        {
+          "type": "eligibility",
+          "settings": {
+            "role": "Trade Professional",
+            "description": "Contractors and resellers seeking exclusive pricing."
+          }
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}

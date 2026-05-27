@@ -1,0 +1,1205 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1646028739ae283905": {
+      "type": "slideshow",
+      "blocks": {
+        "164602873867eb3815-0": {
+          "type": "image_parent",
+          "settings": {
+            "image": "shopify://shop_images/Urban_pots_41_of_93.jpg",
+            "cl_img": "",
+            "link_img1": "shopify://collections",
+            "open_link": "_self",
+            "animate_slide": "none",
+            "text_align": "start",
+            "text_align_tb": "center",
+            "text_align_mb": "start",
+            "content_width": "auto",
+            "cv_pos": 33,
+            "ch_pos": 46,
+            "cv_pos_tb": 68,
+            "ch_pos_tb": 42,
+            "cv_pos_mb": 37,
+            "ch_pos_mb": 26,
+            "bg_overlay": "#000000",
+            "bg_opacity": 0,
+            "bg_content_cl": "rgba(0,0,0,0)",
+            "bg_content_op": 0,
+            "content_pd_tb": 15,
+            "content_pd_lr": 15,
+            "content_pd_tb_tb": 15,
+            "content_pd_lr_tb": 15,
+            "content_pd_tb_mb": 10,
+            "content_pd_lr_mb": 10,
+            "border_bl": false,
+            "br_color": "#222222",
+            "br_bg": "#ffffff",
+            "br_opacity": 50,
+            "br_style": "dashed",
+            "br_pd": 20,
+            "br_pd_tb": 52,
+            "br_pd_mb": 10,
+            "time_animation": 1,
+            "animation_delay": 30
+          }
+        },
+        "164602873867eb3815-1": {
+          "type": "custom_text",
+          "settings": {
+            "text": "",
+            "remove_br_tag_tb": false,
+            "remove_br_tag_mb": true,
+            "tag": "p",
+            "fontf": "3",
+            "text_cl": "#000000",
+            "text_fs": 20,
+            "text_lh": 0,
+            "text_fw": 400,
+            "text_ls": 2,
+            "mgb": 25,
+            "font_italic": true,
+            "text_shadow": false,
+            "text_fs_tb": 18,
+            "text_lh_tb": 0,
+            "text_ls_tb": 2,
+            "mgb_tb": 20,
+            "hidden_mobile": true,
+            "text_fs_mb": 14,
+            "text_lh_mb": 0,
+            "text_ls_mb": 1,
+            "mgb_mb": 20,
+            "animation": "fadeInUp"
+          }
+        },
+        "164602873867eb3815-2": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Get 20% Off Your First Purchase",
+            "remove_br_tag_tb": false,
+            "remove_br_tag_mb": false,
+            "tag": "p",
+            "fontf": "inherit",
+            "text_cl": "#222222",
+            "text_fs": 50,
+            "text_lh": 0,
+            "text_fw": 600,
+            "text_ls": 1.6,
+            "mgb": 25,
+            "font_italic": false,
+            "text_shadow": false,
+            "text_fs_tb": 29,
+            "text_lh_tb": 0,
+            "text_ls_tb": 1,
+            "mgb_tb": 20,
+            "hidden_mobile": false,
+            "text_fs_mb": 21,
+            "text_lh_mb": 0,
+            "text_ls_mb": 2.1,
+            "mgb_mb": 20,
+            "animation": "fadeInUp"
+          }
+        },
+        "390cb6f8-c5fc-44ed-badf-074a03818e5a": {
+          "type": "custom_button",
+          "settings": {
+            "button_text": "SHOP THE COLLECTION",
+            "button_link": "shopify://collections",
+            "target_link": "_self",
+            "fontf": "inherit",
+            "button_style": "default",
+            "button_effect": "sweep-to-top",
+            "pri_cl": "#000000",
+            "second_cl": "#ffffff",
+            "pri_cl_hover": "#b59677",
+            "second_cl_hover": "#ffffff",
+            "button_icon_w": 0,
+            "fsbutton": 11,
+            "fwbutton": 500,
+            "button_mh": 42,
+            "button_pd_lr": 25,
+            "button_ls": 3,
+            "button_bdr": 0,
+            "mgb": 0,
+            "button_icon_w_tb": 0,
+            "fsbutton_tb": 10,
+            "button_mh_tb": 40,
+            "button_pd_lr_tb": 20,
+            "button_ls_tb": 2,
+            "mgb_tb": 0,
+            "hidden_mobile": false,
+            "button_icon_w_mb": 0,
+            "fsbutton_mb": 10,
+            "button_mh_mb": 40,
+            "button_pd_lr_mb": 20,
+            "button_ls_mb": 1,
+            "mgb_mb": 0,
+            "animation": "fadeInUp"
+          }
+        },
+        "164602873867eb3815-4": {
+          "type": "image_parent",
+          "settings": {
+            "image": "shopify://shop_images/Urban_pots_28_of_93.jpg",
+            "cl_img": "",
+            "link_img1": "shopify://collections",
+            "open_link": "_blank",
+            "animate_slide": "none",
+            "text_align": "start",
+            "text_align_tb": "center",
+            "text_align_mb": "center",
+            "content_width": "auto",
+            "cv_pos": 50,
+            "ch_pos": 10,
+            "cv_pos_tb": 12,
+            "ch_pos_tb": 10,
+            "cv_pos_mb": 15,
+            "ch_pos_mb": 22,
+            "bg_overlay": "#000000",
+            "bg_opacity": 0,
+            "bg_content_cl": "rgba(0,0,0,0)",
+            "bg_content_op": 0,
+            "content_pd_tb": 15,
+            "content_pd_lr": 15,
+            "content_pd_tb_tb": 15,
+            "content_pd_lr_tb": 15,
+            "content_pd_tb_mb": 10,
+            "content_pd_lr_mb": 10,
+            "border_bl": false,
+            "br_color": "#222222",
+            "br_bg": "#ffffff",
+            "br_opacity": 50,
+            "br_style": "solid",
+            "br_pd": 20,
+            "br_pd_tb": 15,
+            "br_pd_mb": 10,
+            "time_animation": 1,
+            "animation_delay": 30
+          }
+        },
+        "164602873867eb3815-6": {
+          "type": "custom_text",
+          "settings": {
+            "text": "ELEVATE YOUR SPACE TODAY",
+            "remove_br_tag_tb": false,
+            "remove_br_tag_mb": false,
+            "tag": "p",
+            "fontf": "1",
+            "text_cl": "#222222",
+            "text_fs": 50,
+            "text_lh": 0,
+            "text_fw": 700,
+            "text_ls": 0,
+            "mgb": 25,
+            "font_italic": false,
+            "text_shadow": false,
+            "text_fs_tb": 36,
+            "text_lh_tb": 0,
+            "text_ls_tb": 1,
+            "mgb_tb": 20,
+            "hidden_mobile": false,
+            "text_fs_mb": 24,
+            "text_lh_mb": 26,
+            "text_ls_mb": 2.9,
+            "mgb_mb": 20,
+            "animation": "fadeInUp"
+          }
+        },
+        "390cb6f8-c5fc-44ed-badf-074a03818e5b": {
+          "type": "custom_button",
+          "settings": {
+            "button_text": "Shop Now",
+            "button_link": "shopify://collections",
+            "target_link": "_self",
+            "fontf": "inherit",
+            "button_style": "default",
+            "button_effect": "sweep-to-top",
+            "pri_cl": "#000000",
+            "second_cl": "#ffffff",
+            "pri_cl_hover": "#b59677",
+            "second_cl_hover": "#ffffff",
+            "button_icon_w": 0,
+            "fsbutton": 11,
+            "fwbutton": 500,
+            "button_mh": 42,
+            "button_pd_lr": 25,
+            "button_ls": 3,
+            "button_bdr": 0,
+            "mgb": 0,
+            "button_icon_w_tb": 0,
+            "fsbutton_tb": 10,
+            "button_mh_tb": 40,
+            "button_pd_lr_tb": 20,
+            "button_ls_tb": 2,
+            "mgb_tb": 0,
+            "hidden_mobile": false,
+            "button_icon_w_mb": 0,
+            "fsbutton_mb": 10,
+            "button_mh_mb": 40,
+            "button_pd_lr_mb": 20,
+            "button_ls_mb": 1,
+            "mgb_mb": 0,
+            "animation": "fadeInUp"
+          }
+        },
+        "164602873867eb3815-7": {
+          "type": "image_parent",
+          "settings": {
+            "image": "shopify://shop_images/Urban_pots_86_of_93.jpg",
+            "cl_img": "",
+            "link_img1": "shopify://collections",
+            "open_link": "_blank",
+            "animate_slide": "none",
+            "text_align": "start",
+            "text_align_tb": "start",
+            "text_align_mb": "start",
+            "content_width": "auto",
+            "cv_pos": 35,
+            "ch_pos": 85,
+            "cv_pos_tb": 70,
+            "ch_pos_tb": 33,
+            "cv_pos_mb": 92,
+            "ch_pos_mb": 22,
+            "bg_overlay": "#000000",
+            "bg_opacity": 0,
+            "bg_content_cl": "rgba(0,0,0,0)",
+            "bg_content_op": 0,
+            "content_pd_tb": 15,
+            "content_pd_lr": 15,
+            "content_pd_tb_tb": 15,
+            "content_pd_lr_tb": 15,
+            "content_pd_tb_mb": 10,
+            "content_pd_lr_mb": 10,
+            "border_bl": false,
+            "br_color": "#222222",
+            "br_bg": "#ffffff",
+            "br_opacity": 50,
+            "br_style": "solid",
+            "br_pd": 20,
+            "br_pd_tb": 15,
+            "br_pd_mb": 10,
+            "time_animation": 1,
+            "animation_delay": 30
+          }
+        },
+        "164602873867eb3815-9": {
+          "type": "custom_text",
+          "settings": {
+            "text": "ECO FRIENDLY AND AFFORDABLE",
+            "remove_br_tag_tb": false,
+            "remove_br_tag_mb": true,
+            "tag": "p",
+            "fontf": "inherit",
+            "text_cl": "#222222",
+            "text_fs": 34,
+            "text_lh": 0,
+            "text_fw": 700,
+            "text_ls": 0,
+            "mgb": 25,
+            "font_italic": false,
+            "text_shadow": false,
+            "text_fs_tb": 23,
+            "text_lh_tb": 0,
+            "text_ls_tb": 3.2,
+            "mgb_tb": 20,
+            "hidden_mobile": false,
+            "text_fs_mb": 22,
+            "text_lh_mb": 0,
+            "text_ls_mb": 2.5,
+            "mgb_mb": 20,
+            "animation": "fadeInUp"
+          }
+        },
+        "390cb6f8-c5fc-44ed-badf-074a03818e5c": {
+          "type": "custom_button",
+          "settings": {
+            "button_text": "Shop Our Products",
+            "button_link": "shopify://collections/all",
+            "target_link": "_self",
+            "fontf": "inherit",
+            "button_style": "default",
+            "button_effect": "sweep-to-top",
+            "pri_cl": "#000000",
+            "second_cl": "#ffffff",
+            "pri_cl_hover": "#b59677",
+            "second_cl_hover": "#ffffff",
+            "button_icon_w": 0,
+            "fsbutton": 11,
+            "fwbutton": 500,
+            "button_mh": 42,
+            "button_pd_lr": 25,
+            "button_ls": 3,
+            "button_bdr": 0,
+            "mgb": 0,
+            "button_icon_w_tb": 0,
+            "fsbutton_tb": 10,
+            "button_mh_tb": 40,
+            "button_pd_lr_tb": 20,
+            "button_ls_tb": 2,
+            "mgb_tb": 0,
+            "hidden_mobile": false,
+            "button_icon_w_mb": 0,
+            "fsbutton_mb": 10,
+            "button_mh_mb": 40,
+            "button_pd_lr_mb": 20,
+            "button_ls_mb": 1,
+            "mgb_mb": 0,
+            "animation": "fadeInUp"
+          }
+        }
+      },
+      "block_order": [
+        "164602873867eb3815-0",
+        "164602873867eb3815-1",
+        "164602873867eb3815-2",
+        "390cb6f8-c5fc-44ed-badf-074a03818e5a",
+        "164602873867eb3815-4",
+        "164602873867eb3815-6",
+        "390cb6f8-c5fc-44ed-badf-074a03818e5b",
+        "164602873867eb3815-7",
+        "164602873867eb3815-9",
+        "390cb6f8-c5fc-44ed-badf-074a03818e5c"
+      ],
+      "disabled": true,
+      "settings": {
+        "se_height": "t4s_ratio_cuspx",
+        "custom_dk": true,
+        "height_dk": 600,
+        "custom_tb": true,
+        "height_tb": 500,
+        "custom_mb": true,
+        "height_mb": 250,
+        "eff": "fade",
+        "loop": true,
+        "au_time": 8.5,
+        "au_hover": true,
+        "nav_btn": false,
+        "btn_vi": "hover",
+        "btn_owl": "default",
+        "btn_shape": "none",
+        "btn_cl": "dark",
+        "btn_size": "small",
+        "btn_hidden_mobile": false,
+        "nav_dot": true,
+        "dots_design": "default",
+        "dot_owl": "default",
+        "dots_cl": "primary",
+        "dots_space": 10,
+        "dots_round": true,
+        "dots_hidden_mobile": false,
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,52px,",
+        "pd": "",
+        "mg_tb": ",,50px,",
+        "pd_tb": "",
+        "mg_mb": ",,50px,",
+        "pd_mb": ""
+      }
+    },
+    "full_width_banner_JMPRh4": {
+      "type": "Full-Width-Banner",
+      "blocks": {
+        "banner_hKzzTq": {
+          "type": "banner",
+          "settings": {
+            "banner_image": "shopify://shop_images/UrbanPots29-11-502.jpg"
+          }
+        },
+        "banner_yGqBHX": {
+          "type": "banner",
+          "settings": {
+            "banner_image": "shopify://shop_images/IMG_0950_f476d558-d488-4da0-a895-ef57bd9b24ca.png"
+          }
+        },
+        "banner_LGwkDB": {
+          "type": "banner",
+          "settings": {
+            "banner_image": "shopify://shop_images/IMG_1684.jpg"
+          }
+        },
+        "banner_b44tYj": {
+          "type": "banner",
+          "settings": {
+            "banner_image": "shopify://shop_images/Screenshot_2024-03-22_at_4.38.27_pm.png"
+          }
+        },
+        "banner_TFmGQq": {
+          "type": "banner",
+          "settings": {
+            "banner_image": "shopify://shop_images/IMG_3283.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "banner_hKzzTq",
+        "banner_yGqBHX",
+        "banner_LGwkDB",
+        "banner_b44tYj",
+        "banner_TFmGQq"
+      ],
+      "name": "Full Width Banner",
+      "settings": {}
+    },
+    "counter_homepage": {
+      "type": "counter",
+      "blocks": {
+        "counter_projects": {
+          "type": "counter_item",
+          "settings": {
+            "number": 500,
+            "unit": "+",
+            "heading": "Projects Delivered",
+            "des": "Residential & commercial"
+          }
+        },
+        "counter_years": {
+          "type": "counter_item",
+          "settings": {
+            "number": 20,
+            "unit": "+",
+            "heading": "Years Manufacturing",
+            "des": "Family-owned since day one"
+          }
+        },
+        "counter_location": {
+          "type": "counter_item",
+          "settings": {
+            "number": 6,
+            "unit": "",
+            "heading": "States Delivered",
+            "des": "Locally made, delivered nationwide"
+          }
+        },
+        "counter_delivery": {
+          "type": "counter_item",
+          "settings": {
+            "number": 8,
+            "unit": " wks max",
+            "heading": "Turnaround Time",
+            "des": "From confirmed brief to delivery"
+          }
+        }
+      },
+      "block_order": [
+        "counter_projects",
+        "counter_years",
+        "counter_location",
+        "counter_delivery"
+      ],
+      "name": "Stats Counter",
+      "settings": {
+        "col_dk": "4",
+        "col_tb": "2",
+        "col_mb": "2",
+        "use_border": true,
+        "counter_size": "large",
+        "content_align": "center"
+      }
+    },
+    "client_logos_home": {
+      "type": "client-logos",
+      "blocks": {
+        "logo_h1": {
+          "type": "logo",
+          "settings": {
+            "company_name": "Developer Partner 1"
+          }
+        },
+        "logo_h2": {
+          "type": "logo",
+          "settings": {
+            "company_name": "Developer Partner 2"
+          }
+        },
+        "logo_h3": {
+          "type": "logo",
+          "settings": {
+            "company_name": "Developer Partner 3"
+          }
+        },
+        "logo_h4": {
+          "type": "logo",
+          "settings": {
+            "company_name": "Developer Partner 4"
+          }
+        },
+        "logo_h5": {
+          "type": "logo",
+          "settings": {
+            "company_name": "Developer Partner 5"
+          }
+        }
+      },
+      "block_order": ["logo_h1", "logo_h2", "logo_h3", "logo_h4", "logo_h5"],
+      "name": "Client Logos",
+      "settings": {
+        "section_title": "Trusted by Sydney's Developers"
+      }
+    },
+    "show_gallery_bVG4At": {
+      "type": "show-gallery",
+      "blocks": {
+        "bullet_JEcF3Q": {
+          "type": "bullet",
+          "settings": {
+            "text": "Custom-manufactured in our Western Sydney yard"
+          }
+        },
+        "bullet_fX4jeQ": {
+          "type": "bullet",
+          "settings": {
+            "text": "Fibre cement and fibreglass options — GRC on request"
+          }
+        },
+        "bullet_mMzb7U": {
+          "type": "bullet",
+          "settings": {
+            "text": "Any size, any colour — 3-coat Dulux paint finish"
+          }
+        },
+        "bullet_77knD4": {
+          "type": "bullet",
+          "settings": {
+            "text": "2–8 week turnaround from confirmed brief"
+          }
+        }
+      },
+      "block_order": [
+        "bullet_JEcF3Q",
+        "bullet_fX4jeQ",
+        "bullet_mMzb7U",
+        "bullet_77knD4"
+      ],
+      "name": "Planters & Projects Full-width Rectangle",
+      "settings": {
+        "swap_order": false,
+        "image": "shopify://shop_images/IMG_8861.heic",
+        "heading": "Bespoke. Locally Made. Built to Your Brief.",
+        "text": "Urban Pots manufactures precision-built custom planter boxes for Sydney's most demanding residential and commercial projects. Specify your size, colour, and material — we handle the rest.",
+        "button_label": "Explore Custom Planters",
+        "button_action": "link",
+        "button_link": "shopify://pages/custom-planter-boxes",
+        "pdf_label": "Download Brochure",
+        "pdf_link": "",
+        "show_pdf_button": false
+      }
+    },
+    "show_gallery_FAnpzX": {
+      "type": "show-gallery",
+      "blocks": {
+        "bullet_bXBdWb": {
+          "type": "bullet",
+          "settings": {
+            "text": "Specified by Sydney's leading developers and builders"
+          }
+        },
+        "bullet_deP3kw": {
+          "type": "bullet",
+          "settings": {
+            "text": "Bulk and trade pricing available"
+          }
+        },
+        "bullet_EWdqAh": {
+          "type": "bullet",
+          "settings": {
+            "text": "Project management from brief to delivery"
+          }
+        },
+        "bullet_iqMwyH": {
+          "type": "bullet",
+          "settings": {
+            "text": "Trusted for residential towers, hospitality, and retail"
+          }
+        }
+      },
+      "block_order": [
+        "bullet_bXBdWb",
+        "bullet_deP3kw",
+        "bullet_EWdqAh",
+        "bullet_iqMwyH"
+      ],
+      "name": "Planters & Projects Full-width Rectangle",
+      "settings": {
+        "swap_order": true,
+        "image": "shopify://shop_images/IMG_2960.heic",
+        "heading": "Specified by Sydney's Top Developers",
+        "text": "From boutique residential installs to large-scale commercial developments — Urban Pots delivers the volume, consistency, and finish that serious projects demand.",
+        "button_label": "View Commercial Projects",
+        "button_action": "link",
+        "button_link": "shopify://pages/commercial-planters",
+        "pdf_label": "Download Brochure",
+        "pdf_link": "",
+        "show_pdf_button": false
+      }
+    },
+    "show_items_BjkWhq": {
+      "type": "show-items",
+      "disabled": true,
+      "name": "Hero Compare + Collections Row",
+      "settings": {
+        "hero_image_1": "shopify://shop_images/UrbanPots_2025EcommImagery_066.jpg",
+        "hero_image_2": "shopify://shop_images/UrbanPots_2025EcommImagery_065.jpg",
+        "headline": "Explore Our Collections",
+        "collection_1": "designer-lightweight",
+        "collection_2": "atlantis-grc-series",
+        "collection_3": "natural-grc-range",
+        "collection_4": "terrazzo-range"
+      }
+    },
+    "show_collections_feccfW": {
+      "type": "show-collections",
+      "disabled": true,
+      "name": "All Collections",
+      "settings": {}
+    },
+    "home_gallery_LFX8fB": {
+      "type": "home-gallery",
+      "blocks": {
+        "bullet_tDH69j": {
+          "type": "bullet",
+          "settings": {
+            "text": "Made locally in Australia"
+          }
+        },
+        "bullet_bFriMV": {
+          "type": "bullet",
+          "settings": {
+            "text": "Ideal for residential or boutique commercial spaces"
+          }
+        },
+        "bullet_Fckxbq": {
+          "type": "bullet",
+          "settings": {
+            "text": "Faster turnaround times"
+          }
+        }
+      },
+      "block_order": [
+        "bullet_tDH69j",
+        "bullet_bFriMV",
+        "bullet_Fckxbq"
+      ],
+      "name": "Index Gallery",
+      "settings": {
+        "swap_order": false,
+        "image": "shopify://shop_images/3d4b103a-ef37-42e6-9690-867543cbd071.jpg",
+        "hover_image": "shopify://shop_images/cdeab9b6-40a0-4863-8a96-4b3992d02594.jpg",
+        "heading": "Custom Planter Boxes",
+        "text": "Looking for something tailored? We offer custom planter solutions for residential and small to medium-sized businesses.",
+        "button_label": "Discover More",
+        "button_action": "link",
+        "button_link": "shopify://pages/custom-planter-boxes"
+      }
+    },
+    "home_gallery_fqW9Wa": {
+      "type": "home-gallery",
+      "blocks": {
+        "bullet_hHjxpD": {
+          "type": "bullet",
+          "settings": {
+            "text": "Customised for high-volume commercial projects"
+          }
+        },
+        "bullet_BFVKhz": {
+          "type": "bullet",
+          "settings": {
+            "text": "Available in GRC or Fibreglass materials"
+          }
+        },
+        "bullet_LE4Yme": {
+          "type": "bullet",
+          "settings": {
+            "text": "2–3 month lead time depending on project scope"
+          }
+        },
+        "bullet_6QpRV4": {
+          "type": "bullet",
+          "settings": {
+            "text": "Ideal for urban developments, hospitality, and retail spaces"
+          }
+        }
+      },
+      "block_order": [
+        "bullet_hHjxpD",
+        "bullet_BFVKhz",
+        "bullet_LE4Yme",
+        "bullet_6QpRV4"
+      ],
+      "name": "Index Gallery",
+      "settings": {
+        "swap_order": true,
+        "image": "shopify://shop_images/Screenshot_2025-09-10_at_8.04.29_pm.png",
+        "hover_image": "shopify://shop_images/Screenshot_2025-09-10_at_8.05.01_pm.png",
+        "heading": "Commercial Projects",
+        "text": "We work closely with developers, architects, and commercial clients to deliver large-scale planter solutions.",
+        "button_label": "Check It Out",
+        "button_action": "link",
+        "button_link": "shopify://pages/commercial-planters"
+      }
+    },
+    "modern_collections_68WJdw": {
+      "type": "modern-collections",
+      "blocks": {
+        "collection_XfJmeB": {
+          "type": "collection",
+          "settings": {
+            "collection": "designer-lightweight"
+          }
+        },
+        "collection_hVfFRw": {
+          "type": "collection",
+          "settings": {
+            "collection": "atlantis-grc-series"
+          }
+        },
+        "collection_JmGwVF": {
+          "type": "collection",
+          "settings": {
+            "collection": "natural-grc-range"
+          }
+        },
+        "collection_PJJmDj": {
+          "type": "collection",
+          "settings": {
+            "collection": "terrazzo-range"
+          }
+        }
+      },
+      "block_order": [
+        "collection_XfJmeB",
+        "collection_hVfFRw",
+        "collection_JmGwVF",
+        "collection_PJJmDj"
+      ],
+      "name": "Dynamic Collections",
+      "settings": {
+        "heading": "Premium Planters For Every Space"
+      }
+    },
+    "collection_gallery_qEnLgf": {
+      "type": "collection-gallery",
+      "disabled": true,
+      "name": "Collection Gallery Grid",
+      "settings": {}
+    },
+    "7207da23-8055-4e0e-912b-1691f0df4944": {
+      "type": "collections-list",
+      "blocks": {
+        "template--16607070486764__7207da23-8055-4e0e-912b-1691f0df4944-1667351134fe77b040-0": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "atlantis-grc-series",
+            "image": "shopify://shop_images/Urban_pots_2_of_93.jpg",
+            "icon": "las la-gem",
+            "collection_title": "Atlantis GRC",
+            "collection_link": ""
+          }
+        },
+        "template--16607070486764__7207da23-8055-4e0e-912b-1691f0df4944-1667351134fe77b040-1": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "natural-grc-range",
+            "image": "shopify://shop_images/Urban_pots_22_of_93.jpg",
+            "icon": "las la-gem",
+            "collection_title": "Natural GRC",
+            "collection_link": ""
+          }
+        },
+        "template--16607070486764__7207da23-8055-4e0e-912b-1691f0df4944-1667351134fe77b040-2": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "terrazzo-range",
+            "image": "shopify://shop_images/Urban_pots_86_of_93.jpg",
+            "icon": "las la-gem",
+            "collection_title": "Terrazzo GRC",
+            "collection_link": ""
+          }
+        },
+        "template--16607070486764__7207da23-8055-4e0e-912b-1691f0df4944-1667351134fe77b040-3": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "designer-lightweight",
+            "image": "shopify://shop_images/Urban_pots_67_of_93.jpg",
+            "icon": "las la-gem",
+            "collection_title": "Hand Painted",
+            "collection_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16607070486764__7207da23-8055-4e0e-912b-1691f0df4944-1667351134fe77b040-0",
+        "template--16607070486764__7207da23-8055-4e0e-912b-1691f0df4944-1667351134fe77b040-1",
+        "template--16607070486764__7207da23-8055-4e0e-912b-1691f0df4944-1667351134fe77b040-2",
+        "template--16607070486764__7207da23-8055-4e0e-912b-1691f0df4944-1667351134fe77b040-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "design_heading": "3",
+        "heading_center": true,
+        "top_heading": "Shop some of our categories",
+        "icon_heading": "las la-gem",
+        "top_subheading": "",
+        "tophead_mb": 30,
+        "tophead_mb_tb": 30,
+        "tophead_mb_mb": 25,
+        "collection_des": "5",
+        "title_cl": "#222222",
+        "title_cl_hover": "#b59677",
+        "subtitle_cl": "#878787",
+        "count_cl": "#222222",
+        "border_cl": "#e5e5e5",
+        "collection_subtitle": "",
+        "open_link": "_self",
+        "source": "image",
+        "space_bottom": 35,
+        "space_bottom_tb": 25,
+        "space_bottom_mb": 15,
+        "border": false,
+        "item_pd": 0,
+        "item_rd": 0,
+        "img_effect": "zoom",
+        "b_effect": "pervasive-circle",
+        "image_ratio": "ratio1_1",
+        "image_size": "cover",
+        "image_position": "8",
+        "layout_des": "1",
+        "col_dk": "4",
+        "col_tb": "4",
+        "col_mb": "2",
+        "space_h_item": "30",
+        "space_v_item": "30",
+        "space_h_item_tb": "15",
+        "space_v_item_tb": "30",
+        "space_h_item_mb": "15",
+        "space_v_item_mb": "30",
+        "loop": true,
+        "au_time": 0,
+        "au_hover": true,
+        "nav_btn": false,
+        "btn_vi": "hover",
+        "btn_owl": "default",
+        "btn_shape": "none",
+        "btn_cl": "dark",
+        "btn_size": "small",
+        "btn_hidden_mobile": false,
+        "nav_dot": false,
+        "dot_owl": "default",
+        "dots_cl": "dark",
+        "dots_round": true,
+        "dots_space": 10,
+        "dots_hidden_mobile": false,
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,58px,",
+        "pd": "",
+        "mg_tb": ",,58px,",
+        "pd_tb": "",
+        "mg_mb": ",,50px,",
+        "pd_mb": ""
+      }
+    },
+    "be5613ec-d9d8-4a13-b4a3-5c4ec29db227": {
+      "type": "promo-text",
+      "blocks": {
+        "template--16607070486764__be5613ec-d9d8-4a13-b4a3-5c4ec29db227-166735112925244eab-0": {
+          "type": "1",
+          "settings": {
+            "content": "<p>Don't see what you're after or need help choosing the right planter? Contact us and one of our team members will be in touch! </p>",
+            "countdown": "2022/12/20",
+            "cus_cd": "",
+            "dayx": 0,
+            "cl_text": "#ffffff",
+            "cl_link": "#ffffff",
+            "fw_text": 500,
+            "border_link": true,
+            "fs_text": 14,
+            "lh_text": 25,
+            "ls_text": 1.4,
+            "fs_text_tb": 13,
+            "lh_text_tb": 20,
+            "ls_text_tb": 1.2,
+            "fs_text_mb": 12,
+            "lh_text_mb": 20,
+            "ls_text_mb": 1
+          }
+        }
+      },
+      "block_order": [
+        "template--16607070486764__be5613ec-d9d8-4a13-b4a3-5c4ec29db227-166735112925244eab-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "effect": "slider",
+        "au_time": 3,
+        "layout": "t4s-se-container",
+        "cl_bg": "#000000",
+        "cl_bg_gradient": "",
+        "mg": ",,58px,",
+        "pd": "15px,15px,15px,15px",
+        "mg_tb": ",,58px,",
+        "pd_tb": "15px,15px,15px,15px",
+        "mg_mb": ",,35px,",
+        "pd_mb": "15px,15px,15px,15px"
+      }
+    },
+    "a00cd57c-e2a8-485f-8f74-b3340951f748": {
+      "type": "testimonials",
+      "blocks": {
+        "template--19291736736066__a00cd57c-e2a8-485f-8f74-b3340951f748-168618722847444481-0": {
+          "type": "quote",
+          "settings": {
+            "content": "<p>We highly recommend Urban Pots Australia, great products and great team. We bought a few planters for the new home and we cannot be any more happier. </p>",
+            "title": "Navnesh",
+            "pos": "Melbourne",
+            "rating": 5
+          }
+        },
+        "template--19291736736066__a00cd57c-e2a8-485f-8f74-b3340951f748-168618722847444481-1": {
+          "type": "quote",
+          "settings": {
+            "content": "<p>Pricing is better than the rest of the market. My partner and I visited their showroom and was impressed with their customer service and knowledge. Thank you urban pots</p>",
+            "title": "Jessica",
+            "pos": "Sydney",
+            "rating": 5
+          }
+        },
+        "template--19291736736066__a00cd57c-e2a8-485f-8f74-b3340951f748-168618722847444481-2": {
+          "type": "quote",
+          "settings": {
+            "content": "<p>We love their products! We have recommended Urban Pots to our friends and family. Amazing quality and exceptional customer service </p>",
+            "title": "Michael",
+            "pos": "Sydney",
+            "rating": 5
+          }
+        },
+        "95f23c63-320e-4217-ad31-c56908f5a4f8": {
+          "type": "quote",
+          "settings": {
+            "content": "<p>Love Love Urban Pots. Great family business and exceptional customer service </p>",
+            "title": "Sarah",
+            "pos": "Gold Coast, Queensland",
+            "rating": 5
+          }
+        },
+        "b4cecaff-2950-4099-bef5-2dd4849030f6": {
+          "type": "quote",
+          "settings": {
+            "content": "<p>Bought some pots for my landscaping business. Great quality pots. Highly recommend Urban pots to anyone </p>",
+            "title": "James",
+            "pos": "Sydney",
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "template--19291736736066__a00cd57c-e2a8-485f-8f74-b3340951f748-168618722847444481-0",
+        "template--19291736736066__a00cd57c-e2a8-485f-8f74-b3340951f748-168618722847444481-1",
+        "template--19291736736066__a00cd57c-e2a8-485f-8f74-b3340951f748-168618722847444481-2",
+        "95f23c63-320e-4217-ad31-c56908f5a4f8",
+        "b4cecaff-2950-4099-bef5-2dd4849030f6"
+      ],
+      "settings": {
+        "design_heading": "9",
+        "heading_center": true,
+        "top_heading": "Trusted by builders, loved by homeowners",
+        "icon_heading": "las la-gem",
+        "top_subheading": "",
+        "tophead_mb": 30,
+        "tophead_mb_tb": 30,
+        "tophead_mb_mb": 25,
+        "ter_des": "1",
+        "cl_name": "#222222",
+        "cl_content": "#878787",
+        "cl_bd": "",
+        "cl_bg_item": "",
+        "content_align": "text-center",
+        "col_dk": "3",
+        "col_tb": "3",
+        "col_mb": "1",
+        "space_h_item": "30",
+        "space_v_item": "30",
+        "space_h_item_tb": "15",
+        "space_v_item_tb": "15",
+        "space_h_item_mb": "10",
+        "space_v_item_mb": "10",
+        "layout_des": "2",
+        "loop": true,
+        "au_time": 4,
+        "au_hover": true,
+        "nav_btn": false,
+        "btn_vi": "always",
+        "btn_owl": "default",
+        "btn_shape": "none",
+        "btn_cl": "dark",
+        "btn_size": "small",
+        "btn_hidden_mobile": false,
+        "nav_dot": false,
+        "dot_owl": "default",
+        "dots_cl": "dark",
+        "dots_round": true,
+        "dots_space": 10,
+        "dots_hidden_mobile": false,
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": "50px,,50px,",
+        "pd": "",
+        "mg_tb": ",,50px,",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
+        "pd_mb": ""
+      }
+    },
+    "1760600781544b01a6": {
+      "type": "apps",
+      "blocks": {
+        "rocket_google_reviews_app_block_VhiTYd": {
+          "type": "shopify://apps/google-reviews-rocket/blocks/app-block/d11c8893-a181-4aff-a280-7446d42cec3b",
+          "settings": {
+            "widget_layout": "default"
+          }
+        }
+      },
+      "block_order": [
+        "rocket_google_reviews_app_block_VhiTYd"
+      ],
+      "settings": {}
+    },
+    "29e7e992-0ddb-455f-b294-12baa2b391ed": {
+      "type": "instagram-feed",
+      "blocks": {
+        "96cc6fca-e156-4ca1-8975-f4dcb37478f7": {
+          "type": "2",
+          "settings": {
+            "title": "Follow Us On Our Socials",
+            "sub_title": "@urbanpotsau",
+            "content": "",
+            "des": "2",
+            "pos": "t4s-pa-md"
+          }
+        },
+        "template--16608187908332__29e7e992-0ddb-455f-b294-12baa2b391ed-1667371659e02a297f-0": {
+          "type": "img",
+          "settings": {
+            "image": "shopify://shop_images/IMG_2627_1.heic",
+            "url": "https://www.instagram.com/urbanpotsau/?hl=en"
+          }
+        },
+        "template--16608187908332__29e7e992-0ddb-455f-b294-12baa2b391ed-1667371659e02a297f-1": {
+          "type": "img",
+          "settings": {
+            "image": "shopify://shop_images/IMG_1684_1.heic",
+            "url": ""
+          }
+        },
+        "template--16608187908332__29e7e992-0ddb-455f-b294-12baa2b391ed-1667371659e02a297f-2": {
+          "type": "img",
+          "settings": {
+            "image": "shopify://shop_images/UrbanPots29-11-17.jpg",
+            "url": ""
+          }
+        },
+        "template--16608187908332__29e7e992-0ddb-455f-b294-12baa2b391ed-1667371659e02a297f-3": {
+          "type": "img",
+          "settings": {
+            "image": "shopify://shop_images/UrbanPots29-11-10.jpg",
+            "url": ""
+          }
+        },
+        "template--16608187908332__29e7e992-0ddb-455f-b294-12baa2b391ed-1667371659e02a297f-4": {
+          "type": "img",
+          "settings": {
+            "image": "shopify://shop_images/IMG_1486.heic",
+            "url": ""
+          }
+        },
+        "template--16608187908332__29e7e992-0ddb-455f-b294-12baa2b391ed-1667371659e02a297f-5": {
+          "type": "img",
+          "settings": {
+            "image": "shopify://shop_images/UrbanPots29-11-27_654c51b0-8e06-4e46-a76a-41672c8d4925.jpg",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "96cc6fca-e156-4ca1-8975-f4dcb37478f7",
+        "template--16608187908332__29e7e992-0ddb-455f-b294-12baa2b391ed-1667371659e02a297f-0",
+        "template--16608187908332__29e7e992-0ddb-455f-b294-12baa2b391ed-1667371659e02a297f-1",
+        "template--16608187908332__29e7e992-0ddb-455f-b294-12baa2b391ed-1667371659e02a297f-2",
+        "template--16608187908332__29e7e992-0ddb-455f-b294-12baa2b391ed-1667371659e02a297f-3",
+        "template--16608187908332__29e7e992-0ddb-455f-b294-12baa2b391ed-1667371659e02a297f-4",
+        "template--16608187908332__29e7e992-0ddb-455f-b294-12baa2b391ed-1667371659e02a297f-5"
+      ],
+      "settings": {
+        "layout_des": "2",
+        "image_ratio": "ratio1_1",
+        "image_size": "cover",
+        "img_effect": "zoom",
+        "b_effect": "none",
+        "round": 0,
+        "open_link": "_self",
+        "col_dk": "6",
+        "col_tb": "4",
+        "col_mb": "2",
+        "space_item": "0",
+        "space_item_tb": "0",
+        "space_item_mb": "0",
+        "loop": true,
+        "au_time": 3,
+        "au_hover": true,
+        "nav_btn": false,
+        "btn_vi": "always",
+        "btn_owl": "default",
+        "btn_shape": "round",
+        "btn_cl": "dark",
+        "btn_size": "small",
+        "btn_hidden_mobile": true,
+        "nav_dot": false,
+        "dot_owl": "default",
+        "dots_cl": "dark",
+        "dots_round": true,
+        "dots_space": 10,
+        "dots_hidden_mobile": false,
+        "layout": "t4s-container-fluid",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": "",
+        "pd": "",
+        "mg_tb": "",
+        "pd_tb": "",
+        "mg_mb": "",
+        "pd_mb": ""
+      }
+    }
+  },
+  "order": [
+    "1646028739ae283905",
+    "full_width_banner_JMPRh4",
+    "counter_homepage",
+    "client_logos_home",
+    "show_gallery_bVG4At",
+    "show_gallery_FAnpzX",
+    "show_items_BjkWhq",
+    "show_collections_feccfW",
+    "home_gallery_LFX8fB",
+    "home_gallery_fqW9Wa",
+    "modern_collections_68WJdw",
+    "collection_gallery_qEnLgf",
+    "7207da23-8055-4e0e-912b-1691f0df4944",
+    "be5613ec-d9d8-4a13-b4a3-5c4ec29db227",
+    "a00cd57c-e2a8-485f-8f74-b3340951f748",
+    "1760600781544b01a6",
+    "29e7e992-0ddb-455f-b294-12baa2b391ed"
+  ]
+}

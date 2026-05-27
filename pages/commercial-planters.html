@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, max-scale=1" />
+  <title>Large-Scale Planter Solutions — Urban Pots</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/components.css" />
+
+  <!-- Lenis & GSAP from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav" id="siteNav">
+  <div class="container site-nav__inner">
+    <a href="/" class="nav-logo">
+      <img src="https://cdn.shopify.com/s/files/1/0748/4152/2498/files/urban_pots_logo__white_150.png?v=1684274691" alt="Urban Pots" width="120" height="30" />
+    </a>
+    <div class="nav-links">
+      <a href="/shop.html">Shop</a>
+      <a href="/pages/custom-planter-boxes.html">Custom Planters</a>
+      <a href="/pages/commercial-planters.html">Projects</a>
+      <a href="/pages/grc-planters.html">Materials</a>
+      <a href="/pages/about.html">About</a>
+    </div>
+    <div class="nav-actions">
+      <a href="mailto:info@urbanpots.com.au" class="nav-cta">Get a Quote</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="nav-mobile" id="navMobile" aria-hidden="true">
+  <ul class="nav-mobile__links">
+    <li><a href="/shop.html">Shop</a></li>
+    <li><a href="/pages/custom-planter-boxes.html">Custom Planters</a></li>
+    <li><a href="/pages/commercial-planters.html">Projects</a></li>
+    <li><a href="/pages/grc-planters.html">Materials</a></li>
+    <li><a href="/pages/about.html">About</a></li>
+  </ul>
+  <div class="nav-mobile__footer">
+    <a href="mailto:info@urbanpots.com.au" class="btn btn--stone">Get a Quote</a>
+    <div class="nav-mobile__footer-meta">
+      <a href="tel:0433132406">0433 132 406</a> &nbsp;·&nbsp; Tue–Sat 9am–4pm
+    </div>
+  </div>
+</div>
+
+<!-- PAGE CONTENT -->
+<main>
+
+  <!-- HERO SECTION -->
+  <section class="hero" style="background: linear-gradient(135deg, #F7F7F3 0%, #EDE8E1 100%);">
+    <div class="hero__content">
+      <p class="eyebrow">Commercial Solutions</p>
+      <h1>Large-Scale Planter Solutions <em>for Developers & Architects</em></h1>
+      <p class="hero__subtext">Custom-built planters for high-rise developments, commercial landscapes, and public spaces. Trusted by Australia's leading architects and developers.</p>
+      <a href="mailto:info@urbanpots.com.au?subject=Commercial Planter Enquiry" class="btn btn--dark">Request a Quote <span class="arrow-link">→</span></a>
+    </div>
+    <div class="hero__image" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 600%22><rect fill=%22%23D5D0C8%22 width=%22800%22 height=%22600%22/></rect></svg>')"></div>
+  </section>
+
+  <!-- VALUE PROPS SECTION -->
+  <section class="value-props-section">
+    <div class="container">
+      <div class="section-head fadein">
+        <h2>Why Choose Urban Pots for Your Project</h2>
+        <p>We specialize in large-scale installations with the precision and reliability your project demands.</p>
+      </div>
+
+      <div class="value-props-grid fadein delay-1">
+        <div class="value-card">
+          <div class="value-card__icon">🎨</div>
+          <h3>Complete Customisation</h3>
+          <p>Bespoke designs to match your architectural vision. Any size, material, colour, or finish available.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon">📦</div>
+          <h3>Bulk Manufacturing</h3>
+          <p>Efficiently produce 50+ units across multiple sizes and finishes without compromise on quality.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon">⏱️</div>
+          <h3>Predictable Timelines</h3>
+          <p>Clear lead times and project milestones from brief to delivery. No surprises.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon">🤝</div>
+          <h3>Dedicated Account Support</h3>
+          <p>Direct contact with our project manager throughout design, manufacturing, and installation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT SHOWCASE SECTION -->
+  <section class="projects-section">
+    <div class="container">
+      <div class="section-head fadein">
+        <h2>Featured Commercial Projects</h2>
+        <p>Recent installations across Sydney, Melbourne, and Brisbane.</p>
+      </div>
+
+      <div class="projects-gallery fadein delay-1">
+        <div class="project-card">
+          <div class="project-card__image" style="background: linear-gradient(135deg, #C9B99A 0%, #A0897B 100%)"></div>
+          <div class="project-card__content">
+            <h3>Parramatta Cultural Precinct</h3>
+            <p>180 custom fibre cement planters, sage and stone. Installation: 2024</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-card__image" style="background: linear-gradient(135deg, #7A8C5E 0%, #5F6B47 100%)"></div>
+          <div class="project-card__content">
+            <h3>Barangaroo Reserve Landscape</h3>
+            <p>220 GRC planters in custom finish. Architectural specification: Herzog & de Meuron.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-card__image" style="background: linear-gradient(135deg, #4A4A48 0%, #2F2F2D 100%)"></div>
+          <div class="project-card__content">
+            <h3>Sapphire Micro Apartments</h3>
+            <p>95 fibreglass planters across 32 levels. Fast-track delivery: 6 months.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-card__image" style="background: linear-gradient(135deg, #D5D0C8 0%, #A8A29A 100%)"></div>
+          <div class="project-card__content">
+            <h3>Brisbane Riverside Promenade</h3>
+            <p>150 custom planters in natural concrete finish. Maintenance-free installation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MATERIALS COMPARISON SECTION -->
+  <section class="materials-section" style="background: var(--c-dark); color: white; padding: clamp(5rem, 8vw, 8rem) 0;">
+    <div class="container">
+      <div class="section-head fadein" style="color: white;">
+        <h2>Material Comparison for Commercial Applications</h2>
+        <p>Choose the material that best fits your project requirements.</p>
+      </div>
+
+      <div class="materials-table fadein delay-1">
+        <table>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Fibre Cement</th>
+              <th>Fibreglass</th>
+              <th>GRC</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Weight</strong></td>
+              <td>Medium (lighter shipping)</td>
+              <td>Lightest (easiest handling)</td>
+              <td>Heavy (structural aesthetic)</td>
+            </tr>
+            <tr>
+              <td><strong>Durability</strong></td>
+              <td>20+ years outdoor</td>
+              <td>15+ years outdoor</td>
+              <td>40+ years (heritage)</td>
+            </tr>
+            <tr>
+              <td><strong>Customisation</strong></td>
+              <td>Limited finishes</td>
+              <td>Standard only</td>
+              <td>Full custom (finishes, aggregates)</td>
+            </tr>
+            <tr>
+              <td><strong>Cost (per unit)</strong></td>
+              <td>$$</td>
+              <td>$</td>
+              <td>$$$</td>
+            </tr>
+            <tr>
+              <td><strong>Lead Time</strong></td>
+              <td>8–12 weeks</td>
+              <td>6–8 weeks</td>
+              <td>12–16 weeks</td>
+            </tr>
+            <tr>
+              <td><strong>Best For</strong></td>
+              <td>Mid-scale projects, matte aesthetic</td>
+              <td>Large volumes, budget-conscious</td>
+              <td>Heritage, prestige, bespoke</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS SECTION -->
+  <section class="process-section">
+    <div class="container">
+      <div class="section-head fadein">
+        <h2>Our Commercial Process</h2>
+        <p>From concept to installation in three clear phases.</p>
+      </div>
+
+      <div class="process-timeline fadein delay-1">
+        <div class="process-step">
+          <div class="process-step__number">1</div>
+          <div class="process-step__content">
+            <h3>Project Brief & Specifications</h3>
+            <p>Collaborate with your design team. We provide technical drawings, material samples, and lead time estimates based on your requirements.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-step__number">2</div>
+          <div class="process-step__content">
+            <h3>Manufacturing & Quality Control</h3>
+            <p>Our workshop produces your units to exact specifications. Monthly progress updates and site visits by appointment.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-step__number">3</div>
+          <div class="process-step__content">
+            <h3>Delivery & Installation Support</h3>
+            <p>Coordinated logistics to your site. We provide installation guidance and post-delivery warranty support for 12 months.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="faq-section" style="background: var(--c-bg); padding: clamp(5rem, 8vw, 8rem) 0;">
+    <div class="container">
+      <div class="section-head fadein">
+        <h2>Frequently Asked Questions</h2>
+        <p>Common questions about commercial projects and bulk orders.</p>
+      </div>
+
+      <div class="faq-list fadein delay-1">
+        <details class="faq-item">
+          <summary>What is the minimum order quantity?</summary>
+          <div class="faq-content">
+            <p>We accommodate projects from 10 units upwards. Smaller quantities may have longer lead times. Contact us to discuss your project scope.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What is your typical lead time for commercial orders?</summary>
+          <div class="faq-content">
+            <p>Lead times vary by material and customisation level:</p>
+            <ul style="margin-top: 0.75rem; padding-left: 1.5rem;">
+              <li><strong>Fibreglass:</strong> 6–8 weeks</li>
+              <li><strong>Fibre Cement:</strong> 8–12 weeks</li>
+              <li><strong>GRC (custom):</strong> 12–16 weeks</li>
+            </ul>
+            <p style="margin-top: 0.75rem;">We can discuss fast-track options for tight timelines.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can you provide samples before we commit?</summary>
+          <div class="faq-content">
+            <p>Yes. We supply colour swatches, material samples, and mockup photos at no charge. For large orders, we can produce a single prototype unit for approval before full manufacturing begins.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What payment terms do you offer for bulk orders?</summary>
+          <div class="faq-content">
+            <p>We offer flexible payment terms for commercial projects:</p>
+            <ul style="margin-top: 0.75rem; padding-left: 1.5rem;">
+              <li><strong>Deposit:</strong> 30% upon order confirmation</li>
+              <li><strong>Progress payment:</strong> 40% at 50% manufacturing completion</li>
+              <li><strong>Final payment:</strong> 30% upon delivery</li>
+            </ul>
+            <p style="margin-top: 0.75rem;">Payment plans available for orders exceeding $100k.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do you offer delivery and installation services?</summary>
+          <div class="faq-content">
+            <p>We coordinate delivery to your site across Australia. Installation is your contractor's responsibility, but we provide detailed installation guides and on-site support by request (additional fee applies).</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What warranty do you provide?</summary>
+          <div class="faq-content">
+            <p>All commercial planters come with a 12-month structural warranty covering manufacturing defects. Material-specific durability guarantees:</p>
+            <ul style="margin-top: 0.75rem; padding-left: 1.5rem;">
+              <li><strong>Fibre Cement:</strong> 15-year durability in outdoor conditions</li>
+              <li><strong>Fibreglass:</strong> 12-year durability in outdoor conditions</li>
+              <li><strong>GRC:</strong> 25-year durability in outdoor conditions</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can you match existing Dulux colours or custom paint codes?</summary>
+          <div class="faq-content">
+            <p>Absolutely. We work with Dulux colour codes and can custom-match paint colours from your architectural specification. Provide the colour reference at the briefing stage.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENQUIRY FORM SECTION -->
+  <section class="form-section" style="background: var(--c-cream); padding: clamp(5rem, 8vw, 8rem) 0;">
+    <div class="container container--narrow">
+      <div class="section-head fadein">
+        <h2>Request a Commercial Quote</h2>
+        <p>Tell us about your project. We'll respond within 24 hours.</p>
+      </div>
+
+      <form class="enquiry-form fadein delay-1" id="commercialForm">
+        <!-- Contact Details -->
+        <fieldset>
+          <legend>Your Details</legend>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="commercialName">Full Name *</label>
+              <input type="text" id="commercialName" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="commercialEmail">Email *</label>
+              <input type="email" id="commercialEmail" name="email" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="commercialPhone">Phone *</label>
+              <input type="tel" id="commercialPhone" name="phone" placeholder="04XX XXX XXX" required />
+            </div>
+            <div class="form-group">
+              <label for="commercialCompany">Company Name</label>
+              <input type="text" id="commercialCompany" name="company" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="commercialABN">ABN (if applicable)</label>
+            <input type="text" id="commercialABN" name="abn" placeholder="XX XXX XXX XXX" />
+          </div>
+        </fieldset>
+
+        <!-- Project Details -->
+        <fieldset>
+          <legend>Project Details</legend>
+          <div class="form-group">
+            <label for="commercialProjectType">Project Type *</label>
+            <select id="commercialProjectType" name="projectType" required>
+              <option value="">Select a project type</option>
+              <option value="commercial-development">Commercial Development</option>
+              <option value="residential-high-rise">Residential High-Rise</option>
+              <option value="public-space">Public Space / Park</option>
+              <option value="retail-hospitality">Retail / Hospitality</option>
+              <option value="landscaping">Landscaping / Architectural</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="commercialQuantity">Estimated Quantity (units)</label>
+              <input type="number" id="commercialQuantity" name="quantity" min="10" />
+            </div>
+            <div class="form-group">
+              <label for="commercialMaterial">Preferred Material</label>
+              <select id="commercialMaterial" name="material">
+                <option value="">No preference</option>
+                <option value="fibre-cement">Fibre Cement</option>
+                <option value="fibreglass">Fibreglass</option>
+                <option value="grc">GRC</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="commercialLocation">Project Location *</label>
+            <input type="text" id="commercialLocation" name="location" placeholder="Suburb, City, State" required />
+          </div>
+
+          <div class="form-group">
+            <label for="commercialTimeline">Timeline *</label>
+            <select id="commercialTimeline" name="timeline" required>
+              <option value="">Select a timeline</option>
+              <option value="asap">ASAP (within 3 months)</option>
+              <option value="3-6-months">3–6 months</option>
+              <option value="6-12-months">6–12 months</option>
+              <option value="planning">Still in planning phase</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <!-- Project Scope -->
+        <fieldset>
+          <legend>Project Scope</legend>
+          <div class="form-group">
+            <label for="commercialNotes">Project Brief & Requirements</label>
+            <textarea id="commercialNotes" name="notes" rows="6" placeholder="Tell us about your project, design style, colours, and any special requirements..."></textarea>
+          </div>
+
+          <div class="form-group form-group--checkbox">
+            <input type="checkbox" id="commercialConfirm" name="confirm" required />
+            <label for="commercialConfirm">I agree to be contacted about this commercial enquiry</label>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="btn btn--dark">Submit Enquiry <span class="arrow-link">→</span></button>
+      </form>
+
+      <div id="commercialFormStatus" style="display: none;"></div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="cta-strip" style="background: var(--c-sage); color: white; padding: clamp(3rem, 6vw, 5rem) 0;">
+    <div class="container">
+      <div class="cta-strip__content">
+        <h2>Ready to discuss your project?</h2>
+        <p>Our team is here to help. Call or email us to start a conversation.</p>
+      </div>
+      <div class="cta-strip__contact">
+        <a href="tel:0433132406" class="btn btn--outline" style="border-color: white; color: white;">Call: 0433 132 406</a>
+        <a href="mailto:info@urbanpots.com.au" class="btn btn--outline" style="border-color: white; color: white;">Email: info@urbanpots.com.au</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="https://cdn.shopify.com/s/files/1/0748/4152/2498/files/urban_pots_logo__sage_150.png?v=1684274691" alt="Urban Pots" class="footer-brand__logo" width="120" />
+        <p class="footer-brand__tagline">Your best space. Our planters.</p>
+        <p>An Australian family-owned planter manufacturer. Custom-built in Western Sydney. Trusted by developers, architects, and landscapers nationwide.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="LinkedIn">LI</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="/pages/custom-planter-boxes.html">Custom Planter Boxes</a></li>
+          <li><a href="/shop.html">Fibreglass Planters</a></li>
+          <li><a href="/shop.html">Fibre Cement</a></li>
+          <li><a href="/pages/grc-planters.html">GRC Planters</a></li>
+          <li><a href="/shop.html">Designer Pots</a></li>
+          <li><a href="/shop.html">All Collections</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/pages/about.html">About Us</a></li>
+          <li><a href="/pages/about.html">Our Workshop</a></li>
+          <li><a href="/">Projects</a></li>
+          <li><a href="/">Trade Account</a></li>
+          <li><a href="/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:0433132406">0433 132 406</a></li>
+          <li><a href="mailto:info@urbanpots.com.au">info@urbanpots.com.au</a></li>
+          <li><a href="/">Sydney Showroom</a></li>
+          <li><a href="/">Tue–Sat 9am–4pm</a></li>
+          <li><a href="/">Get Directions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Urban Pots Australia. All rights reserved.</span>
+      <span>
+        <a href="/">Privacy</a> &nbsp;·&nbsp;
+        <a href="/">Terms</a> &nbsp;·&nbsp;
+        Website by <a href="#" style="color:var(--c-stone)">Sowah Studio</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script type="module">
+  import * as animations from '../js/animations.js';
+  import * as ui from '../js/ui.js';
+
+  // Initialize animations and scroll
+  animations.initLenis();
+  animations.initFadein();
+  animations.initNavScroll();
+  animations.fixIOSParallax();
+
+  // Initialize UI
+  ui.initMobileNav(animations.lenis);
+
+  // FAQ Accordion interaction
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const summary = item.querySelector('summary');
+    summary.addEventListener('click', () => {
+      faqItems.forEach(other => {
+        if (other !== item) other.removeAttribute('open');
+      });
+    });
+  });
+
+  // Form submission
+  const form = document.getElementById('commercialForm');
+  const formStatus = document.getElementById('commercialFormStatus');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+
+    try {
+      const response = await fetch('/api/quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        formStatus.style.display = 'block';
+        formStatus.innerHTML = '<div class="toast toast--success">✓ Enquiry submitted! We\'ll contact you within 24 hours.</div>';
+        form.style.display = 'none';
+        form.reset();
+      } else {
+        throw new Error('Network response was not ok');
+      }
+    } catch (error) {
+      // Fallback to email
+      const subject = `Commercial Enquiry: ${data.quantity || 'N/A'} units`;
+      const body = `
+Name: ${data.name}
+Email: ${data.email}
+Phone: ${data.phone}
+Company: ${data.company || 'N/A'}
+ABN: ${data.abn || 'N/A'}
+Project Type: ${data.projectType}
+Quantity: ${data.quantity || 'N/A'}
+Material: ${data.material || 'No preference'}
+Location: ${data.location}
+Timeline: ${data.timeline}
+Notes: ${data.notes}
+      `.trim();
+
+      const mailtoLink = `mailto:info@urbanpots.com.au?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailtoLink;
+    }
+  });
+</script>
+
+</body>
+</html>

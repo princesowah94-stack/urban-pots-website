@@ -1,0 +1,166 @@
+{% comment %}
+  Dynamic Collections Section (Modern Minimal, Contained Width)
+  - Section heading: Times New Roman + underline
+  - Collection titles: theme default font
+  - Zoom effect on image hover
+  - No product count, no card styling
+  - Fully responsive, not full width
+{% endcomment %}
+
+<div class="dynamic-collections-wrapper">
+  <div class="dynamic-collections-inner">
+    {% if section.settings.heading != blank %}
+      <h2 class="collections-heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+
+    <div class="collections-grid">
+      {% for block in section.blocks %}
+        {% assign collection = collections[block.settings.collection] %}
+        {% if collection %}
+          <div class="collection-item">
+            <a href="{{ collection.url }}">
+              {% if collection.image %}
+                <div class="collection-image">
+                  <img src="{{ collection.image | img_url: '600x' }}" alt="{{ collection.title }}">
+                </div>
+              {% endif %}
+              <h3 class="collection-title">{{ collection.title }}</h3>
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Dynamic Collections",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Explore Our Collections"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Choose Collection"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Dynamic Collections",
+      "category": "Collections"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+.dynamic-collections-wrapper {
+  padding: 40px 20px;
+ 
+  text-align: center;
+}
+
+.dynamic-collections-inner {
+  max-width: 1200px; /* contain width */
+   padding-top:40px;
+  margin: 0 auto;    /* center */
+}
+
+.collections-heading {
+  font-family: "Times New Roman", serif;
+  font-size: 3.5rem;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.collection-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.collection-image {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.collection-image img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.collection-item:hover .collection-image img {
+  transform: scale(1.1);
+}
+
+.collection-title {
+  font-size: 1.4rem;
+  margin-top: 12px;
+  text-decoration: underline;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .collections-heading {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+  }
+  .collection-image img {
+    height: 200px;
+  }
+  .collection-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .collections-heading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  .collections-grid {
+    gap: 20px;
+  }
+  .collection-image img {
+    height: 250px;
+  }
+  .collection-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .collections-heading {
+    font-size: 2.3rem;
+  }
+  .collection-image img {
+    height: 250px;
+  }
+  .collection-title {
+    font-size: 1.4rem;
+  }
+}
+</style>

@@ -1,0 +1,108 @@
+
+<section class="custom-planter-boxes" style="padding: 30px;padding-top:100px; background:#fff;">
+  <div class="container" style="max-width:900px;margin:0 auto;text-align:center;">
+
+    <!-- Heading + Intro -->
+    <div class="intro-text text-content" style="margin-bottom:2rem;">
+      <h3>
+        {{ section.settings.heading }}
+      </h3>
+      <p class="subtext">
+        {{ section.settings.subtext | newline_to_br }}
+      </p>
+
+      <!-- Enquire Now Button (toggle + editable text) -->
+      {% if section.settings.show_button %}
+        <a href="#enquiry-form-customer-planter-boxes" class="enquire-btn">
+          {{ section.settings.button_text }}
+        </a>
+      {% endif %}
+    </div>
+
+  </div>
+
+  <style>
+    .custom-planter-boxes .text-content h3 {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 3.5rem;
+      font-weight: 400;
+      margin-bottom: 0.8rem;
+      color: #111;
+    }
+    .custom-planter-boxes .text-content .subtext {
+      font-size: 1.8rem;
+      color: #555;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    /* Enquire Now Button */
+    .custom-planter-boxes .enquire-btn {
+      display: inline-block;
+      border:2px solid black;
+      color: #000;
+      text-decoration: none;
+      padding: 0.9rem 1.8rem;
+      border-radius: 6px;
+      font-size: 1.5rem;
+      font-weight: 600;
+      transition: background 0.3s ease;
+      margin-top:3rem;
+    }
+    .custom-planter-boxes .enquire-btn:hover {
+      background:#000;
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .custom-planter-boxes{
+        padding-bottom:30px;
+      }
+      .custom-planter-boxes .text-content h3 {
+        font-size: 2.2rem;
+      }
+      .custom-planter-boxes .text-content .subtext {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</section>
+
+
+{% schema %}
+{
+  "name": "Custom Planter Boxes",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Handcrafted Custom Planter Boxes Australia – Urban Pots"
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Looking for handcrafted, custom planter boxes in Australia? At Urban Pots, we craft premium quality planter boxes by hand in our yard in Western Sydney, delivering custom-made planter boxes to homes, offices, cafés, and commercial projects nationwide."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button",
+      "label": "Show Button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Enquire Now"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Planter Boxes",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}

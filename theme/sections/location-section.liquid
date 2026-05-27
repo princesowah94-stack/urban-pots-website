@@ -1,0 +1,224 @@
+{% if page.handle == "tradinghours" %}
+<section class="location-section">
+  <div class="location-wrapper">
+    <h2 class="location-heading">{{ section.settings.heading }}</h2>
+    <p class="location-subheading">{{ section.settings.subheading }}</p>
+
+    <!-- Store Description -->
+    <div class="location-description">
+      <p>
+        Urban Pots showroom is located at 21/130 Hassall St in Wetherill Park, Greater Western Sydney, Australia. 
+        Our showroom offers a wide selection of urban pots and planters in different styles and sizes. 
+        All customers are welcome to visit the showroom to check out our stock. 
+        They can also conveniently pick up their purchases in person. 
+        Our knowledgeable staff is always available to provide friendly advice and help customers find the perfect pots and plants for their needs.
+      </p>
+    </div>
+
+    <div class="location-grid">
+      <!-- Warehouse Image -->
+      <div class="location-image">
+        {% if section.settings.image != blank %}
+          <img src="{{ section.settings.image | image_url }}" alt="Warehouse Image">
+        {% endif %}
+      </div>
+
+      <!-- Details Card -->
+      <div class="location-card">
+        <h3 class="card-title">Store Information</h3>
+        <ul class="location-details">
+          <li><strong>Address:</strong> {{ section.settings.address }}</li>
+          <li><strong>Phone:</strong> <a href="tel:{{ section.settings.phone | remove: ' ' }}">{{ section.settings.phone }}</a></li>
+          <li><strong>Email:</strong> <a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a></li>
+        </ul>
+
+        <div class="trading-hours">
+          <h4>Trading Hours:</h4>
+          <p>
+            Tuesday - Thursday: 10am - 5pm<br>
+            Friday: 10am - 4pm<br>
+            Saturday: 10am - 3pm<br>
+            Sunday: 11am - 3pm
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map Embed -->
+    <div class="location-map">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3313.88956527237!2d150.91152467636016!3d-33.84095851761851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12977ff51727d1%3A0x4d7861c7a2fc4559!2sUrban%20Pots%20Australia%20%26%20Urban%20Landscape%20Supplies!5e0!3m2!1sen!2sph!4v1758894359464!5m2!1sen!2sph" 
+        width="100%" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Location Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Where to Find Us"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Come visit our showroom"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Warehouse Image"
+    },
+    {
+      "type": "text",
+      "id": "address",
+      "label": "Store Address",
+      "default": "21/130 Hassall St in Wetherill Park, Greater Western Sydney, Australia"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Phone Number",
+      "default": "(02) 1234 5678"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email Address",
+      "default": "info@urbanpots.com.au"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Location Section"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+.location-section {
+  padding: 60px 20px;
+  background: transparent;
+}
+.location-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.location-heading {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+  color: #222;
+  text-align: center;
+}
+.location-subheading {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.8rem;
+  color: #555;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.location-description {
+  font-size: 1.8rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  text-align: center;
+}
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-top: 50px;
+}
+.location-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3; 
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+.location-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.location-card {
+  background: #fff;
+  padding: 35px;
+  padding-top:10px;
+  padding-bottom:10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+.card-title {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+.location-details {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px 0;
+}
+.location-details li {
+  font-size: 1.8rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+.location-details a {
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+.location-details a:hover {
+  text-decoration: underline;
+}
+.trading-hours h4 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+.trading-hours p {
+    font-size: 1.8rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+.location-map {
+  margin-top: 40px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .location-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+{% endstylesheet %}

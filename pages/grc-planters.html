@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, max-scale=1" />
+  <title>GRC Planters: Premium Concrete Solutions — Urban Pots</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/components.css" />
+
+  <!-- Lenis & GSAP from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav" id="siteNav">
+  <div class="container site-nav__inner">
+    <a href="/" class="nav-logo">
+      <img src="https://cdn.shopify.com/s/files/1/0748/4152/2498/files/urban_pots_logo__white_150.png?v=1684274691" alt="Urban Pots" width="120" height="30" />
+    </a>
+    <div class="nav-links">
+      <a href="/shop.html">Shop</a>
+      <a href="/pages/custom-planter-boxes.html">Custom Planters</a>
+      <a href="/pages/commercial-planters.html">Projects</a>
+      <a href="/pages/grc-planters.html">Materials</a>
+      <a href="/pages/about.html">About</a>
+    </div>
+    <div class="nav-actions">
+      <a href="mailto:info@urbanpots.com.au" class="nav-cta">Get a Quote</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="nav-mobile" id="navMobile" aria-hidden="true">
+  <ul class="nav-mobile__links">
+    <li><a href="/shop.html">Shop</a></li>
+    <li><a href="/pages/custom-planter-boxes.html">Custom Planters</a></li>
+    <li><a href="/pages/commercial-planters.html">Projects</a></li>
+    <li><a href="/pages/grc-planters.html">Materials</a></li>
+    <li><a href="/pages/about.html">About</a></li>
+  </ul>
+  <div class="nav-mobile__footer">
+    <a href="mailto:info@urbanpots.com.au" class="btn btn--stone">Get a Quote</a>
+    <div class="nav-mobile__footer-meta">
+      <a href="tel:0433132406">0433 132 406</a> &nbsp;·&nbsp; Tue–Sat 9am–4pm
+    </div>
+  </div>
+</div>
+
+<!-- PAGE CONTENT -->
+<main>
+
+  <!-- HERO SECTION -->
+  <section class="hero" style="background: linear-gradient(135deg, #F7F7F3 0%, #EDE8E1 100%);">
+    <div class="hero__content">
+      <p class="eyebrow">Premium Material</p>
+      <h1>GRC Planters <em>Prestige & Heritage</em></h1>
+      <p class="hero__subtext">Glass Reinforced Concrete combines the aesthetic of natural stone with 40+ year durability. Bespoke finishes for luxury residential, heritage, and architectural projects.</p>
+      <a href="mailto:info@urbanpots.com.au?subject=GRC Planter Enquiry" class="btn btn--dark">Request a Quote <span class="arrow-link">→</span></a>
+    </div>
+    <div class="hero__image" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 600%22><rect fill=%22%23A8A29A%22 width=%22800%22 height=%22600%22/></rect></svg>')"></div>
+  </section>
+
+  <!-- WHAT IS GRC SECTION -->
+  <section class="grc-intro-section">
+    <div class="container">
+      <div class="grc-intro-grid fadein">
+        <div class="grc-intro__content">
+          <h2>What is GRC?</h2>
+          <p>Glass Reinforced Concrete is a composite material combining Portland cement, fine aggregates, water, and alkali-resistant glass fibres. The result is a material that offers the aesthetic beauty of cast concrete with enhanced strength, durability, and design flexibility.</p>
+
+          <div class="grc-intro__highlights">
+            <div class="highlight-item">
+              <strong>Aesthetic Control</strong>
+              <p>Full control over surface finishes: smooth, board-formed, aggregate-exposed, or polished.</p>
+            </div>
+            <div class="highlight-item">
+              <strong>Design Freedom</strong>
+              <p>Complex shapes and custom details impossible with other materials.</p>
+            </div>
+            <div class="highlight-item">
+              <strong>Exceptional Durability</strong>
+              <p>40+ years in harsh outdoor conditions without degradation.</p>
+            </div>
+            <div class="highlight-item">
+              <strong>Lightweight</strong>
+              <p>40% lighter than equivalent reinforced concrete — easier handling and installation.</p>
+            </div>
+          </div>
+        </div>
+        <div class="grc-intro__image" style="background: linear-gradient(135deg, #8C7B6A 0%, #6B5F52 100%);"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES SECTION -->
+  <section class="grc-features-section">
+    <div class="container">
+      <div class="section-head fadein">
+        <h2>Why Choose GRC for Your Project</h2>
+        <p>Premium material properties for discerning architects and designers.</p>
+      </div>
+
+      <div class="grc-features-grid fadein delay-1">
+        <div class="feature-item">
+          <div class="feature-item__icon">🏛️</div>
+          <h3>Heritage & Prestige</h3>
+          <p>GRC conveys quality and permanence. Perfect for high-end residential and heritage-listed developments.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-item__icon">⏱️</div>
+          <h3>40+ Year Lifespan</h3>
+          <p>Outlasts fibreglass and fibre cement. Minimal maintenance and no need for replacement in owner's lifetime.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-item__icon">🎨</div>
+          <h3>Finish Options</h3>
+          <p>Smooth, board-formed, exposed aggregate, or polished. Match any architectural aesthetic.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-item__icon">🔧</div>
+          <h3>Bespoke Customisation</h3>
+          <p>Any size, shape, and detail available. Perfect for unique architectural requirements.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-item__icon">📦</div>
+          <h3>Lightweight</h3>
+          <p>40% lighter than reinforced concrete. Easier logistics and installation on high-rise projects.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-item__icon">🌍</div>
+          <h3>Sustainable</h3>
+          <p>Low embodied energy and recyclable. A responsible choice for green building projects.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY SECTION -->
+  <section class="grc-gallery-section">
+    <div class="container">
+      <div class="section-head fadein">
+        <h2>GRC in Heritage & Prestige Projects</h2>
+        <p>Recent installations showcasing the aesthetic and durability of GRC.</p>
+      </div>
+
+      <div class="grc-gallery fadein delay-1">
+        <div class="gallery-item gallery-item--large">
+          <div class="gallery-item__image" style="background: linear-gradient(135deg, #7A6B5B 0%, #5F5049 100%);"></div>
+          <div class="gallery-item__content">
+            <h3>National Museum Heritage Garden</h3>
+            <p>180 custom GRC planters with board-formed finish, matching 1930s architecture.</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-item__image" style="background: linear-gradient(135deg, #A0897B 0%, #7F6B5F 100%);"></div>
+          <div class="gallery-item__content">
+            <h3>Kirrawee Estate Landscape</h3>
+            <p>120 units in polished finish. Zero maintenance over 15+ years.</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-item__image" style="background: linear-gradient(135deg, #8C7B6A 0%, #6B5F52 100%);"></div>
+          <div class="gallery-item__content">
+            <h3>Mosman Bay Foreshore</h3>
+            <p>150 units in smooth concrete finish, custom aggregate blend.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNICAL SPECS SECTION -->
+  <section class="grc-specs-section" style="background: var(--c-bg); padding: clamp(5rem, 8vw, 8rem) 0;">
+    <div class="container">
+      <div class="section-head fadein">
+        <h2>Material Specifications</h2>
+        <p>Technical properties and available configurations.</p>
+      </div>
+
+      <div class="specs-grid fadein delay-1">
+        <div class="spec-card">
+          <h3>Compressive Strength</h3>
+          <p class="spec-value">40–60 MPa</p>
+          <p>Exceeds Australian building code for structural applications.</p>
+        </div>
+        <div class="spec-card">
+          <h3>Flexural Strength</h3>
+          <p class="spec-value">10–15 MPa</p>
+          <p>Superior crack resistance compared to reinforced concrete.</p>
+        </div>
+        <div class="spec-card">
+          <h3>Density</h3>
+          <p class="spec-value">1.9–2.1 g/cm³</p>
+          <p>40% lighter than reinforced concrete. 20% lighter than fibre cement.</p>
+        </div>
+        <div class="spec-card">
+          <h3>Abrasion Resistance</h3>
+          <p class="spec-value">Class A (AS/NZS 4211)</p>
+          <p>Highly durable in exposed outdoor conditions.</p>
+        </div>
+        <div class="spec-card">
+          <h3>Thermal Movement</h3>
+          <p class="spec-value">8–12 × 10⁻⁶ /°C</p>
+          <p>Minimal warping or cracking in temperature extremes.</p>
+        </div>
+        <div class="spec-card">
+          <h3>Water Absorption</h3>
+          <p class="spec-value">&lt;5%</p>
+          <p>Excellent weather resistance and frost durability.</p>
+        </div>
+      </div>
+
+      <div class="finishes-section fadein delay-2" style="margin-top: 3rem;">
+        <h3 style="font-size: 1.3rem; margin-bottom: 1.5rem; color: var(--c-brown-dk); font-family: var(--font-heading);">Available Finishes</h3>
+        <div class="finishes-grid">
+          <div class="finish-option">
+            <div class="finish-option__preview" style="background: linear-gradient(135deg, #F5F3F0 0%, #E8E5E0 100%);"></div>
+            <h4>Smooth Cast</h4>
+            <p>Clean, refined aesthetic. Perfect for modern projects.</p>
+          </div>
+          <div class="finish-option">
+            <div class="finish-option__preview" style="background: linear-gradient(135deg, #C4B5A8 0%, #A89A8D 100%);"></div>
+            <h4>Board-Formed</h4>
+            <p>Timber grain pattern. Heritage and rustic appeal.</p>
+          </div>
+          <div class="finish-option">
+            <div class="finish-option__preview" style="background: linear-gradient(135deg, #9D8F82 0%, #7F7168 100%);"></div>
+            <h4>Exposed Aggregate</h4>
+            <p>Stone or gravel details visible. Bespoke character.</p>
+          </div>
+          <div class="finish-option">
+            <div class="finish-option__preview" style="background: linear-gradient(135deg, #C0C0C0 0%, #A9A9A9 100%);"></div>
+            <h4>Polished</h4>
+            <p>High-gloss surface. Premium aesthetic.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON SECTION -->
+  <section class="grc-comparison-section" style="background: var(--c-dark); color: white; padding: clamp(5rem, 8vw, 8rem) 0;">
+    <div class="container">
+      <div class="section-head fadein" style="color: white;">
+        <h2>Material Comparison</h2>
+        <p>How GRC stacks against other planter materials.</p>
+      </div>
+
+      <div class="comparison-table fadein delay-1">
+        <table>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>GRC</th>
+              <th>Fibre Cement</th>
+              <th>Fibreglass</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Lifespan</strong></td>
+              <td>40+ years</td>
+              <td>20+ years</td>
+              <td>15+ years</td>
+            </tr>
+            <tr>
+              <td><strong>Aesthetics</strong></td>
+              <td>Premium (multiple finishes)</td>
+              <td>Limited (matte only)</td>
+              <td>Standard (glossy)</td>
+            </tr>
+            <tr>
+              <td><strong>Design Flexibility</strong></td>
+              <td>Excellent (any shape)</td>
+              <td>Good (standard moulds)</td>
+              <td>Good (standard moulds)</td>
+            </tr>
+            <tr>
+              <td><strong>Weight</strong></td>
+              <td>Light (40% lighter than concrete)</td>
+              <td>Medium</td>
+              <td>Lightest</td>
+            </tr>
+            <tr>
+              <td><strong>Durability Grade</strong></td>
+              <td>Class A (highest)</td>
+              <td>Class B</td>
+              <td>Class B</td>
+            </tr>
+            <tr>
+              <td><strong>Maintenance</strong></td>
+              <td>Minimal (none required)</td>
+              <td>Occasional sealing</td>
+              <td>Regular cleaning</td>
+            </tr>
+            <tr>
+              <td><strong>Cost per Unit</strong></td>
+              <td>$$$</td>
+              <td>$$</td>
+              <td>$</td>
+            </tr>
+            <tr>
+              <td><strong>Best For</strong></td>
+              <td>Heritage, luxury, permanent installations</td>
+              <td>Mid-scale projects, balanced durability</td>
+              <td>Budget-conscious, high volumes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD TIME & PROCESS SECTION -->
+  <section class="grc-timeline-section">
+    <div class="container">
+      <div class="section-head fadein">
+        <h2>Lead Time & Process</h2>
+        <p>Typical timeline from brief to delivery for GRC projects.</p>
+      </div>
+
+      <div class="timeline-visual fadein delay-1">
+        <div class="timeline-phase">
+          <div class="phase-label">Weeks 1–2</div>
+          <h3>Design & Approval</h3>
+          <p>Concept drawings, finish samples, colour selection, and design sign-off.</p>
+        </div>
+        <div class="timeline-connector"></div>
+        <div class="timeline-phase">
+          <div class="phase-label">Weeks 3–6</div>
+          <h3>Mould Preparation</h3>
+          <p>Custom moulds created for your specific design and dimensions.</p>
+        </div>
+        <div class="timeline-connector"></div>
+        <div class="timeline-phase">
+          <div class="phase-label">Weeks 7–12</div>
+          <h3>Manufacturing</h3>
+          <p>Casting, curing, finishing, and quality inspection of all units.</p>
+        </div>
+        <div class="timeline-connector"></div>
+        <div class="timeline-phase">
+          <div class="phase-label">Weeks 13–16</div>
+          <h3>Delivery</h3>
+          <p>Packaging, logistics coordination, and delivery to your site.</p>
+        </div>
+      </div>
+
+      <div class="timeline-note fadein delay-2" style="background: rgba(122, 140, 94, 0.08); padding: 2rem; border-left: 4px solid var(--c-sage); margin-top: 3rem; border-radius: 2px;">
+        <strong>Typical Lead Time: 12–16 weeks</strong>
+        <p style="margin-top: 0.75rem;">Fast-track options available for projects with extended timelines (18+ weeks). Contact us to discuss your project schedule.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="faq-section" style="background: var(--c-bg); padding: clamp(5rem, 8vw, 8rem) 0;">
+    <div class="container">
+      <div class="section-head fadein">
+        <h2>GRC Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-list fadein delay-1">
+        <details class="faq-item">
+          <summary>What does GRC stand for and why should I care?</summary>
+          <div class="faq-content">
+            <p>GRC stands for Glass Reinforced Concrete. It's a composite material that combines the aesthetic beauty of cast concrete with the durability and strength of glass fibres. The result is a material that can last 40+ years with minimal maintenance, making it ideal for premium residential and heritage projects where longevity is valued.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Is GRC suitable for outdoor installations?</summary>
+          <div class="faq-content">
+            <p>Yes, absolutely. GRC is specifically designed for outdoor use. It has excellent resistance to:</p>
+            <ul style="margin-top: 0.75rem; padding-left: 1.5rem;">
+              <li>Water penetration (&lt;5% absorption)</li>
+              <li>UV degradation</li>
+              <li>Freeze-thaw cycles</li>
+              <li>Salt spray (coastal environments)</li>
+              <li>Acid rain and atmospheric pollution</li>
+            </ul>
+            <p style="margin-top: 0.75rem;">GRC is rated Class A (highest durability class) under Australian standards.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How much maintenance does GRC require?</summary>
+          <div class="faq-content">
+            <p>Minimal to none. Unlike other materials, GRC does not require regular sealing, painting, or cleaning. Simply rinse occasionally with water to remove dust and debris. GRC will age gracefully, developing a natural patina over time that many designers appreciate.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can you create custom colours and finishes?</summary>
+          <div class="faq-content">
+            <p>Yes. We offer full control over finish and colour:</p>
+            <ul style="margin-top: 0.75rem; padding-left: 1.5rem;">
+              <li><strong>Finishes:</strong> Smooth cast, board-formed, exposed aggregate, polished</li>
+              <li><strong>Pigmentation:</strong> Custom colour matching from Dulux codes or your own samples</li>
+              <li><strong>Aggregates:</strong> Bespoke stone and material selection for exposed aggregate finishes</li>
+            </ul>
+            <p style="margin-top: 0.75rem;">Lead time may extend 2–4 weeks for highly customised finishes.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Is GRC environmentally sustainable?</summary>
+          <div class="faq-content">
+            <p>Yes. GRC offers several sustainability benefits:</p>
+            <ul style="margin-top: 0.75rem; padding-left: 1.5rem;">
+              <li><strong>Low embodied energy:</strong> Uses less material than reinforced concrete</li>
+              <li><strong>Long lifespan:</strong> 40+ years means no replacement waste</li>
+              <li><strong>Recyclable:</strong> At end-of-life, GRC can be recycled or used as aggregate</li>
+              <li><strong>No maintenance chemicals:</strong> Unlike other materials, GRC requires no sealers or paints</li>
+            </ul>
+            <p style="margin-top: 0.75rem;">For LEED and green building certifications, GRC is an excellent choice.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What is the cost of GRC planters vs other materials?</summary>
+          <div class="faq-content">
+            <p>GRC is typically more expensive than fibreglass or fibre cement due to its premium durability and customisation options. However, when considering total cost of ownership (installation, maintenance, replacement), GRC is often more economical:</p>
+            <ul style="margin-top: 0.75rem; padding-left: 1.5rem;">
+              <li>No replacement costs for 40+ years</li>
+              <li>No maintenance, sealing, or re-painting</li>
+              <li>No performance degradation over time</li>
+            </ul>
+            <p style="margin-top: 0.75rem;">Contact us for a detailed cost comparison on your specific project.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can GRC be cast into custom shapes?</summary>
+          <div class="faq-content">
+            <p>Yes. GRC can be cast into virtually any shape or size, limited only by logistics and mould fabrication. We've produced:</p>
+            <ul style="margin-top: 0.75rem; padding-left: 1.5rem;">
+              <li>Complex geometric forms</li>
+              <li>Curved and organic shapes</li>
+              <li>Sculptural planters with custom detailing</li>
+              <li>Large-scale architectural installations (100+ units)</li>
+            </ul>
+            <p style="margin-top: 0.75rem;">Complex custom shapes will extend lead time by 4–6 weeks.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENQUIRY FORM SECTION -->
+  <section class="form-section" style="background: var(--c-cream); padding: clamp(5rem, 8vw, 8rem) 0;">
+    <div class="container container--narrow">
+      <div class="section-head fadein">
+        <h2>Request a GRC Quote</h2>
+        <p>Tell us about your project. Our team will respond within 24 hours.</p>
+      </div>
+
+      <form class="enquiry-form fadein delay-1" id="grcForm">
+        <!-- Contact Details -->
+        <fieldset>
+          <legend>Your Details</legend>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="grcName">Full Name *</label>
+              <input type="text" id="grcName" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="grcEmail">Email *</label>
+              <input type="email" id="grcEmail" name="email" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="grcPhone">Phone *</label>
+              <input type="tel" id="grcPhone" name="phone" placeholder="04XX XXX XXX" required />
+            </div>
+            <div class="form-group">
+              <label for="grcCompany">Company / Practice</label>
+              <input type="text" id="grcCompany" name="company" />
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Project Details -->
+        <fieldset>
+          <legend>Project Details</legend>
+          <div class="form-group">
+            <label for="grcProjectType">Project Type *</label>
+            <select id="grcProjectType" name="projectType" required>
+              <option value="">Select a project type</option>
+              <option value="luxury-residential">Luxury Residential</option>
+              <option value="heritage">Heritage Renovation</option>
+              <option value="commercial">Commercial / Hospitality</option>
+              <option value="public-space">Public Space / Civic</option>
+              <option value="landscape-design">Landscape Architecture</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="grcQuantity">Estimated Quantity (units)</label>
+              <input type="number" id="grcQuantity" name="quantity" min="1" />
+            </div>
+            <div class="form-group">
+              <label for="grcFinish">Preferred Finish</label>
+              <select id="grcFinish" name="finish">
+                <option value="">No preference</option>
+                <option value="smooth-cast">Smooth Cast</option>
+                <option value="board-formed">Board-Formed</option>
+                <option value="exposed-aggregate">Exposed Aggregate</option>
+                <option value="polished">Polished</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="grcLocation">Project Location *</label>
+            <input type="text" id="grcLocation" name="location" placeholder="Suburb, City, State" required />
+          </div>
+
+          <div class="form-group">
+            <label for="grcTimeline">Timeline *</label>
+            <select id="grcTimeline" name="timeline" required>
+              <option value="">Select a timeline</option>
+              <option value="12-months">12 months or more</option>
+              <option value="12-18-months">12–18 months</option>
+              <option value="18-months-plus">18+ months (extended planning)</option>
+              <option value="planning">Still in early planning</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <!-- Project Scope -->
+        <fieldset>
+          <legend>Project Scope</legend>
+          <div class="form-group">
+            <label for="grcNotes">Project Description & Special Requirements</label>
+            <textarea id="grcNotes" name="notes" rows="6" placeholder="Tell us about your vision: project context, aesthetic goals, custom shapes, colour preferences, and any unique requirements..."></textarea>
+          </div>
+
+          <div class="form-group form-group--checkbox">
+            <input type="checkbox" id="grcConfirm" name="confirm" required />
+            <label for="grcConfirm">I agree to be contacted about this GRC project enquiry</label>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="btn btn--dark">Submit Enquiry <span class="arrow-link">→</span></button>
+      </form>
+
+      <div id="grcFormStatus" style="display: none;"></div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="cta-strip" style="background: var(--c-brown-dk); color: white; padding: clamp(3rem, 6vw, 5rem) 0;">
+    <div class="cta-strip__content">
+      <h2>Experience GRC Quality</h2>
+      <p>Discuss your project with our specialist GRC team. We're here to guide you.</p>
+    </div>
+    <div class="cta-strip__contact">
+      <a href="tel:0433132406" class="btn btn--outline" style="border-color: white; color: white;">Call: 0433 132 406</a>
+      <a href="mailto:info@urbanpots.com.au" class="btn btn--outline" style="border-color: white; color: white;">Email: info@urbanpots.com.au</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="https://cdn.shopify.com/s/files/1/0748/4152/2498/files/urban_pots_logo__sage_150.png?v=1684274691" alt="Urban Pots" class="footer-brand__logo" width="120" />
+        <p class="footer-brand__tagline">Your best space. Our planters.</p>
+        <p>An Australian family-owned planter manufacturer. Custom-built in Western Sydney. Trusted by developers, architects, and landscapers nationwide.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="LinkedIn">LI</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="/pages/custom-planter-boxes.html">Custom Planter Boxes</a></li>
+          <li><a href="/shop.html">Fibreglass Planters</a></li>
+          <li><a href="/shop.html">Fibre Cement</a></li>
+          <li><a href="/pages/grc-planters.html">GRC Planters</a></li>
+          <li><a href="/shop.html">Designer Pots</a></li>
+          <li><a href="/shop.html">All Collections</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/pages/about.html">About Us</a></li>
+          <li><a href="/pages/about.html">Our Workshop</a></li>
+          <li><a href="/">Projects</a></li>
+          <li><a href="/">Trade Account</a></li>
+          <li><a href="/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:0433132406">0433 132 406</a></li>
+          <li><a href="mailto:info@urbanpots.com.au">info@urbanpots.com.au</a></li>
+          <li><a href="/">Sydney Showroom</a></li>
+          <li><a href="/">Tue–Sat 9am–4pm</a></li>
+          <li><a href="/">Get Directions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Urban Pots Australia. All rights reserved.</span>
+      <span>
+        <a href="/">Privacy</a> &nbsp;·&nbsp;
+        <a href="/">Terms</a> &nbsp;·&nbsp;
+        Website by <a href="#" style="color:var(--c-stone)">Sowah Studio</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script type="module">
+  import * as animations from '../js/animations.js';
+  import * as ui from '../js/ui.js';
+
+  // Initialize animations and scroll
+  animations.initLenis();
+  animations.initFadein();
+  animations.initNavScroll();
+  animations.fixIOSParallax();
+
+  // Initialize UI
+  ui.initMobileNav(animations.lenis);
+
+  // FAQ Accordion interaction
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const summary = item.querySelector('summary');
+    summary.addEventListener('click', () => {
+      faqItems.forEach(other => {
+        if (other !== item) other.removeAttribute('open');
+      });
+    });
+  });
+
+  // Form submission
+  const form = document.getElementById('grcForm');
+  const formStatus = document.getElementById('grcFormStatus');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+
+    try {
+      const response = await fetch('/api/quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        formStatus.style.display = 'block';
+        formStatus.innerHTML = '<div class="toast toast--success">✓ Enquiry submitted! We\'ll contact you within 24 hours.</div>';
+        form.style.display = 'none';
+        form.reset();
+      } else {
+        throw new Error('Network response was not ok');
+      }
+    } catch (error) {
+      // Fallback to email
+      const subject = `GRC Planter Enquiry: ${data.quantity || 'Custom'} units`;
+      const body = `
+Name: ${data.name}
+Email: ${data.email}
+Phone: ${data.phone}
+Company: ${data.company || 'N/A'}
+Project Type: ${data.projectType}
+Quantity: ${data.quantity || 'N/A'}
+Finish: ${data.finish || 'No preference'}
+Location: ${data.location}
+Timeline: ${data.timeline}
+Notes: ${data.notes}
+      `.trim();
+
+      const mailtoLink = `mailto:info@urbanpots.com.au?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailtoLink;
+    }
+  });
+</script>
+
+</body>
+</html>

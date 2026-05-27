@@ -1,0 +1,250 @@
+/* ============================================================
+   Urban Pots — Sowah Studio Design System
+   Loaded via layout/theme.liquid before </head>
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ── Tokens ──────────────────────────────────────────────── */
+:root {
+  --up-bg:          #F7F7F3;
+  --up-dark:        #1C1A18;
+  --up-brown:       #7F593E;
+  --up-brown-dark:  #5C3D27;
+  --up-stone:       #C9B99A;
+  --up-sage:        #7A8C5E;
+  --up-cream:       #EDE8E1;
+  --up-border:      rgba(127, 89, 62, 0.14);
+  --up-ease:        cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --up-font-head:   'Cormorant Garamond', Georgia, serif;
+  --up-font-body:   'Inter', Helvetica, sans-serif;
+}
+
+/* ── Body + global typography ─────────────────────────────── */
+body {
+  font-family: var(--up-font-body);
+  background-color: var(--up-bg);
+  color: var(--up-brown);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Headings — apply Cormorant Garamond ──────────────────── */
+h1, h2, h3,
+.t4s-heading,
+.t4s-section-title,
+[class*="section-title"],
+[class*="heading"] {
+  font-family: var(--up-font-head);
+  color: var(--up-brown-dark);
+  letter-spacing: -0.01em;
+}
+
+/* ── Nav colour overrides ─────────────────────────────────── */
+.t4s-header__nav a,
+.t4s-header a.t4s-nav__link,
+nav a {
+  color: var(--up-brown) !important;
+  transition: color 0.2s var(--up-ease);
+}
+.t4s-header__nav a:hover,
+.t4s-header a.t4s-nav__link:hover {
+  color: var(--up-sage) !important;
+}
+
+/* ── CTA / primary button overrides ──────────────────────── */
+.t4s-btn,
+.t4s-button,
+[class*="btn-primary"],
+.t4s-btn--primary {
+  background-color: var(--up-dark) !important;
+  border-color: var(--up-dark) !important;
+  border-radius: 2px !important;
+  font-family: var(--up-font-body) !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  transition: background 0.2s var(--up-ease), transform 0.2s var(--up-ease) !important;
+}
+.t4s-btn:hover,
+.t4s-button:hover,
+[class*="btn-primary"]:hover {
+  background-color: var(--up-brown-dark) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* ── Section backgrounds ──────────────────────────────────── */
+.t4s-section--cream,
+.up-bg-cream { background-color: var(--up-cream); }
+
+.t4s-section--dark,
+.up-bg-dark  { background-color: var(--up-dark); color: rgba(255,255,255,0.75); }
+
+/* ── Eyebrow / label utility ──────────────────────────────── */
+.up-eyebrow {
+  font-family: var(--up-font-body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--up-sage);
+}
+
+/* ── Custom planter banner heading ───────────────────────── */
+.custom-plante-boxes-banner h1,
+.custom-plante-boxes-banner h2 {
+  font-family: var(--up-font-head) !important;
+  font-size: clamp(2.8rem, 5vw, 5rem) !important;
+  font-weight: 600 !important;
+  line-height: 0.95 !important;
+  letter-spacing: -0.02em !important;
+  color: #fff !important;
+}
+
+/* ── How it works step numbers ───────────────────────────── */
+.custom-how-it-work .step-number,
+.custom-how-it-work [class*="number"] {
+  font-family: var(--up-font-head);
+  color: var(--up-stone);
+  font-weight: 300;
+}
+
+/* ── Project grid hover overlay colour ───────────────────── */
+.custom-planter-boxes-grid .project-overlay,
+.commercial-projects-grid .project-overlay {
+  background: linear-gradient(to top, rgba(28,26,24,0.8) 0%, transparent 50%) !important;
+}
+
+/* ── Testimonial section ─────────────────────────────────── */
+.t4s-testimonials .t4s-testimonial__content,
+.testimonials-section blockquote {
+  font-family: var(--up-font-head);
+  font-style: italic;
+  color: var(--up-brown-dark);
+}
+
+/* ── Client logos section (NEW) ──────────────────────────── */
+.up-client-logos {
+  background: var(--up-cream);
+  padding: clamp(3rem, 5vw, 5rem) 0;
+  text-align: center;
+}
+.up-client-logos__label {
+  font-family: var(--up-font-body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--up-sage);
+  margin-bottom: 2.5rem;
+}
+.up-client-logos__grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem 3.5rem;
+}
+.up-client-logos__item img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(1) opacity(0.45);
+  transition: filter 0.3s var(--up-ease);
+}
+.up-client-logos__item img:hover {
+  filter: grayscale(0) opacity(0.9);
+}
+
+/* ── Shop guide page (NEW) ───────────────────────────────── */
+.up-shop-guide {
+  background: var(--up-bg);
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 4vw, 4rem);
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.up-shop-guide__heading {
+  font-family: var(--up-font-head);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 600;
+  color: var(--up-brown-dark);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin-bottom: 3rem;
+}
+.up-shop-guide__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.up-shop-guide__card {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  aspect-ratio: 4/3;
+  text-decoration: none;
+}
+.up-shop-guide__card img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s var(--up-ease);
+}
+.up-shop-guide__card:hover img { transform: scale(1.04); }
+.up-shop-guide__card-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(28,26,24,0.8) 0%, rgba(28,26,24,0.1) 60%);
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+  transition: background 0.3s;
+}
+.up-shop-guide__card:hover .up-shop-guide__card-overlay {
+  background: linear-gradient(to top, rgba(28,26,24,0.9) 0%, rgba(28,26,24,0.2) 60%);
+}
+.up-shop-guide__card-label {
+  font-family: var(--up-font-head);
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  font-weight: 600;
+  color: #fff;
+  line-height: 1;
+}
+.up-shop-guide__card-arrow {
+  font-family: var(--up-font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--up-stone);
+  margin-top: 0.5rem;
+  display: block;
+}
+
+/* ── GRC lead time callout ───────────────────────────────── */
+.up-lead-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--up-brown);
+  background: var(--up-cream);
+  border: 1px solid var(--up-border);
+  border-radius: 2px;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+}
+.up-lead-time::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--up-stone);
+  flex-shrink: 0;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .up-shop-guide__grid { grid-template-columns: 1fr; }
+  .up-client-logos__grid { gap: 1.5rem 2rem; }
+  .up-client-logos__item img { height: 28px; }
+}

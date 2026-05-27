@@ -1,0 +1,229 @@
+{% if page.handle == "commercial-planters" %}
+<div id="commercial-projects-collection" class="projects-grid-wrapper">
+  {% if section.settings.section_title != blank %}
+    <h2 class="projects-section-title">{{ section.settings.section_title }}</h2>
+  {% endif %}
+
+  <div class="projects-grid {{ section.settings.layout_style }}">
+    {% for block in section.blocks %}
+      <div class="project-item {{ section.settings.hover_effect }}">
+        {% if block.settings.project_image %}
+          <div class="project-image">
+            <img 
+              src="{{ block.settings.project_image | img_url: '1200x' }}" 
+              alt="commercial planters">
+            {% if section.settings.hover_effect == 'overlay' or section.settings.hover_effect == 'both' %}
+              <div class="overlay">
+                <span class="overlay-title">{{ block.settings.project_title }}</span>
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+.projects-grid-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.projects-section-title {
+  font-size: 3rem;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 400;
+  margin-bottom: 40px;
+  color: #111;
+}
+
+/* --- GRID LAYOUT --- */
+.projects-grid.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* --- MASONRY LAYOUT --- */
+.projects-grid.masonry {
+  column-count: 3;
+  column-gap: 24px;
+}
+.projects-grid.masonry .project-item {
+  break-inside: avoid;
+  margin-bottom: 24px;
+}
+
+/* Project Item */
+.project-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.project-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  transition: transform 0.5s ease, opacity 0.4s ease;
+}
+
+/* Overlay base */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.4s ease;
+  border-radius: 12px;
+}
+
+.overlay-title {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 20px;
+}
+
+/* === Hover Effects === */
+
+/* Overlay only */
+.project-item.overlay:hover .overlay {
+  opacity: 1;
+}
+
+/* Zoom only */
+.project-item.zoom:hover img {
+  transform: scale(1.08);
+}
+
+/* Both overlay + zoom */
+.project-item.both:hover img {
+  transform: scale(1.08);
+}
+.project-item.both:hover .overlay {
+  opacity: 1;
+}
+
+/* No effect (static) */
+.project-item.none:hover img {
+  transform: none;
+}
+.project-item.none:hover .overlay {
+  opacity: 0;
+}
+
+/* 📱 Tablet */
+@media screen and (max-width: 992px) {
+  .projects-grid-wrapper {
+    padding: 60px 15px;
+  }
+  .projects-section-title {
+    font-size: 2.4rem;
+    margin-bottom: 30px;
+  }
+  .overlay-title {
+    font-size: 1.5rem;
+  }
+  .projects-grid.masonry {
+    column-count: 2;
+  }
+}
+
+/* 📱 Mobile */
+@media screen and (max-width: 600px) {
+  .projects-grid-wrapper {
+    padding: 40px 12px;
+    padding-top: 80px;
+  }
+  .projects-section-title {
+    font-size: 2.3rem;
+    padding-bottom: 20px;
+  }
+  .overlay-title {
+    font-size: 1.3rem;
+    padding: 8px 12px;
+  }
+  .projects-grid.masonry {
+    column-count: 1;
+  }
+}
+</style>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Commercial Projects Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Our Commercial Projects"
+    },
+    {
+      "type": "select",
+      "id": "layout_style",
+      "label": "Layout Style",
+      "options": [
+        { "value": "grid", "label": "Grid" },
+        { "value": "masonry", "label": "Masonry" }
+      ],
+      "default": "grid"
+    },
+    {
+      "type": "select",
+      "id": "hover_effect",
+      "label": "Hover Effect",
+      "options": [
+        { "value": "none", "label": "No Effect" },
+        { "value": "overlay", "label": "Show Overlay Text" },
+        { "value": "zoom", "label": "Zoom Image (Scale)" },
+        { "value": "both", "label": "Zoom + Overlay" }
+      ],
+      "default": "overlay"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "project",
+      "name": "Project",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "project_image",
+          "label": "Project Image"
+        },
+        {
+          "type": "text",
+          "id": "project_title",
+          "label": "Project Title",
+          "default": "Project Name"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Commercial Projects Grid",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

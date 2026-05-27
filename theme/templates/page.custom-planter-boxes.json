@@ -1,0 +1,686 @@
+{
+  "sections": {
+    "heading": {
+      "type": "heading-static",
+      "blocks": {
+        "7b5146f4-dbe6-43f0-8a48-d29d083c0176": {
+          "type": "1",
+          "settings": {
+            "tag": "h3",
+            "fontf": "2",
+            "text_cl": "#ffffff",
+            "text_fs": 20,
+            "text_lh": 26,
+            "text_fw": 500,
+            "text_ls": 2,
+            "mgb": 0,
+            "font_italic": false,
+            "font_uppercase": false,
+            "text_shadow": false,
+            "text_fs_tb": 20,
+            "text_lh_tb": 26,
+            "text_ls_tb": 2,
+            "mgb_tb": 0,
+            "hidden_mobile": false,
+            "text_fs_mb": 20,
+            "text_lh_mb": 26,
+            "text_ls_mb": 2,
+            "mgb_mb": 0
+          }
+        }
+      },
+      "block_order": [
+        "7b5146f4-dbe6-43f0-8a48-d29d083c0176"
+      ],
+      "disabled": true,
+      "settings": {
+        "parallax": false,
+        "bg_overlay": "#000000",
+        "bg_opacity": 54,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "padding_top_tb": 50,
+        "padding_bottom_tb": 50,
+        "padding_top_mb": 50,
+        "padding_bottom_mb": 50,
+        "bg_pos": "center center",
+        "bg_repeat": "no-repeat",
+        "bg_size": "cover",
+        "mgb": 0,
+        "mgb_tb": 0,
+        "mgb_mb": 0
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": "60px,,60px,",
+        "pd": "",
+        "mg_tb": "60px,,60px,",
+        "pd_tb": "",
+        "mg_mb": "60px,,60px,",
+        "pd_mb": ""
+      }
+    },
+    "sidebar-page": {
+      "type": "sidebar-page",
+      "blocks": {
+        "f69681ed-b75e-42de-be58-fdf73b3b7e08": {
+          "type": "blog_cate",
+          "settings": {
+            "title": "Blog categories",
+            "cat_link_list": "",
+            "count": true
+          }
+        }
+      },
+      "block_order": [
+        "f69681ed-b75e-42de-be58-fdf73b3b7e08"
+      ],
+      "disabled": true,
+      "settings": {
+        "enable_drawer": false,
+        "space": 50,
+        "size": "medium",
+        "br_style": "none",
+        "brcolor": "#222222",
+        "sidebar_bdr": 5,
+        "sidebar_pd": 10
+      }
+    },
+    "custom_plante_boxes_banner_4MaDFb": {
+      "type": "custom-plante-boxes-banner",
+      "name": "Custom Planter Banner",
+      "settings": {
+        "banner_image": "shopify://shop_images/Screenshot_2025-09-29_at_8.22.00_pm.png",
+        "banner_heading": "Bespoke Planter Boxes. Built to Spec.",
+        "banner_text": "Custom-manufactured in Western Sydney. Trusted by Sydney's leading property developers, architects, and landscapers.",
+        "banner_button_text": "Start Your Custom Quote",
+        "banner_button_action": "scroll",
+        "banner_button_link": "/"
+      }
+    },
+    "custom_planter_boxes_section_ez9f6m": {
+      "type": "custom-planter-boxes-section",
+      "name": "Custom Planter Boxes",
+      "settings": {
+        "heading": "The custom planter partner for serious projects",
+        "subtext": "Urban Pots manufactures precision-built planter boxes for property developers, landscapers, architects, and builders across Australia. Every order is custom-sized, primed, and finished with three coats of Dulux paint to your exact specification — in our Western Sydney yard. 2–8 week turnaround. Nationwide delivery. Bulk pricing available.",
+        "show_button": false,
+        "button_text": "Enquire Now"
+      }
+    },
+    "customer_planter_boxes_gallery_8tiYhL": {
+      "type": "customer-planter-boxes-gallery",
+      "blocks": {
+        "bullet_r8zDTm": {
+          "type": "bullet",
+          "settings": {
+            "text": "Durable, lightweight, and architecturally clean"
+          }
+        },
+        "bullet_QRWHgG": {
+          "type": "bullet",
+          "settings": {
+            "text": "Ideal for balconies, lobbies, and large-scale commercial installs"
+          }
+        },
+        "bullet_hFWGNJ": {
+          "type": "bullet",
+          "settings": {
+            "text": "Custom sizes — no project too large or complex"
+          }
+        },
+        "bullet_new1": {
+          "type": "bullet",
+          "settings": {
+            "text": "Primed and finished with 3 coats of Dulux paint, any colour"
+          }
+        }
+      },
+      "block_order": [
+        "bullet_r8zDTm",
+        "bullet_QRWHgG",
+        "bullet_hFWGNJ",
+        "bullet_new1"
+      ],
+      "name": "Fibre Cement Gallery",
+      "settings": {
+        "swap_order": false,
+        "image": "shopify://shop_images/Urbanpots_-_54.jpg",
+        "hover_image": "shopify://shop_images/Urbanpots_-_53.jpg",
+        "heading": "Fibre Cement — Durable. Architectural. Made Here.",
+        "text": "The workhorse of commercial installations. Fibre cement planters are lightweight, resistant to Australian weather, and deliver a clean architectural finish across any scale — from a single balcony to a 200-unit residential development.",
+        "show_button": true,
+        "button_label": "Get a Quote",
+        "button_action": "scroll",
+        "button_link": ""
+      }
+    },
+    "customer_planter_boxes_gallery_68N4q4": {
+      "type": "customer-planter-boxes-gallery",
+      "name": "Fibreglass Gallery",
+      "settings": {
+        "swap_order": true,
+        "image": "shopify://shop_images/cdeab9b6-40a0-4863-8a96-4b3992d02594.jpg",
+        "hover_image": "shopify://shop_images/3d4b103a-ef37-42e6-9690-867543cbd071.jpg",
+        "heading": "Fibreglass — Unlimited Colour. Flawless Finish.",
+        "text": "The preferred choice of architects and luxury residential developers. Fibreglass planters offer unlimited colour matching, a smooth premium finish, and exceptional longevity. Specify any RAL or Dulux colour — we match it precisely across every piece in your order.",
+        "show_button": true,
+        "button_label": "Design Yours Today",
+        "button_action": "scroll",
+        "button_link": ""
+      }
+    },
+    "customer_planter_boxes_gallery_NjRmwb": {
+      "type": "customer-planter-boxes-gallery",
+      "blocks": {
+        "bullet_3CzGKB": {
+          "type": "bullet",
+          "settings": {
+            "text": "Concrete aesthetics with superior structural strength"
+          }
+        },
+        "bullet_UMRRyd": {
+          "type": "bullet",
+          "settings": {
+            "text": "Ideal for heritage, hospitality, and prestige residential projects"
+          }
+        },
+        "bullet_W4Mjpr": {
+          "type": "bullet",
+          "settings": {
+            "text": "Special order — 3 to 4 month lead time from confirmed brief"
+          }
+        },
+        "bullet_gNMUhB": {
+          "type": "bullet",
+          "settings": {
+            "text": "Available on request — contact us to discuss your project"
+          }
+        }
+      },
+      "block_order": [
+        "bullet_3CzGKB",
+        "bullet_UMRRyd",
+        "bullet_W4Mjpr",
+        "bullet_gNMUhB"
+      ],
+      "name": "GRC Gallery",
+      "settings": {
+        "swap_order": false,
+        "image": "shopify://shop_images/Screenshot_2025-09-29_at_8.22.00_pm.png",
+        "hover_image": "shopify://shop_images/d8ce80d0d3d5e79873da05216af0bff4.jpg",
+        "heading": "GRC — Prestige Concrete Aesthetics. On Request.",
+        "text": "Glass Reinforced Concrete combines the raw presence of concrete with superior strength and design flexibility. The premium choice for heritage restorations, high-end hospitality, and prestige residential projects. Please note: GRC is a special-order material with a 3–4 month lead time.",
+        "show_button": true,
+        "button_label": "Enquire About GRC",
+        "button_action": "scroll",
+        "button_link": ""
+      }
+    },
+    "custom_how_it_work_BnNBwm": {
+      "type": "custom-how-it-work",
+      "blocks": {
+        "step_XgzEY6": {
+          "type": "step",
+          "settings": {
+            "title": "Consult",
+            "text": "We review your project brief, site dimensions, and material requirements. Commercial or residential, we've handled projects of every scale."
+          }
+        },
+        "step_RP9TAq": {
+          "type": "step",
+          "settings": {
+            "title": "Design",
+            "text": "Custom sizing, colour matching, and material selection. Primed and finished with 3 layers of Dulux paint to your exact specification."
+          }
+        },
+        "step_izpGpB": {
+          "type": "step",
+          "settings": {
+            "title": "Manufacture",
+            "text": "Built by hand in our Western Sydney yard. 2–8 week turnaround from confirmed brief, depending on order size."
+          }
+        },
+        "step_FxdFLP": {
+          "type": "step",
+          "settings": {
+            "title": "Deliver & Install",
+            "text": "Nationwide delivery to Sydney, Melbourne, Brisbane, Perth, and Adelaide. Waterproofed, painted, and ready to use on arrival."
+          }
+        }
+      },
+      "block_order": [
+        "step_XgzEY6",
+        "step_RP9TAq",
+        "step_izpGpB",
+        "step_FxdFLP"
+      ],
+      "name": "How It Works",
+      "settings": {
+        "heading": "How We Work"
+      }
+    },
+    "custom_planter_boxes_grid_KytRwc": {
+      "type": "custom-planter-boxes-grid",
+      "blocks": {
+        "project_meKErH": {
+          "type": "project",
+          "settings": {
+            "project_image": "shopify://shop_images/3d4b103a-ef37-42e6-9690-867543cbd071.jpg",
+            "project_title": "Bella Vista NSW"
+          }
+        },
+        "project_czLieN": {
+          "type": "project",
+          "settings": {
+            "project_image": "shopify://shop_images/IMG_7968.heic",
+            "project_title": "Marsden Park NSW"
+          }
+        },
+        "project_BtAmRU": {
+          "type": "project",
+          "settings": {
+            "project_image": "shopify://shop_images/IMG_7969.heic",
+            "project_title": "Marsden Park NSW"
+          }
+        },
+        "project_qqfTgY": {
+          "type": "project",
+          "settings": {
+            "project_image": "shopify://shop_images/IMG_0709.heic",
+            "project_title": "Rosebery NSW"
+          }
+        },
+        "project_34nPQc": {
+          "type": "project",
+          "settings": {
+            "project_image": "shopify://shop_images/IMG_0950_f476d558-d488-4da0-a895-ef57bd9b24ca.png",
+            "project_title": "Orange NSW"
+          }
+        },
+        "project_9Gg6n8": {
+          "type": "project",
+          "settings": {
+            "project_image": "shopify://shop_images/Urbanpots_-_54.jpg",
+            "project_title": "North Sydney NSW"
+          }
+        },
+        "project_BjHadW": {
+          "type": "project",
+          "settings": {
+            "project_image": "shopify://shop_images/IMG_9547.heic",
+            "project_title": "Bondi NSW"
+          }
+        },
+        "project_6B4KW9": {
+          "type": "project",
+          "settings": {
+            "project_image": "shopify://shop_images/IMG_2999.heic",
+            "project_title": "Castle Hill NSW"
+          }
+        },
+        "project_7cPNUM": {
+          "type": "project",
+          "settings": {
+            "project_image": "shopify://shop_images/IMG_7204.heic",
+            "project_title": "Strathfield NSW"
+          }
+        },
+        "project_BF66UA": {
+          "type": "project",
+          "settings": {
+            "project_image": "shopify://shop_images/image0.jpg",
+            "project_title": "Sydney CBD NSW"
+          }
+        }
+      },
+      "block_order": [
+        "project_meKErH",
+        "project_czLieN",
+        "project_BtAmRU",
+        "project_qqfTgY",
+        "project_34nPQc",
+        "project_9Gg6n8",
+        "project_BjHadW",
+        "project_6B4KW9",
+        "project_7cPNUM",
+        "project_BF66UA"
+      ],
+      "name": "Planter Boxes Grid",
+      "settings": {
+        "section_title": "Projects Delivered",
+        "layout_style": "grid",
+        "hover_effect": "both"
+      }
+    },
+    "client_logos_cpb": {
+      "type": "client-logos",
+      "blocks": {
+        "logo_placeholder_1": {
+          "type": "logo",
+          "settings": {
+            "company_name": "Developer Partner 1"
+          }
+        },
+        "logo_placeholder_2": {
+          "type": "logo",
+          "settings": {
+            "company_name": "Developer Partner 2"
+          }
+        },
+        "logo_placeholder_3": {
+          "type": "logo",
+          "settings": {
+            "company_name": "Developer Partner 3"
+          }
+        },
+        "logo_placeholder_4": {
+          "type": "logo",
+          "settings": {
+            "company_name": "Developer Partner 4"
+          }
+        },
+        "logo_placeholder_5": {
+          "type": "logo",
+          "settings": {
+            "company_name": "Developer Partner 5"
+          }
+        }
+      },
+      "block_order": [
+        "logo_placeholder_1",
+        "logo_placeholder_2",
+        "logo_placeholder_3",
+        "logo_placeholder_4",
+        "logo_placeholder_5"
+      ],
+      "name": "Client Logos",
+      "settings": {
+        "section_title": "Trusted by Sydney's Developers"
+      }
+    },
+    "planter_boxes_info_t679tC": {
+      "type": "planter-boxes-info",
+      "blocks": {
+        "text_item_ia8hr8": {
+          "type": "text_item",
+          "settings": {
+            "item_icon": "fa-solid fa-location-dot",
+            "item_title": "Manufactured in Western Sydney",
+            "item_description": "Every planter leaves our yard — not a warehouse. Built by our team, quality-checked before dispatch."
+          }
+        },
+        "text_item_Gw4EjA": {
+          "type": "text_item",
+          "settings": {
+            "item_icon": "fa-solid fa-star",
+            "item_title": "3-Coat Dulux Paint Finish",
+            "item_description": "Primed and finished with three layers of premium Dulux paint. Any colour. Consistent across every unit."
+          }
+        },
+        "text_item_7UrU68": {
+          "type": "text_item",
+          "settings": {
+            "item_icon": "fa-solid fa-clock",
+            "item_title": "2–8 Week Turnaround",
+            "item_description": "We meet project deadlines. Custom orders delivered within 2–8 weeks from confirmed brief."
+          }
+        },
+        "text_item_Ccm3WE": {
+          "type": "text_item",
+          "settings": {
+            "item_icon": "fa-solid fa-layer-group",
+            "item_title": "Three Material Options",
+            "item_description": "Fibre Cement, Fibreglass, or GRC (on request). Each suited to different project types and budgets."
+          }
+        },
+        "text_item_HNAMFm": {
+          "type": "text_item",
+          "settings": {
+            "item_icon": "fa-solid fa-truck",
+            "item_title": "Nationwide Delivery",
+            "item_description": "Sydney, Melbourne, Brisbane, Perth, Adelaide. We ship to every state and territory."
+          }
+        },
+        "text_item_nwmtDx": {
+          "type": "text_item",
+          "settings": {
+            "item_icon": "fa-solid fa-building",
+            "item_title": "Bulk & Commercial Pricing",
+            "item_description": "Volume discounts available for developers and trade. Contact us to discuss your project scope."
+          }
+        }
+      },
+      "block_order": [
+        "text_item_ia8hr8",
+        "text_item_Gw4EjA",
+        "text_item_7UrU68",
+        "text_item_Ccm3WE",
+        "text_item_HNAMFm",
+        "text_item_nwmtDx"
+      ],
+      "name": "Planter Boxes Text Grid",
+      "settings": {
+        "section_title": "Why Developers Specify Urban Pots"
+      }
+    },
+    "testimonials_cpb": {
+      "type": "testimonials",
+      "blocks": {
+        "quote_1": {
+          "type": "quote",
+          "settings": {
+            "content": "<p>Urban Pots delivered custom fibre cement planters for our entire development on time and exactly to spec. Our landscaper was genuinely impressed. We'll be specifying them on every project going forward.</p>",
+            "title": "James M.",
+            "pos": "Property Developer, Sydney",
+            "rating": 5
+          }
+        },
+        "quote_2": {
+          "type": "quote",
+          "settings": {
+            "content": "<p>As a landscaper I've sourced planters from all over Australia and Urban Pots is in a different league. Custom sizing, the paint finish, the turnaround — everything is professional. My clients are always impressed.</p>",
+            "title": "Sarah R.",
+            "pos": "Senior Landscaper, North Shore",
+            "rating": 5
+          }
+        },
+        "quote_3": {
+          "type": "quote",
+          "settings": {
+            "content": "<p>We specified Urban Pots fibreglass planters for a luxury residential project in Mosman. The finish, the colour match, the consistency across 40+ pieces — flawless. Team was incredibly professional throughout.</p>",
+            "title": "Alex K.",
+            "pos": "Principal Architect, Eastern Suburbs",
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "quote_1",
+        "quote_2",
+        "quote_3"
+      ],
+      "name": "Testimonials",
+      "settings": {
+        "ter_des": "1",
+        "layout_des": "carousel",
+        "col_dk": "3",
+        "col_tb": "2",
+        "col_mb": "1"
+      }
+    },
+    "customer_planter_inquiry_xTArcM": {
+      "type": "customer-planter-inquiry",
+      "blocks": {
+        "field_Xxen7K": {
+          "type": "field",
+          "settings": {
+            "label": "Name",
+            "field_type": "text",
+            "options": "Option 1, Option 2",
+            "required": true,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "field_XMhxnM": {
+          "type": "field",
+          "settings": {
+            "label": "Email",
+            "field_type": "email",
+            "options": "Option 1, Option 2",
+            "required": true,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "field_6jrMNn": {
+          "type": "field",
+          "settings": {
+            "label": "Contact Number",
+            "field_type": "number",
+            "options": "Option 1, Option 2",
+            "required": true,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "field_nbKtPP": {
+          "type": "field",
+          "settings": {
+            "label": "Quantity",
+            "field_type": "number",
+            "options": "Option 1, Option 2",
+            "required": true,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "field_itA39E": {
+          "type": "field",
+          "settings": {
+            "label": "Colour",
+            "field_type": "text",
+            "options": "Option 1, Option 2",
+            "required": true,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "dimensions_group_N4wndH": {
+          "type": "dimensions_group",
+          "settings": {
+            "label": "Dimensions",
+            "unit": "mm",
+            "layout": "row",
+            "required": true,
+            "dimension_labels": "Length, Width, Height"
+          }
+        },
+        "field_DBR6V3": {
+          "type": "field",
+          "settings": {
+            "label": "Delivery Method",
+            "field_type": "select",
+            "options": "Deliver, Pick up",
+            "required": true,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "field_7Qjxdx": {
+          "type": "field",
+          "settings": {
+            "label": "ABN",
+            "field_type": "text",
+            "options": "Option 1, Option 2",
+            "required": false,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "field_NtVRdz": {
+          "type": "field",
+          "settings": {
+            "label": "Company Name",
+            "field_type": "text",
+            "options": "Option 1, Option 2",
+            "required": false,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "field_Km7N66": {
+          "type": "field",
+          "settings": {
+            "label": "Comments",
+            "field_type": "textarea",
+            "options": "Option 1, Option 2",
+            "required": false,
+            "alignment": "left",
+            "layout": "column"
+          }
+        }
+      },
+      "block_order": [
+        "field_Xxen7K",
+        "field_XMhxnM",
+        "field_6jrMNn",
+        "field_nbKtPP",
+        "field_itA39E",
+        "dimensions_group_N4wndH",
+        "field_DBR6V3",
+        "field_7Qjxdx",
+        "field_NtVRdz",
+        "field_Km7N66"
+      ],
+      "name": "Customer Planter Form",
+      "settings": {
+        "form_title": "Start Your Custom Planter Box Project",
+        "form_description": "Tell us about your project and we'll get back to you within 24 hours with a detailed quote. No obligation.",
+        "form_extra_text": "Please check diagram for accurate dimensions when enquiring",
+        "form_image": "shopify://shop_images/IMG_9620.jpg",
+        "form_title_inside": "Custom Quote Enquiry",
+        "form_description_inside": "Fill in the form and our team will respond within 24 hours."
+      }
+    },
+    "176060111416fe1dca": {
+      "type": "apps",
+      "blocks": {
+        "rocket_google_reviews_app_block_KjVJJD": {
+          "type": "shopify://apps/google-reviews-rocket/blocks/app-block/d11c8893-a181-4aff-a280-7446d42cec3b",
+          "settings": {
+            "widget_layout": "default"
+          }
+        }
+      },
+      "block_order": [
+        "rocket_google_reviews_app_block_KjVJJD"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "heading",
+    "main",
+    "sidebar-page",
+    "custom_plante_boxes_banner_4MaDFb",
+    "custom_planter_boxes_section_ez9f6m",
+    "customer_planter_boxes_gallery_8tiYhL",
+    "customer_planter_boxes_gallery_68N4q4",
+    "customer_planter_boxes_gallery_NjRmwb",
+    "custom_how_it_work_BnNBwm",
+    "custom_planter_boxes_grid_KytRwc",
+    "client_logos_cpb",
+    "planter_boxes_info_t679tC",
+    "testimonials_cpb",
+    "customer_planter_inquiry_xTArcM",
+    "176060111416fe1dca"
+  ]
+}

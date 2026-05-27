@@ -1,0 +1,60 @@
+<div class="up-shop-guide">
+  <p class="up-eyebrow" style="margin-bottom:1rem;">{{ section.settings.eyebrow | default: 'Find what you need' }}</p>
+  <h1 class="up-shop-guide__heading">{{ section.settings.heading | default: 'What are you looking for?' }}</h1>
+  <div class="up-shop-guide__grid">
+    {% for block in section.blocks %}
+      <a href="{{ block.settings.card_link }}" class="up-shop-guide__card" {{ block.shopify_attributes }}>
+        {% if block.settings.card_image != blank %}
+          {{ block.settings.card_image | image_url: width: 1200 | image_tag:
+            alt: block.settings.card_label,
+            loading: 'lazy',
+            widths: '600, 900, 1200'
+          }}
+        {% else %}
+          <div style="background:var(--up-cream);width:100%;height:100%;"></div>
+        {% endif %}
+        <div class="up-shop-guide__card-overlay">
+          <div>
+            <span class="up-shop-guide__card-label">{{ block.settings.card_label }}</span>
+            {% if block.settings.card_description != blank %}
+              <span class="up-shop-guide__card-arrow">{{ block.settings.card_description }} →</span>
+            {% endif %}
+          </div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Shop Guide",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow label", "default": "Find what you need" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What are you looking for?" }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Guide Card",
+      "settings": [
+        { "type": "image_picker", "id": "card_image", "label": "Card image" },
+        { "type": "text", "id": "card_label", "label": "Label", "default": "Custom Planters" },
+        { "type": "text", "id": "card_description", "label": "Description / subtext", "default": "Built to your spec" },
+        { "type": "url", "id": "card_link", "label": "Link" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop Guide",
+      "blocks": [
+        { "type": "card" },
+        { "type": "card" },
+        { "type": "card" },
+        { "type": "card" }
+      ]
+    }
+  ]
+}
+{% endschema %}

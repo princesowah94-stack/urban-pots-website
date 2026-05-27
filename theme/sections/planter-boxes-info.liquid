@@ -1,0 +1,172 @@
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<div class="text-grid-wrapper">
+  {% if section.settings.section_title != blank %}
+    <h2 class="text-grid-main-title">{{ section.settings.section_title }}</h2>
+  {% endif %}
+
+  <div class="text-grid">
+    {% for block in section.blocks %}
+      <div class="text-grid-item">
+        {% if block.settings.item_icon != blank %}
+          <div class="text-grid-item-icon">
+            <i class="{{ block.settings.item_icon }}"></i>
+          </div>
+        {% endif %}
+
+        {% if block.settings.item_title != blank %}
+          <h3 class="text-grid-item-title">{{ block.settings.item_title }}</h3>
+        {% endif %}
+
+        {% if block.settings.item_description != blank %}
+          <p class="text-grid-item-desc">{{ block.settings.item_description }}</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+.text-grid-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.text-grid-main-title {
+  font-size: 2.6rem;
+  font-weight: 600;
+  margin-bottom: 50px;
+  color: #111;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.text-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  text-align: left;
+}
+
+.text-grid-item {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.text-grid-item:hover {
+  transform: translateY(-5px);
+}
+
+/* 🔹 Icon styles */
+.text-grid-item-icon {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.text-grid-item-icon i {
+  font-size: 40px;
+  color: #444;
+}
+
+.text-grid-item-title {
+  font-size: 2.3rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #222;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+}
+
+.text-grid-item-desc {
+  font-size: 1.7rem;
+  line-height: 1.7;
+  color: #555;
+  text-align: center;
+}
+
+/* Tablet */
+@media screen and (max-width: 992px) {
+  .text-grid-main-title {
+    font-size: 2.6rem;
+    margin-bottom: 40px;
+  }
+  .text-grid-item-title {
+    font-size: 1.8rem;
+  }
+  .text-grid-item-desc {
+    font-size: 1.2rem;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+  .text-grid-wrapper {
+    padding: 50px 15px;
+  }
+  .text-grid-main-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  .text-grid-item-title {
+    font-size: 1.6rem;
+  }
+  .text-grid-item-desc {
+    font-size: 1.3rem;
+  }
+
+  .text-grid-item-icon i {
+    font-size: 30px;
+    color: #444;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Planter Boxes Text Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Discover Our Values"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_item",
+      "name": "Text Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "item_icon",
+          "label": "Icon Class (e.g. fa-solid fa-star)",
+          "default": "fa-solid fa-star"
+        },
+        {
+          "type": "text",
+          "id": "item_title",
+          "label": "Item Title",
+          "default": "Project Title"
+        },
+        {
+          "type": "textarea",
+          "id": "item_description",
+          "label": "Item Description",
+          "default": "This is a short description about the project, value, or service."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Planter Boxes Text Grid",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

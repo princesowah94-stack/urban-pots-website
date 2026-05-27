@@ -1,0 +1,215 @@
+{% schema %}
+{
+  "name": "Inquiry",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section Heading",
+      "default": "Custom Product Showcase"
+    },
+    {
+      "type": "textarea",
+      "id": "section_description",
+      "label": "Section Description",
+      "default": "Showcase your custom products and let customers enquire with their specifications."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Showcase Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Showcase + Inquiry Form",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="custom-showcase page-width">
+  <div class="custom-showcase__header">
+    <h2>{{ section.settings.section_heading }}</h2>
+    <p>{{ section.settings.section_description }}</p>
+  </div>
+
+  <div class="custom-showcase__grid">
+    <!-- Left column: Images -->
+    <div class="custom-showcase__images">
+      {% for block in section.blocks %}
+        {% if block.type == 'image' and block.settings.image != blank %}
+          <div class="custom-showcase__image">
+            <img src="{{ block.settings.image | image_url: width: 800 }}" alt="">
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <!-- Right column: Form -->
+    <div class="custom-showcase__form card">
+      <h3>Enquire Now</h3>
+      <form method="post" action="/contact#contact_form" id="contact_form" accept-charset="UTF-8" class="enquiry-form">
+        <input type="hidden" name="form_type" value="contact" />
+        <input type="hidden" name="utf8" value="✓" />
+
+        <div class="form-group">
+          <label>Length</label>
+          <input type="text" name="contact[Length]" required>
+        </div>
+
+        <div class="form-group">
+          <label>Width</label>
+          <input type="text" name="contact[Width]" required>
+        </div>
+
+        <div class="form-group">
+          <label>Height</label>
+          <input type="text" name="contact[Height]" required>
+        </div>
+
+        <div class="form-group">
+          <label>Colour</label>
+          <input type="text" name="contact[Colour]">
+        </div>
+
+        <div class="form-group">
+          <label>Quantity</label>
+          <input type="number" name="contact[Quantity]" min="1">
+        </div>
+
+        <div class="form-group">
+          <label>Delivery required?</label>
+          <select name="contact[Delivery required?]">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Other specifications</label>
+          <textarea name="contact[Other specifications]" rows="5"></textarea>
+        </div>
+
+        <button type="submit" class="btn">Submit Inquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<style>
+.custom-showcase {
+  padding: 5rem 2rem;
+}
+
+.custom-showcase__header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+}
+
+.custom-showcase__header h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.custom-showcase__header p {
+  font-size: 1.6rem;
+  color: #555;
+}
+
+.custom-showcase__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.custom-showcase__images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.custom-showcase__image img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.custom-showcase__image img:hover {
+  transform: scale(1.05);
+}
+
+.card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.custom-showcase__form h3 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.enquiry-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.enquiry-form input,
+.enquiry-form select,
+.enquiry-form textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  transition: border-color 0.2s ease;
+}
+
+.enquiry-form input:focus,
+.enquiry-form select:focus,
+.enquiry-form textarea:focus {
+  outline: none;
+  border-color: #111;
+}
+
+.enquiry-form button {
+  padding: 1rem;
+  background: #111;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.3s ease;
+}
+
+.enquiry-form button:hover {
+  background: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .custom-showcase__grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

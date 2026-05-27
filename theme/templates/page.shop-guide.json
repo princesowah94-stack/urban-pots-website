@@ -1,0 +1,52 @@
+{
+  "sections": {
+    "shop_guide_main": {
+      "type": "shop-guide",
+      "blocks": {
+        "card_custom": {
+          "type": "card",
+          "settings": {
+            "card_image": "shopify://shop_images/Urbanpots_-_54.jpg",
+            "card_label": "Custom Planter Boxes",
+            "card_description": "Bespoke, built to spec",
+            "card_link": "/pages/custom-planter-boxes"
+          }
+        },
+        "card_commercial": {
+          "type": "card",
+          "settings": {
+            "card_image": "shopify://shop_images/Screenshot_2025-09-10_at_8.04.29_pm.png",
+            "card_label": "Commercial Projects",
+            "card_description": "Large-scale developer supply",
+            "card_link": "/pages/commercial-planters"
+          }
+        },
+        "card_designer": {
+          "type": "card",
+          "settings": {
+            "card_image": "shopify://shop_images/3d4b103a-ef37-42e6-9690-867543cbd071.jpg",
+            "card_label": "Designer Pots",
+            "card_description": "Premium imported collections",
+            "card_link": "/collections/designer-lightweight"
+          }
+        },
+        "card_all": {
+          "type": "card",
+          "settings": {
+            "card_image": "shopify://shop_images/cdeab9b6-40a0-4863-8a96-4b3992d02594.jpg",
+            "card_label": "All Products",
+            "card_description": "Browse every collection",
+            "card_link": "/collections/all"
+          }
+        }
+      },
+      "block_order": ["card_custom", "card_commercial", "card_designer", "card_all"],
+      "name": "Shop Guide",
+      "settings": {
+        "eyebrow": "Find what you need",
+        "heading": "What are you looking for?"
+      }
+    }
+  },
+  "order": ["shop_guide_main"]
+}

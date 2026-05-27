@@ -1,0 +1,186 @@
+{% schema %}
+{
+  "name": "Who Can Join Trade",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Who Can Join Trade"
+    },
+    {
+      "type": "textarea",
+      "id": "section_subtext",
+      "label": "Section Subtext",
+      "default": "Are you a qualified trade professional? Join our program to access exclusive pricing, dedicated support, and member-only benefits."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "grid_item",
+      "name": "Grid Item",
+      "limit": 9,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Business Owner"
+        },
+        {
+          "type": "textarea",
+          "id": "subtext",
+          "label": "Subtext",
+          "default": "Suitable for entrepreneurs looking for wholesale opportunities."
+        },
+        {
+          "type": "checkbox",
+          "id": "show_subtext",
+          "label": "Show Subtext",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Who Can Join Trade",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+ {% if page.handle == "trade" %}
+<section class="who-can-join-trade">
+  <div class="who-can-join-trade__container">
+    {% if section.settings.section_title != blank %}
+      <h2 class="text-center mb-2">{{ section.settings.section_title }}</h2>
+    {% endif %}
+
+    {% if section.settings.section_subtext != blank %}
+      <p class="text-center section-subtext mb-8">{{ section.settings.section_subtext }}</p>
+    {% endif %}
+
+    <div class="grid grid--3-col-desktop gap-6">
+      {% for block in section.blocks %}
+        <div class="grid-item text-center">
+          <h3 class="grid-item__title">{{ block.settings.title }}</h3>
+          {% if block.settings.show_subtext and block.settings.subtext != blank %}
+            <p class="grid-item__subtext">{{ block.settings.subtext }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .who-can-join-trade {
+    padding: 50px 20px;
+    padding-top:70px;
+  }
+  .who-can-join-trade__container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .who-can-join-trade h2 {
+    font-size: 3.5rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 0.9rem;
+  }
+  .who-can-join-trade .section-subtext {
+    font-size: 1.9rem;
+    color: #555;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  .who-can-join-trade .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: stretch; /* ensures equal height across the row */
+  }
+  .who-can-join-trade .grid-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    cursor: pointer;
+    min-height: 80px; /* gives consistent baseline height */
+  }
+  .who-can-join-trade .grid-item:hover {
+    transform: translateY(-5px); /* subtle lift only */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    background-color: #ffffff;
+  }
+  .who-can-join-trade .grid-item__title {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  .who-can-join-trade .grid-item__subtext {
+    font-size: 1.9rem;
+    color: #555;
+  }
+
+  /* Tablet view (2 columns) */
+  @media (max-width: 991px) {
+    .who-can-join-trade .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .who-can-join-trade h2 {
+      font-size: 2.8rem;
+    }
+    .who-can-join-trade .section-subtext {
+      font-size: 1.6rem;
+    }
+    .who-can-join-trade .grid-item__title {
+      font-size: 2rem;
+    }
+    .who-can-join-trade .grid-item__subtext {
+      font-size: 1.4rem;
+    }
+  }
+
+  /* Mobile view (1 column) */
+  @media (max-width: 600px) {
+    .who-can-join-trade .grid {
+      grid-template-columns: 1fr;
+    }
+    .who-can-join-trade h2 {
+      font-size: 2.2rem;
+    }
+    .who-can-join-trade .section-subtext {
+      font-size: 1.6rem;
+      line-height: 1.4;
+    }
+    .who-can-join-trade .grid-item {
+      padding: 15px;
+      min-height: 80px;
+    }
+    .who-can-join-trade .grid-item__title {
+      font-size: 2rem;
+    }
+    .who-can-join-trade .grid-item__subtext {
+      font-size: 1.2rem;
+    }
+    .who-can-join-trade .grid-item:hover {
+      transform: translateY(-3px); /* even lighter lift on touch */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  }
+</style>
+{% endif %}
+
+

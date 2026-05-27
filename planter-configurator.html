@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>3D Planter Configurator — Urban Pots</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+
+/* ─── TOKENS ─────────────────────────────────────────── */
+:root {
+  --c-bg:       #F7F7F3;
+  --c-dark:     #1C1A18;
+  --c-brown:    #7F593E;
+  --c-brown-dk: #5C3D27;
+  --c-stone:    #C9B99A;
+  --c-sage:     #7A8C5E;
+  --c-cream:    #EDE8E1;
+  --c-border:   rgba(127,89,62,0.13);
+  --font-head:  'Cormorant Garamond', Georgia, serif;
+  --font-body:  'Inter', Helvetica, sans-serif;
+  --nav-h:      60px;
+  --panel-w:    380px;
+  --ease:       cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ─── RESET ──────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--font-body);
+  background: var(--c-bg);
+  color: var(--c-brown);
+  -webkit-font-smoothing: antialiased;
+}
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+input  { font-family: inherit; }
+
+/* ─── NAV ────────────────────────────────────────────── */
+.cfg-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-h);
+  background: rgba(247,247,243,0.96);
+  border-bottom: 1px solid var(--c-border);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(1.25rem, 3vw, 2rem);
+  z-index: 50;
+}
+.cfg-nav__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-brown);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.cfg-nav__back:hover { color: var(--c-sage); }
+.cfg-nav__title {
+  font-family: var(--font-head);
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--c-brown-dk);
+  letter-spacing: 0.03em;
+}
+.cfg-nav__logo img { height: 26px; display: block; }
+
+/* ─── MAIN LAYOUT ────────────────────────────────────── */
+.cfg-layout {
+  position: fixed;
+  top: var(--nav-h);
+  left: 0; right: 0; bottom: 0;
+  display: grid;
+  grid-template-columns: 1fr var(--panel-w);
+}
+
+/* ─── CANVAS AREA ────────────────────────────────────── */
+.canvas-wrap {
+  position: relative;
+  background: #E8E2D9;
+  overflow: hidden;
+}
+.canvas-wrap canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+/* CSS2DRenderer label overlay */
+.canvas-wrap .css2d-overlay {
+  position: absolute !important;
+  top: 0 !important; left: 0 !important;
+  width: 100% !important; height: 100% !important;
+  pointer-events: none !important;
+}
+
+/* Drag hint badge */
+.drag-hint {
+  position: absolute;
+  bottom: 1.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgba(92,61,39,0.5);
+  background: rgba(247,247,243,0.85);
+  border: 1px solid var(--c-border);
+  padding: 0.38rem 1rem;
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  pointer-events: none;
+  transition: opacity 0.7s var(--ease);
+  white-space: nowrap;
+}
+.drag-hint.hidden { opacity: 0; }
+
+/* ─── CSS2D DIMENSION LABELS ─────────────────────────── */
+.dim-tag {
+  font-family: var(--font-body);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--c-brown-dk);
+  background: rgba(247,247,243,0.93);
+  border: 1px solid rgba(127,89,62,0.18);
+  padding: 3px 9px;
+  border-radius: 2px;
+  white-space: nowrap;
+  backdrop-filter: blur(5px);
+  pointer-events: none;
+  user-select: none;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+/* ─── CONTROLS PANEL ─────────────────────────────────── */
+.controls-panel {
+  background: var(--c-bg);
+  border-left: 1px solid var(--c-border);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.controls-inner {
+  padding: 1.25rem 1.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── CONTROL SECTION ────────────────────────────────── */
+.ctrl-section {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--c-border);
+}
+.ctrl-section:first-child { padding-top: 0.5rem; }
+.ctrl-section--last  { border-bottom: none; }
+.ctrl-title {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(127,89,62,0.45);
+  margin-bottom: 1rem;
+}
+
+/* ─── DIMENSION ROWS ─────────────────────────────────── */
+.dim-rows { display: flex; flex-direction: column; gap: 0.95rem; }
+.dim-row  { display: flex; flex-direction: column; gap: 0.4rem; }
+.dim-row__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.dim-row__name {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--c-brown-dk);
+}
+.dim-row__readout {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--c-sage);
+  letter-spacing: 0.04em;
+}
+.dim-row__controls {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* Range slider */
+input[type="range"] {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 3px;
+  background: rgba(127,89,62,0.15);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 17px; height: 17px;
+  border-radius: 50%;
+  background: var(--c-sage);
+  border: 2.5px solid var(--c-bg);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+  cursor: grab;
+  transition: transform 0.15s;
+}
+input[type="range"]::-webkit-slider-thumb:active { cursor: grabbing; transform: scale(1.2); }
+input[type="range"]::-moz-range-thumb {
+  width: 17px; height: 17px;
+  border-radius: 50%;
+  background: var(--c-sage);
+  border: 2.5px solid var(--c-bg);
+  cursor: grab;
+}
+
+/* Number input */
+.num-wrap {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  border: 1px solid var(--c-border);
+  border-radius: 2px;
+  background: #fff;
+  padding: 0 6px;
+  height: 32px;
+  flex-shrink: 0;
+  transition: border-color 0.15s;
+}
+.num-wrap:focus-within { border-color: var(--c-sage); }
+.num-wrap input[type="number"] {
+  width: 46px;
+  border: none;
+  outline: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--c-brown-dk);
+  background: transparent;
+  text-align: right;
+  -moz-appearance: textfield;
+}
+.num-wrap input[type="number"]::-webkit-inner-spin-button,
+.num-wrap input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; }
+.num-unit {
+  font-size: 0.62rem;
+  color: var(--c-brown);
+  flex-shrink: 0;
+}
+
+/* ─── PRESET BUTTONS ─────────────────────────────────── */
+.preset-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.45rem;
+}
+.preset-btn {
+  padding: 0.5rem 0.3rem;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-brown);
+  border: 1px solid var(--c-border);
+  border-radius: 2px;
+  background: transparent;
+  transition: background 0.18s var(--ease), color 0.18s, border-color 0.18s;
+  text-align: center;
+  line-height: 1.4;
+}
+.preset-btn:hover { border-color: var(--c-brown); color: var(--c-brown-dk); }
+.preset-btn.active {
+  background: var(--c-dark);
+  border-color: var(--c-dark);
+  color: #fff;
+}
+.preset-sub {
+  display: block;
+  font-size: 0.55rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  opacity: 0.5;
+  margin-top: 1px;
+}
+.preset-btn.active .preset-sub { opacity: 0.6; }
+
+/* ─── MATERIAL TOGGLE ────────────────────────────────── */
+.material-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.45rem;
+}
+.material-btn {
+  padding: 0.65rem 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--c-brown);
+  border: 1px solid var(--c-border);
+  border-radius: 2px;
+  background: transparent;
+  text-align: center;
+  transition: all 0.18s var(--ease);
+}
+.material-btn:hover { border-color: var(--c-brown); }
+.material-btn.active {
+  background: var(--c-dark);
+  border-color: var(--c-dark);
+  color: #fff;
+}
+
+/* ─── COLOUR SWATCHES ────────────────────────────────── */
+.swatch-row {
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.7rem;
+}
+.swatch {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  border: 2.5px solid transparent;
+  cursor: pointer;
+  transition: transform 0.18s var(--ease), box-shadow 0.18s;
+  flex-shrink: 0;
+}
+.swatch:hover { transform: scale(1.1); }
+.swatch.active {
+  box-shadow: 0 0 0 2.5px var(--c-bg), 0 0 0 4.5px var(--c-brown-dk);
+}
+.swatch-name {
+  font-size: 0.7rem;
+  color: var(--c-brown);
+  font-weight: 400;
+}
+
+/* ─── SUMMARY ────────────────────────────────────────── */
+.summary-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  row-gap: 0.45rem;
+  column-gap: 1rem;
+  align-items: baseline;
+}
+.s-key {
+  font-size: 0.65rem;
+  color: rgba(127,89,62,0.48);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+.s-val {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--c-brown-dk);
+}
+
+/* ─── QUOTE CTA ──────────────────────────────────────── */
+.quote-cta {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 1rem;
+  background: var(--c-stone);
+  color: var(--c-dark);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: background 0.22s var(--ease), transform 0.18s;
+}
+.quote-cta:hover { background: #D9C9AA; transform: translateY(-1px); }
+
+.disclaimer {
+  margin-top: 1rem;
+  font-size: 0.62rem;
+  color: rgba(127,89,62,0.38);
+  line-height: 1.65;
+  text-align: center;
+}
+
+/* ─── RESPONSIVE ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  html, body { overflow: auto; }
+  .cfg-layout {
+    position: static;
+    display: block;
+    margin-top: var(--nav-h);
+  }
+  .canvas-wrap {
+    height: 55vh;
+    min-height: 320px;
+  }
+  .controls-panel {
+    overflow: visible;
+    border-left: none;
+    border-top: 1px solid var(--c-border);
+  }
+  .cfg-nav__title { display: none; }
+  .preset-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  :root { --panel-w: 100%; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="cfg-nav">
+  <a href="mockup.html" class="cfg-nav__back">&#8592; Back to site</a>
+  <span class="cfg-nav__title">3D Planter Configurator</span>
+  <a href="mockup.html" class="cfg-nav__logo" aria-label="Urban Pots home">
+    <img src="https://cdn.shopify.com/s/files/1/0748/4152/2498/files/urban_pots_logo__sage_150.png?v=1684274691" alt="Urban Pots" />
+  </a>
+</header>
+
+<!-- MAIN -->
+<main class="cfg-layout">
+
+  <!-- 3D CANVAS -->
+  <div class="canvas-wrap" id="canvasWrap">
+    <div class="drag-hint" id="dragHint">Drag to rotate &nbsp;&middot;&nbsp; Scroll to zoom</div>
+  </div>
+
+  <!-- CONTROLS -->
+  <aside class="controls-panel" role="complementary" aria-label="Planter configuration">
+    <div class="controls-inner">
+
+      <!-- YOUR DIMENSIONS -->
+      <div class="ctrl-section">
+        <p class="ctrl-title">Your Dimensions</p>
+        <div class="dim-rows">
+
+          <div class="dim-row">
+            <div class="dim-row__header">
+              <span class="dim-row__name">Length</span>
+              <span class="dim-row__readout" id="readL">600 mm</span>
+            </div>
+            <div class="dim-row__controls">
+              <input type="range" id="sliderL" min="300" max="3000" step="50" value="600" aria-label="Length in mm" />
+              <div class="num-wrap">
+                <input type="number" id="inputL" min="300" max="3000" step="50" value="600" aria-label="Length value" />
+                <span class="num-unit">mm</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dim-row">
+            <div class="dim-row__header">
+              <span class="dim-row__name">Width</span>
+              <span class="dim-row__readout" id="readW">400 mm</span>
+            </div>
+            <div class="dim-row__controls">
+              <input type="range" id="sliderW" min="200" max="1500" step="50" value="400" aria-label="Width in mm" />
+              <div class="num-wrap">
+                <input type="number" id="inputW" min="200" max="1500" step="50" value="400" aria-label="Width value" />
+                <span class="num-unit">mm</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dim-row">
+            <div class="dim-row__header">
+              <span class="dim-row__name">Height</span>
+              <span class="dim-row__readout" id="readH">450 mm</span>
+            </div>
+            <div class="dim-row__controls">
+              <input type="range" id="sliderH" min="200" max="1200" step="50" value="450" aria-label="Height in mm" />
+              <div class="num-wrap">
+                <input type="number" id="inputH" min="200" max="1200" step="50" value="450" aria-label="Height value" />
+                <span class="num-unit">mm</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PRESET SIZES -->
+      <div class="ctrl-section">
+        <p class="ctrl-title">Preset Sizes</p>
+        <div class="preset-grid">
+          <button class="preset-btn" data-l="600"  data-w="400" data-h="450">
+            Small<span class="preset-sub">600×400×450</span>
+          </button>
+          <button class="preset-btn" data-l="900"  data-w="450" data-h="500">
+            Medium<span class="preset-sub">900×450×500</span>
+          </button>
+          <button class="preset-btn" data-l="1200" data-w="600" data-h="600">
+            Large<span class="preset-sub">1200×600×600</span>
+          </button>
+          <button class="preset-btn" data-l="1800" data-w="600" data-h="600">
+            XL<span class="preset-sub">1800×600×600</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- MATERIAL -->
+      <div class="ctrl-section">
+        <p class="ctrl-title">Material</p>
+        <div class="material-toggle">
+          <button class="material-btn active" data-mat="fibre-cement">Fibre Cement</button>
+          <button class="material-btn"        data-mat="fibreglass">Fibreglass</button>
+        </div>
+      </div>
+
+      <!-- COLOUR -->
+      <div class="ctrl-section">
+        <p class="ctrl-title">Colour</p>
+        <div class="swatch-row">
+          <button class="swatch active"
+            data-hex="#F2EFE9" data-name="Lexicon Half"
+            style="background:#F2EFE9; border-color:rgba(127,89,62,0.2);"
+            title="Dulux Lexicon Half" aria-label="Lexicon Half"></button>
+          <button class="swatch"
+            data-hex="#D5D0C8" data-name="Antique White"
+            style="background:#D5D0C8;"
+            title="Dulux Antique White USA" aria-label="Antique White"></button>
+          <button class="swatch"
+            data-hex="#C9B99A" data-name="Stone"
+            style="background:#C9B99A;"
+            title="Dulux Dune" aria-label="Stone"></button>
+          <button class="swatch"
+            data-hex="#7A8C5E" data-name="Sage"
+            style="background:#7A8C5E;"
+            title="Urban Pots Sage" aria-label="Sage"></button>
+          <button class="swatch"
+            data-hex="#4A4A48" data-name="Monument"
+            style="background:#4A4A48;"
+            title="Dulux Monument" aria-label="Monument"></button>
+          <button class="swatch"
+            data-hex="#1C1A18" data-name="Domino"
+            style="background:#1C1A18;"
+            title="Dulux Domino" aria-label="Domino"></button>
+        </div>
+        <p class="swatch-name">Dulux <span id="activeSwatch">Lexicon Half</span></p>
+      </div>
+
+      <!-- SUMMARY -->
+      <div class="ctrl-section ctrl-section--last">
+        <p class="ctrl-title">Your Configuration</p>
+        <div class="summary-grid">
+          <span class="s-key">Dimensions</span>
+          <span class="s-val" id="sDims">600 &times; 400 &times; 450 mm</span>
+          <span class="s-key">Material</span>
+          <span class="s-val" id="sMat">Fibre Cement</span>
+          <span class="s-key">Colour</span>
+          <span class="s-val" id="sCol">Lexicon Half</span>
+        </div>
+        <button class="quote-cta" id="quoteCta">Get a Quote &rarr;</button>
+        <p class="disclaimer">Dimensions shown are for visual guidance only. Actual product proportions may vary slightly in production. All planters primed and finished with 3 coats of Dulux paint.</p>
+      </div>
+
+    </div>
+  </aside>
+</main>
+
+<!-- GSAP — UMD global, must precede the module script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<!-- Three.js importmap -->
+<script type="importmap">
+{
+  "imports": {
+    "three":          "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js",
+    "three/addons/":  "https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/"
+  }
+}
+</script>
+
+<!-- Main 3D module -->
+<script type="module">
+import * as THREE            from 'three';
+import { OrbitControls }     from 'three/addons/controls/OrbitControls.js';
+import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
+
+// gsap is window.gsap from the UMD script above
+const { gsap } = window;
+
+// ──────────────────────────────────────────────────────────
+// DOM
+// ──────────────────────────────────────────────────────────
+const canvasWrap = document.getElementById('canvasWrap');
+const dragHint   = document.getElementById('dragHint');
+
+const sliderL = document.getElementById('sliderL');
+const sliderW = document.getElementById('sliderW');
+const sliderH = document.getElementById('sliderH');
+const inputL  = document.getElementById('inputL');
+const inputW  = document.getElementById('inputW');
+const inputH  = document.getElementById('inputH');
+const readL   = document.getElementById('readL');
+const readW   = document.getElementById('readW');
+const readH   = document.getElementById('readH');
+
+// ──────────────────────────────────────────────────────────
+// SCENE
+// ──────────────────────────────────────────────────────────
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xE6E0D6);
+scene.fog = new THREE.FogExp2(0xE6E0D6, 0.018);
+
+// ──────────────────────────────────────────────────────────
+// RENDERER
+// ──────────────────────────────────────────────────────────
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type    = THREE.PCFSoftShadowMap;
+renderer.toneMapping       = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.18;
+canvasWrap.appendChild(renderer.domElement);
+
+// ──────────────────────────────────────────────────────────
+// CSS2D LABEL RENDERER
+// ──────────────────────────────────────────────────────────
+const labelRenderer = new CSS2DRenderer();
+labelRenderer.domElement.classList.add('css2d-overlay');
+canvasWrap.appendChild(labelRenderer.domElement);
+
+// ──────────────────────────────────────────────────────────
+// CAMERA
+// ──────────────────────────────────────────────────────────
+const camera = new THREE.PerspectiveCamera(44, 1, 0.1, 120);
+camera.position.set(13, 10, 13);
+
+// ──────────────────────────────────────────────────────────
+// ORBIT CONTROLS
+// ──────────────────────────────────────────────────────────
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.target.set(0, 2.5, 0);
+controls.enableDamping   = true;
+controls.dampingFactor   = 0.055;
+controls.minPolarAngle   = 0.12;
+controls.maxPolarAngle   = Math.PI / 2.05;
+controls.enablePan       = false;
+controls.minDistance     = 5;
+controls.maxDistance     = 30;
+controls.autoRotate      = true;
+controls.autoRotateSpeed = 1.5;
+controls.update();
+
+// Stop auto-rotate + dismiss hint on first drag
+let firstInteract = false;
+renderer.domElement.addEventListener('pointerdown', () => {
+  if (firstInteract) return;
+  firstInteract = true;
+  controls.autoRotate = false;
+  dragHint.classList.add('hidden');
+});
+
+// ──────────────────────────────────────────────────────────
+// LIGHTING
+// ──────────────────────────────────────────────────────────
+// Warm ambient fill
+scene.add(new THREE.AmbientLight(0xFFF8F2, 0.7));
+
+// Key light with soft shadows
+const keyLight = new THREE.DirectionalLight(0xFFF3E0, 2.3);
+keyLight.position.set(9, 15, 8);
+keyLight.castShadow = true;
+keyLight.shadow.mapSize.width  = 2048;
+keyLight.shadow.mapSize.height = 2048;
+keyLight.shadow.camera.near    = 0.5;
+keyLight.shadow.camera.far     = 60;
+keyLight.shadow.camera.left    = -18;
+keyLight.shadow.camera.right   = 18;
+keyLight.shadow.camera.top     = 18;
+keyLight.shadow.camera.bottom  = -18;
+keyLight.shadow.radius         = 6;
+keyLight.shadow.blurSamples    = 16;
+scene.add(keyLight);
+
+// Cool fill from opposite side
+const fillLight = new THREE.DirectionalLight(0xD8E8FF, 0.5);
+fillLight.position.set(-7, 5, -9);
+scene.add(fillLight);
+
+// Sky/ground hemisphere
+scene.add(new THREE.HemisphereLight(0xF2EDE5, 0x9C8B7A, 0.45));
+
+// ──────────────────────────────────────────────────────────
+// GROUND PLANE
+// ──────────────────────────────────────────────────────────
+const groundMat = new THREE.MeshStandardMaterial({
+  color: 0xD9D3C8,
+  roughness: 0.95,
+  metalness: 0.0,
+});
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(60, 60), groundMat);
+ground.rotation.x  = -Math.PI / 2;
+ground.receiveShadow = true;
+scene.add(ground);
+
+// Subtle warm grid
+const grid = new THREE.GridHelper(60, 60, 0xBFB8AE, 0xBFB8AE);
+grid.material.opacity     = 0.2;
+grid.material.transparent = true;
+scene.add(grid);
+
+// ──────────────────────────────────────────────────────────
+// MATERIALS
+// ──────────────────────────────────────────────────────────
+const planterMat = new THREE.MeshStandardMaterial({
+  color:     0xF2EFE9,
+  roughness: 0.88,
+  metalness: 0.02,
+});
+
+const soilMat = new THREE.MeshStandardMaterial({
+  color:     0x2E1B0E,
+  roughness: 1.0,
+  metalness: 0.0,
+});
+
+// ──────────────────────────────────────────────────────────
+// PLANTER GROUP + DIMENSION TWEENING OBJECT
+// ──────────────────────────────────────────────────────────
+const planterGroup = new THREE.Group();
+scene.add(planterGroup);
+
+// dims in scene units — 1 unit = 100 mm
+const dims = { L: 6.0, W: 4.0, H: 4.5 };
+const T    = 0.5; // wall thickness = 50mm
+
+function makeWall(x, y, z) {
+  const mesh = new THREE.Mesh(new THREE.BoxGeometry(x, y, z), planterMat);
+  mesh.castShadow    = true;
+  mesh.receiveShadow = true;
+  return mesh;
+}
+
+function rebuildPlanter() {
+  // Dispose existing geometries
+  for (const child of planterGroup.children) {
+    if (child.geometry) child.geometry.dispose();
+  }
+  planterGroup.clear();
+
+  const { L, W, H } = dims;
+  const iL = Math.max(L - 2 * T, 0.02); // inner length
+  const iW = Math.max(W - 2 * T, 0.02); // inner width
+
+  // Front wall  (faces +Z)
+  const front = makeWall(L, H, T);
+  front.position.set(0, H / 2, W / 2 - T / 2);
+  planterGroup.add(front);
+
+  // Back wall (faces -Z)
+  const back = makeWall(L, H, T);
+  back.position.set(0, H / 2, -W / 2 + T / 2);
+  planterGroup.add(back);
+
+  // Left wall (faces -X)
+  const leftWall = makeWall(T, H, iW);
+  leftWall.position.set(-L / 2 + T / 2, H / 2, 0);
+  planterGroup.add(leftWall);
+
+  // Right wall (faces +X)
+  const rightWall = makeWall(T, H, iW);
+  rightWall.position.set(L / 2 - T / 2, H / 2, 0);
+  planterGroup.add(rightWall);
+
+  // Base
+  const base = makeWall(L, T, W);
+  base.position.set(0, T / 2, 0);
+  planterGroup.add(base);
+
+  // Soil cap — visible from above, slightly inset from the top rim
+  const soilSizeL = Math.max(iL - 0.04, 0.01);
+  const soilSizeW = Math.max(iW - 0.04, 0.01);
+  const soil = new THREE.Mesh(
+    new THREE.BoxGeometry(soilSizeL, 0.06, soilSizeW),
+    soilMat
+  );
+  soil.position.set(0, H - T - 0.03, 0);
+  planterGroup.add(soil);
+
+  // Update floating labels
+  syncLabels();
+}
+
+// ──────────────────────────────────────────────────────────
+// CSS2D DIMENSION LABELS
+// ──────────────────────────────────────────────────────────
+function makeDimLabel(text) {
+  const el = document.createElement('div');
+  el.className  = 'dim-tag';
+  el.textContent = text;
+  const obj = new CSS2DObject(el);
+  scene.add(obj);
+  return { obj, el };
+}
+
+const lblL = makeDimLabel('600 mm');
+const lblW = makeDimLabel('400 mm');
+const lblH = makeDimLabel('450 mm');
+
+function syncLabels() {
+  const { L, W, H } = dims;
+  const Lmm = Math.round(L * 100);
+  const Wmm = Math.round(W * 100);
+  const Hmm = Math.round(H * 100);
+
+  // Length label — front bottom center, offset toward camera slightly
+  lblL.el.textContent = `L ${Lmm} mm`;
+  lblL.obj.position.set(0, -0.25, W / 2 + 0.6);
+
+  // Width label — right bottom center
+  lblW.el.textContent = `W ${Wmm} mm`;
+  lblW.obj.position.set(L / 2 + 0.6, -0.25, 0);
+
+  // Height label — left face, mid-height
+  lblH.el.textContent = `H ${Hmm} mm`;
+  lblH.obj.position.set(-L / 2 - 0.6, H / 2, 0);
+}
+
+// ──────────────────────────────────────────────────────────
+// ANIMATE DIMENSIONS WITH GSAP
+// ──────────────────────────────────────────────────────────
+function animateTo(Lmm, Wmm, Hmm) {
+  gsap.killTweensOf(dims);
+  gsap.to(dims, {
+    L: Lmm / 100,
+    W: Wmm / 100,
+    H: Hmm / 100,
+    duration: 0.58,
+    ease: 'power2.out',
+    onUpdate: rebuildPlanter,
+  });
+  syncReadouts(Lmm, Wmm, Hmm);
+}
+
+// ──────────────────────────────────────────────────────────
+// READOUTS + SUMMARY
+// ──────────────────────────────────────────────────────────
+let activeMat     = 'fibre-cement';
+let activeHex     = '#F2EFE9';
+let activeColName = 'Lexicon Half';
+
+function syncReadouts(Lmm, Wmm, Hmm) {
+  readL.textContent = `${Lmm} mm`;
+  readW.textContent = `${Wmm} mm`;
+  readH.textContent = `${Hmm} mm`;
+  document.getElementById('sDims').textContent =
+    `${Lmm} × ${Wmm} × ${Hmm} mm`;
+}
+
+function syncSummary() {
+  document.getElementById('sMat').textContent =
+    activeMat === 'fibre-cement' ? 'Fibre Cement' : 'Fibreglass';
+  document.getElementById('sCol').textContent = activeColName;
+}
+
+// ──────────────────────────────────────────────────────────
+// SLIDER ↔ NUMBER INPUT SYNC
+// ──────────────────────────────────────────────────────────
+function clampStep(value, min, max, step) {
+  const v = Math.max(min, Math.min(max, value));
+  return Math.round(v / step) * step;
+}
+
+function wireControl(slider, input, axisGetter) {
+  // Slider move
+  slider.addEventListener('input', () => {
+    const v = +slider.value;
+    input.value = v;
+    const [L, W, H] = axisGetter(v);
+    animateTo(L, W, H);
+  });
+
+  // Number input commit
+  input.addEventListener('change', () => {
+    const v = clampStep(+input.value, +input.min, +input.max, +input.step);
+    input.value  = v;
+    slider.value = v;
+    const [L, W, H] = axisGetter(v);
+    animateTo(L, W, H);
+  });
+}
+
+wireControl(sliderL, inputL, v => [v, +sliderW.value, +sliderH.value]);
+wireControl(sliderW, inputW, v => [+sliderL.value, v, +sliderH.value]);
+wireControl(sliderH, inputH, v => [+sliderL.value, +sliderW.value, v]);
+
+// ──────────────────────────────────────────────────────────
+// PRESET BUTTONS
+// ──────────────────────────────────────────────────────────
+document.querySelectorAll('.preset-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const Lp = +btn.dataset.l;
+    const Wp = +btn.dataset.w;
+    const Hp = +btn.dataset.h;
+
+    // Sync controls
+    sliderL.value = inputL.value = Lp;
+    sliderW.value = inputW.value = Wp;
+    sliderH.value = inputH.value = Hp;
+
+    // Animate 3D
+    animateTo(Lp, Wp, Hp);
+
+    // Active state
+    document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// ──────────────────────────────────────────────────────────
+// MATERIAL BUTTONS
+// ──────────────────────────────────────────────────────────
+const MAT_PROPS = {
+  'fibre-cement': { roughness: 0.88, metalness: 0.02 },
+  'fibreglass':   { roughness: 0.30, metalness: 0.07 },
+};
+
+document.querySelectorAll('.material-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    activeMat = btn.dataset.mat;
+    const p   = MAT_PROPS[activeMat];
+    planterMat.roughness    = p.roughness;
+    planterMat.metalness    = p.metalness;
+    planterMat.needsUpdate  = true;
+    document.querySelectorAll('.material-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    syncSummary();
+  });
+});
+
+// ──────────────────────────────────────────────────────────
+// COLOUR SWATCHES
+// ──────────────────────────────────────────────────────────
+document.querySelectorAll('.swatch').forEach(sw => {
+  sw.addEventListener('click', () => {
+    activeHex     = sw.dataset.hex;
+    activeColName = sw.dataset.name;
+    planterMat.color.set(activeHex);
+    document.querySelectorAll('.swatch').forEach(s => s.classList.remove('active'));
+    sw.classList.add('active');
+    document.getElementById('activeSwatch').textContent = activeColName;
+    syncSummary();
+  });
+});
+
+// ──────────────────────────────────────────────────────────
+// QUOTE CTA
+// ──────────────────────────────────────────────────────────
+document.getElementById('quoteCta').addEventListener('click', () => {
+  const Lmm = Math.round(dims.L * 100);
+  const Wmm = Math.round(dims.W * 100);
+  const Hmm = Math.round(dims.H * 100);
+  const mat = activeMat === 'fibre-cement' ? 'Fibre+Cement' : 'Fibreglass';
+  window.open(
+    `https://www.urbanpots.com.au/pages/custom-planter-boxes` +
+    `?length=${Lmm}&width=${Wmm}&height=${Hmm}&material=${mat}`,
+    '_blank'
+  );
+});
+
+// ──────────────────────────────────────────────────────────
+// RESIZE OBSERVER
+// ──────────────────────────────────────────────────────────
+function fit() {
+  const w = canvasWrap.clientWidth;
+  const h = canvasWrap.clientHeight;
+  if (w === 0 || h === 0) return;
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+  renderer.setSize(w, h);
+  labelRenderer.setSize(w, h);
+}
+new ResizeObserver(fit).observe(canvasWrap);
+fit();
+
+// ──────────────────────────────────────────────────────────
+// RENDER LOOP
+// ──────────────────────────────────────────────────────────
+function animate() {
+  requestAnimationFrame(animate);
+  controls.update();
+  renderer.render(scene, camera);
+  labelRenderer.render(scene, camera);
+}
+
+// ──────────────────────────────────────────────────────────
+// INIT
+// ──────────────────────────────────────────────────────────
+rebuildPlanter();
+syncReadouts(600, 400, 450);
+syncSummary();
+animate();
+
+// Camera intro — eases in from further away
+gsap.from(camera.position, {
+  x: 22,
+  y: 18,
+  z: 22,
+  duration: 2.0,
+  ease: 'power2.out',
+  onUpdate() { controls.update(); },
+});
+
+</script>
+</body>
+</html>

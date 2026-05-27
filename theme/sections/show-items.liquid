@@ -1,0 +1,326 @@
+<div class="modern-minimalist-wrapper">
+  <!-- Hero Split Image Section -->
+  <div class="hero-section" id="heroCompare">
+    {% if section.settings.hero_image_1 and section.settings.hero_image_2 %}
+      <div class="hero-image-wrapper">
+        <img src="{{ section.settings.hero_image_1 | img_url: '1600x' }}" alt="Hero Image 1" class="hero-image">
+        <div class="hero-overlay">
+          <img src="{{ section.settings.hero_image_2 | img_url: '1600x' }}" alt="Hero Image 2" class="hero-image hero-image-2">
+        </div>
+        <div class="hero-divider" id="heroDivider">
+          <div class="divider-arrows">
+            <div class="arrow arrow-left"></div>
+            <div class="arrow arrow-right"></div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    <div class="hero-text">
+      <h1>{{ section.settings.headline }}</h1>
+    </div>
+  </div>
+
+  <!-- Collections -->
+  <div class="collections-container">
+    <div class="collections-row">
+      {% assign collections_list = 
+        section.settings.collection_1 | append: ',' | append: section.settings.collection_2 | append: ',' | append: section.settings.collection_3 | append: ',' | append: section.settings.collection_4 | split: ',' 
+      %}
+      {% for col_handle in collections_list %}
+        {% assign col = collections[col_handle] %}
+        {% if col and col.image %}
+          <a href="{{ col.url }}" class="collection-tile">
+            <img src="{{ col.image | img_url: '600x' }}" alt="{{ col.title }}">
+            <div class="collection-overlay">
+              <span>{{ col.title }}</span>
+            </div>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+/* Wrapper */
+.modern-minimalist-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-family: 'Times New Roman', Times, serif;
+  color: #111;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.hero-image,
+.hero-image-2 {
+  -webkit-user-drag: none;
+  user-drag: none;
+  pointer-events: none; /* images won't block swipe */
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height:800px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.hero-image-wrapper {
+  position: relative;
+  width: 800px;
+  height: 100%;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ✅ covers and centers */
+  display: block;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow: hidden;
+  width: 50%;
+}
+
+.hero-overlay .hero-image-2 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Divider */
+.hero-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  cursor: ew-resize;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.divider-arrows {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.divider-arrows .arrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  animation: pulseArrow 1.5s infinite;
+}
+
+.arrow-left {
+  border-width: 12px 14px 12px 0;
+  border-color: transparent white transparent transparent;
+}
+.arrow-right {
+  border-width: 12px 0 12px 14px;
+  border-color: transparent transparent transparent white;
+}
+
+.dragging {
+  cursor: ew-resize !important;
+}
+
+/* Hero Text */
+.hero-text {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #fff;
+  max-width: 600px;
+  padding: 0 1rem;
+}
+.hero-text h1 {
+  font-size: 2.8rem;
+  font-weight: 400;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  letter-spacing: 1.2px;
+}
+
+/* Collections */
+.collections-container {
+  width: 100%;
+  max-width: 1200px; /* ✅ centered */
+  margin: 2rem auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.collections-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* ✅ centered row */
+  gap: 1rem;
+}
+
+.collection-tile {
+  flex: 1 1 calc(25% - 1rem);
+  max-width: 280px;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+.collection-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.collection-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0.5rem;
+  background: rgba(0,0,0,0.6);
+  text-align: center;
+  opacity: 0; /* hidden by default */
+  transition: opacity 0.3s ease;
+}
+.collection-overlay span {
+  color: white;
+  font-size: 1rem;
+}
+.collection-tile:hover .collection-overlay {
+  opacity: 1; /* ✅ only show on hover */
+}
+
+@keyframes pulseArrow {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .collection-tile {
+    flex: 1 1 calc(50% - 1rem);
+  }
+}
+@media (max-width: 480px) {
+  .collection-tile {
+    flex: 1 1 100%;
+  }
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.getElementById("heroCompare");
+  if (!container) return;
+  const overlay = container.querySelector(".hero-overlay");
+  const divider = container.querySelector(".hero-divider");
+  let isDragging = false;
+
+  function updateSlider(x) {
+    const rect = container.getBoundingClientRect();
+    let pos = x - rect.left;
+    if (pos < 0) pos = 0;
+    if (pos > rect.width) pos = rect.width;
+    const percent = (pos / rect.width) * 100;
+    overlay.style.width = percent + "%";
+    divider.style.left = percent + "%";
+  }
+
+  // Desktop mouse
+  container.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    container.classList.add("dragging");
+    updateSlider(e.clientX);
+  });
+  window.addEventListener("mousemove", (e) => {
+    if (isDragging) updateSlider(e.clientX);
+  });
+  window.addEventListener("mouseup", () => {
+    isDragging = false;
+    container.classList.remove("dragging");
+  });
+
+  // Touch events
+  container.addEventListener("touchstart", (e) => {
+    updateSlider(e.touches[0].clientX);
+  });
+  container.addEventListener("touchmove", (e) => {
+    updateSlider(e.touches[0].clientX);
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Collections Row",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image_1",
+      "label": "Hero Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image_2",
+      "label": "Hero Image 2"
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "Explore Our Collections"
+    },
+    {
+      "type": "collection",
+      "id": "collection_1",
+      "label": "Collection 1"
+    },
+    {
+      "type": "collection",
+      "id": "collection_2",
+      "label": "Collection 2"
+    },
+    {
+      "type": "collection",
+      "id": "collection_3",
+      "label": "Collection 3"
+    },
+    {
+      "type": "collection",
+      "id": "collection_4",
+      "label": "Collection 4"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Compare + Collections Row",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

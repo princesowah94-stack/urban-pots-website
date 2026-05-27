@@ -1,0 +1,190 @@
+ {% if page.handle == "trade" %}
+ <!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<section id="benefit-section" class="benefits-section">
+  <div class="container">
+    <h3 class="section-title">{{ section.settings.heading }}</h3>
+
+    <div class="benefits-wrapper">
+      {% for block in section.blocks %}
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="{{ block.settings.icon }}"></i>
+          </div>
+          <div class="benefit-content">
+            <h3 class="benefit-title">{{ block.settings.title }}</h3>
+            <p class="benefit-text">{{ block.settings.text }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <style>
+    .benefits-section .benefits-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: stretch;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .benefits-section .benefit-card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      max-width: 240px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .benefits-section .benefit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+
+    .benefits-section .benefit-icon {
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      background: #fff;
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .benefits-section .benefit-title {
+      font-size: 1.9rem;
+      margin-bottom: 0.6rem;
+      color: #333;
+    }
+
+    .benefits-section .benefit-text {
+      font-size: 1.7rem;
+      line-height: 1.5;
+      color: #555;
+    }
+
+    .section-title {
+      text-align:center;
+      font-size: 3.5rem;
+      font-weight: 400;
+      padding-top:50px;
+      padding-bottom:50px;
+      color: #111;
+    }
+
+    @media (max-width: 768px) {
+      .benefits-section .benefits-wrapper {
+        flex-direction: column;
+        align-items: center;
+        margin-top:0;
+        padding-top:0;
+      }
+      .section-title {
+        font-size: 2.2rem;
+      }
+      .benefits-section .benefit-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.9rem;
+      }
+      .benefits-section .benefit-card {
+        max-width: 400px;
+        margin-left:20px;
+        margin-right:20px;
+      }
+    }
+  </style>
+</section>
+{% endif %}
+{% schema %}
+{
+  "name": "Trade Partner Benefits",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Benefits of Becoming a Trade Partner"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Font Awesome Icon Class",
+          "default": "fas fa-leaf"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Exclusive Discounts"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Save more with bulk and repeat order pricing."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trade Partner Benefits",
+      "category": "Custom Sections",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "fas fa-leaf",
+            "title": "Exclusive Discounts",
+            "text": "Save more with bulk and repeat order pricing."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "fas fa-truck",
+            "title": "Fast Delivery",
+            "text": "Priority shipping on all trade orders."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "fas fa-box",
+            "title": "Custom Packaging",
+            "text": "Tailored solutions for your business needs."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "fas fa-handshake",
+            "title": "Dedicated Support",
+            "text": "Our team is here to help you succeed."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

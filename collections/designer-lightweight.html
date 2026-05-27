@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, max-scale=1" />
+  <title>Designer Lightweight Collection — Urban Pots</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/components.css" />
+
+  <!-- Lenis & GSAP from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav" id="siteNav">
+  <div class="container site-nav__inner">
+    <a href="/" class="nav-logo">
+      <img src="https://cdn.shopify.com/s/files/1/0748/4152/2498/files/urban_pots_logo__white_150.png?v=1684274691" alt="Urban Pots" width="120" height="30" />
+    </a>
+    <div class="nav-links">
+      <a href="/shop.html">Shop</a>
+      <a href="/pages/custom-planter-boxes.html">Custom Planters</a>
+      <a href="/pages/commercial-planters.html">Projects</a>
+      <a href="/pages/grc-planters.html">Materials</a>
+      <a href="/pages/about.html">About</a>
+    </div>
+    <div class="nav-actions">
+      <a href="mailto:info@urbanpots.com.au" class="nav-cta">Get a Quote</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="nav-mobile" id="navMobile" aria-hidden="true">
+  <ul class="nav-mobile__links">
+    <li><a href="/shop.html">Shop</a></li>
+    <li><a href="/pages/custom-planter-boxes.html">Custom Planters</a></li>
+    <li><a href="/pages/commercial-planters.html">Projects</a></li>
+    <li><a href="/pages/grc-planters.html">Materials</a></li>
+    <li><a href="/pages/about.html">About</a></li>
+  </ul>
+  <div class="nav-mobile__footer">
+    <a href="mailto:info@urbanpots.com.au" class="btn btn--stone">Get a Quote</a>
+    <div class="nav-mobile__footer-meta">
+      <a href="tel:0433132406">0433 132 406</a> &nbsp;·&nbsp; Tue–Sat 9am–4pm
+    </div>
+  </div>
+</div>
+
+<!-- PAGE CONTENT -->
+<main>
+
+  <!-- COLLECTION HEADER -->
+  <section class="collection-header">
+    <div class="container">
+      <a href="/shop.html" style="color: var(--c-sage); text-decoration: none; font-size: 0.9rem; margin-bottom: 1rem; display: inline-block;">← Back to Collections</a>
+      <h1>Designer Lightweight</h1>
+      <p>Contemporary fibreglass planters in sleek profiles. Ideal for modern spaces, interior landscaping, and minimalist architectural designs. Lightweight construction makes installation effortless.</p>
+    </div>
+  </section>
+
+  <!-- COLLECTION CONTENT -->
+  <section class="collection-layout container">
+    <!-- SIDEBAR FILTERS -->
+    <aside class="collection-sidebar">
+        <h3 style="font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--c-brown-dk); font-family: var(--font-heading);">Filter Products</h3>
+
+        <!-- Material Filter -->
+        <div class="filter-section">
+          <label class="filter-section__title">Material</label>
+          <div class="filter-group">
+            <label class="filter-label">
+              <input type="checkbox" name="material" value="fibreglass" checked />
+              Fibreglass
+            </label>
+            <label class="filter-label">
+              <input type="checkbox" name="material" value="fibre-cement" />
+              Fibre Cement
+            </label>
+          </div>
+          <div class="filter-section__divider"></div>
+        </div>
+
+        <!-- Size Filter -->
+        <div class="filter-section">
+          <label class="filter-section__title">Height Range</label>
+          <div class="filter-group">
+            <label class="filter-label">
+              <input type="checkbox" name="size" value="300-400" />
+              300–400mm
+            </label>
+            <label class="filter-label">
+              <input type="checkbox" name="size" value="400-500" />
+              400–500mm
+            </label>
+            <label class="filter-label">
+              <input type="checkbox" name="size" value="500-600" />
+              500–600mm
+            </label>
+            <label class="filter-label">
+              <input type="checkbox" name="size" value="600-plus" />
+              600mm+
+            </label>
+          </div>
+          <div class="filter-section__divider"></div>
+        </div>
+
+        <!-- Colour Filter -->
+        <div class="filter-section">
+          <label class="filter-section__title">Colour</label>
+          <div class="filter-group">
+            <label class="filter-label">
+              <input type="checkbox" name="colour" value="white" />
+              <span style="width: 12px; height: 12px; background: #F2EFE9; border: 1px solid #ddd; display: inline-block; border-radius: 2px;"></span>
+              White
+            </label>
+            <label class="filter-label">
+              <input type="checkbox" name="colour" value="stone" />
+              <span style="width: 12px; height: 12px; background: #C9B99A; border: 1px solid #ddd; display: inline-block; border-radius: 2px;"></span>
+              Stone
+            </label>
+            <label class="filter-label">
+              <input type="checkbox" name="colour" value="sage" />
+              <span style="width: 12px; height: 12px; background: #7A8C5E; border: 1px solid #ddd; display: inline-block; border-radius: 2px;"></span>
+              Sage
+            </label>
+            <label class="filter-label">
+              <input type="checkbox" name="colour" value="charcoal" />
+              <span style="width: 12px; height: 12px; background: #4A4A48; border: 1px solid #ddd; display: inline-block; border-radius: 2px;"></span>
+              Charcoal
+            </label>
+          </div>
+          <div class="filter-section__divider"></div>
+        </div>
+
+        <!-- Price Filter -->
+        <div class="filter-section">
+          <label class="filter-section__title">Price Range</label>
+          <div class="filter-group">
+            <label class="filter-label">
+              <input type="checkbox" name="price" value="0-100" />
+              Under $100
+            </label>
+            <label class="filter-label">
+              <input type="checkbox" name="price" value="100-250" />
+              $100–$250
+            </label>
+            <label class="filter-label">
+              <input type="checkbox" name="price" value="250-500" />
+              $250–$500
+            </label>
+            <label class="filter-label">
+              <input type="checkbox" name="price" value="500-plus" />
+              $500+
+            </label>
+          </div>
+        </div>
+      </aside>
+
+      <!-- PRODUCTS GRID -->
+      <div>
+        <div class="products-grid">
+          <!-- Product 1 -->
+          <div class="product-card fadein">
+            <div class="product-card__image" style="background: linear-gradient(135deg, #F2EFE9 0%, #E8E5E0 100%);"></div>
+            <div class="product-card__content">
+              <h3 class="product-card__name">Minimalist Cylinder 350mm</h3>
+              <div class="product-card__specs">
+                <strong>Height:</strong> 350mm<br>
+                <strong>Diameter:</strong> 300mm<br>
+                <strong>Colour:</strong> Lexicon Half
+              </div>
+              <div class="product-card__price">$89</div>
+              <button class="btn btn--sage">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="product-card fadein delay-1">
+            <div class="product-card__image" style="background: linear-gradient(135deg, #D5D0C8 0%, #C9B99A 100%);"></div>
+            <div class="product-card__content">
+              <h3 class="product-card__name">Tall Tapered 500mm</h3>
+              <div class="product-card__specs">
+                <strong>Height:</strong> 500mm<br>
+                <strong>Diameter:</strong> 280mm (top)<br>
+                <strong>Colour:</strong> Stone
+              </div>
+              <div class="product-card__price">$135</div>
+              <button class="btn btn--sage">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="product-card fadein delay-2">
+            <div class="product-card__image" style="background: linear-gradient(135deg, #7A8C5E 0%, #5F6B47 100%);"></div>
+            <div class="product-card__content">
+              <h3 class="product-card__name">Sage Round 450mm</h3>
+              <div class="product-card__specs">
+                <strong>Height:</strong> 450mm<br>
+                <strong>Diameter:</strong> 350mm<br>
+                <strong>Colour:</strong> Urban Pots Sage
+              </div>
+              <div class="product-card__price">$128</div>
+              <button class="btn btn--sage">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="product-card fadein delay-3">
+            <div class="product-card__image" style="background: linear-gradient(135deg, #4A4A48 0%, #2F2F2D 100%);"></div>
+            <div class="product-card__content">
+              <h3 class="product-card__name">Charcoal Square 380mm</h3>
+              <div class="product-card__specs">
+                <strong>Height:</strong> 380mm<br>
+                <strong>Width:</strong> 320 × 320mm<br>
+                <strong>Colour:</strong> Monument
+              </div>
+              <div class="product-card__price">$112</div>
+              <button class="btn btn--sage">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Product 5 -->
+          <div class="product-card fadein delay-1">
+            <div class="product-card__image" style="background: linear-gradient(135deg, #C9B99A 0%, #B5A08B 100%);"></div>
+            <div class="product-card__content">
+              <h3 class="product-card__name">Natural Oval 420mm</h3>
+              <div class="product-card__specs">
+                <strong>Height:</strong> 420mm<br>
+                <strong>Length:</strong> 450 × 280mm<br>
+                <strong>Colour:</strong> Antique White
+              </div>
+              <div class="product-card__price">$148</div>
+              <button class="btn btn--sage">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Product 6 -->
+          <div class="product-card fadein delay-2">
+            <div class="product-card__image" style="background: linear-gradient(135deg, #A0897B 0%, #8C7B6A 100%);"></div>
+            <div class="product-card__content">
+              <h3 class="product-card__name">Terrazzo Planter 550mm</h3>
+              <div class="product-card__specs">
+                <strong>Height:</strong> 550mm<br>
+                <strong>Width:</strong> 400 × 350mm<br>
+                <strong>Colour:</strong> Dune
+              </div>
+              <div class="product-card__price">$189</div>
+              <button class="btn btn--sage">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Product 7 -->
+          <div class="product-card fadein delay-3">
+            <div class="product-card__image" style="background: linear-gradient(135deg, #F2EFE9 0%, #D5D0C8 100%);"></div>
+            <div class="product-card__content">
+              <h3 class="product-card__name">White Cylinder 600mm</h3>
+              <div class="product-card__specs">
+                <strong>Height:</strong> 600mm<br>
+                <strong>Diameter:</strong> 400mm<br>
+                <strong>Colour:</strong> Lexicon Half
+              </div>
+              <div class="product-card__price">$156</div>
+              <button class="btn btn--sage">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Product 8 -->
+          <div class="product-card fadein delay-1">
+            <div class="product-card__image" style="background: linear-gradient(135deg, #7A8C5E 0%, #8B9D6F 100%);"></div>
+            <div class="product-card__content">
+              <h3 class="product-card__name">Sage Tapered 480mm</h3>
+              <div class="product-card__specs">
+                <strong>Height:</strong> 480mm<br>
+                <strong>Diameter:</strong> 320mm (top)<br>
+                <strong>Colour:</strong> Urban Pots Sage
+              </div>
+              <div class="product-card__price">$142</div>
+              <button class="btn btn--sage">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Product 9 -->
+          <div class="product-card fadein delay-2">
+            <div class="product-card__image" style="background: linear-gradient(135deg, #C9B99A 0%, #A89A8D 100%);"></div>
+            <div class="product-card__content">
+              <h3 class="product-card__name">Stone Round 520mm</h3>
+              <div class="product-card__specs">
+                <strong>Height:</strong> 520mm<br>
+                <strong>Diameter:</strong> 380mm<br>
+                <strong>Colour:</strong> Dune
+              </div>
+              <div class="product-card__price">$167</div>
+              <button class="btn btn--sage">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Product 10 -->
+          <div class="product-card fadein delay-3">
+            <div class="product-card__image" style="background: linear-gradient(135deg, #4A4A48 0%, #333333 100%);"></div>
+            <div class="product-card__content">
+              <h3 class="product-card__name">Domino Square 420mm</h3>
+              <div class="product-card__specs">
+                <strong>Height:</strong> 420mm<br>
+                <strong>Width:</strong> 360 × 360mm<br>
+                <strong>Colour:</strong> Domino
+              </div>
+              <div class="product-card__price">$134</div>
+              <button class="btn btn--sage">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Product 11 -->
+          <div class="product-card fadein delay-1">
+            <div class="product-card__image" style="background: linear-gradient(135deg, #D5D0C8 0%, #C0B5AD 100%);"></div>
+            <div class="product-card__content">
+              <h3 class="product-card__name">Minimalist Rectangle 360mm</h3>
+              <div class="product-card__specs">
+                <strong>Height:</strong> 360mm<br>
+                <strong>Length:</strong> 480 × 260mm<br>
+                <strong>Colour:</strong> Antique White
+              </div>
+              <div class="product-card__price">$118</div>
+              <button class="btn btn--sage">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Product 12 -->
+          <div class="product-card fadein delay-2">
+            <div class="product-card__image" style="background: linear-gradient(135deg, #A0897B 0%, #7A6B5B 100%);"></div>
+            <div class="product-card__content">
+              <h3 class="product-card__name">Warm Taupe Cylinder 560mm</h3>
+              <div class="product-card__specs">
+                <strong>Height:</strong> 560mm<br>
+                <strong>Diameter:</strong> 360mm<br>
+                <strong>Colour:</strong> Stone
+              </div>
+              <div class="product-card__price">$152</div>
+              <button class="btn btn--sage">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAGINATION -->
+        <div class="pagination">
+          <span class="pagination__current">1</span>
+          <a href="#">2</a>
+          <a href="#">Next <span class="arrow-link">→</span></a>
+        </div>
+      </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section style="background: var(--c-cream); padding: clamp(4rem, 8vw, 6rem) 0; text-align: center;">
+    <div class="container">
+      <h2 style="font-size: clamp(1.8rem, 5vw, 2.2rem); margin-bottom: 1rem; font-family: var(--font-heading);">Need a custom size or colour?</h2>
+      <p style="font-size: 1rem; max-width: 600px; margin: 0 auto 2rem; color: var(--c-brown);">We specialise in custom designs. Request a quote for bespoke planters tailored to your space.</p>
+      <a href="/pages/custom-planter-boxes.html" class="btn btn--dark">Design Your Custom Planter <span class="arrow-link">→</span></a>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="https://cdn.shopify.com/s/files/1/0748/4152/2498/files/urban_pots_logo__sage_150.png?v=1684274691" alt="Urban Pots" class="footer-brand__logo" width="120" />
+        <p class="footer-brand__tagline">Your best space. Our planters.</p>
+        <p>An Australian family-owned planter manufacturer. Custom-built in Western Sydney. Trusted by developers, architects, and landscapers nationwide.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="LinkedIn">LI</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="/pages/custom-planter-boxes.html">Custom Planter Boxes</a></li>
+          <li><a href="/shop.html">Fibreglass Planters</a></li>
+          <li><a href="/shop.html">Fibre Cement</a></li>
+          <li><a href="/pages/grc-planters.html">GRC Planters</a></li>
+          <li><a href="/shop.html">Designer Pots</a></li>
+          <li><a href="/shop.html">All Collections</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/pages/about.html">About Us</a></li>
+          <li><a href="/pages/about.html">Our Workshop</a></li>
+          <li><a href="/">Projects</a></li>
+          <li><a href="/">Trade Account</a></li>
+          <li><a href="/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:0433132406">0433 132 406</a></li>
+          <li><a href="mailto:info@urbanpots.com.au">info@urbanpots.com.au</a></li>
+          <li><a href="/">Sydney Showroom</a></li>
+          <li><a href="/">Tue–Sat 9am–4pm</a></li>
+          <li><a href="/">Get Directions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Urban Pots Australia. All rights reserved.</span>
+      <span>
+        <a href="/">Privacy</a> &nbsp;·&nbsp;
+        <a href="/">Terms</a> &nbsp;·&nbsp;
+        Website by <a href="#" style="color:var(--c-stone)">Sowah Studio</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script type="module">
+  import * as animations from '../js/animations.js';
+  import * as ui from '../js/ui.js';
+
+  // Initialize animations and scroll
+  animations.initLenis();
+  animations.initFadein();
+  animations.initNavScroll();
+  animations.fixIOSParallax();
+
+  // Initialize UI
+  ui.initMobileNav(animations.lenis);
+
+  // Simple filter functionality (placeholder)
+  const filterCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+  filterCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', () => {
+      console.log('Filter applied:', checkbox.value);
+      // In a real app, this would filter the products displayed
+    });
+  });
+</script>
+
+</body>
+</html>

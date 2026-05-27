@@ -1,0 +1,206 @@
+{% schema %}
+{
+  "name": "Custom Planter Boxes",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Intro"
+    },
+    {
+      "type": "textarea",
+      "id": "intro_text",
+      "label": "Intro Paragraph",
+      "default": "We design and build custom planter boxes for personal and commercial projects. Our team ensures the perfect fit and finish to match your needs. Click below to request a quote!"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "past_job",
+      "name": "Past Job",
+      "settings": [
+        {
+          "type": "text",
+          "id": "job_title",
+          "label": "Job Title"
+        },
+        {
+          "type": "textarea",
+          "id": "job_description",
+          "label": "Job Description"
+        },
+        {
+          "type": "image_picker",
+          "id": "job_image",
+          "label": "Job Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Planter Boxes",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="custom-planter-boxes">
+  <div class="intro">
+    <p>{{ section.settings.intro_text }}</p>
+    <button class="inquire-btn" onclick="document.getElementById('custom-inquiry-form').scrollIntoView({behavior: 'smooth'})">
+      Inquire Now
+    </button>
+  </div>
+
+  <div class="past-jobs">
+    {% for block in section.blocks %}
+      {% assign mod = forloop.index0 | modulo: 2 %}
+      <div class="past-job {% if mod == 0 %}layout-normal{% else %}layout-flipped{% endif %}">
+        <div class="text">
+          <h3>{{ block.settings.job_title }}</h3>
+          <p>{{ block.settings.job_description }}</p>
+        </div>
+        {% if block.settings.job_image != blank %}
+        <div class="image">
+          <img src="{{ block.settings.job_image | image_url: width: 800 }}" alt="{{ block.settings.job_title }}">
+        </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+
+  <div id="custom-inquiry-form" class="inquiry-form">
+    <h2>Request a Quote</h2>
+    <form method="post" action="/contact" enctype="multipart/form-data">
+      <input type="hidden" name="form_type" value="contact">
+      <input type="hidden" name="utf8" value="✓">
+
+      <label>Length</label>
+      <input type="text" name="contact[length]" required>
+
+      <label>Width</label>
+      <input type="text" name="contact[width]" required>
+
+      <label>Height</label>
+      <input type="text" name="contact[height]" required>
+
+      <label>Colour</label>
+      <input type="text" name="contact[colour]">
+
+      <label>Amount</label>
+      <input type="number" name="contact[amount]" min="1">
+
+      <label>Personal or Business</label>
+      <select name="contact[personal_or_business]">
+        <option value="Personal">Personal</option>
+        <option value="Business">Business</option>
+      </select>
+
+      <label>Pick Up or Delivery</label>
+      <select name="contact[pickup_or_delivery]">
+        <option value="Pickup">Pick Up</option>
+        <option value="Delivery">Delivery</option>
+      </select>
+
+      <label>Upload Sketch/Drawings</label>
+      <input type="file" name="contact[file]">
+
+      <label>Other Specifications</label>
+      <textarea name="contact[other_specs]"></textarea>
+
+      <button type="submit">Submit Inquiry</button>
+    </form>
+  </div>
+</div>
+
+<style>
+.custom-planter-boxes {
+  padding: 40px 20px;
+}
+.custom-planter-boxes .intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.custom-planter-boxes .inquire-btn {
+  background: #333;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+}
+.custom-planter-boxes .inquire-btn:hover {
+  background: #555;
+}
+
+.past-jobs {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+.past-job {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.past-job.layout-normal .text { order: 1; }
+.past-job.layout-normal .image { order: 2; }
+.past-job.layout-flipped .text { order: 2; }
+.past-job.layout-flipped .image { order: 1; }
+.past-job .text { flex: 1; }
+.past-job .image { flex: 1; }
+.past-job .image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.inquiry-form {
+  max-width: 700px; /* ✅ not full width */
+  margin: 0 auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fafafa;
+}
+.inquiry-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.inquiry-form form {
+  display: grid;
+  gap: 15px;
+}
+.inquiry-form input,
+.inquiry-form select,
+.inquiry-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+.inquiry-form button {
+  background: #333;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.inquiry-form button:hover {
+  background: #555;
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .past-job {
+    flex-direction: column;
+  }
+  .past-job .text, .past-job .image {
+    order: unset !important;
+    width: 100%;
+  }
+}
+</style>

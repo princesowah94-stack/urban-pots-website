@@ -1,0 +1,85 @@
+<!-- sections/connect-mega-menu.liquid -->
+<section id="connect-mega-menu" class="connect-mega-menu">
+  <div class="container">
+    {% if section.settings.header != blank %}
+      <h2 class="mega-menu-header">{{ section.settings.header }}</h2>
+    {% endif %}
+
+    <ul class="mega-menu-list">
+      {% for block in section.blocks %}
+        <li class="mega-menu-item">
+          {% if block.settings.link != blank %}
+            <a href="{{ block.settings.link }}" class="mega-menu-link">
+              {{ block.settings.title }}
+            </a>
+          {% else %}
+            {{ block.settings.title }}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Connect Mega Menu",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header",
+      "label": "Menu Header",
+      "default": "Connect with Us"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "menu_item",
+      "name": "Menu Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Item Title",
+          "default": "Menu Link"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Item Link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Connect Mega Menu",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+.connect-mega-menu {
+  padding: 20px;
+}
+.mega-menu-header {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.mega-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.mega-menu-item {
+  margin-bottom: 10px;
+}
+.mega-menu-link {
+  text-decoration: none;
+  color: inherit;
+}
+{% endstylesheet %}

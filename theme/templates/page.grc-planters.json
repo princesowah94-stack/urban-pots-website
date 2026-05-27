@@ -1,0 +1,240 @@
+{
+  "sections": {
+    "grc_banner": {
+      "type": "custom-plante-boxes-banner",
+      "name": "GRC Banner",
+      "settings": {
+        "banner_image": "shopify://shop_images/Screenshot_2025-09-29_at_8.22.00_pm.png",
+        "banner_heading": "GRC Planter Boxes. Prestige Concrete Aesthetics.",
+        "banner_text": "Glass Reinforced Concrete for heritage, hospitality, and luxury residential projects. Special order — manufactured to brief.",
+        "banner_button_text": "Enquire About GRC",
+        "banner_button_action": "scroll",
+        "banner_button_link": "/"
+      }
+    },
+    "grc_intro": {
+      "type": "custom-planter-boxes-section",
+      "name": "GRC Introduction",
+      "settings": {
+        "heading": "The prestige material for demanding projects",
+        "subtext": "GRC — Glass Reinforced Concrete — combines the raw architectural presence of concrete with superior structural strength and design flexibility. It is the material of choice for heritage restorations, high-end hospitality fit-outs, and prestige residential developments where nothing else will do.\n\nImportant: GRC is a special-order material. Please allow 3–4 months from confirmed brief to delivery. Contact our team to discuss your project requirements before placing an order.",
+        "show_button": false,
+        "button_text": "Enquire Now"
+      }
+    },
+    "grc_gallery": {
+      "type": "customer-planter-boxes-gallery",
+      "blocks": {
+        "bullet_grc_1": {
+          "type": "bullet",
+          "settings": {
+            "text": "Authentic concrete aesthetics with superior strength"
+          }
+        },
+        "bullet_grc_2": {
+          "type": "bullet",
+          "settings": {
+            "text": "Ideal for heritage, hospitality, and prestige residential"
+          }
+        },
+        "bullet_grc_3": {
+          "type": "bullet",
+          "settings": {
+            "text": "Custom sizes, profiles, and surface textures available"
+          }
+        },
+        "bullet_grc_4": {
+          "type": "bullet",
+          "settings": {
+            "text": "Special order — 3 to 4 month lead time from confirmed brief"
+          }
+        },
+        "bullet_grc_5": {
+          "type": "bullet",
+          "settings": {
+            "text": "Imported and finished to your exact specification"
+          }
+        }
+      },
+      "block_order": [
+        "bullet_grc_1",
+        "bullet_grc_2",
+        "bullet_grc_3",
+        "bullet_grc_4",
+        "bullet_grc_5"
+      ],
+      "name": "GRC Gallery",
+      "settings": {
+        "swap_order": false,
+        "image": "shopify://shop_images/Screenshot_2025-09-29_at_8.22.00_pm.png",
+        "hover_image": "shopify://shop_images/d8ce80d0d3d5e79873da05216af0bff4.jpg",
+        "heading": "Concrete Character. Engineered Strength.",
+        "text": "GRC planters deliver the texture and weight of raw concrete while being significantly lighter than poured concrete alternatives. Available in a range of surface finishes — smooth, board-formed, or aggregate exposed — to suit the character of your project.",
+        "show_button": true,
+        "button_label": "Enquire About GRC",
+        "button_action": "scroll",
+        "button_link": ""
+      }
+    },
+    "grc_info": {
+      "type": "planter-boxes-info",
+      "blocks": {
+        "grc_info_1": {
+          "type": "text_item",
+          "settings": {
+            "item_icon": "fa-solid fa-clock",
+            "item_title": "3–4 Month Lead Time",
+            "item_description": "GRC is a special-order product. Allow 3–4 months from confirmed brief and deposit."
+          }
+        },
+        "grc_info_2": {
+          "type": "text_item",
+          "settings": {
+            "item_icon": "fa-solid fa-layer-group",
+            "item_title": "Custom Sizes & Profiles",
+            "item_description": "Every GRC planter is made to your exact dimensions. No standard sizes — fully bespoke."
+          }
+        },
+        "grc_info_3": {
+          "type": "text_item",
+          "settings": {
+            "item_icon": "fa-solid fa-building",
+            "item_title": "Heritage & Prestige Projects",
+            "item_description": "Specified by architects for projects where standard materials simply won't meet the brief."
+          }
+        },
+        "grc_info_4": {
+          "type": "text_item",
+          "settings": {
+            "item_icon": "fa-solid fa-truck",
+            "item_title": "Nationwide Delivery",
+            "item_description": "We deliver to all states and territories. Freight quoted on enquiry based on project scope."
+          }
+        }
+      },
+      "block_order": ["grc_info_1", "grc_info_2", "grc_info_3", "grc_info_4"],
+      "name": "GRC Info Cards",
+      "settings": {
+        "section_title": "What You Need to Know About GRC"
+      }
+    },
+    "grc_form": {
+      "type": "customer-planter-inquiry",
+      "blocks": {
+        "field_name": {
+          "type": "field",
+          "settings": {
+            "label": "Name",
+            "field_type": "text",
+            "options": "",
+            "required": true,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "field_email": {
+          "type": "field",
+          "settings": {
+            "label": "Email",
+            "field_type": "email",
+            "options": "",
+            "required": true,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "field_phone": {
+          "type": "field",
+          "settings": {
+            "label": "Contact Number",
+            "field_type": "number",
+            "options": "",
+            "required": true,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "field_qty": {
+          "type": "field",
+          "settings": {
+            "label": "Quantity",
+            "field_type": "number",
+            "options": "",
+            "required": true,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "dimensions_grc": {
+          "type": "dimensions_group",
+          "settings": {
+            "label": "Dimensions",
+            "unit": "mm",
+            "layout": "row",
+            "required": true,
+            "dimension_labels": "Length, Width, Height"
+          }
+        },
+        "field_company": {
+          "type": "field",
+          "settings": {
+            "label": "Company Name",
+            "field_type": "text",
+            "options": "",
+            "required": false,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "field_abn": {
+          "type": "field",
+          "settings": {
+            "label": "ABN",
+            "field_type": "text",
+            "options": "",
+            "required": false,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "field_comments": {
+          "type": "field",
+          "settings": {
+            "label": "Project details and surface finish requirements",
+            "field_type": "textarea",
+            "options": "",
+            "required": false,
+            "alignment": "left",
+            "layout": "column"
+          }
+        }
+      },
+      "block_order": [
+        "field_name",
+        "field_email",
+        "field_phone",
+        "field_qty",
+        "dimensions_grc",
+        "field_company",
+        "field_abn",
+        "field_comments"
+      ],
+      "name": "GRC Enquiry Form",
+      "settings": {
+        "form_title": "Enquire About GRC Planters",
+        "form_description": "GRC is a special-order product with a 3–4 month lead time. Fill in the form below and our team will contact you within 24 hours to discuss your project requirements.",
+        "form_extra_text": "Please check diagram for accurate dimensions when enquiring",
+        "form_image": "shopify://shop_images/IMG_9620.jpg",
+        "form_title_inside": "GRC Project Enquiry",
+        "form_description_inside": "Please provide as much detail as possible — dimensions, finish preference, and project timeline."
+      }
+    }
+  },
+  "order": [
+    "grc_banner",
+    "grc_intro",
+    "grc_gallery",
+    "grc_info",
+    "grc_form"
+  ]
+}

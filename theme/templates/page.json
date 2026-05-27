@@ -1,0 +1,1080 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "heading": {
+      "type": "heading-static",
+      "blocks": {
+        "7b5146f4-dbe6-43f0-8a48-d29d083c0176": {
+          "type": "1",
+          "settings": {
+            "tag": "h3",
+            "fontf": "2",
+            "text_cl": "#ffffff",
+            "text_fs": 20,
+            "text_lh": 26,
+            "text_fw": 500,
+            "text_ls": 2,
+            "mgb": 0,
+            "font_italic": false,
+            "font_uppercase": false,
+            "text_shadow": false,
+            "text_fs_tb": 20,
+            "text_lh_tb": 26,
+            "text_ls_tb": 2,
+            "mgb_tb": 0,
+            "hidden_mobile": false,
+            "text_fs_mb": 20,
+            "text_lh_mb": 26,
+            "text_ls_mb": 2,
+            "mgb_mb": 0
+          }
+        }
+      },
+      "block_order": [
+        "7b5146f4-dbe6-43f0-8a48-d29d083c0176"
+      ],
+      "disabled": true,
+      "settings": {
+        "parallax": false,
+        "bg_overlay": "#000000",
+        "bg_opacity": 54,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "padding_top_tb": 50,
+        "padding_bottom_tb": 50,
+        "padding_top_mb": 50,
+        "padding_bottom_mb": 50,
+        "bg_pos": "center center",
+        "bg_repeat": "no-repeat",
+        "bg_size": "cover",
+        "mgb": 0,
+        "mgb_tb": 0,
+        "mgb_mb": 0
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": "60px,,60px,",
+        "pd": "",
+        "mg_tb": "60px,,60px,",
+        "pd_tb": "",
+        "mg_mb": "60px,,60px,",
+        "pd_mb": ""
+      }
+    },
+    "sidebar-page": {
+      "type": "sidebar-page",
+      "blocks": {
+        "f69681ed-b75e-42de-be58-fdf73b3b7e08": {
+          "type": "blog_cate",
+          "settings": {
+            "title": "Blog categories",
+            "cat_link_list": "",
+            "count": true
+          }
+        }
+      },
+      "block_order": [
+        "f69681ed-b75e-42de-be58-fdf73b3b7e08"
+      ],
+      "disabled": true,
+      "settings": {
+        "enable_drawer": false,
+        "space": 50,
+        "size": "medium",
+        "br_style": "none",
+        "brcolor": "#222222",
+        "sidebar_bdr": 5,
+        "sidebar_pd": 10
+      }
+    },
+    "collection_showcase_gR3xf8": {
+      "type": "collection-showcase",
+      "blocks": {
+        "collection_DmAEny": {
+          "type": "collection",
+          "settings": {
+            "collection": "designer-lightweight",
+            "subtitle": " Lightweight & sleek for modern aesthetics"
+          }
+        },
+        "collection_bCBWqy": {
+          "type": "collection",
+          "settings": {
+            "collection": "atlantis-grc-series",
+            "subtitle": "Lightweight with a unique, weathered texture"
+          }
+        },
+        "collection_mPCKU4": {
+          "type": "collection",
+          "settings": {
+            "collection": "natural-grc-range",
+            "subtitle": "Heavyweight, robust, and timeless"
+          }
+        },
+        "collection_wpjNkJ": {
+          "type": "collection",
+          "settings": {
+            "collection": "terrazzo-range",
+            "subtitle": "Lightweight with a classic, polished finish"
+          }
+        }
+      },
+      "block_order": [
+        "collection_DmAEny",
+        "collection_bCBWqy",
+        "collection_mPCKU4",
+        "collection_wpjNkJ"
+      ],
+      "disabled": true,
+      "name": "Modern Collection Showcase",
+      "settings": {
+        "intro_text": "Discover our curated collection of high-quality planters, designed to suit a variety of indoor and outdoor spaces",
+        "columns": 2,
+        "aspect_ratio": "4/3"
+      }
+    },
+    "trade_program_chbQLc": {
+      "type": "trade-program",
+      "blocks": {
+        "eligibility_eKF9mp": {
+          "type": "eligibility",
+          "disabled": true,
+          "settings": {
+            "role": "Landscapers and Gardeners",
+            "description": ""
+          }
+        },
+        "eligibility_tbGCwr": {
+          "type": "eligibility",
+          "disabled": true,
+          "settings": {
+            "role": "Interior Designer",
+            "description": ""
+          }
+        },
+        "eligibility_DK67rP": {
+          "type": "eligibility",
+          "disabled": true,
+          "settings": {
+            "role": "Builders and Renovators",
+            "description": ""
+          }
+        },
+        "eligibility_QAKzYc": {
+          "type": "eligibility",
+          "disabled": true,
+          "settings": {
+            "role": "Property Stylists",
+            "description": ""
+          }
+        },
+        "eligibility_NNhTfL": {
+          "type": "eligibility",
+          "disabled": true,
+          "settings": {
+            "role": "Cafés, Restaurants & Bars",
+            "description": ""
+          }
+        },
+        "eligibility_pgQw3j": {
+          "type": "eligibility",
+          "disabled": true,
+          "settings": {
+            "role": "Real Estate Agents / Developers",
+            "description": ""
+          }
+        },
+        "eligibility_KjqXYw": {
+          "type": "eligibility",
+          "disabled": true,
+          "settings": {
+            "role": "Event Planners",
+            "description": ""
+          }
+        },
+        "eligibility_BcJR77": {
+          "type": "eligibility",
+          "disabled": true,
+          "settings": {
+            "role": "Retail Fit-Out Companies",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "eligibility_eKF9mp",
+        "eligibility_tbGCwr",
+        "eligibility_DK67rP",
+        "eligibility_QAKzYc",
+        "eligibility_NNhTfL",
+        "eligibility_pgQw3j",
+        "eligibility_KjqXYw",
+        "eligibility_BcJR77"
+      ],
+      "name": "Trade Program Full Page",
+      "settings": {
+        "hero_image": "shopify://shop_images/642CA212-4B2E-464B-AE27-B99CE959EAB6_1_1.jpg",
+        "overlay_color": "#000000",
+        "overlay_opacity": 35,
+        "hero_heading": "Become A Trade Partner",
+        "hero_subheading": "Submit your trade enquiry today",
+        "hero_primary_cta": "Apply Now",
+        "hero_primary_cta_link_type": "enquiry",
+        "hero_primary_cta_page": "/",
+        "hero_secondary_cta": "Learn More",
+        "hero_secondary_cta_link_type": "benefit",
+        "hero_secondary_cta_page": "/",
+        "who_heading": "",
+        "who_intro": "We’re more than just suppliers; we’re partners in creating exceptional spaces. As a Growing Revolution Trade Partner, you’ll enjoy exclusive benefits that make your projects easier, including dedicated trade accounts, expert guidance, and customized planter solutions tailored to your needs"
+      }
+    },
+    "trade_benefits_aA4DQi": {
+      "type": "trade-benefits",
+      "blocks": {
+        "benefit_P7te7j": {
+          "type": "benefit",
+          "settings": {
+            "icon": "fa-solid fa-star",
+            "title": "Exclusive Discounts",
+            "text": "Special lower rates only available to trade partners."
+          }
+        },
+        "benefit_k4ExY7": {
+          "type": "benefit",
+          "settings": {
+            "icon": "fa-solid fa-truck",
+            "title": "Priority Delivery",
+            "text": "Fast-tracked orders so you get materials when you need them."
+          }
+        },
+        "benefit_QWpNzw": {
+          "type": "benefit",
+          "settings": {
+            "icon": "fas fa-clipboard-list",
+            "title": "Project Consultation",
+            "text": "Expert advice to help you plan, estimate, and execute efficiently."
+          }
+        },
+        "benefit_T3xPYW": {
+          "type": "benefit",
+          "settings": {
+            "icon": "fa-solid fa-dollar",
+            "title": "Tiered Pricing",
+            "text": "Bigger discounts as your order volume increases."
+          }
+        }
+      },
+      "block_order": [
+        "benefit_P7te7j",
+        "benefit_k4ExY7",
+        "benefit_QWpNzw",
+        "benefit_T3xPYW"
+      ],
+      "name": "Trade Partner Benefits",
+      "settings": {
+        "heading": "Benefits of Becoming a Trade Partner"
+      }
+    },
+    "eligible_E6ax3e": {
+      "type": "eligible",
+      "blocks": {
+        "grid_item_QgEDUM": {
+          "type": "grid_item",
+          "settings": {
+            "title": "Landscapers & Gardeners",
+            "subtext": "",
+            "show_subtext": true
+          }
+        },
+        "grid_item_cdycWm": {
+          "type": "grid_item",
+          "settings": {
+            "title": "Interior Designers ",
+            "subtext": "",
+            "show_subtext": true
+          }
+        },
+        "grid_item_yCw3e8": {
+          "type": "grid_item",
+          "settings": {
+            "title": "Builders & Renovators",
+            "subtext": "",
+            "show_subtext": true
+          }
+        },
+        "grid_item_6grbPj": {
+          "type": "grid_item",
+          "settings": {
+            "title": "Staging Companies",
+            "subtext": "",
+            "show_subtext": true
+          }
+        },
+        "grid_item_qyLhBe": {
+          "type": "grid_item",
+          "settings": {
+            "title": "Real Estate Agents / Developers",
+            "subtext": "",
+            "show_subtext": true
+          }
+        },
+        "grid_item_HbqwFi": {
+          "type": "grid_item",
+          "settings": {
+            "title": "Cafés, Restaurants & Bars",
+            "subtext": "",
+            "show_subtext": true
+          }
+        },
+        "grid_item_Un4kUU": {
+          "type": "grid_item",
+          "settings": {
+            "title": "Event Planners",
+            "subtext": "",
+            "show_subtext": true
+          }
+        },
+        "grid_item_dbwEHM": {
+          "type": "grid_item",
+          "settings": {
+            "title": "Retail Fit-Out Companies",
+            "subtext": "",
+            "show_subtext": true
+          }
+        },
+        "grid_item_QXaHUm": {
+          "type": "grid_item",
+          "settings": {
+            "title": "Florists & Decor Stylists",
+            "subtext": "",
+            "show_subtext": true
+          }
+        }
+      },
+      "block_order": [
+        "grid_item_QgEDUM",
+        "grid_item_cdycWm",
+        "grid_item_yCw3e8",
+        "grid_item_6grbPj",
+        "grid_item_qyLhBe",
+        "grid_item_HbqwFi",
+        "grid_item_Un4kUU",
+        "grid_item_dbwEHM",
+        "grid_item_QXaHUm"
+      ],
+      "name": "Who Can Join Trade",
+      "settings": {
+        "section_title": "Who Can Join Trade Program",
+        "section_subtext": "Qualified trade professionals are welcome to apply and unlock exclusive pricing, priority support, and member-only perks."
+      }
+    },
+    "trade_enquiry_YrjikP": {
+      "type": "trade-enquiry",
+      "blocks": {
+        "field_9BbLUn": {
+          "type": "field",
+          "settings": {
+            "label": "Name",
+            "field_type": "text",
+            "options": "Option 1, Option 2",
+            "required": true,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "field_LPXrbV": {
+          "type": "field",
+          "settings": {
+            "label": "Email",
+            "field_type": "text",
+            "options": "Option 1, Option 2",
+            "required": true,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "field_aPKpH8": {
+          "type": "field",
+          "settings": {
+            "label": "Contact Number",
+            "field_type": "number",
+            "options": "Option 1, Option 2",
+            "required": true,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "field_zV7Rj4": {
+          "type": "field",
+          "settings": {
+            "label": "Country",
+            "field_type": "text",
+            "options": "Option 1, Option 2",
+            "required": true,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "field_ME9yzq": {
+          "type": "field",
+          "settings": {
+            "label": "Company",
+            "field_type": "text",
+            "options": "Option 1, Option 2",
+            "required": false,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "field_H3h7RK": {
+          "type": "field",
+          "settings": {
+            "label": "Business Address (Street Address, City, State & Postal Code)",
+            "field_type": "text",
+            "options": "Option 1, Option 2",
+            "required": false,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "field_Nim9ig": {
+          "type": "field",
+          "settings": {
+            "label": "ABN",
+            "field_type": "text",
+            "options": "Option 1, Option 2",
+            "required": false,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "field_pwYzYw": {
+          "type": "field",
+          "settings": {
+            "label": "Position",
+            "field_type": "text",
+            "options": "Option 1, Option 2",
+            "required": false,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "field_prQDNH": {
+          "type": "field",
+          "settings": {
+            "label": "Business Website",
+            "field_type": "text",
+            "options": "Option 1, Option 2",
+            "required": false,
+            "alignment": "left",
+            "layout": "column"
+          }
+        }
+      },
+      "block_order": [
+        "field_9BbLUn",
+        "field_LPXrbV",
+        "field_aPKpH8",
+        "field_zV7Rj4",
+        "field_ME9yzq",
+        "field_H3h7RK",
+        "field_Nim9ig",
+        "field_pwYzYw",
+        "field_prQDNH"
+      ],
+      "name": "Trade Form",
+      "settings": {
+        "form_title": "Unlock the Benefits of Our Trade Program",
+        "form_description": "Partner with us to access exclusive pricing, tailored support, and priority services. Fill in the enquiry form to become a member and take your projects to the next level.",
+        "form_title_inside": "Enquiry Form",
+        "form_description_inside": "Please fill in the form below and our team will get back to you within 24 hours."
+      }
+    },
+    "1760600932508ab14a": {
+      "type": "apps",
+      "settings": {}
+    },
+    "custom_banner_khCXjG": {
+      "type": "custom-banner",
+      "disabled": true,
+      "name": "Banner with Inquire Button",
+      "settings": {
+        "banner_image": "shopify://shop_images/IMG_8861.heic",
+        "banner_heading": "Commercial Projects",
+        "banner_text": "Collaboration is where great design begins. Share your ideas with us.",
+        "banner_button_text": "Start Your Project Today",
+        "banner_button_action": "scroll",
+        "banner_button_link": "shopify://pages/contact"
+      }
+    },
+    "show_gallery_UFzDMg": {
+      "type": "show-gallery",
+      "disabled": true,
+      "name": "Planters & Projects Full-width Rectangle",
+      "settings": {
+        "swap_order": false,
+        "image": "shopify://shop_images/IMG_1114.heic",
+        "heading": "Shaping Experiences Through Design",
+        "text": "Great design happens when we work together. We take the time to understand your vision, listen to your ideas, and collaborate every step of the way. Our goal is to transform your concepts into spaces and solutions that feel uniquely yours.",
+        "button_label": "Collaborate With Us",
+        "button_action": "link",
+        "button_link": "shopify://pages/contact",
+        "pdf_label": "Download Brochure",
+        "pdf_link": "",
+        "show_pdf_button": true
+      }
+    },
+    "show_gallery_mp7zyj": {
+      "type": "show-gallery",
+      "disabled": true,
+      "name": "Planters & Projects Full-width Rectangle",
+      "settings": {
+        "swap_order": true,
+        "image": "shopify://shop_images/UrbanPots29-11-50_1.jpg",
+        "heading": "Elevating Everyday Spaces",
+        "text": "UrbanPots are more than accents  they’re part of how you experience your surroundings. We collaborate with you to design solutions that are modern, practical, and timeless.",
+        "button_label": "Enquire Now",
+        "button_action": "link",
+        "button_link": "shopify://pages/contact",
+        "pdf_label": "Download Brochure",
+        "pdf_link": "",
+        "show_pdf_button": true
+      }
+    },
+    "inquiry_form_4CXUGW": {
+      "type": "inquiry-form",
+      "blocks": {
+        "field_8B9DdD": {
+          "type": "field",
+          "settings": {
+            "label": "Name",
+            "field_type": "text",
+            "options": "Option 1, Option 2",
+            "required": true,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "field_afjL79": {
+          "type": "field",
+          "settings": {
+            "label": "Email",
+            "field_type": "email",
+            "options": "Option 1, Option 2",
+            "required": true,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "field_iHWL4n": {
+          "type": "field",
+          "settings": {
+            "label": "Contact Number",
+            "field_type": "number",
+            "options": "Option 1, Option 2",
+            "required": true,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "field_6jXCj9": {
+          "type": "field",
+          "settings": {
+            "label": "Position",
+            "field_type": "text",
+            "options": "Option 1, Option 2",
+            "required": false,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "field_TwTKmJ": {
+          "type": "field",
+          "settings": {
+            "label": "Describe your job",
+            "field_type": "textarea",
+            "options": "Option 1, Option 2",
+            "required": false,
+            "alignment": "left",
+            "layout": "column"
+          }
+        }
+      },
+      "block_order": [
+        "field_8B9DdD",
+        "field_afjL79",
+        "field_iHWL4n",
+        "field_6jXCj9",
+        "field_TwTKmJ"
+      ],
+      "disabled": true,
+      "name": "Custom Enquiry Form",
+      "settings": {
+        "form_title": "Let Us Know About Your Project",
+        "form_description": "Tell us about your project, your goals, and any ideas you have in mind. The more details you share, the better we can understand your vision and craft the perfect solution for you.",
+        "form_title_inside": "Enquiry Form",
+        "form_description_inside": "Please fill in the form below and our team will get back to you within 24 hours."
+      }
+    },
+    "custom_banner_49JED6": {
+      "type": "custom-banner",
+      "name": "Custom Banner",
+      "settings": {
+        "banner_image": "shopify://shop_images/IMG_3378.jpg",
+        "banner_heading": "Commercial Planters Solutions",
+        "banner_text": "Submit a Commercial Tender Today and Enjoy 10% Off Your First Project!",
+        "banner_button_text": "Enquire Now and Get 10% Off Your First Tender",
+        "banner_button_action": "scroll",
+        "banner_button_link": "shopify://pages/contact"
+      }
+    },
+    "show_gallery_hJ47qG": {
+      "type": "show-gallery",
+      "name": "Planters & Projects Full-width Rectangle",
+      "settings": {
+        "swap_order": false,
+        "image": "shopify://shop_images/Screenshot_2025-09-29_at_8.22.09_pm.png",
+        "hover_image": "shopify://shop_images/IMG_1110.heic",
+        "heading": "Partner with our expert team for premium commercial planters",
+        "text": "Upgrade your commercial spaces with our high-quality commercial planters Australia. Our expert team manages every stage of your project, from custom planter design and material selection to fabrication and nationwide delivery. Each planter is crafted for durability, style, and seamless installation. Take advantage of our limited-time offer and enjoy 10% off your first project – delivering large outdoor planters built to last anywhere in Australia.",
+        "button_label": "Submit Your Project!",
+        "button_action": "scroll",
+        "button_link": "shopify://pages/contact",
+        "pdf_label": "Download 2025–2026 Commercial Planters Catalogue",
+        "pdf_link": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urban_Pots_Commercial_Planters.pdf?v=1760602395",
+        "show_pdf_button": true
+      }
+    },
+    "show_gallery_dXfjaa": {
+      "type": "show-gallery",
+      "name": "Planters & Projects Full-width Rectangle",
+      "settings": {
+        "swap_order": true,
+        "image": "shopify://shop_images/IMG_1114.heic",
+        "hover_image": "shopify://shop_images/IMG_1091.heic",
+        "heading": "Custom Commercial Planters Solutions for Projects Across Australia",
+        "text": "When planning your next commercial development, construction, or landscaping project in Australia, finding the right commercial planters or custom planters can be a costly and frustrating task. Hours searching for non-standard sizes shouldn’t slow your project.\n\nOur team handles everything from planter design and material selection to precision manufacturing and nationwide delivery. We deliver large outdoor planters and custom commercial planters built to your project’s specifications—on time, on budget, and with lasting quality.",
+        "button_label": "Explore Our Designs",
+        "button_action": "collection",
+        "button_link": "shopify://pages/contact",
+        "pdf_label": "Download 2025–2026 Commercial Planters Catalogue",
+        "pdf_link": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urban_Pots_Commercial_Planters.pdf?v=1760602395",
+        "show_pdf_button": true
+      }
+    },
+    "show_gallery_Viiari": {
+      "type": "show-gallery",
+      "blocks": {
+        "bullet_piYJCb": {
+          "type": "bullet",
+          "settings": {
+            "text": "Customised for high-volume commercial projects"
+          }
+        },
+        "bullet_jbKNAM": {
+          "type": "bullet",
+          "settings": {
+            "text": "Available in GRC or Fibreglass materials"
+          }
+        },
+        "bullet_njpaWy": {
+          "type": "bullet",
+          "settings": {
+            "text": "2–3 month lead time depending on project scope"
+          }
+        },
+        "bullet_PEGTmg": {
+          "type": "bullet",
+          "settings": {
+            "text": "Ideal for urban developments, hospitality, and retail spaces"
+          }
+        }
+      },
+      "block_order": [
+        "bullet_piYJCb",
+        "bullet_jbKNAM",
+        "bullet_njpaWy",
+        "bullet_PEGTmg"
+      ],
+      "name": "Planters & Projects Full-width Rectangle",
+      "settings": {
+        "swap_order": false,
+        "image": "shopify://shop_images/Screenshot_2025-09-10_at_8.04.29_pm.png",
+        "hover_image": "shopify://shop_images/Screenshot_2025-09-10_at_8.05.01_pm.png",
+        "heading": "Elevating Everyday Spaces",
+        "text": "We work closely with developers, architects, and commercial clients to deliver large-scale planter solutions.",
+        "button_label": "Enquire Now",
+        "button_action": "scroll",
+        "button_link": "shopify://pages/contact",
+        "pdf_label": "Download 2025–2026 Commercial Planters Catalogue",
+        "pdf_link": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urban_Pots_Commercial_Planters.pdf?v=1760602395",
+        "show_pdf_button": true
+      }
+    },
+    "commercial_projects_grid_iEB8Hw": {
+      "type": "commercial-projects-grid",
+      "blocks": {
+        "project_aGkxcT": {
+          "type": "project",
+          "settings": {
+            "project_image": "shopify://shop_images/IMG_4865.jpg",
+            "project_title": "Bella Vista NSW"
+          }
+        },
+        "project_PGPtCw": {
+          "type": "project",
+          "settings": {
+            "project_image": "shopify://shop_images/IMG_2957.jpg",
+            "project_title": "Marsden Park NSW"
+          }
+        },
+        "project_wdeXDR": {
+          "type": "project",
+          "settings": {
+            "project_image": "shopify://shop_images/thumbnail_IMG_4775.jpg",
+            "project_title": "Rosebery NSW"
+          }
+        },
+        "project_ABKhdA": {
+          "type": "project",
+          "settings": {
+            "project_image": "shopify://shop_images/thumbnail_IMG_4434.jpg",
+            "project_title": "Orange NSW"
+          }
+        },
+        "project_LgpXzd": {
+          "type": "project",
+          "settings": {
+            "project_image": "shopify://shop_images/IMG_4473.jpg",
+            "project_title": "North Sydney NSW"
+          }
+        },
+        "project_LzaJPj": {
+          "type": "project",
+          "settings": {
+            "project_image": "shopify://shop_images/IMG_3099.jpg",
+            "project_title": "Bondi NSW"
+          }
+        },
+        "project_atd7At": {
+          "type": "project",
+          "settings": {
+            "project_image": "shopify://shop_images/thumbnail_IMG_8758.jpg",
+            "project_title": "Castle Hill NSW"
+          }
+        },
+        "project_NtEAWx": {
+          "type": "project",
+          "settings": {
+            "project_image": "shopify://shop_images/Screenshot_2025-10-08_at_1.20.31_pm.jpg",
+            "project_title": "Project Name"
+          }
+        },
+        "project_MAEtWD": {
+          "type": "project",
+          "settings": {
+            "project_image": "shopify://shop_images/Screenshot_2025-10-08_at_1.21.06_pm_1.png",
+            "project_title": "Project Name"
+          }
+        },
+        "project_T6Ftjy": {
+          "type": "project",
+          "settings": {
+            "project_title": "Project Name"
+          }
+        }
+      },
+      "block_order": [
+        "project_aGkxcT",
+        "project_PGPtCw",
+        "project_wdeXDR",
+        "project_ABKhdA",
+        "project_LgpXzd",
+        "project_LzaJPj",
+        "project_atd7At",
+        "project_NtEAWx",
+        "project_MAEtWD",
+        "project_T6Ftjy"
+      ],
+      "disabled": true,
+      "name": "Commercial Projects Grid",
+      "settings": {
+        "section_title": "Take a Look at Some of Our Commercial Planter Projects",
+        "layout_style": "grid",
+        "hover_effect": "zoom"
+      }
+    },
+    "dynamic_image_grid_VqeTJQ": {
+      "type": "dynamic-image-grid",
+      "blocks": {
+        "image_block_iQLWRt": {
+          "type": "image_block",
+          "settings": {
+            "grid_image": "shopify://shop_images/Screenshot_2026-04-23_163017.png",
+            "image_title": ""
+          }
+        },
+        "image_block_fwRjWF": {
+          "type": "image_block",
+          "settings": {
+            "grid_image": "shopify://shop_images/Screenshot_2026-04-23_153953.png",
+            "image_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_block_iQLWRt",
+        "image_block_fwRjWF"
+      ],
+      "name": "Dynamic Image Grid",
+      "settings": {
+        "heading": "Check out some of our commercial planter designs",
+        "subtext": "<p>Do you have commercial project that need large outdoor pots in the next 3-4 months? Save costs by letting us take care of your tender and ordering in advance</p>"
+      }
+    },
+    "commercial_projects_info_grid_FbLUj9": {
+      "type": "commercial-projects-info-grid",
+      "blocks": {
+        "text_item_rJFbK6": {
+          "type": "text_item",
+          "settings": {
+            "item_icon": "fa-solid fa-star",
+            "item_title": "Excellence in Craftsmanship",
+            "item_description": "Each commercial pot and custom planter is crafted with meticulous attention to detail by skilled tradespeople, leveraging years of expertise to ensure every piece not only meets but exceeds your expectations for quality, durability, and style."
+          }
+        },
+        "text_item_n8fbPP": {
+          "type": "text_item",
+          "settings": {
+            "item_icon": "fa-solid fa-money-bill",
+            "item_title": "Best Price Guarantee",
+            "item_description": "Your satisfaction is our priority. We compare and match commercial planters and custom planters, working closely with you to ensure every order meets your specifications—delivering high-quality large outdoor planters at the best possible price across Australia."
+          }
+        },
+        "text_item_hVwXmp": {
+          "type": "text_item",
+          "settings": {
+            "item_icon": "fa-solid fa-ruler-horizontal",
+            "item_title": "Custom Sizes, Perfect Fit",
+            "item_description": "Get the exact commercial or custom planter size you need—whether matching a competitor’s design at a better price or creating a large outdoor planter tailored specifically for your project."
+          }
+        },
+        "text_item_PMj7JE": {
+          "type": "text_item",
+          "settings": {
+            "item_icon": "fa-solid fa-paint-roller",
+            "item_title": "Tailored Dulux Colours",
+            "item_description": "Every commercial or custom planter can be finished in your choice of Australian Dulux colours, ensuring a perfect match with your project’s palette. Using the same high-grade coatings specified for commercial buildings, our planters are built to withstand even the toughest Australian climates, combining durability with lasting aesthetic appeal."
+          }
+        },
+        "text_item_tdmdCW": {
+          "type": "text_item",
+          "settings": {
+            "item_icon": "fa-solid fa-arrow-trend-up",
+            "item_title": "Stock Availability",
+            "item_description": "Chances are, we already have the commercial planters and custom planters you need in stock, minimizing delays and keeping your project on schedule. We provide Australia-wide delivery, serving everything from major cities to regional areas with large outdoor planters ready for installation."
+          }
+        },
+        "text_item_3qjpap": {
+          "type": "text_item",
+          "settings": {
+            "item_icon": "fa-solid fa-clock",
+            "item_title": "Fast & Reliable Lead Times",
+            "item_description": "Whether you need in-stock commercial planters or custom sizes, we deliver quickly and reliably. Standard products are ready in as little as 2 weeks, while bespoke custom planters and large outdoor planters are completed within 7–12 weeks, depending on production capacity."
+          }
+        },
+        "text_item_Td7dwP": {
+          "type": "text_item",
+          "settings": {
+            "item_icon": "fa-solid fa-gem",
+            "item_title": "Extensive Range",
+            "item_description": "Our extensive collection sets us apart in the world of commercial planters Australia. From durable planter shapes and colours perfect for large-scale projects such as apartment complexes and shopping centres, to bespoke custom planters tailored for premium developments, we provide solutions for every requirement. Our range includes GRC, Atlantis, Lightweight Terrazzo, and more, delivering large outdoor planters that combine style, durability, and functionality."
+          }
+        },
+        "text_item_WpnGVR": {
+          "type": "text_item",
+          "settings": {
+            "item_icon": "fa-solid fa-earth-asia",
+            "item_title": "Australian Owned & Operated",
+            "item_description": "We are proudly 100% Australian owned and operated. As a family-run business, our experienced team specializes in commercial planters and custom planter solutions, committed to industry best practices to ensure every project delivers exceptional quality, durability, and value for your clients."
+          }
+        },
+        "text_item_y3YPQW": {
+          "type": "text_item",
+          "settings": {
+            "item_icon": "fa-solid fa-handshake-angle",
+            "item_title": "Partnerships That Last",
+            "item_description": "Our goal is to build enduring relationships within the commercial sector. We go beyond transactions, providing consistent service and meaningful results that leave a lasting impression. Your success is our highest priority."
+          }
+        }
+      },
+      "block_order": [
+        "text_item_rJFbK6",
+        "text_item_n8fbPP",
+        "text_item_hVwXmp",
+        "text_item_PMj7JE",
+        "text_item_tdmdCW",
+        "text_item_3qjpap",
+        "text_item_Td7dwP",
+        "text_item_WpnGVR",
+        "text_item_y3YPQW"
+      ],
+      "name": "Text Grid Section",
+      "settings": {
+        "section_title": "Efficient Solutions for Your Commercial Projects"
+      }
+    },
+    "inquiry_form_NBXJbA": {
+      "type": "inquiry-form",
+      "blocks": {
+        "field_fcYkag": {
+          "type": "field",
+          "settings": {
+            "label": "Name",
+            "field_type": "text",
+            "options": "Option 1, Option 2",
+            "required": true,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "field_Fg4Afd": {
+          "type": "field",
+          "settings": {
+            "label": "Email",
+            "field_type": "email",
+            "options": "Option 1, Option 2",
+            "required": true,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "field_JNhKY9": {
+          "type": "field",
+          "settings": {
+            "label": "Contact Number",
+            "field_type": "number",
+            "options": "Option 1, Option 2",
+            "required": true,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "field_jRRKdp": {
+          "type": "field",
+          "settings": {
+            "label": "Company",
+            "field_type": "text",
+            "options": "Option 1, Option 2",
+            "required": false,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "field_j3wHph": {
+          "type": "field",
+          "settings": {
+            "label": "Position",
+            "field_type": "text",
+            "options": "Option 1, Option 2",
+            "required": false,
+            "alignment": "left",
+            "layout": "column"
+          }
+        },
+        "field_Gqaifi": {
+          "type": "field",
+          "settings": {
+            "label": "Describe your job",
+            "field_type": "textarea",
+            "options": "Option 1, Option 2",
+            "required": false,
+            "alignment": "left",
+            "layout": "column"
+          }
+        }
+      },
+      "block_order": [
+        "field_fcYkag",
+        "field_Fg4Afd",
+        "field_JNhKY9",
+        "field_jRRKdp",
+        "field_j3wHph",
+        "field_Gqaifi"
+      ],
+      "name": "Custom Enquiry Form",
+      "settings": {
+        "form_title": "Bring Your Commercial Projects to Life",
+        "form_description": "From large-scale commercial planter installations to custom design solutions, we work with businesses, architects, and designers to deliver premium urban planters and landscape supplies across Australia. Every project is tailored to meet both functional requirements and aesthetic goals, ensuring your large outdoor planters enhance the space and leave a lasting impression.",
+        "form_title_inside": "Enquiry Form",
+        "form_description_inside": "Please fill in the form below and our team will get back to you within 24 hours."
+      }
+    },
+    "location_section_DU8k3n": {
+      "type": "location-section",
+      "name": "Location Section",
+      "settings": {
+        "heading": "Where to Find Us",
+        "subheading": "Come visit our store",
+        "image": "shopify://shop_images/IMG_1114.heic",
+        "address": "21/130 Hassall St in Wetherill Park, Greater Western Sydney, Australia",
+        "phone": "0433 132 406",
+        "email": "info@urbanpots.com.au"
+      }
+    },
+    "17606014677d9065f8": {
+      "type": "apps",
+      "blocks": {
+        "rocket_google_reviews_app_block_QTqyJa": {
+          "type": "shopify://apps/google-reviews-rocket/blocks/app-block/d11c8893-a181-4aff-a280-7446d42cec3b",
+          "settings": {
+            "widget_layout": "default"
+          }
+        }
+      },
+      "block_order": [
+        "rocket_google_reviews_app_block_QTqyJa"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "heading",
+    "main",
+    "sidebar-page",
+    "collection_showcase_gR3xf8",
+    "trade_program_chbQLc",
+    "trade_benefits_aA4DQi",
+    "eligible_E6ax3e",
+    "trade_enquiry_YrjikP",
+    "1760600932508ab14a",
+    "custom_banner_khCXjG",
+    "show_gallery_UFzDMg",
+    "show_gallery_mp7zyj",
+    "inquiry_form_4CXUGW",
+    "custom_banner_49JED6",
+    "show_gallery_hJ47qG",
+    "show_gallery_dXfjaa",
+    "show_gallery_Viiari",
+    "commercial_projects_grid_iEB8Hw",
+    "dynamic_image_grid_VqeTJQ",
+    "commercial_projects_info_grid_FbLUj9",
+    "inquiry_form_NBXJbA",
+    "location_section_DU8k3n",
+    "17606014677d9065f8"
+  ]
+}

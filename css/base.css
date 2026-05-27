@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap');
+@import 'tokens.css';
+
+/* ── RESET ──────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: auto; /* Lenis handles smooth scroll */
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--c-bg);
+  color: var(--c-brown);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ── UTILITY ────────────────────────────────────────────────── */
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 4vw, 4rem);
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-sage);
+}
+
+.eyebrow--stone { color: var(--c-stone); }
+.eyebrow--faint { color: rgba(255,255,255,0.45); }
+
+.arrow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-brown-dk);
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  transition: gap 0.25s var(--ease), color 0.2s;
+}
+
+.arrow-link:hover { gap: 1.1rem; color: var(--c-sage); }
+.arrow-link--light { color: rgba(255,255,255,0.8); }
+.arrow-link--light:hover { color: var(--c-stone); }
+
+/* ── FADEIN SYSTEM ──────────────────────────────────────────── */
+.fadein {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.fadein.inView {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fadein.delay-1 { transition-delay: 0.10s; }
+.fadein.delay-2 { transition-delay: 0.20s; }
+.fadein.delay-3 { transition-delay: 0.30s; }
+.fadein.delay-4 { transition-delay: 0.40s; }
+.fadein.delay-5 { transition-delay: 0.50s; }
+
+/* ── TYPOGRAPHY ────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-head);
+  font-weight: 600;
+}
+
+h1 { font-size: clamp(2.8rem, 6vw, 5rem); line-height: 0.92; }
+h2 { font-size: clamp(2.2rem, 4.5vw, 3.8rem); line-height: 0.92; }
+h3 { font-size: clamp(1.5rem, 3vw, 2.2rem); line-height: 1.1; }
+h4 { font-size: 1.2rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.9rem; }
+
+p { line-height: 1.8; }
+
+/* ── RESPONSIVE UTILITIES ────────────────────────────────────– */
+@media (max-width: 768px) {
+  .hide-mobile { display: none !important; }
+}
+
+@media (max-width: 1024px) {
+  .hide-tablet { display: none !important; }
+}
+
+@media (min-width: 1025px) {
+  .hide-desktop { display: none !important; }
+}

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, max-scale=1" />
+  <title>About Us — Urban Pots</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/components.css" />
+
+  <!-- Lenis & GSAP from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav" id="siteNav">
+  <div class="container site-nav__inner">
+    <a href="/" class="nav-logo">
+      <img src="https://cdn.shopify.com/s/files/1/0748/4152/2498/files/urban_pots_logo__white_150.png?v=1684274691" alt="Urban Pots" width="120" height="30" />
+    </a>
+    <div class="nav-links">
+      <a href="/shop.html">Shop</a>
+      <a href="/pages/custom-planter-boxes.html">Custom Planters</a>
+      <a href="/pages/commercial-planters.html">Projects</a>
+      <a href="/pages/grc-planters.html">Materials</a>
+      <a href="/pages/about.html">About</a>
+    </div>
+    <div class="nav-actions">
+      <a href="mailto:info@urbanpots.com.au" class="nav-cta">Get a Quote</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="nav-mobile" id="navMobile" aria-hidden="true">
+  <ul class="nav-mobile__links">
+    <li><a href="/shop.html">Shop</a></li>
+    <li><a href="/pages/custom-planter-boxes.html">Custom Planters</a></li>
+    <li><a href="/pages/commercial-planters.html">Projects</a></li>
+    <li><a href="/pages/grc-planters.html">Materials</a></li>
+    <li><a href="/pages/about.html">About</a></li>
+  </ul>
+  <div class="nav-mobile__footer">
+    <a href="mailto:info@urbanpots.com.au" class="btn btn--stone">Get a Quote</a>
+    <div class="nav-mobile__footer-meta">
+      <a href="tel:0433132406">0433 132 406</a> &nbsp;·&nbsp; Tue–Sat 9am–4pm
+    </div>
+  </div>
+</div>
+
+<!-- PAGE CONTENT -->
+<main>
+
+  <!-- HERO SECTION -->
+  <section class="hero" style="background: linear-gradient(135deg, #F7F7F3 0%, #EDE8E1 100%);">
+    <div class="hero__content">
+      <p class="eyebrow">About Our Studio</p>
+      <h1>Urban Pots <em>Since 2015</em></h1>
+      <p class="hero__subtext">Family-owned planter manufacturer in Western Sydney. Trusted by architects, developers, and landscapers across Australia.</p>
+    </div>
+    <div class="hero__image" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 600%22><rect fill=%22%23D5D0C8%22 width=%22800%22 height=%22600%22/></rect></svg>')"></div>
+  </section>
+
+  <!-- STORY SECTION -->
+  <section class="about-story">
+    <div class="container">
+      <div class="about-story-grid fadein">
+        <div class="about-story__content">
+          <h2>Our Story</h2>
+          <p>Urban Pots was founded in 2015 with a simple mission: to design and manufacture high-quality planters that combine aesthetic beauty with functional durability. What started as a small workshop in Penrith has grown into a trusted supplier for residential, commercial, and landscape projects across Australia.</p>
+
+          <p>Every planter we create is handcrafted with attention to detail. We work directly with architects, developers, and landscapers to deliver custom solutions that exceed expectations. Our commitment to quality materials, precision manufacturing, and responsive customer service has made us a preferred partner for discerning designers and project managers.</p>
+
+          <p>Today, Urban Pots operates a state-of-the-art workshop in Western Sydney, employing skilled craftspeople who take pride in their work. We've supplied over 10,000+ planters to projects ranging from intimate residential gardens to landmark commercial developments.</p>
+        </div>
+        <div class="about-story__image" style="background: linear-gradient(135deg, #C9B99A 0%, #A0897B 100%);"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES SECTION -->
+  <section class="about-values" style="background: var(--c-cream); padding: clamp(5rem, 8vw, 8rem) 0;">
+    <div class="container">
+      <div class="section-head fadein">
+        <h2>Our Values</h2>
+        <p>Principles that guide everything we do.</p>
+      </div>
+
+      <div class="values-grid fadein delay-1">
+        <div class="value-item">
+          <div class="value-item__icon">🎯</div>
+          <h3>Quality First</h3>
+          <p>Every planter is inspected for durability, finish, and structural integrity. We use premium materials and proven manufacturing techniques.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-item__icon">🤝</div>
+          <h3>Customer Partnership</h3>
+          <p>We collaborate closely with our clients from concept to delivery. Your vision becomes our mission.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-item__icon">🌍</div>
+          <h3>Sustainability</h3>
+          <p>We source responsibly, minimise waste, and design products built to last decades — reducing environmental impact through longevity.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-item__icon">💡</div>
+          <h3>Innovation</h3>
+          <p>We stay current with design trends, manufacturing techniques, and material science to offer cutting-edge solutions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM SECTION -->
+  <section class="about-team">
+    <div class="container">
+      <div class="section-head fadein">
+        <h2>Meet the Team</h2>
+        <p>Skilled craftspeople and designers dedicated to excellence.</p>
+      </div>
+
+      <div class="team-grid fadein delay-1">
+        <div class="team-card">
+          <div class="team-card__image" style="background: linear-gradient(135deg, #A0897B 0%, #8C7B6A 100%);"></div>
+          <div class="team-card__content">
+            <h3 class="team-card__name">Marcus Chen</h3>
+            <p class="team-card__role">Founder & Director</p>
+            <p class="team-card__bio">20+ years in manufacturing. Passionate about design-led production and customer partnerships.</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card__image" style="background: linear-gradient(135deg, #C9B99A 0%, #B5A08B 100%);"></div>
+          <div class="team-card__content">
+            <h3 class="team-card__name">Sarah Mitchell</h3>
+            <p class="team-card__role">Head of Design</p>
+            <p class="team-card__bio">Architect with a background in landscape design. Leads our custom planter development.</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card__image" style="background: linear-gradient(135deg, #7A8C5E 0%, #5F6B47 100%);"></div>
+          <div class="team-card__content">
+            <h3 class="team-card__name">David Huang</h3>
+            <p class="team-card__role">Manufacturing Manager</p>
+            <p class="team-card__bio">Quality control expert. Ensures every planter meets our rigorous standards.</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card__image" style="background: linear-gradient(135deg, #4A4A48 0%, #2F2F2D 100%);"></div>
+          <div class="team-card__content">
+            <h3 class="team-card__name">Jessica Kumar</h3>
+            <p class="team-card__role">Client Relations</p>
+            <p class="team-card__bio">Your dedicated point of contact for projects. Handles custom quotes and timelines.</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card__image" style="background: linear-gradient(135deg, #D5D0C8 0%, #C0B5AD 100%);"></div>
+          <div class="team-card__content">
+            <h3 class="team-card__name">Robert Walsh</h3>
+            <p class="team-card__role">Senior Craftsperson</p>
+            <p class="team-card__bio">15 years in fibre cement and GRC production. Master of surface finishes.</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card__image" style="background: linear-gradient(135deg, #8C7B6A 0%, #7A6B5B 100%);"></div>
+          <div class="team-card__content">
+            <h3 class="team-card__name">Emma Torres</h3>
+            <p class="team-card__role">Product Development</p>
+            <p class="team-card__bio">Explores new materials and manufacturing methods. Drives innovation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS SECTION -->
+  <section class="about-credentials" style="background: var(--c-bg); padding: clamp(5rem, 8vw, 8rem) 0;">
+    <div class="container">
+      <div class="section-head fadein">
+        <h2>Certifications & Recognition</h2>
+        <p>Industry standards and quality assurance.</p>
+      </div>
+
+      <div class="credentials-grid fadein delay-1">
+        <div class="credential-item">
+          <div class="credential-item__badge">✓</div>
+          <h4>AS/NZS 4211 Certified</h4>
+          <p>Abrasion resistance testing for outdoor materials.</p>
+        </div>
+        <div class="credential-item">
+          <div class="credential-item__badge">✓</div>
+          <h4>ISO 9001:2015</h4>
+          <p>Quality management systems certification.</p>
+        </div>
+        <div class="credential-item">
+          <div class="credential-item__badge">✓</div>
+          <h4>Work Health & Safety</h4>
+          <p>Full compliance with Australian WHS regulations.</p>
+        </div>
+        <div class="credential-item">
+          <div class="credential-item__badge">✓</div>
+          <h4>Environmental Standards</h4>
+          <p>Sustainable manufacturing practices certified.</p>
+        </div>
+        <div class="credential-item">
+          <div class="credential-item__badge">✓</div>
+          <h4>Master Craftsperson</h4>
+          <p>Team members recognised by Australian Craft Guild.</p>
+        </div>
+        <div class="credential-item">
+          <div class="credential-item__badge">✓</div>
+          <h4>Trade Partner</h4>
+          <p>Preferred supplier for major Australian architecture firms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWROOM SECTION -->
+  <section class="about-showroom">
+    <div class="container">
+      <div class="showroom-grid fadein">
+        <div class="showroom-content">
+          <h2>Visit Our Showroom</h2>
+          <p>See and touch our planters in person. Our team is available to discuss your project, provide material samples, and answer questions.</p>
+
+          <div class="showroom-details">
+            <div class="detail-item">
+              <strong>Address</strong>
+              <p>Unit 12, 45 Industrial Ave<br>Penrith NSW 2750</p>
+            </div>
+            <div class="detail-item">
+              <strong>Hours</strong>
+              <p>Tuesday–Saturday, 9am–4pm<br>Closed Sundays & Mondays<br>Public holidays by appointment</p>
+            </div>
+            <div class="detail-item">
+              <strong>Contact</strong>
+              <p><a href="tel:0433132406">0433 132 406</a><br><a href="mailto:info@urbanpots.com.au">info@urbanpots.com.au</a></p>
+            </div>
+          </div>
+
+          <a href="#contact-map" class="btn btn--dark" style="margin-top: 2rem;">Get Directions <span class="arrow-link">→</span></a>
+        </div>
+        <div class="showroom-image" style="background: linear-gradient(135deg, #C9B99A 0%, #A0897B 100%);"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP SECTION -->
+  <section id="contact-map" style="padding: clamp(4rem, 8vw, 6rem) 0;">
+    <div class="container">
+      <div style="width: 100%; height: 400px; background: linear-gradient(135deg, #E8E5E0 0%, #D5D0C8 100%); border-radius: 2px; display: flex; align-items: center; justify-content: center; color: var(--c-brown); font-size: 1rem;">
+        <p style="text-align: center;">
+          <strong>Google Maps Embed Here</strong><br>
+          Unit 12, 45 Industrial Ave, Penrith NSW 2750<br>
+          <a href="https://maps.google.com/?q=Unit+12+45+Industrial+Ave+Penrith+NSW+2750" target="_blank" style="color: var(--c-sage);">Open in Google Maps →</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section style="background: var(--c-sage); color: white; padding: clamp(4rem, 8vw, 6rem) 0; text-align: center;">
+    <div class="container">
+      <h2 style="font-size: clamp(1.8rem, 5vw, 2.2rem); margin-bottom: 1rem; font-family: var(--font-heading);">Ready to work with us?</h2>
+      <p style="font-size: 1rem; max-width: 600px; margin: 0 auto 2rem;">Let's discuss your project. Call, email, or visit our showroom.</p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="tel:0433132406" class="btn btn--outline" style="border-color: white; color: white;">Call: 0433 132 406</a>
+        <a href="mailto:info@urbanpots.com.au" class="btn btn--outline" style="border-color: white; color: white;">Email Us</a>
+        <a href="/contact.html" class="btn btn--outline" style="border-color: white; color: white;">Contact Form</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="https://cdn.shopify.com/s/files/1/0748/4152/2498/files/urban_pots_logo__sage_150.png?v=1684274691" alt="Urban Pots" class="footer-brand__logo" width="120" />
+        <p class="footer-brand__tagline">Your best space. Our planters.</p>
+        <p>An Australian family-owned planter manufacturer. Custom-built in Western Sydney. Trusted by developers, architects, and landscapers nationwide.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="LinkedIn">LI</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="/pages/custom-planter-boxes.html">Custom Planter Boxes</a></li>
+          <li><a href="/shop.html">Fibreglass Planters</a></li>
+          <li><a href="/shop.html">Fibre Cement</a></li>
+          <li><a href="/pages/grc-planters.html">GRC Planters</a></li>
+          <li><a href="/shop.html">Designer Pots</a></li>
+          <li><a href="/shop.html">All Collections</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/pages/about.html">About Us</a></li>
+          <li><a href="/pages/about.html">Our Workshop</a></li>
+          <li><a href="/">Projects</a></li>
+          <li><a href="/">Trade Account</a></li>
+          <li><a href="/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:0433132406">0433 132 406</a></li>
+          <li><a href="mailto:info@urbanpots.com.au">info@urbanpots.com.au</a></li>
+          <li><a href="/">Sydney Showroom</a></li>
+          <li><a href="/">Tue–Sat 9am–4pm</a></li>
+          <li><a href="/">Get Directions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Urban Pots Australia. All rights reserved.</span>
+      <span>
+        <a href="/">Privacy</a> &nbsp;·&nbsp;
+        <a href="/">Terms</a> &nbsp;·&nbsp;
+        Website by <a href="#" style="color:var(--c-stone)">Sowah Studio</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script type="module">
+  import * as animations from '../js/animations.js';
+  import * as ui from '../js/ui.js';
+
+  // Initialize animations and scroll
+  animations.initLenis();
+  animations.initFadein();
+  animations.initNavScroll();
+  animations.fixIOSParallax();
+
+  // Initialize UI
+  ui.initMobileNav(animations.lenis);
+</script>
+
+</body>
+</html>

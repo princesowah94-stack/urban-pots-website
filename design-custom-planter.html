@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, max-scale=1" />
+  <title>Design Your Custom Planter Box — Urban Pots</title>
+
+  <link rel="stylesheet" href="css/components.css" />
+  <style>
+    .configurator-page {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      padding-top: var(--nav-h);
+    }
+
+    .configurator-header {
+      padding: clamp(2rem, 4vw, 3rem) 0;
+      background: var(--c-bg);
+      border-bottom: 1px solid var(--c-border);
+    }
+
+    .configurator-header h1 {
+      color: var(--c-brown-dk);
+      margin-bottom: 0.5rem;
+    }
+
+    .breadcrumb {
+      font-size: 0.75rem;
+      color: var(--c-brown);
+      margin-bottom: 1rem;
+    }
+
+    .breadcrumb a { color: var(--c-brown); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--c-sage); }
+
+    /* Tab styles */
+    .configurator-tabs {
+      position: sticky;
+      top: var(--nav-h);
+      z-index: 100;
+      display: flex;
+      gap: 0;
+      background: #fff;
+      border-bottom: 1px solid var(--c-border);
+    }
+
+    .tab-button {
+      flex: 1;
+      padding: 1.25rem clamp(1rem, 3vw, 2rem);
+      text-align: center;
+      background: var(--c-bg);
+      border: none;
+      border-bottom: 3px solid transparent;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--c-brown);
+      cursor: pointer;
+      transition: background 0.25s, border-color 0.25s, color 0.25s;
+    }
+
+    .tab-button.active {
+      background: #fff;
+      border-bottom-color: var(--c-sage);
+      color: var(--c-dark);
+    }
+
+    .tab-button:hover:not(.active) {
+      background: rgba(122, 140, 94, 0.05);
+    }
+
+    /* Configurator layout */
+    .configurator-workspace {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 60% 40%;
+      gap: 0;
+    }
+
+    .tab-content {
+      display: none;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .tab-content.active {
+      display: grid;
+    }
+
+    .configurator-canvas {
+      background: #fafaf8;
+      border-right: 1px solid var(--c-border);
+      position: relative;
+      min-height: 600px;
+      width: 100%;
+    }
+
+    .configurator-canvas canvas {
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    .controls-panel {
+      background: #fff;
+      overflow-y: auto;
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    .control-section {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .control-section__title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--c-brown-dk);
+    }
+
+    .dimension-input-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .dimension-input-group label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      min-width: 30px;
+      color: var(--c-brown);
+      margin: 0;
+    }
+
+    .dimension-input-group input[type="range"] {
+      flex: 1;
+      height: 5px;
+      cursor: pointer;
+    }
+
+    .dimension-input-group input[type="number"] {
+      width: 70px;
+      padding: 0.5rem;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+
+    .presets-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+
+    .preset-btn {
+      padding: 0.75rem;
+      background: var(--c-bg);
+      border: 1px solid var(--c-border);
+      border-radius: 2px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--c-brown);
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+
+    .preset-btn:hover {
+      background: var(--c-stone);
+      border-color: var(--c-stone);
+      color: #fff;
+    }
+
+    .preset-btn.active {
+      background: var(--c-dark);
+      border-color: var(--c-dark);
+      color: #fff;
+    }
+
+    .material-group {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .material-option {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+    }
+
+    .material-option input[type="radio"] {
+      cursor: pointer;
+    }
+
+    .material-option label {
+      margin: 0;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .colour-swatches {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0.5rem;
+    }
+
+    .colour-swatch {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 2px;
+      cursor: pointer;
+      border: 3px solid transparent;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .colour-swatch:hover {
+      transform: scale(1.05);
+    }
+
+    .colour-swatch.active {
+      border-color: var(--c-brown-dk);
+    }
+
+    .colour-code {
+      font-size: 0.7rem;
+      color: var(--c-brown);
+      margin-top: 0.5rem;
+    }
+
+    .summary-card {
+      background: var(--c-cream);
+      padding: 1.25rem;
+      border-radius: 2px;
+      border: 1px solid var(--c-border);
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: var(--c-brown);
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+
+    .summary-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .quantity-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .quantity-group label {
+      margin: 0;
+      font-size: 0.8rem;
+    }
+
+    .quantity-group input[type="number"] {
+      width: 80px;
+      padding: 0.6rem;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    .action-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--c-border);
+    }
+
+    .action-buttons .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .action-buttons .btn--dark { background: var(--c-dark); color: #fff; }
+    .action-buttons .btn--stone { background: var(--c-stone); color: var(--c-dark); }
+    .action-buttons .btn--outline {
+      background: transparent;
+      border: 1px solid var(--c-border);
+      color: var(--c-brown);
+    }
+
+    .action-buttons .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .pdf-link {
+      text-align: center;
+      margin-top: 0.75rem;
+    }
+
+    .pdf-link a {
+      font-size: 0.7rem;
+      color: var(--c-sage);
+      text-decoration: underline;
+    }
+
+    .pdf-link a:hover { color: var(--c-brown-dk); }
+
+    /* Mobile responsive */
+    @media (max-width: 1024px) {
+      .configurator-workspace {
+        grid-template-columns: 1fr;
+      }
+
+      .tab-content {
+        grid-template-columns: 1fr;
+      }
+
+      .configurator-canvas {
+        min-height: 400px;
+        border-right: none;
+        border-bottom: 1px solid var(--c-border);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .configurator-page {
+        padding-top: var(--nav-h);
+      }
+
+      .configurator-workspace {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .tab-content {
+        display: none;
+        flex-direction: column;
+      }
+
+      .tab-content.active {
+        display: flex;
+      }
+
+      .configurator-canvas {
+        height: 55vh;
+        min-height: 300px;
+      }
+
+      .controls-panel {
+        padding: 1.5rem;
+        max-height: 45vh;
+      }
+
+      .tab-button {
+        padding: 0.85rem;
+        font-size: 0.7rem;
+        letter-spacing: 0.02em;
+      }
+
+      .presets-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .colour-swatches {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.165.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.165.0/examples/js/renderers/CSS2DRenderer.js"></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav" id="siteNav">
+  <div class="container">
+    <div class="site-nav__inner">
+      <a href="/" class="nav-logo">
+        <img src="https://cdn.shopify.com/s/files/1/0748/4152/2498/files/urban_pots_logo__white_150.png?v=1684274691" alt="Urban Pots" />
+      </a>
+      <ul class="nav-links hide-mobile">
+        <li><a href="/">Home</a></li>
+        <li><a href="/shop.html">Shop</a></li>
+      </ul>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE -->
+<div class="configurator-page">
+
+  <div class="configurator-header">
+    <div class="container">
+      <h1>Design Your Custom Planter Box</h1>
+      <p style="font-size: 0.95rem; color: var(--c-brown); margin: 0;">
+        Customize dimensions, material, and colour. Add to quote when ready.
+      </p>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="configurator-tabs">
+    <button class="tab-button active" data-tab="straight">Straight Edge Planter</button>
+    <button class="tab-button" data-tab="cylindrical">Cylindrical Planter</button>
+  </div>
+
+  <!-- WORKSPACE -->
+  <div class="configurator-workspace">
+
+    <!-- STRAIGHT EDGE TAB -->
+    <div class="tab-content active" id="straightTab">
+      <div class="configurator-canvas" id="canvasStraight"></div>
+      <div class="controls-panel">
+        <div class="control-section">
+          <div class="control-section__title">Dimensions (mm)</div>
+          <div class="dimension-input-group">
+            <label>Length</label>
+            <input type="range" class="lengthSlider" min="300" max="3000" step="50" value="600" />
+            <input type="number" class="lengthInput" min="300" max="3000" step="50" value="600" />
+          </div>
+          <div class="dimension-input-group">
+            <label>Width</label>
+            <input type="range" class="widthSlider" min="200" max="1500" step="50" value="400" />
+            <input type="number" class="widthInput" min="200" max="1500" step="50" value="400" />
+          </div>
+          <div class="dimension-input-group">
+            <label>Height</label>
+            <input type="range" class="heightSlider" min="200" max="1200" step="50" value="450" />
+            <input type="number" class="heightInput" min="200" max="1200" step="50" value="450" />
+          </div>
+        </div>
+
+        <div class="control-section">
+          <div class="control-section__title">Presets</div>
+          <div class="presets-grid">
+            <button class="preset-btn" data-l="600" data-w="400" data-h="450">Small</button>
+            <button class="preset-btn" data-l="900" data-w="450" data-h="500">Medium</button>
+            <button class="preset-btn" data-l="1200" data-w="600" data-h="600">Large</button>
+            <button class="preset-btn" data-l="1800" data-w="600" data-h="600">XL</button>
+          </div>
+        </div>
+
+        <div class="control-section">
+          <div class="control-section__title">Material</div>
+          <div class="material-group">
+            <label class="material-option">
+              <input type="radio" name="material-straight" value="fibre-cement" checked />
+              <span>Fibre Cement</span>
+            </label>
+            <label class="material-option">
+              <input type="radio" name="material-straight" value="fibreglass" />
+              <span>Fibreglass</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="control-section">
+          <div class="control-section__title">Colour</div>
+          <div class="colour-swatches" id="colourSwatchesStraight"></div>
+          <div class="colour-code" id="colourCodeStraight">Dulux Lexicon Half</div>
+        </div>
+
+        <div class="control-section">
+          <div class="summary-card">
+            <div class="summary-row">
+              <span>Dimensions</span>
+              <strong id="summaryDimsStraight">600 × 400 × 450</strong>
+            </div>
+            <div class="summary-row">
+              <span>Material</span>
+              <strong id="summaryMatStraight">Fibre Cement</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="control-section">
+          <label>Quantity</label>
+          <input type="number" id="quantityStraight" min="1" max="50" value="1" />
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn btn--dark" id="addQuoteStraight">Add to Quote</button>
+          <button class="btn btn--outline" id="viewQuoteStraight" disabled>View Quote</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CYLINDRICAL TAB -->
+    <div class="tab-content" id="cylindricalTab">
+      <div class="configurator-canvas" id="canvasCylindrical"></div>
+      <div class="controls-panel">
+        <div class="control-section">
+          <div class="control-section__title">Dimensions (mm)</div>
+          <div class="dimension-input-group">
+            <label>Diameter</label>
+            <input type="range" class="diameterSlider" min="200" max="2000" step="50" value="500" />
+            <input type="number" class="diameterInput" min="200" max="2000" step="50" value="500" />
+          </div>
+          <div class="dimension-input-group">
+            <label>Height</label>
+            <input type="range" class="heightSliderCyl" min="200" max="1200" step="50" value="600" />
+            <input type="number" class="heightInputCyl" min="200" max="1200" step="50" value="600" />
+          </div>
+        </div>
+
+        <div class="control-section">
+          <div class="control-section__title">Presets</div>
+          <div class="presets-grid">
+            <button class="preset-btn" data-d="600" data-h="450">Small</button>
+            <button class="preset-btn" data-d="800" data-h="500">Medium</button>
+            <button class="preset-btn" data-d="1200" data-h="600">Large</button>
+            <button class="preset-btn" data-d="1600" data-h="600">XL</button>
+          </div>
+        </div>
+
+        <div class="control-section">
+          <div class="control-section__title">Material</div>
+          <div class="material-group">
+            <label class="material-option">
+              <input type="radio" name="material-cyl" value="fibre-cement" checked />
+              <span>Fibre Cement</span>
+            </label>
+            <label class="material-option">
+              <input type="radio" name="material-cyl" value="fibreglass" />
+              <span>Fibreglass</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="control-section">
+          <div class="control-section__title">Colour</div>
+          <div class="colour-swatches" id="colourSwatchesCyl"></div>
+          <div class="colour-code" id="colourCodeCyl">Dulux Lexicon Half</div>
+        </div>
+
+        <div class="control-section">
+          <div class="summary-card">
+            <div class="summary-row">
+              <span>Dimensions</span>
+              <strong id="summaryDimsCyl">Ø500 × 600</strong>
+            </div>
+            <div class="summary-row">
+              <span>Material</span>
+              <strong id="summaryMatCyl">Fibre Cement</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="control-section">
+          <label>Quantity</label>
+          <input type="number" id="quantityCyl" min="1" max="50" value="1" />
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn btn--dark" id="addQuoteCyl">Add to Quote</button>
+          <button class="btn btn--outline" id="viewQuoteCyl" disabled>View Quote</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 Urban Pots Australia. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ============ BASIC TAB SWITCHING ============
+const tabButtons = document.querySelectorAll('.tab-button');
+const tabContents = document.querySelectorAll('.tab-content');
+
+tabButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    // Remove active from all
+    tabButtons.forEach(b => b.classList.remove('active'));
+    tabContents.forEach(c => c.classList.remove('active'));
+
+    // Add active to clicked
+    button.classList.add('active');
+    const tabId = button.dataset.tab + 'Tab';
+    document.getElementById(tabId).classList.add('active');
+  });
+});
+
+// ============ COLOURS ============
+const COLORS = [
+  { name: 'Lexicon Half', hex: '#F2EFE9', code: 'Dulux Lexicon Half' },
+  { name: 'Antique White', hex: '#D5D0C8', code: 'Dulux Antique White' },
+  { name: 'Stone', hex: '#C9B99A', code: 'Dulux Dune' },
+  { name: 'Sage', hex: '#7A8C5E', code: 'Urban Pots Sage' },
+  { name: 'Monument', hex: '#4A4A48', code: 'Dulux Monument' },
+  { name: 'Domino', hex: '#1C1A18', code: 'Dulux Domino' },
+];
+
+function renderColours(containerId, codeId) {
+  const container = document.getElementById(containerId);
+  COLORS.forEach((color, idx) => {
+    const swatch = document.createElement('div');
+    swatch.className = 'colour-swatch' + (idx === 0 ? ' active' : '');
+    swatch.style.backgroundColor = color.hex;
+    swatch.dataset.hex = color.hex;
+    swatch.dataset.name = color.name;
+    swatch.dataset.code = color.code;
+    swatch.addEventListener('click', () => {
+      container.querySelectorAll('.colour-swatch').forEach(s => s.classList.remove('active'));
+      swatch.classList.add('active');
+      document.getElementById(codeId).textContent = color.code;
+    });
+    container.appendChild(swatch);
+  });
+}
+
+renderColours('colourSwatchesStraight', 'colourCodeStraight');
+renderColours('colourSwatchesCyl', 'colourCodeCyl');
+
+// ============ STRAIGHT EDGE SLIDERS ============
+const straightTab = document.getElementById('straightTab');
+
+document.addEventListener('DOMContentLoaded', () => {
+  const lengthSlider = straightTab.querySelector('.lengthSlider');
+  const lengthInput = straightTab.querySelector('.lengthInput');
+  const widthSlider = straightTab.querySelector('.widthSlider');
+  const widthInput = straightTab.querySelector('.widthInput');
+  const heightSlider = straightTab.querySelector('.heightSlider');
+  const heightInput = straightTab.querySelector('.heightInput');
+
+  [lengthSlider, lengthInput].forEach(el => {
+    el.addEventListener('input', (e) => {
+      const val = e.target.value;
+      lengthSlider.value = val;
+      lengthInput.value = val;
+      updateStraightSummary();
+    });
+  });
+
+  [widthSlider, widthInput].forEach(el => {
+    el.addEventListener('input', (e) => {
+      const val = e.target.value;
+      widthSlider.value = val;
+      widthInput.value = val;
+      updateStraightSummary();
+    });
+  });
+
+  [heightSlider, heightInput].forEach(el => {
+    el.addEventListener('input', (e) => {
+      const val = e.target.value;
+      heightSlider.value = val;
+      heightInput.value = val;
+      updateStraightSummary();
+    });
+  });
+
+  // Presets - Straight
+  straightTab.querySelectorAll('.preset-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.dataset.l) {
+        lengthInput.value = btn.dataset.l;
+        lengthSlider.value = btn.dataset.l;
+        widthInput.value = btn.dataset.w;
+        widthSlider.value = btn.dataset.w;
+        heightInput.value = btn.dataset.h;
+        heightSlider.value = btn.dataset.h;
+
+        straightTab.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        updateStraightSummary();
+      }
+    });
+  });
+
+  // Material change
+  straightTab.querySelectorAll('input[name="material-straight"]').forEach(input => {
+    input.addEventListener('change', updateStraightSummary);
+  });
+
+  // Quantity
+  document.getElementById('quantityStraight').addEventListener('change', () => {
+    updateQuoteButtons();
+  });
+
+  // Add to quote
+  document.getElementById('addQuoteStraight').addEventListener('click', () => {
+    const design = {
+      shape: 'straight',
+      dimensions: {
+        length: parseInt(lengthInput.value),
+        width: parseInt(widthInput.value),
+        height: parseInt(heightInput.value),
+      },
+      material: straightTab.querySelector('input[name="material-straight"]:checked').value,
+      colour: straightTab.querySelector('.colour-swatch.active').dataset.hex,
+      quantity: parseInt(document.getElementById('quantityStraight').value),
+    };
+    localStorage.setItem('urbanpots_designs', JSON.stringify([
+      ...JSON.parse(localStorage.getItem('urbanpots_designs') || '[]'),
+      { ...design, id: Date.now() }
+    ]));
+    alert('✓ Design added to quote!');
+    updateQuoteButtons();
+  });
+
+  document.getElementById('viewQuoteStraight').addEventListener('click', () => {
+    window.location.href = '/design-custom-planter-quote.html';
+  });
+
+  updateStraightSummary();
+  updateQuoteButtons();
+});
+
+function updateStraightSummary() {
+  const straightTab = document.getElementById('straightTab');
+  const l = straightTab.querySelector('.lengthInput').value;
+  const w = straightTab.querySelector('.widthInput').value;
+  const h = straightTab.querySelector('.heightInput').value;
+  document.getElementById('summaryDimsStraight').textContent = `${l} × ${w} × ${h}`;
+  const mat = straightTab.querySelector('input[name="material-straight"]:checked').value;
+  document.getElementById('summaryMatStraight').textContent = mat === 'fibre-cement' ? 'Fibre Cement' : 'Fibreglass';
+}
+
+// ============ CYLINDRICAL SLIDERS ============
+const cylindricalTab = document.getElementById('cylindricalTab');
+
+document.addEventListener('DOMContentLoaded', () => {
+  const diameterSlider = cylindricalTab.querySelector('.diameterSlider');
+  const diameterInput = cylindricalTab.querySelector('.diameterInput');
+  const heightSlider = cylindricalTab.querySelector('.heightSliderCyl');
+  const heightInput = cylindricalTab.querySelector('.heightInputCyl');
+
+  [diameterSlider, diameterInput].forEach(el => {
+    el.addEventListener('input', (e) => {
+      const val = e.target.value;
+      diameterSlider.value = val;
+      diameterInput.value = val;
+      updateCylindricalSummary();
+    });
+  });
+
+  [heightSlider, heightInput].forEach(el => {
+    el.addEventListener('input', (e) => {
+      const val = e.target.value;
+      heightSlider.value = val;
+      heightInput.value = val;
+      updateCylindricalSummary();
+    });
+  });
+
+  // Presets - Cylindrical
+  cylindricalTab.querySelectorAll('.preset-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.dataset.d) {
+        diameterInput.value = btn.dataset.d;
+        diameterSlider.value = btn.dataset.d;
+        heightInput.value = btn.dataset.h;
+        heightSlider.value = btn.dataset.h;
+
+        cylindricalTab.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        updateCylindricalSummary();
+      }
+    });
+  });
+
+  // Material change
+  cylindricalTab.querySelectorAll('input[name="material-cyl"]').forEach(input => {
+    input.addEventListener('change', updateCylindricalSummary);
+  });
+
+  // Add to quote
+  document.getElementById('addQuoteCyl').addEventListener('click', () => {
+    const design = {
+      shape: 'cylindrical',
+      dimensions: {
+        diameter: parseInt(diameterInput.value),
+        height: parseInt(heightInput.value),
+      },
+      material: cylindricalTab.querySelector('input[name="material-cyl"]:checked').value,
+      colour: cylindricalTab.querySelector('.colour-swatch.active').dataset.hex,
+      quantity: parseInt(document.getElementById('quantityCyl').value),
+    };
+    localStorage.setItem('urbanpots_designs', JSON.stringify([
+      ...JSON.parse(localStorage.getItem('urbanpots_designs') || '[]'),
+      { ...design, id: Date.now() }
+    ]));
+    alert('✓ Design added to quote!');
+    updateQuoteButtons();
+  });
+
+  document.getElementById('viewQuoteCyl').addEventListener('click', () => {
+    window.location.href = '/design-custom-planter-quote.html';
+  });
+
+  updateCylindricalSummary();
+});
+
+function updateCylindricalSummary() {
+  const cylindricalTab = document.getElementById('cylindricalTab');
+  const d = cylindricalTab.querySelector('.diameterInput').value;
+  const h = cylindricalTab.querySelector('.heightInputCyl').value;
+  document.getElementById('summaryDimsCyl').textContent = `Ø${d} × ${h}`;
+  const mat = cylindricalTab.querySelector('input[name="material-cyl"]:checked').value;
+  document.getElementById('summaryMatCyl').textContent = mat === 'fibre-cement' ? 'Fibre Cement' : 'Fibreglass';
+}
+
+function updateQuoteButtons() {
+  const designs = JSON.parse(localStorage.getItem('urbanpots_designs') || '[]');
+  const hasDesigns = designs.length > 0;
+  document.getElementById('viewQuoteStraight').disabled = !hasDesigns;
+  document.getElementById('viewQuoteCyl').disabled = !hasDesigns;
+}
+</script>
+
+</body>
+</html>

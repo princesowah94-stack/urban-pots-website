@@ -1,0 +1,80 @@
+{% schema %}
+{
+  "name": "Parallax Image",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Parallax Background Image"
+    },
+    {
+      "type": "text",
+      "id": "overlay_text",
+      "label": "Overlay Text",
+      "default": "Your Overlay Text"
+    },
+    {
+      "type": "color",
+      "id": "overlay_text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "overlay_bg_color",
+      "label": "Overlay Background",
+      "default": "rgba(0,0,0,0.4)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Parallax Image"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="parallax-section">
+  <div class="parallax-image" style="background-image: url({{ section.settings.background_image | img_url: 'master' }});">
+    <div class="parallax-overlay" style="color: {{ section.settings.overlay_text_color }}; background-color: {{ section.settings.overlay_bg_color }}">
+      {{ section.settings.overlay_text }}
+    </div>
+  </div>
+</section>
+
+<style>
+.parallax-section {
+  width: 100%;
+  overflow: hidden;
+}
+
+.parallax-image {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* changed from 500px to full screen height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.parallax-overlay {
+  font-size: 4.5rem;
+  font-weight: bold;
+  padding: 20px 30px;
+  border-radius: 8px;
+}
+@media (max-width: 768px) {
+  .parallax-image {
+    background-attachment: scroll;
+    height: 70vh; /* Optional: smaller height for mobile */
+    padding: 20px;
+  }
+  .parallax-overlay {
+    font-size: 1.5rem;
+    padding: 12px 16px;
+  }
+}
+</style>

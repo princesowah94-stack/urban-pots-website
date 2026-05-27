@@ -1,0 +1,62 @@
+{% if section.settings.section_title != blank %}
+<div class="up-client-logos">
+  <div class="t4s-container-wrap">
+    <p class="up-client-logos__label">{{ section.settings.section_title }}</p>
+    <div class="up-client-logos__grid">
+      {% for block in section.blocks %}
+        <div class="up-client-logos__item" {{ block.shopify_attributes }}>
+          {% if block.settings.logo != blank %}
+            {{ block.settings.logo | image_url: width: 300 | image_tag:
+              alt: block.settings.company_name,
+              loading: 'lazy',
+              widths: '150, 200, 300'
+            }}
+          {% else %}
+            <span style="font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--up-brown);opacity:0.4;">
+              {{ block.settings.company_name }}
+            </span>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Client Logos",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Label",
+      "default": "Trusted by Sydney's Developers"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Client Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo image"
+        },
+        {
+          "type": "text",
+          "id": "company_name",
+          "label": "Company name",
+          "info": "Shown as text fallback if no logo image is set"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Client Logos"
+    }
+  ]
+}
+{% endschema %}

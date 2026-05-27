@@ -1,0 +1,141 @@
+<section class="planter-box-info">
+  <div class="container">
+    <div class="content-wrapper">
+      
+      <!-- Left Text -->
+      <div class="text-content">
+        <p class="subtext">
+          Our planter boxes are made from durable fibre cement or fibre glass, built to last, fully waterproofed, primed, and finished with 3 coats of high-quality Dulux paint. Perfect for indoor and outdoor use, they combine functionality, style, and modern design.
+        </p>
+        <ul class="info-list">
+          <li><span>Handcrafted & Custom-Made in Western Sydney</span> – Crafted to your exact specifications.</li>
+          <li><span>Premium Quality Finish</span> – Primed and coated with 3 layers of Dulux paint for long-lasting protection.</li>
+          <li><span>Quick Turnaround</span> – Custom planter boxes ready within 2–8 weeks, depending on order size.</li>
+          <li><span>Material Options</span> – Choose between fibre cement or fibre glass for a strong, durable planter.</li>
+          <li><span>Nationwide Delivery</span> – We ship across Sydney, Melbourne, Brisbane, Perth, Adelaide, and all Australian suburbs.</li>
+        </ul>
+      </div>
+
+      <!-- Right Image -->
+      <div class="image-content">
+        <div class="image-wrapper">
+          <img src="{{ section.settings.image | img_url: '800x' }}" alt="Custom Planter Boxes" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.planter-box-info {
+  padding: 80px 20px;
+  background: #fff;
+}
+
+.planter-box-info .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.planter-box-info .content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.planter-box-info .text-content {
+  flex: 1 1 55%;
+}
+
+.planter-box-info .image-content {
+  flex: 1 1 40%;
+  text-align: center;
+}
+
+.planter-box-info .image-wrapper {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.planter-box-info .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.planter-box-info .text-content .subtext {
+      font-size: 1.8rem;
+      color: #555;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+}
+
+.planter-box-info .info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.planter-box-info .info-list li {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #333;
+  position: relative;
+  padding-left: 28px;
+}
+
+.planter-box-info .info-list li::before {
+  content: "✓";
+  color: #000;
+  font-weight: 600;
+  font-size: 1.4rem;
+  position: absolute;
+  left: 0;
+  top: 0.2rem;
+}
+
+.planter-box-info .info-list li span {
+  font-weight: 600;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .planter-box-info .content-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+  .planter-box-info .text-content {
+    flex: 1 1 100%;
+  }
+  .planter-box-info .image-content {
+    flex: 1 1 100%;
+  }
+  .planter-box-info .info-list {
+    text-align: left;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Modern Planter Box Info",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Right Side Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Modern Planter Box Info",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}

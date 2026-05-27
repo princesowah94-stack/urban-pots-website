@@ -1,0 +1,247 @@
+{% if page.handle == "commercial-planters" %}
+<section class="dynamic-image-grid section-{{ section.id }}">
+  <div class="custom-grid-container">
+    
+    <div class="grid-header">
+      {% if section.settings.heading != blank %}
+        <h2 class="grid-main-title">{{ section.settings.heading }}</h2>
+      {% endif %}
+      
+      {% if section.settings.subtext != blank %}
+        <div class="grid-subtext">
+          {{ section.settings.subtext }}
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- GRID -->
+    <div class="image-grid-layout">
+      {% for block in section.blocks %}
+        <div class="grid-item-card" {{ block.shopify_attributes }}>
+          <div class="image-box" onclick="openFullImage(this)">
+            {% if block.settings.grid_image != blank %}
+              <img 
+                src="{{ block.settings.grid_image | image_url: width: 1200 }}" 
+                alt="{{ block.settings.grid_image.alt | escape }}"
+                loading="lazy"
+              >
+            {% else %}
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg-custom' }}
+            {% endif %}
+            <div class="zoom-overlay"><span>View Full Screen</span></div>
+          </div>
+          
+          {% if block.settings.image_title != blank %}
+             <h3 class="item-card-title">{{ block.settings.image_title }}</h3>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div id="ImageModal" class="image-lightbox" onclick="this.style.display='none'">
+    <span class="close-lightbox">&times;</span>
+    <img class="modal-content" id="FullImage">
+  </div>
+</section>
+
+<style>
+.dynamic-image-grid { 
+  padding: 80px 0; 
+  background-color: #fff;
+}
+
+.custom-grid-container { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 0 20px; 
+}
+
+.grid-header { 
+  text-align: center; 
+  margin-bottom: 50px; 
+}
+
+.grid-main-title { 
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 3.5rem; 
+  font-weight: 400; 
+  color: #111;
+  margin-bottom: 15px; 
+}
+
+.grid-subtext { 
+  font-size: 1.8rem; 
+  color: #555; 
+  max-width: 800px; 
+  margin: 0 auto; 
+  line-height: 1.6;
+}
+
+/* ✅ FIXED: GRID INSTEAD OF FLEX */
+.image-grid-layout { 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* CARD */
+.grid-item-card { 
+  width: 100%;
+}
+
+/* IMAGE BOX */
+.image-box { 
+  width: 100%; 
+  aspect-ratio: 4 / 3; 
+  position: relative; 
+  cursor: pointer; 
+  overflow: hidden; 
+  border-radius: 12px; 
+  background-color: #f3f3f3;
+}
+
+/* IMAGE */
+.image-box img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  object-position: center; 
+  display: block; 
+  transition: transform 0.5s ease-in-out; 
+}
+
+.image-box:hover img { 
+  transform: scale(1.05); 
+}
+
+/* OVERLAY */
+.zoom-overlay {
+  position: absolute; 
+  top: 0; left: 0; 
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.1); 
+  color: white; 
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  opacity: 0;
+  transition: opacity 0.3s ease; 
+  font-weight: 600; 
+  font-size: 1.4rem;
+}
+
+.image-box:hover .zoom-overlay { 
+  opacity: 1; 
+}
+
+/* TITLE */
+.item-card-title { 
+  margin-top: 1.5rem; 
+  font-size: 1.8rem; 
+  font-weight: 600; 
+  text-align: center; 
+  color: #333; 
+}
+
+/* LIGHTBOX */
+.image-lightbox {
+  display: none; 
+  position: fixed; 
+  z-index: 10000; 
+  left: 0; top: 0;
+  width: 100%; height: 100%; 
+  background-color: rgba(0,0,0,0.9);
+  align-items: center; 
+  justify-content: center; 
+  padding: 20px;
+}
+
+.modal-content { 
+  max-width: 95%; 
+  max-height: 95%; 
+  object-fit: contain; 
+  border-radius: 8px; 
+}
+
+.close-lightbox { 
+  position: absolute; 
+  top: 20px; 
+  right: 30px; 
+  color: #fff; 
+  font-size: 50px; 
+  cursor: pointer; 
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+  .grid-main-title { 
+    font-size: 2.5rem; 
+  }
+
+  .grid-subtext { 
+    font-size: 1.5rem; 
+  }
+}
+</style>
+
+<script>
+function openFullImage(element) {
+  var imgSource = element.querySelector('img').src;
+  var modal = document.getElementById("ImageModal");
+  var modalImg = document.getElementById("FullImage");
+  modalImg.src = imgSource;
+  modal.style.display = "flex";
+}
+</script>
+
+{% endif %}
+
+{% schema %}
+{
+  "name": "Dynamic Image Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Custom Projects"
+    },
+    {
+      "type": "richtext",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "<p>Tailored solutions designed to suit your style.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image_block",
+      "name": "Grid Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "grid_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "image_title",
+          "label": "Image Caption",
+          "default": "Project Name"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dynamic Image Grid",
+      "blocks": [
+        { "type": "image_block" },
+        { "type": "image_block" }
+      ]
+    }
+  ]
+}
+{% endschema %}

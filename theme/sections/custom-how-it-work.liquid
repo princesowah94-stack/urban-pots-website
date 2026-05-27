@@ -1,0 +1,198 @@
+
+<section class="how-it-works">
+  <div class="container">
+    <h3 class="section-title">{{ section.settings.heading }}</h3>
+
+    <div class="steps-wrapper">
+      {% for block in section.blocks %}
+        <div class="step-card">
+          <div class="step-number">{{ forloop.index }}</div>
+          <div class="step-content">
+            <h3 class="step-title">{{ block.settings.title }}</h3>
+            <p class="step-text">{{ block.settings.text }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <style>
+    .how-it-works .steps-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: stretch;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .how-it-works .step-card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      max-width: 240px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .how-it-works .step-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+
+    .how-it-works .step-number {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: #000;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .how-it-works .step-title {
+      font-size: 1.6rem;
+      margin-bottom: 0.6rem;
+      color: #333;
+    }
+
+    .how-it-works .step-text {
+      font-size: 1.5rem;
+      line-height: 1.5;
+      color: #555;
+    }
+
+    .section-title {
+      text-align:center;
+      font-size: 3.5rem;
+      font-weight: 400;
+      padding-top:40px;
+      padding-bottom:30px;
+      color: #111;
+    }
+
+    @media (max-width: 768px) {
+      .section-title{
+        font-size:2.5rem;
+      }
+      .how-it-works{
+        padding-bottom:30px;
+      }
+      .how-it-works .steps-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        
+      }
+
+      .how-it-works .step-number {
+        width: 30px;
+        height: 30px;
+      }
+
+      .how-it-works .step-card {
+        width: calc(100% - 40px) !important; /* full width minus padding */
+        max-width: none;
+        border-radius: 0;
+        padding: 1.5rem;
+      }
+
+      .how-it-works .step-title {
+        font-size: 1.4rem;
+      }
+
+      .how-it-works .step-text {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</section>
+
+
+{% schema %}
+{
+  "name": "How It Works",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "How It Works"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Step Title",
+          "default": "Request a Free Quote"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Step Description",
+          "default": "Share your design, size, and material preference."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "How It Works",
+      "category": "Custom Sections",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "title": "Request a Free Quote",
+            "text": "Share your design, size, and material preference."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Receive Your Quote Within 24 Hours",
+            "text": "Fast, transparent, no-obligation pricing."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Confirm with a Deposit",
+            "text": "Pay your deposit to secure your order."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Production & Lead Time",
+            "text": "Handcrafted in our Western Sydney yard, ready within 2–8 weeks depending on order size."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Delivered & Ready to Use",
+            "text": "Waterproofed, painted, and fully finished for immediate use."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

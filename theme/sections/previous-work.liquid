@@ -1,0 +1,211 @@
+{% schema %}
+{
+  "name": "Previous Work Showcase",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Our Previous Work"
+    },
+    {
+      "type": "textarea",
+      "id": "intro_text",
+      "label": "Intro Text",
+      "default": "Take a look at some of our past projects."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "work_item",
+      "name": "Work Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "work_image",
+          "label": "Work Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "work_image_hover",
+          "label": "Hover Image"
+        },
+        {
+          "type": "text",
+          "id": "work_title",
+          "label": "Title",
+          "default": "Project Title"
+        },
+        {
+          "type": "textarea",
+          "id": "work_description",
+          "label": "Description",
+          "default": "Brief description of the project."
+        },
+        {
+          "type": "select",
+          "id": "layout",
+          "label": "Layout Position",
+          "default": "text-left",
+          "options": [
+            { "value": "text-left", "label": "Text Left, Image Right" },
+            { "value": "text-right", "label": "Text Right, Image Left" }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Previous Work Showcase",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="previous-work">
+  <div class="previous-work__container">
+    {% if section.settings.heading != blank %}
+      <h2 class="previous-work__heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+    
+    {% if section.settings.intro_text != blank %}
+      <p class="previous-work__intro">{{ section.settings.intro_text }}</p>
+    {% endif %}
+    
+    <div class="previous-work__grid">
+      {% for block in section.blocks %}
+        <div class="previous-work__item {{ block.settings.layout }}">
+          <div class="previous-work__content">
+            <h3 class="previous-work__title">{{ block.settings.work_title }}</h3>
+            <p class="previous-work__description">{{ block.settings.work_description }}</p>
+          </div>
+          {% if block.settings.work_image != blank %}
+            <div class="previous-work__image">
+              <img 
+                class="main-image" 
+                src="{{ block.settings.work_image | img_url: '600x' }}" 
+                alt="{{ block.settings.work_title | escape }}">
+              {% if block.settings.work_image_hover != blank %}
+                <img 
+                  class="hover-image" 
+                  src="{{ block.settings.work_image_hover | img_url: '600x' }}" 
+                  alt="{{ block.settings.work_title | escape }}">
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+.previous-work {
+  padding: 40px 0;
+}
+
+/* Container */
+.previous-work__container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.previous-work__heading {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+.previous-work__intro {
+  text-align: center;
+  margin-bottom: 25px;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.previous-work__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.previous-work__item {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 12px;
+  padding:20px;
+}
+
+/* Manual layout control */
+.previous-work__item.text-left {
+  flex-direction: row;
+}
+.previous-work__item.text-right {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+/* Default text alignment */
+.previous-work__content {
+  flex: 1;
+  text-align: right;
+  padding:20px
+}
+
+/* When text is on the right side */
+.previous-work__item.text-right .previous-work__content {
+  text-align: left;
+}
+
+.previous-work__image {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16/9; /* ✅ forces same height/width ratio */
+}
+
+.previous-work__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ✅ crops images to fill ratio without stretching */
+  border-radius: 8px;
+  display: block;
+  transition: opacity 0.4s ease-in-out;
+}
+.previous-work__image .hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.previous-work__image:hover .main-image {
+  opacity: 0;
+}
+.previous-work__image:hover .hover-image {
+  opacity: 1;
+}
+
+.previous-work__title {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+.previous-work__description {
+  color: #555;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .previous-work__item {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 10px;
+  }
+  .previous-work__content {
+    text-align: center;
+  }
+}
+</style>
