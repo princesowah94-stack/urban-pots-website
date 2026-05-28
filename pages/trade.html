@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, max-scale=1" />
+  <title>Trade & Wholesale Planters — Urban Pots Sydney</title>
+  <meta name="description" content="Trade and wholesale planter solutions for Sydney professionals. Exclusive discounts for landscapers, builders, architects, and designers." />
+
+  <link rel="stylesheet" href="../css/components.css" />
+  <style>
+    /* Hero */
+    .hero {
+      position: relative;
+      height: 50vh;
+      min-height: 400px;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: clamp(2rem, 5vw, 4rem);
+      background: linear-gradient(135deg, #1C1A18 0%, #3a3530 100%);
+      overflow: hidden;
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+    }
+
+    .hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--c-stone);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero__eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--c-stone);
+    }
+
+    .hero__h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 600;
+      line-height: 0.93;
+      letter-spacing: -0.025em;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .hero__sub {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.65);
+      max-width: 420px;
+      line-height: 1.8;
+    }
+
+    /* Section */
+    .section {
+      padding: clamp(4rem, 8vw, 7rem) 0;
+    }
+
+    .section--light { background: var(--c-bg); }
+    .section--cream { background: var(--c-cream); }
+    .section--dark { background: var(--c-dark); }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      margin-bottom: 3rem;
+    }
+
+    .section-head h2 {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 4.5vw, 3.6rem);
+      font-weight: 700;
+      line-height: 0.92;
+      letter-spacing: -0.025em;
+      color: var(--c-brown-dk);
+    }
+
+    .section-head h2 em { font-style: italic; font-weight: 300; color: var(--c-sage); }
+
+    .section-head p {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--c-brown);
+      line-height: 1.85;
+    }
+
+    .section--dark .section-head h2 {
+      color: #fff;
+    }
+
+    .section--dark .section-head h2 em { color: var(--c-stone); }
+
+    .section--dark .section-head p {
+      color: rgba(255,255,255,0.62);
+    }
+
+    /* Benefits grid */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    .benefit-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .benefit-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--c-sage);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+
+    .benefit-card h3 {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--c-brown-dk);
+    }
+
+    .benefit-card p {
+      font-size: 0.9rem;
+      color: var(--c-brown);
+      line-height: 1.8;
+    }
+
+    /* Audience list */
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .audience-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .audience-item::before {
+      content: '✓';
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--c-sage);
+      flex-shrink: 0;
+    }
+
+    .audience-item p {
+      font-size: 0.95rem;
+      color: var(--c-brown);
+      margin: 0;
+    }
+
+    /* Process timeline */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .process-step {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      border-top: 1px solid var(--c-border);
+      padding-top: 1.5rem;
+    }
+
+    .process-step__num {
+      font-family: var(--font-head);
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: var(--c-stone);
+      line-height: 1;
+    }
+
+    .process-step h3 {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--c-brown-dk);
+    }
+
+    .process-step p {
+      font-size: 0.9rem;
+      color: var(--c-brown);
+      line-height: 1.8;
+    }
+
+    /* Form section */
+    .form-section {
+      background: var(--c-cream);
+      padding: clamp(3rem, 5vw, 5rem);
+      border-radius: 2px;
+    }
+
+    .form-section h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--c-brown-dk);
+      margin-bottom: 2rem;
+      line-height: 1;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--c-brown-dk);
+    }
+
+    input,
+    textarea,
+    select {
+      padding: 0.9rem 1.2rem;
+      border: 1px solid var(--c-border);
+      border-radius: 2px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--c-brown);
+      background: #fff;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: var(--c-sage);
+      box-shadow: 0 0 0 3px rgba(122, 140, 94, 0.1);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-submit {
+      padding: 0.9rem 2rem;
+      background: var(--c-dark);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.2s;
+    }
+
+    .form-submit:hover {
+      background: #333;
+      transform: translateY(-2px);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .audience-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        height: 40vh;
+        min-height: 300px;
+      }
+
+      .hero__h1 {
+        font-size: clamp(1.8rem, 5vw, 2.8rem);
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .audience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-section {
+        padding: clamp(2rem, 4vw, 3rem);
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- NAV -->
+<nav class="site-nav" id="siteNav">
+  <div class="container site-nav__inner">
+    <a href="/" class="nav-logo">
+      <img src="https://cdn.shopify.com/s/files/1/0748/4152/2498/files/urban_pots_logo__white_150.png?v=1684274691" alt="Urban Pots" width="120" height="30" />
+    </a>
+    <div class="nav-links">
+      <a href="/shop.html">Shop Now</a>
+      <a href="/pages/custom-planter-boxes.html">Custom Planters</a>
+      <a href="/pages/commercial-planters.html">Commercial</a>
+      <a href="/pages/trade.html" class="active">Trade</a>
+      <a href="/pages/contact.html">Contact</a>
+      <a href="/pages/find-us.html">Find Us</a>
+      <a href="/pages/about.html">About Us</a>
+    </div>
+    <div class="nav-actions">
+      <a href="mailto:info@urbanpots.com.au" class="nav-cta">Get a Quote</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="nav-mobile" id="navMobile" aria-hidden="true">
+  <ul class="nav-mobile__links">
+    <li><a href="/shop.html">Shop Now</a></li>
+    <li><a href="/pages/custom-planter-boxes.html">Custom Planters</a></li>
+    <li><a href="/pages/commercial-planters.html">Commercial</a></li>
+    <li><a href="/pages/trade.html">Trade</a></li>
+    <li><a href="/pages/contact.html">Contact</a></li>
+    <li><a href="/pages/find-us.html">Find Us</a></li>
+    <li><a href="/pages/about.html">About Us</a></li>
+  </ul>
+  <div class="nav-mobile__footer">
+    <a href="mailto:info@urbanpots.com.au" class="btn btn--stone">Get a Quote</a>
+    <div class="nav-mobile__footer-meta">
+      <a href="tel:0433132406">0433 132 406</a> &nbsp;·&nbsp; Tue–Sat 9am–4pm
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__content">
+      <p class="hero__eyebrow">B2B Solutions</p>
+      <h1 class="hero__h1">Trade & Wholesale for Sydney Professionals</h1>
+      <p class="hero__sub">Exclusive pricing and priority support for landscapers, builders, architects, designers, and hospitality professionals.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="section section--light">
+  <div class="container">
+    <div class="section-head fadein">
+      <div>
+        <p class="eyebrow" style="margin-bottom: 0.75rem;">Why Trade With Us</p>
+        <h2>Built for <em>Professional Buyers</em></h2>
+      </div>
+      <p>We partner with Sydney's leading design and construction professionals. Our trade program offers exclusive benefits designed to support your projects.</p>
+    </div>
+
+    <div class="benefits-grid fadein delay-1">
+      <div class="benefit-card">
+        <div class="benefit-icon">💰</div>
+        <h3>Tiered Pricing</h3>
+        <p>Volume-based discounts starting from your first order. The more you buy, the more you save.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">🚚</div>
+        <h3>Priority Delivery</h3>
+        <p>Fast turnaround and dedicated delivery scheduling. We work around your project timeline.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">🎯</div>
+        <h3>Project Consultation</h3>
+        <p>Work directly with our team to customize solutions for your specific projects and clients.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">📋</div>
+        <h3>Dedicated Support</h3>
+        <p>A single point of contact for all your orders, questions, and project needs. Personal service at scale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="section-head fadein">
+      <div>
+        <p class="eyebrow" style="margin-bottom: 0.75rem;">Who We Work With</p>
+        <h2>Sydney's Top <em>Design & Build</em> Professionals</h2>
+      </div>
+      <p>We serve a broad range of professionals across residential, commercial, hospitality, and events sectors.</p>
+    </div>
+
+    <div class="audience-grid fadein delay-1">
+      <div class="audience-item">
+        <p><strong>Landscapers & Garden Designers</strong></p>
+      </div>
+      <div class="audience-item">
+        <p><strong>Interior Designers</strong></p>
+      </div>
+      <div class="audience-item">
+        <p><strong>Architects & Developers</strong></p>
+      </div>
+      <div class="audience-item">
+        <p><strong>Builders & Construction Firms</strong></p>
+      </div>
+      <div class="audience-item">
+        <p><strong>Hospitality & Café Owners</strong></p>
+      </div>
+      <div class="audience-item">
+        <p><strong>Event Planners & Stylists</strong></p>
+      </div>
+      <div class="audience-item">
+        <p><strong>Real Estate Agents & Staging</strong></p>
+      </div>
+      <div class="audience-item">
+        <p><strong>Commercial Fit-Out Companies</strong></p>
+      </div>
+      <div class="audience-item">
+        <p><strong>Florists & Plant Retailers</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section section--light">
+  <div class="container">
+    <div class="section-head fadein">
+      <div>
+        <p class="eyebrow" style="margin-bottom: 0.75rem;">Getting Started</p>
+        <h2>Simple <em>3-Step Process</em></h2>
+      </div>
+      <p>From first enquiry to delivery, we make the trade process straightforward and stress-free.</p>
+    </div>
+
+    <div class="process-steps fadein delay-1">
+      <div class="process-step">
+        <div class="process-step__num">1</div>
+        <h3>Submit Enquiry</h3>
+        <p>Tell us about your project, the quantities you need, and your timeline. We'll review and get back to you promptly.</p>
+      </div>
+
+      <div class="process-step">
+        <div class="process-step__num">2</div>
+        <h3>Project Consultation</h3>
+        <p>Our team discusses your specific needs, offers custom solutions, and provides tiered pricing based on volume.</p>
+      </div>
+
+      <div class="process-step">
+        <div class="process-step__num">3</div>
+        <h3>Delivery & Support</h3>
+        <p>We handle delivery to your project site and provide ongoing support throughout the project lifecycle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENQUIRY FORM -->
+<section class="section section--light">
+  <div class="container">
+    <div class="form-section fadein">
+      <h2>Submit Your Trade Enquiry</h2>
+      <form id="tradeForm" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" required />
+          </div>
+
+          <div class="form-group">
+            <label for="company">Company Name *</label>
+            <input type="text" id="company" name="company" required />
+          </div>
+
+          <div class="form-group full">
+            <label for="profession">Professional Role *</label>
+            <select id="profession" name="profession" required>
+              <option value="">Select your profession...</option>
+              <option value="landscaper">Landscaper / Garden Designer</option>
+              <option value="interior-designer">Interior Designer</option>
+              <option value="architect">Architect / Designer</option>
+              <option value="builder">Builder / Construction</option>
+              <option value="developer">Developer / Real Estate</option>
+              <option value="hospitality">Hospitality / Café Owner</option>
+              <option value="event-planner">Event Planner / Stylist</option>
+              <option value="florist">Florist / Plant Retailer</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group full">
+            <label for="project">Project Description *</label>
+            <textarea id="project" name="project" placeholder="Tell us about your project, the quantities needed, and timeline..." required></textarea>
+          </div>
+
+          <div class="form-group full">
+            <label for="message">Additional Information (Optional)</label>
+            <textarea id="message" name="message" placeholder="Any other details we should know..."></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="form-submit">Submit Enquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background: var(--c-dark); color: #fff; padding: clamp(3rem, 5vw, 5rem) 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
+  <div class="container">
+    <p style="font-size: 0.9rem; margin-bottom: 1rem;">Urban Pots — Handcrafted in Western Sydney</p>
+    <p style="font-size: 0.8rem; color: rgba(255,255,255,0.5); margin: 0;">
+      <a href="mailto:info@urbanpots.com.au" style="color: inherit; text-decoration: none;">info@urbanpots.com.au</a> ·
+      <a href="tel:0433132406" style="color: inherit; text-decoration: none;">0433 132 406</a> ·
+      Tue–Sat 9am–4pm
+    </p>
+  </div>
+</footer>
+
+<script type="module">
+  // Navbar scroll detection
+  const nav = document.getElementById('siteNav');
+  const hamburger = document.getElementById('navHamburger');
+  const mobileNav = document.getElementById('navMobile');
+
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 80);
+  });
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', !isOpen);
+    mobileNav.classList.toggle('open');
+  });
+
+  // Close mobile menu on link click
+  document.querySelectorAll('.nav-mobile__links a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileNav.classList.remove('open');
+    });
+  });
+
+  // Fadein observer
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('inView');
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fadein').forEach(el => fadeObserver.observe(el));
+
+  // Form submission
+  document.getElementById('tradeForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    // In production, send to email service or Vercel Function
+    console.log('Form data:', Object.fromEntries(formData));
+    alert('Thank you for your enquiry. Our team will be in touch within 24 hours.');
+    e.target.reset();
+  });
+</script>
+</body>
+</html>

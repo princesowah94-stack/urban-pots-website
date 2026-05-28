@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, max-scale=1" />
+  <title>Visit Our Showroom — Wetherill Park, Sydney</title>
+  <meta name="description" content="Visit Urban Pots showroom in Wetherill Park, Greater Western Sydney. See planters in person, get expert advice, and browse our full range." />
+
+  <link rel="stylesheet" href="../css/components.css" />
+  <style>
+    /* Hero */
+    .hero {
+      position: relative;
+      height: 50vh;
+      min-height: 400px;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: clamp(2rem, 5vw, 4rem);
+      background: linear-gradient(135deg, #1C1A18 0%, #3a3530 100%);
+      overflow: hidden;
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+    }
+
+    .hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--c-stone);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero__eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--c-stone);
+    }
+
+    .hero__h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 600;
+      line-height: 0.93;
+      letter-spacing: -0.025em;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .hero__sub {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.65);
+      max-width: 420px;
+      line-height: 1.8;
+    }
+
+    /* Section */
+    .section {
+      padding: clamp(4rem, 8vw, 7rem) 0;
+    }
+
+    .section--light { background: var(--c-bg); }
+    .section--cream { background: var(--c-cream); }
+
+    /* Store info grid */
+    .store-info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .store-card {
+      background: #fff;
+      border: 1px solid var(--c-border);
+      padding: 2rem;
+      border-radius: 2px;
+    }
+
+    .store-card h3 {
+      font-family: var(--font-head);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--c-brown-dk);
+      margin-bottom: 1.5rem;
+    }
+
+    .store-card p {
+      font-size: 0.95rem;
+      color: var(--c-brown);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .store-card a {
+      color: var(--c-sage);
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+      transition: color 0.2s;
+      font-weight: 500;
+    }
+
+    .store-card a:hover {
+      color: var(--c-brown-dk);
+    }
+
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+    }
+
+    .hours-table th,
+    .hours-table td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--c-border);
+      font-size: 0.9rem;
+    }
+
+    .hours-table th {
+      background: var(--c-bg);
+      font-weight: 700;
+      color: var(--c-brown-dk);
+    }
+
+    .hours-table td {
+      color: var(--c-brown);
+    }
+
+    .hours-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Map section */
+    .map-section {
+      border-radius: 2px;
+      overflow: hidden;
+      height: 500px;
+      background: #f0f0f0;
+      margin-bottom: 3rem;
+    }
+
+    .map-section iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* What to expect section */
+    .what-expect {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .expect-item {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .expect-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--c-sage);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+
+    .expect-item h4 {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--c-brown-dk);
+      margin: 0;
+    }
+
+    .expect-item p {
+      font-size: 0.9rem;
+      color: var(--c-brown);
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    /* Local area section */
+    .local-area {
+      background: var(--c-cream);
+      padding: 2rem;
+      border-radius: 2px;
+    }
+
+    .local-area h3 {
+      font-family: var(--font-head);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--c-brown-dk);
+      margin-bottom: 1rem;
+    }
+
+    .local-area p {
+      font-size: 0.95rem;
+      color: var(--c-brown);
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .store-info-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .what-expect {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+
+      .map-section {
+        height: 400px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        height: 40vh;
+        min-height: 300px;
+      }
+
+      .hero__h1 {
+        font-size: clamp(1.8rem, 5vw, 2.8rem);
+      }
+
+      .store-info-grid {
+        gap: 1.5rem;
+      }
+
+      .what-expect {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .map-section {
+        height: 300px;
+      }
+
+      .store-card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- NAV -->
+<nav class="site-nav" id="siteNav">
+  <div class="container site-nav__inner">
+    <a href="/" class="nav-logo">
+      <img src="https://cdn.shopify.com/s/files/1/0748/4152/2498/files/urban_pots_logo__white_150.png?v=1684274691" alt="Urban Pots" width="120" height="30" />
+    </a>
+    <div class="nav-links">
+      <a href="/shop.html">Shop Now</a>
+      <a href="/pages/custom-planter-boxes.html">Custom Planters</a>
+      <a href="/pages/commercial-planters.html">Commercial</a>
+      <a href="/pages/trade.html">Trade</a>
+      <a href="/pages/contact.html">Contact</a>
+      <a href="/pages/find-us.html" class="active">Find Us</a>
+      <a href="/pages/about.html">About Us</a>
+    </div>
+    <div class="nav-actions">
+      <a href="mailto:info@urbanpots.com.au" class="nav-cta">Get a Quote</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="nav-mobile" id="navMobile" aria-hidden="true">
+  <ul class="nav-mobile__links">
+    <li><a href="/shop.html">Shop Now</a></li>
+    <li><a href="/pages/custom-planter-boxes.html">Custom Planters</a></li>
+    <li><a href="/pages/commercial-planters.html">Commercial</a></li>
+    <li><a href="/pages/trade.html">Trade</a></li>
+    <li><a href="/pages/contact.html">Contact</a></li>
+    <li><a href="/pages/find-us.html">Find Us</a></li>
+    <li><a href="/pages/about.html">About Us</a></li>
+  </ul>
+  <div class="nav-mobile__footer">
+    <a href="tel:0433132406" class="btn btn--stone">Call Us</a>
+    <div class="nav-mobile__footer-meta">
+      <a href="tel:0433132406">0433 132 406</a> &nbsp;·&nbsp; Tue–Sat 9am–4pm
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__content">
+      <p class="hero__eyebrow">Visit Us</p>
+      <h1 class="hero__h1">Urban Pots Showroom</h1>
+      <p class="hero__sub">Come see our full range of planters in person. Chat with our team, get expert advice, and discover the perfect solution for your space.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORE INFO -->
+<section class="section section--light">
+  <div class="container">
+    <div class="store-info-grid fadein">
+      <div class="store-card">
+        <h3>Location & Hours</h3>
+        <p style="font-weight: 600; margin-top: 1.5rem;">21/130 Hassall Street<br>Wetherill Park NSW 2164<br>Greater Western Sydney</p>
+
+        <table class="hours-table">
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Hours</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monday</td>
+              <td>Closed</td>
+            </tr>
+            <tr>
+              <td>Tuesday–Thursday</td>
+              <td>10am – 5pm</td>
+            </tr>
+            <tr>
+              <td>Friday</td>
+              <td>10am – 4pm</td>
+            </tr>
+            <tr>
+              <td>Saturday</td>
+              <td>10am – 3pm</td>
+            </tr>
+            <tr>
+              <td>Sunday</td>
+              <td>11am – 3pm</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p style="font-size: 0.85rem; color: rgba(0,0,0,0.5); margin-top: 1rem;">Public holidays may vary. Call ahead to confirm.</p>
+      </div>
+
+      <div class="store-card">
+        <h3>Get in Touch</h3>
+        <p><strong>Phone:</strong><br><a href="tel:0433132406">0433 132 406</a></p>
+        <p><strong>Email:</strong><br><a href="mailto:info@urbanpots.com.au">info@urbanpots.com.au</a></p>
+        <p><strong>Service Area:</strong><br>Sydney metro, NSW, Australia-wide delivery</p>
+        <p style="font-size: 0.85rem; color: rgba(0,0,0,0.5); margin-top: 1.5rem;">We offer custom consultations for larger projects. Book ahead for a tailored showroom experience.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<div class="map-section fadein delay-1">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.1234567890123!2d150.89!3d-33.847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12b7c8c7c7c7c7%3A0x1234567890abcdef!2s21%2F130%20Hassall%20St%2C%20Wetherill%20Park%20NSW%202164!5e0!3m2!1sen!2sau!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<!-- WHAT TO EXPECT -->
+<section class="section section--light">
+  <div class="container">
+    <div style="margin-bottom: 3rem; text-align: center;">
+      <p class="eyebrow" style="margin-bottom: 0.75rem;">Visit Our Showroom</p>
+      <h2 style="font-family: var(--font-head); font-size: clamp(2rem, 4.5vw, 3.6rem); font-weight: 700; line-height: 0.92; letter-spacing: -0.025em; color: var(--c-brown-dk); margin-bottom: 1rem;">What to Expect</h2>
+    </div>
+
+    <div class="what-expect fadein delay-1">
+      <div class="expect-item">
+        <div class="expect-icon">🌱</div>
+        <h4>Product Range</h4>
+        <p>See our full range of materials (Fibre Cement, Fibreglass, GRC) and colours in person. Touch the finishes, compare sizes.</p>
+      </div>
+
+      <div class="expect-item">
+        <div class="expect-icon">👥</div>
+        <h4>Expert Advice</h4>
+        <p>Our team is available to discuss your project, recommend products, and provide insights on durability and maintenance.</p>
+      </div>
+
+      <div class="expect-item">
+        <div class="expect-icon">💡</div>
+        <h4>Custom Solutions</h4>
+        <p>Explore custom planter options for your exact specifications. We'll discuss timelines, pricing, and delivery.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCAL AREA -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="local-area fadein">
+      <h3>Conveniently Located in Greater Western Sydney</h3>
+      <p>Our showroom is situated in Wetherill Park, centrally positioned in Greater Western Sydney. We're easily accessible from Parramatta, Penrith, Marsden Park, and surrounding suburbs. Whether you're based in the Eastern suburbs, Northern beaches, or South Sydney, we're well-positioned to serve your needs with fast delivery across the Sydney metro area.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="section section--light">
+  <div class="container" style="text-align: center;">
+    <p class="eyebrow" style="margin-bottom: 1rem;">Need Custom Solutions?</p>
+    <h2 style="font-family: var(--font-head); font-size: clamp(2rem, 4.5vw, 3.6rem); font-weight: 700; line-height: 0.92; letter-spacing: -0.025em; color: var(--c-brown-dk); margin-bottom: 2rem;">Design Your Planter in 3D</h2>
+    <a href="/design-custom-planter.html" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.9rem; background: var(--c-dark); color: #fff; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; text-decoration: none; transition: background 0.25s, transform 0.2s;">
+      Explore Configurator →
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background: var(--c-dark); color: #fff; padding: clamp(3rem, 5vw, 5rem) 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
+  <div class="container">
+    <p style="font-size: 0.9rem; margin-bottom: 1rem;">Urban Pots — Handcrafted in Western Sydney</p>
+    <p style="font-size: 0.8rem; color: rgba(255,255,255,0.5); margin: 0;">
+      <a href="mailto:info@urbanpots.com.au" style="color: inherit; text-decoration: none;">info@urbanpots.com.au</a> ·
+      <a href="tel:0433132406" style="color: inherit; text-decoration: none;">0433 132 406</a> ·
+      Tue–Sat 9am–4pm
+    </p>
+  </div>
+</footer>
+
+<script type="module">
+  // Navbar scroll detection
+  const nav = document.getElementById('siteNav');
+  const hamburger = document.getElementById('navHamburger');
+  const mobileNav = document.getElementById('navMobile');
+
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 80);
+  });
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', !isOpen);
+    mobileNav.classList.toggle('open');
+  });
+
+  // Close mobile menu on link click
+  document.querySelectorAll('.nav-mobile__links a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileNav.classList.remove('open');
+    });
+  });
+
+  // Fadein observer
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('inView');
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fadein').forEach(el => fadeObserver.observe(el));
+</script>
+</body>
+</html>
