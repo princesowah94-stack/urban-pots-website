@@ -8,6 +8,8 @@
   z-index: 200;
   transition: background 0.4s var(--ease), border-color 0.4s var(--ease), backdrop-filter 0.4s;
   border-bottom: 1px solid transparent;
+  background: rgba(0,0,0,0.15);
+  backdrop-filter: blur(8px);
 }
 
 .site-nav.scrolled {
