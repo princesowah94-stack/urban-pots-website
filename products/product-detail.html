@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, max-scale=1" />
+  <title>Product Details — Urban Pots</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/components.css" />
+
+  <!-- Lenis & GSAP from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav" id="siteNav">
+  <div class="container site-nav__inner">
+    <a href="/" class="nav-logo">
+      <img src="https://cdn.shopify.com/s/files/1/0748/4152/2498/files/urban_pots_logo__white_150.png?v=1684274691" alt="Urban Pots" width="120" height="30" />
+    </a>
+    <div class="nav-links">
+      <a href="/shop.html">Shop</a>
+      <a href="/pages/custom-planter-boxes.html">Custom Planters</a>
+      <a href="/pages/commercial-planters.html">Projects</a>
+      <a href="/pages/grc-planters.html">Materials</a>
+      <a href="/pages/about.html">About</a>
+    </div>
+    <div class="nav-actions">
+      <a href="mailto:info@urbanpots.com.au" class="nav-cta">Get a Quote</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="nav-mobile" id="navMobile" aria-hidden="true">
+  <ul class="nav-mobile__links">
+    <li><a href="/shop.html">Shop</a></li>
+    <li><a href="/pages/custom-planter-boxes.html">Custom Planters</a></li>
+    <li><a href="/pages/commercial-planters.html">Projects</a></li>
+    <li><a href="/pages/grc-planters.html">Materials</a></li>
+    <li><a href="/pages/about.html">About</a></li>
+  </ul>
+  <div class="nav-mobile__footer">
+    <a href="mailto:info@urbanpots.com.au" class="btn btn--stone">Get a Quote</a>
+    <div class="nav-mobile__footer-meta">
+      <a href="tel:0433132406">0433 132 406</a> &nbsp;·&nbsp; Tue–Sat 9am–4pm
+    </div>
+  </div>
+</div>
+
+<!-- PAGE CONTENT -->
+<main>
+
+  <!-- BREADCRUMB -->
+  <section style="padding: 2rem 0; background: var(--c-bg);">
+    <div class="container">
+      <div id="breadcrumb" style="font-size: 0.9rem; color: var(--c-brown);">
+        <a href="/shop.html" style="color: var(--c-sage); text-decoration: none;">Shop</a>
+        <span style="margin: 0 0.5rem;">/</span>
+        <span id="breadcrumb-collection"></span>
+        <span style="margin: 0 0.5rem;">/</span>
+        <span id="breadcrumb-product" style="color: var(--c-brown-dk);"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT DETAILS SECTION -->
+  <section class="container" style="padding: clamp(3rem, 6vw, 5rem) 0;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+      <!-- PRODUCT IMAGE GALLERY -->
+      <div>
+        <div id="product-main-image" style="width: 100%; aspect-ratio: 1; background: var(--c-bg); border-radius: 2px; margin-bottom: 1rem; overflow: hidden;">
+          <img id="main-image" src="" alt="" style="width: 100%; height: 100%; object-fit: cover;" />
+        </div>
+        <div id="product-thumbnails" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
+          <!-- Thumbnails rendered by JavaScript -->
+        </div>
+      </div>
+
+      <!-- PRODUCT INFORMATION -->
+      <div>
+        <h1 id="product-title" style="font-size: clamp(2rem, 5vw, 2.8rem); margin-bottom: 1rem; color: var(--c-brown-dk); font-family: var(--font-heading);"></h1>
+
+        <div id="product-price" style="font-size: 2rem; font-weight: 700; color: var(--c-sage); margin-bottom: 1.5rem;"></div>
+
+        <div id="product-description" style="font-size: 1rem; color: var(--c-brown); line-height: 1.8; margin-bottom: 2rem;"></div>
+
+        <!-- SPECIFICATIONS -->
+        <div style="background: var(--c-bg); padding: 1.5rem; border-radius: 2px; margin-bottom: 2rem;">
+          <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--c-brown-dk); margin-bottom: 1rem; font-family: var(--font-heading);">Specifications</h3>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div>
+              <strong style="display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--c-sage); margin-bottom: 0.5rem;">Material</strong>
+              <p id="product-material" style="margin: 0; color: var(--c-brown-dk);"></p>
+            </div>
+            <div>
+              <strong style="display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--c-sage); margin-bottom: 0.5rem;">Dimensions</strong>
+              <p id="product-dimensions" style="margin: 0; color: var(--c-brown-dk);"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- COLOUR OPTIONS -->
+        <div id="colour-options-container" style="margin-bottom: 2rem; display: none;">
+          <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--c-brown-dk); margin-bottom: 1rem; font-family: var(--font-heading);">Available Colours</h3>
+          <div id="colour-swatches" style="display: flex; gap: 1rem; flex-wrap: wrap;"></div>
+        </div>
+
+        <!-- ACTIONS -->
+        <div style="display: flex; gap: 1rem; flex-direction: column;">
+          <a href="#" id="product-shop-link" class="btn btn--sage" style="text-align: center; width: 100%; display: flex; align-items: center; justify-content: center;">
+            View on Shopify <span style="margin-left: 0.5rem;">→</span>
+          </a>
+          <a href="/pages/custom-planter-boxes.html" class="btn btn--stone" style="text-align: center; width: 100%; display: flex; align-items: center; justify-content: center;">
+            Need a Custom Size? <span style="margin-left: 0.5rem;">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED PRODUCTS -->
+  <section style="background: var(--c-cream); padding: clamp(4rem, 8vw, 6rem) 0;">
+    <div class="container">
+      <h2 style="font-size: clamp(1.8rem, 5vw, 2.4rem); margin-bottom: 3rem; color: var(--c-brown-dk); font-family: var(--font-heading);">More from This Collection</h2>
+      <div id="related-products" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 2rem;">
+        <!-- Related products rendered by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section style="background: var(--c-dark); color: #fff; padding: clamp(4rem, 8vw, 6rem) 0; text-align: center;">
+    <div class="container">
+      <h2 style="font-size: clamp(1.8rem, 5vw, 2.2rem); margin-bottom: 1rem; font-family: var(--font-heading);">Ready to transform your space?</h2>
+      <p style="font-size: 1rem; max-width: 600px; margin: 0 auto 2rem; color: rgba(255,255,255,0.9);">Browse our complete collection or contact our team for expert advice.</p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="/shop.html" class="btn btn--stone">View All Products</a>
+        <a href="mailto:info@urbanpots.com.au" class="btn btn--outline">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="https://cdn.shopify.com/s/files/1/0748/4152/2498/files/urban_pots_logo__sage_150.png?v=1684274691" alt="Urban Pots" class="footer-brand__logo" width="120" />
+        <p class="footer-brand__tagline">Your best space. Our planters.</p>
+        <p>An Australian family-owned planter manufacturer. Custom-built in Western Sydney. Trusted by developers, architects, and landscapers nationwide.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="LinkedIn">LI</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="/pages/custom-planter-boxes.html">Custom Planter Boxes</a></li>
+          <li><a href="/shop.html">Fibreglass Planters</a></li>
+          <li><a href="/shop.html">Fibre Cement</a></li>
+          <li><a href="/pages/grc-planters.html">GRC Planters</a></li>
+          <li><a href="/shop.html">Designer Pots</a></li>
+          <li><a href="/shop.html">All Collections</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/pages/about.html">About Us</a></li>
+          <li><a href="/pages/about.html">Our Workshop</a></li>
+          <li><a href="/">Projects</a></li>
+          <li><a href="/">Trade Account</a></li>
+          <li><a href="/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:0433132406">0433 132 406</a></li>
+          <li><a href="mailto:info@urbanpots.com.au">info@urbanpots.com.au</a></li>
+          <li><a href="/">Sydney Showroom</a></li>
+          <li><a href="/">Tue–Sat 9am–4pm</a></li>
+          <li><a href="/">Get Directions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Urban Pots Australia. All rights reserved.</span>
+      <span>
+        <a href="/">Privacy</a> &nbsp;·&nbsp;
+        <a href="/">Terms</a> &nbsp;·&nbsp;
+        Website by <a href="#" style="color:var(--c-stone)">Sowah Studio</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script type="module">
+  import * as animations from '../js/animations.js';
+  import * as ui from '../js/ui.js';
+
+  // Initialize animations and scroll
+  animations.initLenis();
+  animations.initFadein();
+  animations.initNavScroll();
+  animations.fixIOSParallax();
+
+  // Initialize UI
+  ui.initMobileNav(animations.lenis);
+
+  // Load and render product details
+  async function loadProductDetail() {
+    try {
+      // Get product handle from URL parameter
+      const params = new URLSearchParams(window.location.search);
+      const productHandle = params.get('handle');
+
+      if (!productHandle) {
+        document.querySelector('main').innerHTML = '<div style="padding: 4rem 2rem; text-align: center;"><p style="color: var(--c-brown);">Product not found. <a href="/shop.html">Back to shop</a></p></div>';
+        return;
+      }
+
+      // Load products data
+      const response = await fetch('/data/products.json');
+      if (!response.ok) throw new Error('Failed to load product data');
+      const data = await response.json();
+
+      // Find product across all collections
+      let product = null;
+      let collectionName = null;
+
+      for (const collection of data.collections) {
+        const found = collection.products.find(p => p.handle === productHandle);
+        if (found) {
+          product = found;
+          collectionName = collection.name;
+          break;
+        }
+      }
+
+      if (!product) {
+        document.querySelector('main').innerHTML = '<div style="padding: 4rem 2rem; text-align: center;"><p style="color: var(--c-brown);">Product not found. <a href="/shop.html">Back to shop</a></p></div>';
+        return;
+      }
+
+      // Format price
+      const priceAUD = (product.price / 100).toLocaleString('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+      // Update breadcrumb
+      document.getElementById('breadcrumb-collection').innerHTML = `<a href="/shop.html" style="color: var(--c-sage); text-decoration: none;">${collectionName}</a>`;
+      document.getElementById('breadcrumb-product').textContent = product.title;
+
+      // Update product details
+      document.getElementById('product-title').textContent = product.title;
+      document.getElementById('product-price').textContent = `$${priceAUD}`;
+      document.getElementById('product-description').textContent = product.description;
+      document.getElementById('product-material').textContent = product.material;
+      document.getElementById('product-dimensions').textContent = product.dimensions;
+      document.getElementById('product-shop-link').href = product.url;
+
+      // Set main image
+      const mainImage = document.getElementById('main-image');
+      mainImage.src = product.images[0] || product.image;
+      mainImage.alt = product.title;
+
+      // Render image thumbnails
+      const thumbnailsContainer = document.getElementById('product-thumbnails');
+      (product.images || [product.image]).forEach((img, index) => {
+        const thumb = document.createElement('img');
+        thumb.src = img;
+        thumb.alt = `${product.title} - Image ${index + 1}`;
+        thumb.style.cssText = 'width: 100%; height: 100%; object-fit: cover; cursor: pointer; border-radius: 2px; border: 2px solid transparent; transition: border-color 0.2s;';
+        if (index === 0) thumb.style.borderColor = 'var(--c-sage)';
+        thumb.onclick = () => {
+          mainImage.src = img;
+          document.querySelectorAll('#product-thumbnails img').forEach(t => t.style.borderColor = 'transparent');
+          thumb.style.borderColor = 'var(--c-sage)';
+        };
+        thumbnailsContainer.appendChild(thumb);
+      });
+
+      // Render colour swatches if available
+      if (product.colours && product.colours.length > 0) {
+        document.getElementById('colour-options-container').style.display = 'block';
+        const swatchesContainer = document.getElementById('colour-swatches');
+        const colourMap = {
+          'black': '#1C1A18', 'smoke grey': '#4A4A48', 'white': '#F2EFE9', 'light grey': '#D5D0C8',
+          'matte black': '#1C1A18', 'matte white': '#F2EFE9', 'stone': '#C9B99A', 'sage': '#7A8C5E',
+          'charcoal': '#4A4A48', 'natural concrete': '#9B9B9B', 'terrazzo grey': '#B8B8B8'
+        };
+        product.colours.forEach(colour => {
+          const colourHex = colourMap[colour.toLowerCase()] || '#CCC';
+          const swatch = document.createElement('button');
+          swatch.style.cssText = `width: 50px; height: 50px; border-radius: 4px; background: ${colourHex}; border: 2px solid var(--c-border); cursor: pointer; transition: all 0.2s;`;
+          swatch.title = colour;
+          swatch.onmouseover = () => swatch.style.boxShadow = '0 4px 12px rgba(28,26,24,0.2)';
+          swatch.onmouseout = () => swatch.style.boxShadow = 'none';
+          swatchesContainer.appendChild(swatch);
+        });
+      }
+
+      // Render related products from same collection
+      const relatedContainer = document.getElementById('related-products');
+      const collectionData = data.collections.find(c => c.products.some(p => p.handle === productHandle));
+      if (collectionData) {
+        const related = collectionData.products.filter(p => p.handle !== productHandle).slice(0, 4);
+        related.forEach(p => {
+          const pAUD = (p.price / 100).toLocaleString('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+          const card = document.createElement('a');
+          card.href = `?handle=${p.handle}`;
+          card.style.cssText = 'text-decoration: none; color: inherit;';
+          card.innerHTML = `
+            <div style="background: #fff; border: 1px solid var(--c-border); border-radius: 2px; overflow: hidden; transition: box-shadow 0.3s, transform 0.3s;">
+              <div style="width: 100%; height: 200px; background: var(--c-bg); overflow: hidden;">
+                <img src="${p.images[0] || p.image}" alt="${p.title}" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div style="padding: 1.5rem;">
+                <h4 style="font-size: 1rem; font-weight: 700; color: var(--c-brown-dk); margin-bottom: 0.5rem; font-family: var(--font-heading);">${p.title}</h4>
+                <p style="font-size: 0.8rem; color: var(--c-brown); margin-bottom: 1rem; line-height: 1.6;">${p.dimensions}</p>
+                <div style="font-size: 1.25rem; font-weight: 700; color: var(--c-sage);">$${pAUD}</div>
+              </div>
+            </div>
+          `;
+          card.onmouseover = () => card.style.cursor = 'pointer';
+          relatedContainer.appendChild(card);
+        });
+      }
+
+      // Update page title
+      document.title = `${product.title} — Urban Pots`;
+
+    } catch (error) {
+      console.error('Error loading product:', error);
+      document.querySelector('main').innerHTML = '<div style="padding: 4rem 2rem; text-align: center;"><p style="color: var(--c-brown);">Error loading product. <a href="/shop.html">Back to shop</a></p></div>';
+    }
+  }
+
+  loadProductDetail();
+</script>
+
+</body>
+</html>

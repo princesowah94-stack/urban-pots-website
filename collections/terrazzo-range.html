@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, max-scale=1" />
-  <title>Designer Lightweight Collection — Urban Pots</title>
+  <title>Terrazzo Range — Urban Pots</title>
 
   <!-- CSS -->
   <link rel="stylesheet" href="../css/components.css" />
@@ -61,8 +61,8 @@
   <section class="collection-header">
     <div class="container">
       <a href="/shop.html" style="color: var(--c-sage); text-decoration: none; font-size: 0.9rem; margin-bottom: 1rem; display: inline-block;">← Back to Collections</a>
-      <h1>Designer Lightweight</h1>
-      <p>Contemporary fibreglass planters in sleek profiles. Ideal for modern spaces, interior landscaping, and minimalist architectural designs. Lightweight construction makes installation effortless.</p>
+      <h1>Terrazzo Range</h1>
+      <p>Contemporary terrazzo-finished planters combining style with durability. The unique aggregate surface creates a premium aesthetic perfect for modern interiors and architectural spaces.</p>
     </div>
   </section>
 
@@ -77,12 +77,8 @@
           <label class="filter-section__title">Material</label>
           <div class="filter-group">
             <label class="filter-label">
-              <input type="checkbox" name="material" value="fibreglass" checked />
-              Fibreglass
-            </label>
-            <label class="filter-label">
-              <input type="checkbox" name="material" value="fibre-cement" />
-              Fibre Cement
+              <input type="checkbox" name="material" value="fibre-cement" checked />
+              Terrazzo
             </label>
           </div>
           <div class="filter-section__divider"></div>
@@ -117,24 +113,14 @@
           <label class="filter-section__title">Colour</label>
           <div class="filter-group">
             <label class="filter-label">
+              <input type="checkbox" name="colour" value="grey" />
+              <span style="width: 12px; height: 12px; background: #B8B8B8; border: 1px solid #ddd; display: inline-block; border-radius: 2px;"></span>
+              Terrazzo Grey
+            </label>
+            <label class="filter-label">
               <input type="checkbox" name="colour" value="white" />
-              <span style="width: 12px; height: 12px; background: #F2EFE9; border: 1px solid #ddd; display: inline-block; border-radius: 2px;"></span>
-              White
-            </label>
-            <label class="filter-label">
-              <input type="checkbox" name="colour" value="stone" />
-              <span style="width: 12px; height: 12px; background: #C9B99A; border: 1px solid #ddd; display: inline-block; border-radius: 2px;"></span>
-              Stone
-            </label>
-            <label class="filter-label">
-              <input type="checkbox" name="colour" value="sage" />
-              <span style="width: 12px; height: 12px; background: #7A8C5E; border: 1px solid #ddd; display: inline-block; border-radius: 2px;"></span>
-              Sage
-            </label>
-            <label class="filter-label">
-              <input type="checkbox" name="colour" value="charcoal" />
-              <span style="width: 12px; height: 12px; background: #4A4A48; border: 1px solid #ddd; display: inline-block; border-radius: 2px;"></span>
-              Charcoal
+              <span style="width: 12px; height: 12px; background: #DEDEDE; border: 1px solid #ddd; display: inline-block; border-radius: 2px;"></span>
+              Terrazzo White
             </label>
           </div>
           <div class="filter-section__divider"></div>
@@ -180,8 +166,8 @@
   <!-- CTA SECTION -->
   <section style="background: var(--c-cream); padding: clamp(4rem, 8vw, 6rem) 0; text-align: center;">
     <div class="container">
-      <h2 style="font-size: clamp(1.8rem, 5vw, 2.2rem); margin-bottom: 1rem; font-family: var(--font-heading);">Need a custom size or colour?</h2>
-      <p style="font-size: 1rem; max-width: 600px; margin: 0 auto 2rem; color: var(--c-brown);">We specialise in custom designs. Request a quote for bespoke planters tailored to your space.</p>
+      <h2 style="font-size: clamp(1.8rem, 5vw, 2.2rem); margin-bottom: 1rem; font-family: var(--font-heading);">Looking for a Custom Terrazzo Design?</h2>
+      <p style="font-size: 1rem; max-width: 600px; margin: 0 auto 2rem; color: var(--c-brown);">We create bespoke terrazzo planters tailored to your colour and size preferences. Get in touch for a custom quote.</p>
       <a href="/pages/custom-planter-boxes.html" class="btn btn--dark">Design Your Custom Planter <span class="arrow-link">→</span></a>
     </div>
   </section>
@@ -261,7 +247,7 @@
   ui.initMobileNav(animations.lenis);
 
   // Render products for this collection with working filters
-  renderCollectionProducts('designer-lightweight', 'productsGrid');
+  renderCollectionProducts('terrazzo-range', 'productsGrid');
 </script>
 
 </body>

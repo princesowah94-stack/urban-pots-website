@@ -1,0 +1,261 @@
+{
+  "collections": [
+    {
+      "id": "designer-lightweight",
+      "handle": "designer-lightweight",
+      "name": "Designer Lightweight",
+      "title": "DESIGNER - LIGHTWEIGHT",
+      "description": "Contemporary fibreglass planters in sleek profiles. Ideal for modern spaces, interior landscaping, and minimalist architectural designs. Lightweight construction makes installation effortless.",
+      "image": "https://www.urbanpots.com.au/cdn/shop/collections/Urban_pots_73_of_93.jpg?v=1756432404",
+      "products": [
+        {
+          "id": "dome",
+          "handle": "dome",
+          "title": "DOME",
+          "price": 99999,
+          "currency": "AUD",
+          "image": "https://www.urbanpots.com.au/cdn/shop/files/UrbanPots_2025EcommImagery_024.jpg?v=1756433471",
+          "images": [
+            "https://www.urbanpots.com.au/cdn/shop/files/UrbanPots_2025EcommImagery_024.jpg?v=1756433471",
+            "https://www.urbanpots.com.au/cdn/shop/files/UrbanPots_2025EcommImagery_018.jpg?v=1756433471",
+            "https://www.urbanpots.com.au/cdn/shop/files/UrbanPots_2025EcommImagery_019.jpg?v=1756433471",
+            "https://www.urbanpots.com.au/cdn/shop/files/UrbanPots_2025EcommImagery_020.jpg?v=1756433471"
+          ],
+          "description": "Don't be fooled by look alikes — the Dome Pot is a true round planter, not an oval. Its perfectly symmetrical shape is inspired by the form of a stadium, which is exactly how it earned the name Dome.",
+          "url": "https://www.urbanpots.com.au/products/dome",
+          "material": "Fibreglass",
+          "dimensions": "110x72cm, 82x57cm, 52x44cm",
+          "variants": [
+            {"size": "110x72", "colour": "Black", "price": 99999},
+            {"size": "110x72", "colour": "Smoke Grey", "price": 99999},
+            {"size": "110x72", "colour": "White", "price": 99999},
+            {"size": "110x72", "colour": "Light Grey", "price": 99999},
+            {"size": "82x57", "colour": "Black", "price": 99999},
+            {"size": "82x57", "colour": "Smoke Grey", "price": 99999},
+            {"size": "82x57", "colour": "White", "price": 99999},
+            {"size": "82x57", "colour": "Light Grey", "price": 99999},
+            {"size": "52x44", "colour": "Black", "price": 99999},
+            {"size": "52x44", "colour": "Smoke Grey", "price": 99999},
+            {"size": "52x44", "colour": "White", "price": 99999},
+            {"size": "52x44", "colour": "Light Grey", "price": 99999}
+          ],
+          "colours": ["Black", "Smoke Grey", "White", "Light Grey"],
+          "sizes": ["110x72", "82x57", "52x44"]
+        },
+        {
+          "id": "tea-cup",
+          "handle": "tea-cup",
+          "title": "TEA CUP",
+          "price": 49999,
+          "currency": "AUD",
+          "image": "https://www.urbanpots.com.au/cdn/shop/files/UrbanPots_2025EcommImagery_060.jpg?v=1756433456",
+          "images": [
+            "https://www.urbanpots.com.au/cdn/shop/files/UrbanPots_2025EcommImagery_060.jpg?v=1756433456",
+            "https://www.urbanpots.com.au/cdn/shop/files/UrbanPots_2025EcommImagery_058.jpg?v=1756433456",
+            "https://www.urbanpots.com.au/cdn/shop/files/UrbanPots_2025EcommImagery_059.jpg?v=1756433456"
+          ],
+          "description": "Inspired by the graceful silhouette of a classic tea cup, this planter brings a refined, elegant look to your space. Unlike the softer curves of an egg style planter, Tea Cup features a slightly pointier base and lifted profile.",
+          "url": "https://www.urbanpots.com.au/products/tea-cup",
+          "material": "Fibreglass",
+          "dimensions": "76x63cm, 64x52cm, 51x42cm",
+          "variants": [
+            {"size": "76x63", "colour": "Matte Black", "price": 49999},
+            {"size": "76x63", "colour": "Matte White", "price": 49999},
+            {"size": "64x52", "colour": "Matte Black", "price": 49999},
+            {"size": "64x52", "colour": "Matte White", "price": 49999},
+            {"size": "51x42", "colour": "Matte Black", "price": 49999},
+            {"size": "51x42", "colour": "Matte White", "price": 49999}
+          ],
+          "colours": ["Matte Black", "Matte White"],
+          "sizes": ["76x63", "64x52", "51x42"]
+        },
+        {
+          "id": "wobble",
+          "handle": "wobble",
+          "title": "WOBBLE",
+          "price": 24999,
+          "currency": "AUD",
+          "image": "https://www.urbanpots.com.au/cdn/shop/products/wobble.png",
+          "description": "Contemporary wobble planter with unique tilted design.",
+          "url": "https://www.urbanpots.com.au/products/wobble",
+          "material": "Fibreglass",
+          "colours": ["White", "Black", "Stone"]
+        },
+        {
+          "id": "eggy",
+          "handle": "pc005-1",
+          "title": "Eggy",
+          "price": 5999,
+          "currency": "AUD",
+          "image": "https://www.urbanpots.com.au/cdn/shop/products/eggy.png",
+          "description": "Classic egg-shaped planter in compact size.",
+          "url": "https://www.urbanpots.com.au/products/pc005-1",
+          "material": "Fibreglass",
+          "colours": ["White", "Stone", "Sage"]
+        },
+        {
+          "id": "waddle",
+          "handle": "waddle",
+          "title": "WADDLE",
+          "price": 11999,
+          "currency": "AUD",
+          "image": "https://www.urbanpots.com.au/cdn/shop/products/waddle.png",
+          "description": "Lightweight wobbling planter with playful design.",
+          "url": "https://www.urbanpots.com.au/products/waddle",
+          "material": "Fibreglass",
+          "colours": ["White", "Stone"]
+        },
+        {
+          "id": "foamy",
+          "handle": "foamy",
+          "title": "FOAMY",
+          "price": 9999,
+          "currency": "AUD",
+          "image": "https://www.urbanpots.com.au/cdn/shop/products/foamy.png",
+          "description": "Sculptural foam-inspired planter.",
+          "url": "https://www.urbanpots.com.au/products/foamy",
+          "material": "Fibreglass",
+          "colours": ["White", "Stone", "Charcoal"]
+        },
+        {
+          "id": "tear-drop",
+          "handle": "gyza",
+          "title": "TEAR DROP",
+          "price": 11999,
+          "currency": "AUD",
+          "image": "https://www.urbanpots.com.au/cdn/shop/products/teardrop.png",
+          "description": "Elegant teardrop-shaped planter.",
+          "url": "https://www.urbanpots.com.au/products/gyza",
+          "material": "Fibreglass",
+          "colours": ["White", "Stone", "Sage"]
+        },
+        {
+          "id": "door-stop",
+          "handle": "door-stop",
+          "title": "DOOR STOP",
+          "price": 7999,
+          "currency": "AUD",
+          "image": "https://www.urbanpots.com.au/cdn/shop/products/doorstop.png",
+          "description": "Compact wedge-shaped planter.",
+          "url": "https://www.urbanpots.com.au/products/door-stop",
+          "material": "Fibreglass",
+          "colours": ["White", "Stone", "Sage", "Charcoal"]
+        },
+        {
+          "id": "tube",
+          "handle": "tube-1",
+          "title": "TUBE",
+          "price": 3999,
+          "currency": "AUD",
+          "image": "https://www.urbanpots.com.au/cdn/shop/products/tube.png",
+          "description": "Minimalist cylindrical planter.",
+          "url": "https://www.urbanpots.com.au/products/tube-1",
+          "material": "Fibreglass",
+          "colours": ["White", "Stone", "Sage"]
+        },
+        {
+          "id": "mini-wok",
+          "handle": "mini-wok",
+          "title": "MINI WOK",
+          "price": 5999,
+          "currency": "AUD",
+          "image": "https://www.urbanpots.com.au/cdn/shop/products/miniwok.png",
+          "description": "Shallow wok-inspired planter.",
+          "url": "https://www.urbanpots.com.au/products/mini-wok",
+          "material": "Fibreglass",
+          "colours": ["White", "Stone", "Sage"]
+        },
+        {
+          "id": "ripple-tube",
+          "handle": "ripple-tube",
+          "title": "RIPPLE TUBE",
+          "price": 6999,
+          "currency": "AUD",
+          "image": "https://www.urbanpots.com.au/cdn/shop/products/rippletube.png",
+          "description": "Textured cylindrical planter with ripple detail.",
+          "url": "https://www.urbanpots.com.au/products/ripple-tube",
+          "material": "Fibreglass",
+          "colours": ["White", "Stone", "Charcoal"]
+        },
+        {
+          "id": "large-tub",
+          "handle": "large-tub",
+          "title": "LARGE TUB",
+          "price": 7999,
+          "currency": "AUD",
+          "image": "https://www.urbanpots.com.au/cdn/shop/products/largetub.png",
+          "description": "Large capacity rectangular planter.",
+          "url": "https://www.urbanpots.com.au/products/large-tub",
+          "material": "Fibreglass",
+          "colours": ["White", "Stone", "Sage"]
+        }
+      ]
+    },
+    {
+      "id": "atlantis-grc-series",
+      "handle": "atlantis-grc-series",
+      "name": "Modern Atlantis",
+      "title": "MODERN ATLANTIS - LIGHTWEIGHT",
+      "description": "Premium GRC (Glass Reinforced Concrete) collection with contemporary Atlantis-inspired designs.",
+      "image": "https://www.urbanpots.com.au/cdn/shop/collections/Urban_pots_6_of_93.jpg?v=1756447708",
+      "products": [
+        {
+          "id": "atlantis-eggy",
+          "handle": "eggy",
+          "title": "EGGY (Atlantis Series)",
+          "price": 6999,
+          "currency": "AUD",
+          "image": "https://www.urbanpots.com.au/cdn/shop/products/atlantis-eggy.png",
+          "description": "Premium GRC egg-shaped planter from Atlantis collection.",
+          "url": "https://www.urbanpots.com.au/products/eggy",
+          "material": "GRC",
+          "colours": ["Natural Concrete", "White"]
+        }
+      ]
+    },
+    {
+      "id": "natural-grc-range",
+      "handle": "natural-grc-range",
+      "name": "Natural GRC",
+      "title": "NATURAL GRC - HEAVYWEIGHT",
+      "description": "Heavyweight GRC planters with natural concrete aesthetic. Premium quality for large-scale projects.",
+      "image": "https://www.urbanpots.com.au/cdn/shop/collections/Urban_pots_21_of_93.jpg?v=1687499552",
+      "products": [
+        {
+          "id": "natural-grc-eggy",
+          "handle": "egg-terrazzo-natural",
+          "title": "EGGY (Natural GRC)",
+          "price": 4999,
+          "currency": "AUD",
+          "image": "https://www.urbanpots.com.au/cdn/shop/products/natural-grc-eggy.png",
+          "description": "Natural GRC egg-shaped planter with authentic concrete finish.",
+          "url": "https://www.urbanpots.com.au/products/egg-terrazzo-natural",
+          "material": "GRC",
+          "colours": ["Natural Concrete"]
+        }
+      ]
+    },
+    {
+      "id": "terrazzo-range",
+      "handle": "terrazzo-range",
+      "name": "Terrazzo",
+      "title": "TERRAZZO - LIGHTWEIGHT",
+      "description": "Contemporary terrazzo-finished planters combining style with durability.",
+      "image": "https://www.urbanpots.com.au/cdn/shop/collections/Urban_pots_87_of_93.jpg?v=1756447923",
+      "products": [
+        {
+          "id": "terrazzo-eggy",
+          "handle": "tc006-01",
+          "title": "EGGY (Terrazzo)",
+          "price": 6999,
+          "currency": "AUD",
+          "image": "https://www.urbanpots.com.au/cdn/shop/products/terrazzo-eggy.png",
+          "description": "Terrazzo-finished egg planter with premium aesthetic.",
+          "url": "https://www.urbanpots.com.au/products/tc006-01",
+          "material": "Terrazzo",
+          "colours": ["Terrazzo Grey", "Terrazzo White"]
+        }
+      ]
+    }
+  ]
+}
