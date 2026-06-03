@@ -9,12 +9,15 @@ const PRODUCTS_PER_PAGE = 12;
 // Load products from JSON
 async function loadProducts() {
   try {
+    console.log('[products.js] Fetching /data/products.json...');
     const response = await fetch('/data/products.json');
+    console.log('[products.js] Fetch response status:', response.status);
     if (!response.ok) throw new Error(`Failed to load products: ${response.status}`);
     const data = await response.json();
+    console.log('[products.js] JSON loaded, collections:', data.collections.length);
     return data.collections;
   } catch (error) {
-    console.error('Error loading products:', error);
+    console.error('[products.js] Error loading products:', error);
     return [];
   }
 }
@@ -258,14 +261,18 @@ function initializeFilters(collectionId, products, containerId) {
 
 // Main initialization function - call this from the collection page
 export async function renderCollectionProducts(collectionId, containerId = 'productsGrid') {
+  console.log('[products.js] renderCollectionProducts called with:', collectionId, containerId);
   const collections = await loadProducts();
+  console.log('[products.js] collections loaded:', collections.map(c => c.id));
   const products = getCollectionProducts(collectionId, collections);
+  console.log('[products.js] products for collection:', products.length);
 
   if (products.length === 0) {
     console.warn(`No products found for collection: ${collectionId}`);
     return;
   }
 
+  console.log('[products.js] Initializing filters with', products.length, 'products');
   initializeFilters(collectionId, products, containerId);
 }
 
