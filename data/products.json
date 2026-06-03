@@ -14,12 +14,12 @@
           "title": "DOME",
           "price": 99999,
           "currency": "AUD",
-          "image": "https://www.urbanpots.com.au/cdn/shop/files/UrbanPots_2025EcommImagery_024.jpg?v=1756433471",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/UrbanPots_2025EcommImagery_024.jpg?v=1756433471",
           "images": [
-            "https://www.urbanpots.com.au/cdn/shop/files/UrbanPots_2025EcommImagery_024.jpg?v=1756433471",
-            "https://www.urbanpots.com.au/cdn/shop/files/UrbanPots_2025EcommImagery_018.jpg?v=1756433471",
-            "https://www.urbanpots.com.au/cdn/shop/files/UrbanPots_2025EcommImagery_019.jpg?v=1756433471",
-            "https://www.urbanpots.com.au/cdn/shop/files/UrbanPots_2025EcommImagery_020.jpg?v=1756433471"
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/UrbanPots_2025EcommImagery_024.jpg?v=1756433471",
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/UrbanPots_2025EcommImagery_018.jpg?v=1756433471",
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/UrbanPots_2025EcommImagery_019.jpg?v=1756433471",
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/UrbanPots_2025EcommImagery_020.jpg?v=1756433471"
           ],
           "description": "Don't be fooled by look alikes — the Dome Pot is a true round planter, not an oval. Its perfectly symmetrical shape is inspired by the form of a stadium, which is exactly how it earned the name Dome.",
           "url": "https://www.urbanpots.com.au/products/dome",
@@ -30,14 +30,14 @@
             {"size": "110x72", "colour": "Smoke Grey", "price": 99999},
             {"size": "110x72", "colour": "White", "price": 99999},
             {"size": "110x72", "colour": "Light Grey", "price": 99999},
-            {"size": "82x57", "colour": "Black", "price": 99999},
-            {"size": "82x57", "colour": "Smoke Grey", "price": 99999},
-            {"size": "82x57", "colour": "White", "price": 99999},
-            {"size": "82x57", "colour": "Light Grey", "price": 99999},
-            {"size": "52x44", "colour": "Black", "price": 99999},
-            {"size": "52x44", "colour": "Smoke Grey", "price": 99999},
-            {"size": "52x44", "colour": "White", "price": 99999},
-            {"size": "52x44", "colour": "Light Grey", "price": 99999}
+            {"size": "82x57", "colour": "Black", "price": 59999},
+            {"size": "82x57", "colour": "Smoke Grey", "price": 59999},
+            {"size": "82x57", "colour": "White", "price": 59999},
+            {"size": "82x57", "colour": "Light Grey", "price": 59999},
+            {"size": "52x44", "colour": "Black", "price": 24999},
+            {"size": "52x44", "colour": "Smoke Grey", "price": 24999},
+            {"size": "52x44", "colour": "White", "price": 24999},
+            {"size": "52x44", "colour": "Light Grey", "price": 24999}
           ],
           "colours": ["Black", "Smoke Grey", "White", "Light Grey"],
           "sizes": ["110x72", "82x57", "52x44"]
@@ -48,11 +48,11 @@
           "title": "TEA CUP",
           "price": 49999,
           "currency": "AUD",
-          "image": "https://www.urbanpots.com.au/cdn/shop/files/UrbanPots_2025EcommImagery_060.jpg?v=1756433456",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/UrbanPots_2025EcommImagery_060.jpg?v=1756433456",
           "images": [
-            "https://www.urbanpots.com.au/cdn/shop/files/UrbanPots_2025EcommImagery_060.jpg?v=1756433456",
-            "https://www.urbanpots.com.au/cdn/shop/files/UrbanPots_2025EcommImagery_058.jpg?v=1756433456",
-            "https://www.urbanpots.com.au/cdn/shop/files/UrbanPots_2025EcommImagery_059.jpg?v=1756433456"
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/UrbanPots_2025EcommImagery_060.jpg?v=1756433456",
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/UrbanPots_2025EcommImagery_058.jpg?v=1756433456",
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/UrbanPots_2025EcommImagery_059.jpg?v=1756433456"
           ],
           "description": "Inspired by the graceful silhouette of a classic tea cup, this planter brings a refined, elegant look to your space. Unlike the softer curves of an egg style planter, Tea Cup features a slightly pointier base and lifted profile.",
           "url": "https://www.urbanpots.com.au/products/tea-cup",
@@ -61,155 +61,649 @@
           "variants": [
             {"size": "76x63", "colour": "Matte Black", "price": 49999},
             {"size": "76x63", "colour": "Matte White", "price": 49999},
-            {"size": "64x52", "colour": "Matte Black", "price": 49999},
-            {"size": "64x52", "colour": "Matte White", "price": 49999},
-            {"size": "51x42", "colour": "Matte Black", "price": 49999},
-            {"size": "51x42", "colour": "Matte White", "price": 49999}
+            {"size": "64x52", "colour": "Matte Black", "price": 29999},
+            {"size": "64x52", "colour": "Matte White", "price": 29999},
+            {"size": "51x42", "colour": "Matte Black", "price": 16999},
+            {"size": "51x42", "colour": "Matte White", "price": 16999}
           ],
           "colours": ["Matte Black", "Matte White"],
           "sizes": ["76x63", "64x52", "51x42"]
         },
         {
-          "id": "wobble",
-          "handle": "wobble",
-          "title": "WOBBLE",
-          "price": 24999,
-          "currency": "AUD",
-          "image": "https://www.urbanpots.com.au/cdn/shop/products/wobble.png",
-          "description": "Contemporary wobble planter with unique tilted design.",
-          "url": "https://www.urbanpots.com.au/products/wobble",
-          "material": "Fibreglass",
-          "colours": ["White", "Black", "Stone"]
-        },
-        {
-          "id": "eggy",
-          "handle": "pc005-1",
-          "title": "Eggy",
-          "price": 5999,
-          "currency": "AUD",
-          "image": "https://www.urbanpots.com.au/cdn/shop/products/eggy.png",
-          "description": "Classic egg-shaped planter in compact size.",
-          "url": "https://www.urbanpots.com.au/products/pc005-1",
-          "material": "Fibreglass",
-          "colours": ["White", "Stone", "Sage"]
-        },
-        {
           "id": "waddle",
           "handle": "waddle",
           "title": "WADDLE",
-          "price": 11999,
+          "price": 22999,
           "currency": "AUD",
-          "image": "https://www.urbanpots.com.au/cdn/shop/products/waddle.png",
-          "description": "Lightweight wobbling planter with playful design.",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urban_Pots_2025_Ecomm_Imagery_06.jpg?v=1756433197",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urban_Pots_2025_Ecomm_Imagery_06.jpg?v=1756433197",
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urban_Pots_2025_Ecomm_Imagery_05.jpg?v=1756433197"
+          ],
+          "description": "Meet the Waddle planter, a custom favourite and a true crowd-pleaser with its soft, egg-inspired curves. Its playful, rounded silhouette brings a relaxed, sculptural touch to any space.",
           "url": "https://www.urbanpots.com.au/products/waddle",
           "material": "Fibreglass",
-          "colours": ["White", "Stone"]
+          "dimensions": "84x92cm, 65x71cm, 48x55cm, 35x42cm",
+          "variants": [
+            {"size": "84x92", "colour": "Light Grey", "price": 79999},
+            {"size": "65x71", "colour": "Matte Black", "price": 39999},
+            {"size": "65x71", "colour": "White", "price": 39999},
+            {"size": "65x71", "colour": "Smoke Grey", "price": 39999},
+            {"size": "65x71", "colour": "Light Grey", "price": 39999},
+            {"size": "48x55", "colour": "Matte Black", "price": 22999},
+            {"size": "48x55", "colour": "White", "price": 22999},
+            {"size": "48x55", "colour": "Smoke Grey", "price": 22999},
+            {"size": "48x55", "colour": "Light Grey", "price": 22999},
+            {"size": "35x42", "colour": "Matte Black", "price": 11999},
+            {"size": "35x42", "colour": "White", "price": 11999},
+            {"size": "35x42", "colour": "Smoke Grey", "price": 11999},
+            {"size": "35x42", "colour": "Light Grey", "price": 11999}
+          ],
+          "colours": ["Matte Black", "White", "Smoke Grey", "Light Grey"],
+          "sizes": ["84x92", "65x71", "48x55", "35x42"]
         },
         {
           "id": "foamy",
           "handle": "foamy",
           "title": "FOAMY",
-          "price": 9999,
+          "price": 59999,
           "currency": "AUD",
-          "image": "https://www.urbanpots.com.au/cdn/shop/products/foamy.png",
-          "description": "Sculptural foam-inspired planter.",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urban_Pots_2025_Ecomm_Imagery_014.jpg?v=1773642298",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urban_Pots_2025_Ecomm_Imagery_014.jpg?v=1773642298",
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/IMG_1561.jpg?v=1773642298"
+          ],
+          "description": "The FOAMY planter takes its name from the familiar foam roller, with a distinctive surface that mimics its textured, rhythmic pattern. This unique ripple and straight look gives the pot depth, movement, and a tactile finish.",
           "url": "https://www.urbanpots.com.au/products/foamy",
           "material": "Fibreglass",
-          "colours": ["White", "Stone", "Charcoal"]
+          "dimensions": "70x70cm, 55x55cm, 40x40cm, 30x30cm",
+          "variants": [
+            {"size": "70x70", "colour": "Matte White", "price": 59999},
+            {"size": "70x70", "colour": "Matte Black", "price": 59999},
+            {"size": "70x70", "colour": "Smoke Grey", "price": 59999},
+            {"size": "55x55", "colour": "Matte White", "price": 39999},
+            {"size": "55x55", "colour": "Matte Black", "price": 39999},
+            {"size": "55x55", "colour": "Smoke Grey", "price": 39999},
+            {"size": "40x40", "colour": "Matte White", "price": 19999},
+            {"size": "40x40", "colour": "Matte Black", "price": 19999},
+            {"size": "40x40", "colour": "Smoke Grey", "price": 19999},
+            {"size": "30x30", "colour": "Matte White", "price": 9999},
+            {"size": "30x30", "colour": "Matte Black", "price": 9999},
+            {"size": "30x30", "colour": "Smoke Grey", "price": 9999}
+          ],
+          "colours": ["Matte White", "Matte Black", "Smoke Grey"],
+          "sizes": ["70x70", "55x55", "40x40", "30x30"]
         },
         {
-          "id": "tear-drop",
+          "id": "gyza",
           "handle": "gyza",
           "title": "TEAR DROP",
-          "price": 11999,
+          "price": 34999,
           "currency": "AUD",
-          "image": "https://www.urbanpots.com.au/cdn/shop/products/teardrop.png",
-          "description": "Elegant teardrop-shaped planter.",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/UrbanPots_2025EcommImagery_051.jpg?v=1756441260",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/UrbanPots_2025EcommImagery_051.jpg?v=1756441260",
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/UrbanPots_2025EcommImagery_050.jpg?v=1756441260"
+          ],
+          "description": "Stand out from the ordinary with the Tear Drop planter — a striking design that flips tradition on its head. Inspired by a reverse triangle or pyramid-like silhouette, Tear Drop brings architectural flair.",
           "url": "https://www.urbanpots.com.au/products/gyza",
           "material": "Fibreglass",
-          "colours": ["White", "Stone", "Sage"]
+          "dimensions": "55x70cm, 35x45cm",
+          "variants": [
+            {"size": "55x70", "colour": "Smoke Grey", "price": 34999},
+            {"size": "55x70", "colour": "Matte Black", "price": 34999},
+            {"size": "55x70", "colour": "Matte White", "price": 34999},
+            {"size": "35x45", "colour": "Smoke Grey", "price": 11999},
+            {"size": "35x45", "colour": "Matte Black", "price": 11999},
+            {"size": "35x45", "colour": "Matte White", "price": 11999}
+          ],
+          "colours": ["Smoke Grey", "Matte Black", "Matte White"],
+          "sizes": ["55x70", "35x45"]
         },
         {
           "id": "door-stop",
           "handle": "door-stop",
           "title": "DOOR STOP",
-          "price": 7999,
+          "price": 89999,
           "currency": "AUD",
-          "image": "https://www.urbanpots.com.au/cdn/shop/products/doorstop.png",
-          "description": "Compact wedge-shaped planter.",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/UrbanPots_2025EcommImagery_078.jpg?v=1756442097",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/UrbanPots_2025EcommImagery_078.jpg?v=1756442097",
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/UrbanPots_2025EcommImagery_077.jpg?v=1756442097"
+          ],
+          "description": "A contemporary wedge-shaped planter designed for modern spaces.",
           "url": "https://www.urbanpots.com.au/products/door-stop",
           "material": "Fibreglass",
-          "colours": ["White", "Stone", "Sage", "Charcoal"]
+          "dimensions": "70x105cm, 60x90cm, 50x75cm, 40x60cm, 33x51cm, 29x43cm",
+          "variants": [
+            {"size": "70x105", "colour": "Matte White", "price": 89999},
+            {"size": "70x105", "colour": "Matte Black", "price": 89999},
+            {"size": "60x90", "colour": "Matte White", "price": 59999},
+            {"size": "60x90", "colour": "Matte Black", "price": 59999},
+            {"size": "50x75", "colour": "Matte White", "price": 29999},
+            {"size": "50x75", "colour": "Matte Black", "price": 29999},
+            {"size": "40x60", "colour": "Matte White", "price": 19999},
+            {"size": "40x60", "colour": "Matte Black", "price": 19999},
+            {"size": "40x60", "colour": "Light Grey", "price": 19999},
+            {"size": "33x51", "colour": "Matte White", "price": 11999},
+            {"size": "33x51", "colour": "Matte Black", "price": 11999},
+            {"size": "33x51", "colour": "Light Grey", "price": 11999},
+            {"size": "29x43", "colour": "Matte White", "price": 7999},
+            {"size": "29x43", "colour": "Matte Black", "price": 7999},
+            {"size": "29x43", "colour": "Light Grey", "price": 7999}
+          ],
+          "colours": ["Matte White", "Matte Black", "Light Grey"],
+          "sizes": ["70x105", "60x90", "50x75", "40x60", "33x51", "29x43"]
         },
         {
-          "id": "tube",
+          "id": "tube-1",
           "handle": "tube-1",
           "title": "TUBE",
-          "price": 3999,
+          "price": 16999,
           "currency": "AUD",
-          "image": "https://www.urbanpots.com.au/cdn/shop/products/tube.png",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urban_Pots_2025_Ecomm_Imagery_090.jpg?v=1756445391",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urban_Pots_2025_Ecomm_Imagery_090.jpg?v=1756445391"
+          ],
           "description": "Minimalist cylindrical planter.",
           "url": "https://www.urbanpots.com.au/products/tube-1",
           "material": "Fibreglass",
-          "colours": ["White", "Stone", "Sage"]
+          "dimensions": "50x48cm, 40x38cm, 30x28cm, 20x18cm",
+          "variants": [
+            {"size": "50x48", "colour": "Black", "price": 16999},
+            {"size": "40x38", "colour": "Black", "price": 9999},
+            {"size": "30x28", "colour": "Black", "price": 5999},
+            {"size": "20x18", "colour": "Black", "price": 2999},
+            {"size": "50x48", "colour": "White", "price": 22999},
+            {"size": "40x38", "colour": "White", "price": 11999},
+            {"size": "30x28", "colour": "White", "price": 6999},
+            {"size": "20x18", "colour": "White", "price": 3999}
+          ],
+          "colours": ["Black", "White"],
+          "sizes": ["50x48", "40x38", "30x28", "20x18"]
         },
         {
           "id": "mini-wok",
           "handle": "mini-wok",
           "title": "MINI WOK",
-          "price": 5999,
+          "price": 24999,
           "currency": "AUD",
-          "image": "https://www.urbanpots.com.au/cdn/shop/products/miniwok.png",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/UrbanPots_2025EcommImagery_083.jpg?v=1756447301",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/UrbanPots_2025EcommImagery_083.jpg?v=1756447301"
+          ],
           "description": "Shallow wok-inspired planter.",
           "url": "https://www.urbanpots.com.au/products/mini-wok",
           "material": "Fibreglass",
-          "colours": ["White", "Stone", "Sage"]
+          "dimensions": "90x30cm, 75x25cm, 60x20cm, 50x17cm",
+          "variants": [
+            {"size": "90x30", "colour": "White", "price": 24999},
+            {"size": "75x25", "colour": "White", "price": 14999},
+            {"size": "60x20", "colour": "White", "price": 7999},
+            {"size": "50x17", "colour": "White", "price": 5999},
+            {"size": "90x30", "colour": "Black", "price": 29999},
+            {"size": "75x25", "colour": "Black", "price": 19999},
+            {"size": "60x20", "colour": "Black", "price": 7999},
+            {"size": "50x17", "colour": "Black", "price": 5999}
+          ],
+          "colours": ["White", "Black"],
+          "sizes": ["90x30", "75x25", "60x20", "50x17"]
         },
         {
           "id": "ripple-tube",
           "handle": "ripple-tube",
           "title": "RIPPLE TUBE",
-          "price": 6999,
+          "price": 29999,
           "currency": "AUD",
-          "image": "https://www.urbanpots.com.au/cdn/shop/products/rippletube.png",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/UrbanPots_2025EcommImagery_045.jpg?v=1756444505",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/UrbanPots_2025EcommImagery_045.jpg?v=1756444505"
+          ],
           "description": "Textured cylindrical planter with ripple detail.",
           "url": "https://www.urbanpots.com.au/products/ripple-tube",
           "material": "Fibreglass",
-          "colours": ["White", "Stone", "Charcoal"]
+          "dimensions": "40x80cm, 30x60cm, 22x44cm",
+          "variants": [
+            {"size": "40x80", "colour": "White", "price": 29999},
+            {"size": "40x80", "colour": "Black", "price": 29999},
+            {"size": "30x60", "colour": "White", "price": 19999},
+            {"size": "30x60", "colour": "Black", "price": 19999},
+            {"size": "22x44", "colour": "White", "price": 6999},
+            {"size": "22x44", "colour": "Black", "price": 6999}
+          ],
+          "colours": ["White", "Black"],
+          "sizes": ["40x80", "30x60", "22x44"]
         },
         {
           "id": "large-tub",
           "handle": "large-tub",
           "title": "LARGE TUB",
-          "price": 7999,
+          "price": 39999,
           "currency": "AUD",
-          "image": "https://www.urbanpots.com.au/cdn/shop/products/largetub.png",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/UrbanPots_2025EcommImagery_066.jpg?v=1756955789",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/UrbanPots_2025EcommImagery_066.jpg?v=1756955789"
+          ],
           "description": "Large capacity rectangular planter.",
           "url": "https://www.urbanpots.com.au/products/large-tub",
           "material": "Fibreglass",
-          "colours": ["White", "Stone", "Sage"]
+          "dimensions": "70x55cm, 60x45cm, 50x37.5cm, 40x30cm",
+          "variants": [
+            {"size": "70x55", "colour": "Standard", "price": 39999},
+            {"size": "60x45", "colour": "Standard", "price": 29999},
+            {"size": "50x37.5", "colour": "Standard", "price": 19999},
+            {"size": "40x30", "colour": "Standard", "price": 7999}
+          ],
+          "colours": ["Standard"],
+          "sizes": ["70x55", "60x45", "50x37.5", "40x30"]
+        },
+        {
+          "id": "wobble",
+          "handle": "wobble",
+          "title": "WOBBLE",
+          "price": 44999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/UrbanPots_2025EcommImagery_039.jpg?v=1756433534",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/UrbanPots_2025EcommImagery_039.jpg?v=1756433534"
+          ],
+          "description": "Contemporary wobble planter with unique tilted design.",
+          "url": "https://www.urbanpots.com.au/products/wobble",
+          "material": "Fibreglass",
+          "dimensions": "70x75cm, 43x46cm",
+          "variants": [
+            {"size": "70x75", "colour": "Black", "price": 44999},
+            {"size": "43x46", "colour": "Black", "price": 24999},
+            {"size": "70x75", "colour": "White", "price": 44999},
+            {"size": "43x46", "colour": "White", "price": 24999}
+          ],
+          "colours": ["Black", "White"],
+          "sizes": ["70x75", "43x46"]
+        },
+        {
+          "id": "pipe",
+          "handle": "pipe",
+          "title": "PIPE",
+          "price": 29999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/UrbanPots_2025EcommImagery_091.jpg?v=1756967479",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/UrbanPots_2025EcommImagery_091.jpg?v=1756967479"
+          ],
+          "description": "Planter box with modern cylindrical design.",
+          "url": "https://www.urbanpots.com.au/products/pipe",
+          "material": "Fibreglass",
+          "dimensions": "48x70cm, 35x50cm, 25x35cm",
+          "variants": [
+            {"size": "48x70", "colour": "White", "price": 29999},
+            {"size": "35x50", "colour": "White", "price": 14999},
+            {"size": "25x35", "colour": "White", "price": 6990}
+          ],
+          "colours": ["White"],
+          "sizes": ["48x70", "35x50", "25x35"]
+        },
+        {
+          "id": "giant-wok",
+          "handle": "giant-wok",
+          "title": "GIANT WOK",
+          "price": 299999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/IMG_3440.heic?v=1773641697",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/IMG_3440.heic?v=1773641697",
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Gemini_Generated_Image_ev8dz4ev8dz4ev8d.png?v=1773641697"
+          ],
+          "description": "The Giant Wok – Large Low Bowl Planter (Fibreglass & Polyresin). Bring sculptural elegance to your garden or outdoor space with The Giant Wok – a large low bowl planter designed for impact.",
+          "url": "https://www.urbanpots.com.au/products/giant-wok",
+          "material": "Fibreglass",
+          "dimensions": "210x62cm, 180x50cm, 150x47cm, 120x40cm",
+          "variants": [
+            {"size": "210x62", "colour": "White", "price": 299999},
+            {"size": "210x62", "colour": "Black", "price": 299999},
+            {"size": "180x50", "colour": "White", "price": 199999},
+            {"size": "180x50", "colour": "Black", "price": 199999},
+            {"size": "150x47", "colour": "White", "price": 149999},
+            {"size": "150x47", "colour": "Black", "price": 149999},
+            {"size": "120x40", "colour": "White", "price": 119999},
+            {"size": "120x40", "colour": "Black", "price": 119999}
+          ],
+          "colours": ["White", "Black"],
+          "sizes": ["210x62", "180x50", "150x47", "120x40"]
+        },
+        {
+          "id": "pc005-1",
+          "handle": "pc005-1",
+          "title": "EGGY",
+          "price": 34999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/UrbanPots_2025EcommImagery_0104.jpg?v=1756434063",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/UrbanPots_2025EcommImagery_0104.jpg?v=1756434063"
+          ],
+          "description": "Eggy Planter – Timeless Egg-Shape Style with Straighter Edges. Meet the Eggy planter, the stylish cousin to our beloved Waddle.",
+          "url": "https://www.urbanpots.com.au/products/pc005-1",
+          "material": "Fibreglass",
+          "dimensions": "60x60cm, 50x50cm, 40x40cm, 30x30cm",
+          "variants": [
+            {"size": "60x60", "colour": "White", "price": 34999},
+            {"size": "60x60", "colour": "Black", "price": 34999},
+            {"size": "60x60", "colour": "Light Grey", "price": 34999},
+            {"size": "50x50", "colour": "White", "price": 22999},
+            {"size": "50x50", "colour": "Black", "price": 22999},
+            {"size": "50x50", "colour": "Light Grey", "price": 22999},
+            {"size": "40x40", "colour": "White", "price": 11999},
+            {"size": "40x40", "colour": "Black", "price": 11999},
+            {"size": "40x40", "colour": "Light Grey", "price": 11999},
+            {"size": "30x30", "colour": "White", "price": 5999},
+            {"size": "30x30", "colour": "Black", "price": 5999},
+            {"size": "30x30", "colour": "Light Grey", "price": 5999}
+          ],
+          "colours": ["White", "Black", "Light Grey"],
+          "sizes": ["60x60", "50x50", "40x40", "30x30"]
+        },
+        {
+          "id": "pointy-eggy",
+          "handle": "pointy-eggy",
+          "title": "POINTY EGGY",
+          "price": 19999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/ScreenShot2023-11-16at3.39.44pm.png?v=1700109682",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/ScreenShot2023-11-16at3.39.44pm.png?v=1700109682"
+          ],
+          "description": "Pointy egg-shaped planter.",
+          "url": "https://www.urbanpots.com.au/products/pointy-eggy",
+          "material": "Fibreglass",
+          "dimensions": "50x50cm, 42x42cm, 35x35cm, 28x29cm",
+          "variants": [
+            {"size": "50x50", "colour": "Brown", "price": 19999},
+            {"size": "50x50", "colour": "Glossy Black", "price": 19999},
+            {"size": "50x50", "colour": "Matte Black", "price": 19999},
+            {"size": "50x50", "colour": "Light Grey", "price": 19999},
+            {"size": "50x50", "colour": "Baby Blue", "price": 19999},
+            {"size": "50x50", "colour": "White", "price": 19999},
+            {"size": "42x42", "colour": "Brown", "price": 9999},
+            {"size": "42x42", "colour": "Glossy Black", "price": 9999},
+            {"size": "42x42", "colour": "Matte Black", "price": 9999},
+            {"size": "42x42", "colour": "Light Grey", "price": 9999},
+            {"size": "42x42", "colour": "Baby Blue", "price": 9999},
+            {"size": "42x42", "colour": "White", "price": 9999},
+            {"size": "35x35", "colour": "Brown", "price": 6999},
+            {"size": "35x35", "colour": "Glossy Black", "price": 6999},
+            {"size": "35x35", "colour": "Matte Black", "price": 6999},
+            {"size": "35x35", "colour": "Light Grey", "price": 6999},
+            {"size": "35x35", "colour": "Baby Blue", "price": 6999},
+            {"size": "35x35", "colour": "White", "price": 6999},
+            {"size": "28x29", "colour": "Brown", "price": 2999},
+            {"size": "28x29", "colour": "Glossy Black", "price": 2999},
+            {"size": "28x29", "colour": "Matte Black", "price": 2999},
+            {"size": "28x29", "colour": "Light Grey", "price": 2999},
+            {"size": "28x29", "colour": "Baby Blue", "price": 2999},
+            {"size": "28x29", "colour": "White", "price": 2999}
+          ],
+          "colours": ["Brown", "Glossy Black", "Matte Black", "Light Grey", "Baby Blue", "White"],
+          "sizes": ["50x50", "42x42", "35x35", "28x29"]
+        },
+        {
+          "id": "cube",
+          "handle": "cube",
+          "title": "CUBE",
+          "price": 27999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/ScreenShot2023-11-17at1.04.06pm.png?v=1700186962",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/ScreenShot2023-11-17at1.04.06pm.png?v=1700186962"
+          ],
+          "description": "Cube-shaped planter in multiple colours.",
+          "url": "https://www.urbanpots.com.au/products/cube",
+          "material": "Fibreglass",
+          "dimensions": "60x60cm, 50x50cm, 40x40cm, 30x30cm, 20x20cm",
+          "variants": [
+            {"size": "60x60", "colour": "Black", "price": 27999},
+            {"size": "60x60", "colour": "Space Grey", "price": 27999},
+            {"size": "60x60", "colour": "Light Grey", "price": 27999},
+            {"size": "50x50", "colour": "Black", "price": 22999},
+            {"size": "50x50", "colour": "Space Grey", "price": 22999},
+            {"size": "50x50", "colour": "Light Grey", "price": 22999},
+            {"size": "40x40", "colour": "Black", "price": 12999},
+            {"size": "40x40", "colour": "Space Grey", "price": 12999},
+            {"size": "40x40", "colour": "Light Grey", "price": 12999},
+            {"size": "30x30", "colour": "Black", "price": 7999},
+            {"size": "30x30", "colour": "Space Grey", "price": 7999},
+            {"size": "30x30", "colour": "Light Grey", "price": 7999},
+            {"size": "20x20", "colour": "Black", "price": 5999},
+            {"size": "20x20", "colour": "Space Grey", "price": 5999},
+            {"size": "20x20", "colour": "Light Grey", "price": 5999}
+          ],
+          "colours": ["Black", "Space Grey", "Light Grey"],
+          "sizes": ["60x60", "50x50", "40x40", "30x30", "20x20"]
         }
       ]
     },
     {
       "id": "atlantis-grc-series",
       "handle": "atlantis-grc-series",
-      "name": "Modern Atlantis",
+      "name": "Atlantis GRC Series",
       "title": "MODERN ATLANTIS - LIGHTWEIGHT",
       "description": "Premium GRC (Glass Reinforced Concrete) collection with contemporary Atlantis-inspired designs.",
       "image": "https://www.urbanpots.com.au/cdn/shop/collections/Urban_pots_6_of_93.jpg?v=1756447708",
       "products": [
         {
-          "id": "atlantis-eggy",
-          "handle": "eggy",
-          "title": "EGGY (Atlantis Series)",
-          "price": 6999,
+          "id": "ac005-01",
+          "handle": "ac005-01",
+          "title": "AC005-01",
+          "price": 3999,
           "currency": "AUD",
-          "image": "https://www.urbanpots.com.au/cdn/shop/products/atlantis-eggy.png",
-          "description": "Premium GRC egg-shaped planter from Atlantis collection.",
-          "url": "https://www.urbanpots.com.au/products/eggy",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Screenshot2023-05-02at3.24.49pm.png?v=1683005213",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Screenshot2023-05-02at3.24.49pm.png?v=1683005213"
+          ],
+          "description": "Introducing the AC005-01 Atlantis Planter, a modern addition to any indoor or outdoor space.",
+          "url": "https://www.urbanpots.com.au/products/ac005-01",
           "material": "GRC",
-          "colours": ["Natural Concrete", "White"]
+          "dimensions": "20x20cm, 30x30cm, 40x40cm, 50x50cm",
+          "variants": [
+            {"size": "20x20", "colour": "Standard", "price": 3999},
+            {"size": "30x30", "colour": "Standard", "price": 6999},
+            {"size": "40x40", "colour": "Standard", "price": 10999},
+            {"size": "50x50", "colour": "Standard", "price": 13999}
+          ],
+          "colours": ["Standard"],
+          "sizes": ["20x20", "30x30", "40x40", "50x50"]
+        },
+        {
+          "id": "ac002-01",
+          "handle": "ac002-01",
+          "title": "ATLANTIS WHITE WADDLE",
+          "price": 4999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_6of93.jpg?v=1687331017",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_6of93.jpg?v=1687331017"
+          ],
+          "description": "The AC002-01 planter is a beautifully crafted pot that is perfect for displaying your favourite plants or flowers.",
+          "url": "https://www.urbanpots.com.au/products/ac002-01",
+          "material": "GRC",
+          "dimensions": "30x23cm, 41x34cm, 55x45cm, 70x65cm",
+          "variants": [
+            {"size": "30x23", "colour": "White", "price": 4999},
+            {"size": "30x23", "colour": "Black", "price": 4999},
+            {"size": "41x34", "colour": "White", "price": 9999},
+            {"size": "41x34", "colour": "Black", "price": 4999},
+            {"size": "55x45", "colour": "White", "price": 19999},
+            {"size": "55x45", "colour": "Black", "price": 4999},
+            {"size": "70x65", "colour": "White", "price": 29999},
+            {"size": "70x65", "colour": "Black", "price": 4999}
+          ],
+          "colours": ["White", "Black"],
+          "sizes": ["30x23", "41x34", "55x45", "70x65"]
+        },
+        {
+          "id": "ac008-2",
+          "handle": "ac008-2",
+          "title": "ATLANTIS DOG BOWL",
+          "price": 2499,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_42of93.jpg?v=1687740005",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_42of93.jpg?v=1687740005"
+          ],
+          "description": "Atlantis Dog Bowl planter.",
+          "url": "https://www.urbanpots.com.au/products/ac008-2",
+          "material": "GRC",
+          "dimensions": "12x20cm, 15x30cm, 20x40cm, 25x55cm",
+          "variants": [
+            {"size": "12x20", "colour": "Standard", "price": 2499},
+            {"size": "15x30", "colour": "Standard", "price": 4999},
+            {"size": "20x40", "colour": "Standard", "price": 9999},
+            {"size": "25x55", "colour": "Standard", "price": 19999}
+          ],
+          "colours": ["Standard"],
+          "sizes": ["12x20", "15x30", "20x40", "25x55"]
+        },
+        {
+          "id": "atlantis-muffin",
+          "handle": "atlantis-muffin",
+          "title": "ATLANTIS MUFFIN",
+          "price": 7999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_53of93.jpg?v=1687240702",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_53of93.jpg?v=1687240702"
+          ],
+          "description": "Atlantis Muffin planter in multiple sizes.",
+          "url": "https://www.urbanpots.com.au/products/atlantis-muffin",
+          "material": "GRC",
+          "dimensions": "32x25cm, 54x44cm, 82x57cm, 110x72cm",
+          "variants": [
+            {"size": "32x25", "colour": "White", "price": 7999},
+            {"size": "32x25", "colour": "Black", "price": 7999},
+            {"size": "54x44", "colour": "White", "price": 19999},
+            {"size": "54x44", "colour": "Black", "price": 19999},
+            {"size": "82x57", "colour": "White", "price": 39999},
+            {"size": "82x57", "colour": "Black", "price": 39999},
+            {"size": "110x72", "colour": "White", "price": 59999},
+            {"size": "110x72", "colour": "Black", "price": 59999}
+          ],
+          "colours": ["White", "Black"],
+          "sizes": ["32x25", "54x44", "82x57", "110x72"]
+        },
+        {
+          "id": "atlantis-white-eggy",
+          "handle": "atlantis-white-eggy",
+          "title": "ATLANTIS WHITE EGGY",
+          "price": 4999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_13of93.jpg?v=1687332298",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_13of93.jpg?v=1687332298"
+          ],
+          "description": "Atlantis White Eggy planter.",
+          "url": "https://www.urbanpots.com.au/products/atlantis-white-eggy",
+          "material": "GRC",
+          "dimensions": "30x30cm, 40x40cm, 50x50cm",
+          "variants": [
+            {"size": "30x30", "colour": "White", "price": 4999},
+            {"size": "30x30", "colour": "Black", "price": 4999},
+            {"size": "40x40", "colour": "White", "price": 9999},
+            {"size": "40x40", "colour": "Black", "price": 9999},
+            {"size": "50x50", "colour": "White", "price": 19999},
+            {"size": "50x50", "colour": "Black", "price": 19999}
+          ],
+          "colours": ["White", "Black"],
+          "sizes": ["30x30", "40x40", "50x50"]
+        },
+        {
+          "id": "atlantis-blue-eggy",
+          "handle": "atlantis-blue-eggy",
+          "title": "ATLANTIS BLUE EGGY",
+          "price": 1999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_14of93.jpg?v=1687332493",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_14of93.jpg?v=1687332493"
+          ],
+          "description": "Atlantis Blue Eggy planter.",
+          "url": "https://www.urbanpots.com.au/products/atlantis-blue-eggy",
+          "material": "GRC",
+          "dimensions": "20x20cm, 30x30cm, 40x40cm, 50x50cm",
+          "variants": [
+            {"size": "20x20", "colour": "Standard", "price": 1999},
+            {"size": "30x30", "colour": "Standard", "price": 4999},
+            {"size": "40x40", "colour": "Standard", "price": 9999},
+            {"size": "50x50", "colour": "Standard", "price": 14999}
+          ],
+          "colours": ["Standard"],
+          "sizes": ["20x20", "30x30", "40x40", "50x50"]
+        },
+        {
+          "id": "ac004-05",
+          "handle": "ac004-05",
+          "title": "ATLANTIS BLUE TUBE",
+          "price": 4999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_8of93.jpg?v=1687331849",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_8of93.jpg?v=1687331849"
+          ],
+          "description": "Atlantis Blue Tube planter.",
+          "url": "https://www.urbanpots.com.au/products/ac004-05",
+          "material": "GRC",
+          "dimensions": "30x28cm, 40x38cm, 50x48cm",
+          "variants": [
+            {"size": "30x28", "colour": "Standard", "price": 4999},
+            {"size": "40x38", "colour": "Standard", "price": 7999},
+            {"size": "50x48", "colour": "Standard", "price": 14999}
+          ],
+          "colours": ["Standard"],
+          "sizes": ["30x28", "40x38", "50x48"]
+        },
+        {
+          "id": "ac010-01",
+          "handle": "ac010-01",
+          "title": "ATLANTIS YELLOW CUP",
+          "price": 7999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_46of93.jpg?v=1687332807",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_46of93.jpg?v=1687332807"
+          ],
+          "description": "Atlantis Yellow Cup planter.",
+          "url": "https://www.urbanpots.com.au/products/ac010-01",
+          "material": "GRC",
+          "dimensions": "35x41cm, 42x51cm, 52x64cm, 63x76cm, 75x90cm",
+          "variants": [
+            {"size": "35x41", "colour": "Standard", "price": 7999},
+            {"size": "42x51", "colour": "Standard", "price": 14999},
+            {"size": "52x64", "colour": "Standard", "price": 34999},
+            {"size": "63x76", "colour": "Standard", "price": 99999},
+            {"size": "75x90", "colour": "Standard", "price": 119999}
+          ],
+          "colours": ["Standard"],
+          "sizes": ["35x41", "42x51", "52x64", "63x76", "75x90"]
+        },
+        {
+          "id": "ac008-02",
+          "handle": "ac008-02",
+          "title": "AC008-02",
+          "price": 2999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/products/AC008-02.jpg?v=1681213031",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/products/AC008-02.jpg?v=1681213031"
+          ],
+          "description": "AC008-02 planter.",
+          "url": "https://www.urbanpots.com.au/products/ac008-02",
+          "material": "GRC",
+          "dimensions": "12x20cm, 15x30cm, 20x40cm, 25x55cm",
+          "variants": [
+            {"size": "12x20", "colour": "Standard", "price": 2999},
+            {"size": "15x30", "colour": "Standard", "price": 3999},
+            {"size": "20x40", "colour": "Standard", "price": 6999},
+            {"size": "25x55", "colour": "Standard", "price": 8999}
+          ],
+          "colours": ["Standard"],
+          "sizes": ["12x20", "15x30", "20x40", "25x55"]
         }
       ]
     },
@@ -218,20 +712,256 @@
       "handle": "natural-grc-range",
       "name": "Natural GRC",
       "title": "NATURAL GRC - HEAVYWEIGHT",
-      "description": "Heavyweight GRC planters with natural concrete aesthetic. Premium quality for large-scale projects.",
+      "description": "Heavyweight GRC planters with natural concrete aesthetic. Premium quality for large-scale projects and commercial applications.",
       "image": "https://www.urbanpots.com.au/cdn/shop/collections/Urban_pots_21_of_93.jpg?v=1687499552",
       "products": [
         {
-          "id": "natural-grc-eggy",
+          "id": "egg-terrazzo-natural",
           "handle": "egg-terrazzo-natural",
-          "title": "EGGY (Natural GRC)",
-          "price": 4999,
+          "title": "EGGY",
+          "price": 2999,
           "currency": "AUD",
-          "image": "https://www.urbanpots.com.au/cdn/shop/products/natural-grc-eggy.png",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_22of93.jpg?v=1687335085",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_22of93.jpg?v=1687335085"
+          ],
           "description": "Natural GRC egg-shaped planter with authentic concrete finish.",
           "url": "https://www.urbanpots.com.au/products/egg-terrazzo-natural",
           "material": "GRC",
-          "colours": ["Natural Concrete"]
+          "dimensions": "20x20cm, 30x30cm, 40x40cm, 50x50cm, 60x60cm",
+          "variants": [
+            {"size": "20x20", "colour": "Natural Concrete", "price": 2999},
+            {"size": "30x30", "colour": "Natural Concrete", "price": 4999},
+            {"size": "40x40", "colour": "Natural Concrete", "price": 9999},
+            {"size": "50x50", "colour": "Natural Concrete", "price": 19999},
+            {"size": "60x60", "colour": "Natural Concrete", "price": 29999}
+          ],
+          "colours": ["Natural Concrete"],
+          "sizes": ["20x20", "30x30", "40x40", "50x50", "60x60"]
+        },
+        {
+          "id": "nc026-01",
+          "handle": "nc026-01",
+          "title": "NC026-01",
+          "price": 5999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/3_ec617066-2001-43d9-b7be-9a7d9ef09d65.jpg?v=1683162576",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/3_ec617066-2001-43d9-b7be-9a7d9ef09d65.jpg?v=1683162576"
+          ],
+          "description": "NC026-01 Natural GRC planter.",
+          "url": "https://www.urbanpots.com.au/products/nc026-01",
+          "material": "GRC",
+          "dimensions": "23x28cm, 34x39cm, 45x52cm, 65x70cm",
+          "variants": [
+            {"size": "23x28", "colour": "White", "price": 5999},
+            {"size": "34x39", "colour": "White", "price": 9999},
+            {"size": "45x52", "colour": "White", "price": 15999},
+            {"size": "65x70", "colour": "White", "price": 19999}
+          ],
+          "colours": ["White"],
+          "sizes": ["23x28", "34x39", "45x52", "65x70"]
+        },
+        {
+          "id": "nc017-01",
+          "handle": "nc017-01",
+          "title": "TROUGH NATURAL",
+          "price": 11999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_61of93.jpg?v=1687237945",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_61of93.jpg?v=1687237945"
+          ],
+          "description": "Trough Natural GRC planter.",
+          "url": "https://www.urbanpots.com.au/products/nc017-01",
+          "material": "GRC",
+          "dimensions": "30x60x30cm, 40x80x40cm, 50x100x50cm",
+          "variants": [
+            {"size": "30x60x30", "colour": "Standard", "price": 11999},
+            {"size": "40x80x40", "colour": "Standard", "price": 19999},
+            {"size": "50x100x50", "colour": "Standard", "price": 29999}
+          ],
+          "colours": ["Standard"],
+          "sizes": ["30x60x30", "40x80x40", "50x100x50"]
+        },
+        {
+          "id": "nc018-01",
+          "handle": "nc018-01",
+          "title": "TEA CUP",
+          "price": 2999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_49of93_495c5791-e631-4543-904b-f485f3b1fb4c.jpg?v=1688531823",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_49of93_495c5791-e631-4543-904b-f485f3b1fb4c.jpg?v=1688531823"
+          ],
+          "description": "Tea Cup Natural GRC planter.",
+          "url": "https://www.urbanpots.com.au/products/nc018-01",
+          "material": "GRC",
+          "dimensions": "28x28cm, 35x35cm, 42x42cm, 50x50cm",
+          "variants": [
+            {"size": "28x28", "colour": "Standard", "price": 2999},
+            {"size": "35x35", "colour": "Standard", "price": 4999},
+            {"size": "42x42", "colour": "Standard", "price": 7999},
+            {"size": "50x50", "colour": "Standard", "price": 9999}
+          ],
+          "colours": ["Standard"],
+          "sizes": ["28x28", "35x35", "42x42", "50x50"]
+        },
+        {
+          "id": "nc013-01",
+          "handle": "nc013-01",
+          "title": "DOG BOWL",
+          "price": 1999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_44of93.jpg?v=1687233393",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_44of93.jpg?v=1687233393"
+          ],
+          "description": "Dog Bowl Natural GRC planter.",
+          "url": "https://www.urbanpots.com.au/products/nc013-01",
+          "material": "GRC",
+          "dimensions": "20x12cm, 30x15cm, 40x20cm, 55x25cm",
+          "variants": [
+            {"size": "20x12", "colour": "Standard", "price": 1999},
+            {"size": "30x15", "colour": "Standard", "price": 3999},
+            {"size": "40x20", "colour": "Standard", "price": 7999},
+            {"size": "55x25", "colour": "Standard", "price": 14999}
+          ],
+          "colours": ["Standard"],
+          "sizes": ["20x12", "30x15", "40x20", "55x25"]
+        },
+        {
+          "id": "nc006-02",
+          "handle": "nc006-02",
+          "title": "STRAIGHT UP",
+          "price": 7999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_-_29.jpg?v=1732164900",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_-_29.jpg?v=1732164900"
+          ],
+          "description": "Straight Up Natural GRC planter.",
+          "url": "https://www.urbanpots.com.au/products/nc006-02",
+          "material": "GRC",
+          "dimensions": "45x34cm, 56x42cm",
+          "variants": [
+            {"size": "45x34", "colour": "Standard", "price": 7999},
+            {"size": "56x42", "colour": "Standard", "price": 14999}
+          ],
+          "colours": ["Standard"],
+          "sizes": ["45x34", "56x42"]
+        },
+        {
+          "id": "nc005-01",
+          "handle": "nc005-01",
+          "title": "SHARP EGGY NATURAL",
+          "price": 3999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_55of93.jpg?v=1687236048",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_55of93.jpg?v=1687236048"
+          ],
+          "description": "Sharp Eggy Natural GRC planter.",
+          "url": "https://www.urbanpots.com.au/products/nc005-01",
+          "material": "GRC",
+          "dimensions": "28x29cm, 35x35cm, 42x43cm, 50x50cm",
+          "variants": [
+            {"size": "28x29", "colour": "Standard", "price": 3999},
+            {"size": "35x35", "colour": "Standard", "price": 5999},
+            {"size": "42x43", "colour": "Standard", "price": 9999},
+            {"size": "50x50", "colour": "Standard", "price": 19999}
+          ],
+          "colours": ["Standard"],
+          "sizes": ["28x29", "35x35", "42x43", "50x50"]
+        },
+        {
+          "id": "muffin-natural",
+          "handle": "muffin-natural",
+          "title": "MUFFIN",
+          "price": 19999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_3of19.jpg?v=1687233565",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_3of19.jpg?v=1687233565",
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_2of19.jpg?v=1687233565"
+          ],
+          "description": "Muffin Natural GRC planter.",
+          "url": "https://www.urbanpots.com.au/products/muffin-natural",
+          "material": "GRC",
+          "dimensions": "54x44cm, 110x72cm",
+          "variants": [
+            {"size": "54x44", "colour": "Standard", "price": 19999},
+            {"size": "110x72", "colour": "Standard", "price": 69999}
+          ],
+          "colours": ["Standard"],
+          "sizes": ["54x44", "110x72"]
+        },
+        {
+          "id": "trench",
+          "handle": "trench",
+          "title": "TRENCH",
+          "price": 29999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_11of19.jpg?v=1687234017",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_11of19.jpg?v=1687234017"
+          ],
+          "description": "Trench Natural GRC planter.",
+          "url": "https://www.urbanpots.com.au/products/trench",
+          "material": "GRC",
+          "dimensions": "40x70cm, 53x85cm, 68x119cm",
+          "variants": [
+            {"size": "40x70", "colour": "Standard", "price": 29999},
+            {"size": "53x85", "colour": "Standard", "price": 39999},
+            {"size": "68x119", "colour": "Standard", "price": 79999}
+          ],
+          "colours": ["Standard"],
+          "sizes": ["40x70", "53x85", "68x119"]
+        },
+        {
+          "id": "tower",
+          "handle": "tower",
+          "title": "TOWER",
+          "price": 14999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_8of19.jpg?v=1687235424",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_8of19.jpg?v=1687235424"
+          ],
+          "description": "Tower Natural GRC planter.",
+          "url": "https://www.urbanpots.com.au/products/tower",
+          "material": "GRC",
+          "dimensions": "30x60cm, 38x80cm, 48x100cm",
+          "variants": [
+            {"size": "30x60", "colour": "Standard", "price": 14999},
+            {"size": "38x80", "colour": "Standard", "price": 29999},
+            {"size": "48x100", "colour": "Standard", "price": 41999}
+          ],
+          "colours": ["Standard"],
+          "sizes": ["30x60", "38x80", "48x100"]
+        },
+        {
+          "id": "nc004-01",
+          "handle": "nc004-01",
+          "title": "TEA CUP",
+          "price": 9999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_49of93.jpg?v=1687235148",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_49of93.jpg?v=1687235148"
+          ],
+          "description": "Tea Cup Natural GRC planter.",
+          "url": "https://www.urbanpots.com.au/products/nc004-01",
+          "material": "GRC",
+          "dimensions": "41x35cm, 51x42cm, 64x52cm, 76x63cm",
+          "variants": [
+            {"size": "41x35", "colour": "Standard", "price": 9999},
+            {"size": "51x42", "colour": "Standard", "price": 19999},
+            {"size": "64x52", "colour": "Standard", "price": 39999},
+            {"size": "76x63", "colour": "Standard", "price": 49999}
+          ],
+          "colours": ["Standard"],
+          "sizes": ["41x35", "51x42", "64x52", "76x63"]
         }
       ]
     },
@@ -240,20 +970,202 @@
       "handle": "terrazzo-range",
       "name": "Terrazzo",
       "title": "TERRAZZO - LIGHTWEIGHT",
-      "description": "Contemporary terrazzo-finished planters combining style with durability.",
+      "description": "Contemporary terrazzo-finished planters combining style with durability. The unique aggregate surface creates a premium aesthetic perfect for modern interiors.",
       "image": "https://www.urbanpots.com.au/cdn/shop/collections/Urban_pots_87_of_93.jpg?v=1756447923",
       "products": [
         {
-          "id": "terrazzo-eggy",
+          "id": "tc006-01",
           "handle": "tc006-01",
-          "title": "EGGY (Terrazzo)",
+          "title": "EGGY",
           "price": 6999,
           "currency": "AUD",
-          "image": "https://www.urbanpots.com.au/cdn/shop/products/terrazzo-eggy.png",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/UrbanPots_2025EcommImagery_036.jpg?v=1756447954",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/UrbanPots_2025EcommImagery_036.jpg?v=1756447954"
+          ],
           "description": "Terrazzo-finished egg planter with premium aesthetic.",
           "url": "https://www.urbanpots.com.au/products/tc006-01",
           "material": "Terrazzo",
-          "colours": ["Terrazzo Grey", "Terrazzo White"]
+          "dimensions": "30x30cm, 40x40cm, 50x50cm",
+          "variants": [
+            {"size": "30x30", "colour": "Terrazzo Grey", "price": 6999},
+            {"size": "40x40", "colour": "Terrazzo Grey", "price": 10999},
+            {"size": "50x50", "colour": "Terrazzo Grey", "price": 20999}
+          ],
+          "colours": ["Terrazzo Grey"],
+          "sizes": ["30x30", "40x40", "50x50"]
+        },
+        {
+          "id": "egg-terrazzo-light-grey",
+          "handle": "egg-terrazzo-light-grey",
+          "title": "EGGY TERRAZZO LIGHT GREY",
+          "price": 2999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_23of93.jpg?v=1687334975",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_23of93.jpg?v=1687334975"
+          ],
+          "description": "Terrazzo egg planter in light grey.",
+          "url": "https://www.urbanpots.com.au/products/egg-terrazzo-light-grey",
+          "material": "Terrazzo",
+          "dimensions": "20x20cm, 30x30cm, 40x40cm, 50x50cm",
+          "variants": [
+            {"size": "20x20", "colour": "Terrazzo Light Grey", "price": 2999},
+            {"size": "30x30", "colour": "Terrazzo Light Grey", "price": 4999},
+            {"size": "40x40", "colour": "Terrazzo Light Grey", "price": 9999},
+            {"size": "50x50", "colour": "Terrazzo Light Grey", "price": 19999}
+          ],
+          "colours": ["Terrazzo Light Grey"],
+          "sizes": ["20x20", "30x30", "40x40", "50x50"]
+        },
+        {
+          "id": "tc006-03",
+          "handle": "tc006-03",
+          "title": "EGGY DARK GREY TERRAZZO",
+          "price": 2999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_36of93.jpg?v=1687333493",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_36of93.jpg?v=1687333493"
+          ],
+          "description": "Terrazzo egg planter in dark grey.",
+          "url": "https://www.urbanpots.com.au/products/tc006-03",
+          "material": "Terrazzo",
+          "dimensions": "20x20cm, 30x30cm, 40x40cm, 50x50cm",
+          "variants": [
+            {"size": "20x20", "colour": "Terrazzo Dark Grey", "price": 2999},
+            {"size": "30x30", "colour": "Terrazzo Dark Grey", "price": 4999},
+            {"size": "40x40", "colour": "Terrazzo Dark Grey", "price": 9999},
+            {"size": "50x50", "colour": "Terrazzo Dark Grey", "price": 19999}
+          ],
+          "colours": ["Terrazzo Dark Grey"],
+          "sizes": ["20x20", "30x30", "40x40", "50x50"]
+        },
+        {
+          "id": "tc020-02",
+          "handle": "tc020-02",
+          "title": "CUBE",
+          "price": 3999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_18of19.jpg?v=1687232167",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_18of19.jpg?v=1687232167"
+          ],
+          "description": "Terrazzo cube planter.",
+          "url": "https://www.urbanpots.com.au/products/tc020-02",
+          "material": "Terrazzo",
+          "dimensions": "20x20cm, 30x30cm, 40x40cm, 50x50cm, 60x60cm",
+          "variants": [
+            {"size": "20x20", "colour": "Natural", "price": 3999},
+            {"size": "20x20", "colour": "White", "price": 3999},
+            {"size": "20x20", "colour": "Black/Grey", "price": 3999},
+            {"size": "30x30", "colour": "Natural", "price": 5999},
+            {"size": "30x30", "colour": "White", "price": 5999},
+            {"size": "30x30", "colour": "Black/Grey", "price": 5999},
+            {"size": "40x40", "colour": "Natural", "price": 9999},
+            {"size": "40x40", "colour": "White", "price": 9999},
+            {"size": "40x40", "colour": "Black/Grey", "price": 9999},
+            {"size": "50x50", "colour": "Natural", "price": 19999},
+            {"size": "50x50", "colour": "White", "price": 19999},
+            {"size": "50x50", "colour": "Black/Grey", "price": 19999},
+            {"size": "60x60", "colour": "Natural", "price": 24999},
+            {"size": "60x60", "colour": "White", "price": 24999},
+            {"size": "60x60", "colour": "Black/Grey", "price": 24999}
+          ],
+          "colours": ["Natural", "White", "Black/Grey"],
+          "sizes": ["20x20", "30x30", "40x40", "50x50", "60x60"]
+        },
+        {
+          "id": "tc022-03",
+          "handle": "tc022-03",
+          "title": "LIGHT GREY TROUGH",
+          "price": 5999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_58of93.jpg?v=1687238521",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_58of93.jpg?v=1687238521"
+          ],
+          "description": "Light grey terrazzo trough.",
+          "url": "https://www.urbanpots.com.au/products/tc022-03",
+          "material": "Terrazzo",
+          "dimensions": "40x20x20cm, 60x30x30cm, 80x40x40cm, 100x50x50cm",
+          "variants": [
+            {"size": "40x20x20", "colour": "Standard", "price": 5999},
+            {"size": "60x30x30", "colour": "Standard", "price": 11999},
+            {"size": "80x40x40", "colour": "Standard", "price": 19999},
+            {"size": "100x50x50", "colour": "Standard", "price": 29999}
+          ],
+          "colours": ["Standard"],
+          "sizes": ["40x20x20", "60x30x30", "80x40x40", "100x50x50"]
+        },
+        {
+          "id": "tc008-01",
+          "handle": "tc008-01",
+          "title": "TC008-01",
+          "price": 4999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/products/8.jpg?v=1681348295",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/products/8.jpg?v=1681348295"
+          ],
+          "description": "TC008-01 terrazzo planter.",
+          "url": "https://www.urbanpots.com.au/products/tc008-01",
+          "material": "Terrazzo",
+          "dimensions": "35x25cm, 51x37cm",
+          "variants": [
+            {"size": "35x25", "colour": "Black", "price": 4999},
+            {"size": "35x25", "colour": "White", "price": 4999},
+            {"size": "51x37", "colour": "Black", "price": 5999},
+            {"size": "51x37", "colour": "White", "price": 5999}
+          ],
+          "colours": ["Black", "White"],
+          "sizes": ["35x25", "51x37"]
+        },
+        {
+          "id": "tc003-01",
+          "handle": "tc003-01",
+          "title": "PENTAGON",
+          "price": 2999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_87of93.jpg?v=1687334445",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_87of93.jpg?v=1687334445"
+          ],
+          "description": "Pentagon-shaped terrazzo planter.",
+          "url": "https://www.urbanpots.com.au/products/tc003-01",
+          "material": "Terrazzo",
+          "dimensions": "20x23cm, 30x35cm, 40x45cm, 60x65cm",
+          "variants": [
+            {"size": "20x23", "colour": "Standard", "price": 2999},
+            {"size": "30x35", "colour": "Standard", "price": 7999},
+            {"size": "40x45", "colour": "Standard", "price": 14999},
+            {"size": "60x65", "colour": "Standard", "price": 24999}
+          ],
+          "colours": ["Standard"],
+          "sizes": ["20x23", "30x35", "40x45", "60x65"]
+        },
+        {
+          "id": "tc022-02",
+          "handle": "tc022-02",
+          "title": "TROUGH DARK GREY",
+          "price": 6999,
+          "currency": "AUD",
+          "image": "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_19of19.jpg?v=1687238645",
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0748/4152/2498/files/Urbanpots_19of19.jpg?v=1687238645"
+          ],
+          "description": "Dark grey terrazzo trough.",
+          "url": "https://www.urbanpots.com.au/products/tc022-02",
+          "material": "Terrazzo",
+          "dimensions": "20x40x20cm, 30x60x30cm, 40x80x40cm, 50x100x50cm",
+          "variants": [
+            {"size": "20x40x20", "colour": "Standard", "price": 6999},
+            {"size": "30x60x30", "colour": "Standard", "price": 11999},
+            {"size": "40x80x40", "colour": "Standard", "price": 19999},
+            {"size": "50x100x50", "colour": "Standard", "price": 29999}
+          ],
+          "colours": ["Standard"],
+          "sizes": ["20x40x20", "30x60x30", "40x80x40", "50x100x50"]
         }
       ]
     }
