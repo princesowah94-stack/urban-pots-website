@@ -133,15 +133,18 @@ function createProductCard(product, index = 0) {
 
 // Render products to a container
 function renderProducts(products, containerId) {
+  console.log('[products.js] renderProducts called with', products.length, 'products, container:', containerId);
   const container = document.getElementById(containerId);
   if (!container) {
     console.error(`Container with ID "${containerId}" not found`);
     return;
   }
+  console.log('[products.js] Container found:', container);
 
   container.innerHTML = '';
 
   if (products.length === 0) {
+    console.log('[products.js] No products to render');
     container.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: var(--c-brown); padding: 3rem 0;">No products found matching your filters.</p>';
     return;
   }
@@ -152,10 +155,18 @@ function renderProducts(products, containerId) {
   const endIndex = startIndex + PRODUCTS_PER_PAGE;
   const paginatedProducts = products.slice(startIndex, endIndex);
 
+  console.log('[products.js] Rendering', paginatedProducts.length, 'paginated products');
   // Render product cards
   paginatedProducts.forEach((product, index) => {
-    container.appendChild(createProductCard(product, index));
+    try {
+      const card = createProductCard(product, index);
+      console.log('[products.js] Created card for:', product.title);
+      container.appendChild(card);
+    } catch (error) {
+      console.error('[products.js] Error creating card for', product.title, ':', error);
+    }
   });
+  console.log('[products.js] All product cards appended');
 
   // Render pagination
   renderPagination(totalPages, containerId);
