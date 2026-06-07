@@ -103,6 +103,7 @@ function filterProducts(products, filterState) {
 
 // Create a product card HTML element
 function createProductCard(product, index = 0) {
+  console.log('[products.js] createProductCard called for:', product.title, 'index:', index);
   const firstImage = product.images?.[0] || product.image || '';
   const delayClass = index % 4 === 0 ? '' : `delay-${index % 4}`;
 
@@ -267,7 +268,9 @@ function initializeFilters(collectionId, products, containerId) {
   });
 
   // Initial render
+  console.log('[products.js] About to call initial renderProducts with', filteredProducts.length, 'products');
   renderProducts(filteredProducts, containerId);
+  console.log('[products.js] Initial renderProducts completed');
 }
 
 // Main initialization function - call this from the collection page
