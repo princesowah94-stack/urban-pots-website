@@ -108,7 +108,7 @@ function createProductCard(product, index = 0) {
   const delayClass = index % 4 === 0 ? '' : `delay-${index % 4}`;
 
   const card = document.createElement('div');
-  card.className = `product-card fadein ${delayClass}`.trim();
+  card.className = `product-card fadein inView ${delayClass}`.trim();
   card.innerHTML = `
     <div class="product-card__image">
       <img
