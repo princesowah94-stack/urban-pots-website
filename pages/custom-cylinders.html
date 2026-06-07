@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, max-scale=1" />
+  <title>Custom Cylinders — Made To Order | Urban Pots</title>
+  <meta name="description" content="Commercial-grade fibreglass cylinders perfect for large feature trees and commercial precincts. Waterproofed, primed, custom colours. 4-14 week lead time." />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/components.css" />
+
+  <!-- Lenis & GSAP from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav" id="siteNav">
+  <div class="container site-nav__inner">
+    <a href="/" class="nav-logo">
+      <img src="https://cdn.shopify.com/s/files/1/0748/4152/2498/files/urban_pots_logo__white_150.png?v=1684274691" alt="Urban Pots" width="120" height="30" />
+    </a>
+    <div class="nav-links">
+      <a href="/shop.html">Shop Now</a>
+      <a href="/pages/custom-planter-boxes.html">Custom Planters</a>
+      <a href="/pages/custom-cylinders.html">Custom Cylinders</a>
+      <a href="/pages/commercial-planters.html">Commercial</a>
+      <a href="/pages/trade.html">Trade</a>
+      <a href="/pages/contact.html">Contact</a>
+      <a href="/pages/find-us.html">Find Us</a>
+      <a href="/pages/about.html">About Us</a>
+    </div>
+    <div class="nav-actions">
+      <a href="mailto:info@urbanpots.com.au" class="nav-cta">Get a Quote</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="nav-mobile" id="navMobile" aria-hidden="true">
+  <ul class="nav-mobile__links">
+    <li><a href="/shop.html">Shop Now</a></li>
+    <li><a href="/pages/custom-planter-boxes.html">Custom Planters</a></li>
+    <li><a href="/pages/custom-cylinders.html">Custom Cylinders</a></li>
+    <li><a href="/pages/commercial-planters.html">Commercial</a></li>
+    <li><a href="/pages/trade.html">Trade</a></li>
+    <li><a href="/pages/contact.html">Contact</a></li>
+    <li><a href="/pages/find-us.html">Find Us</a></li>
+    <li><a href="/pages/about.html">About Us</a></li>
+  </ul>
+  <div class="nav-mobile__footer">
+    <a href="mailto:info@urbanpots.com.au" class="btn btn--stone">Get a Quote</a>
+    <div class="nav-mobile__footer-meta">
+      <a href="tel:0433132406">0433 132 406</a> &nbsp;·&nbsp; Tue–Sat 9am–4pm
+    </div>
+  </div>
+</div>
+
+<!-- PAGE CONTENT -->
+<main>
+
+  <!-- HERO SECTION -->
+  <section class="hero" style="background: linear-gradient(135deg, #F7F7F3 0%, #EDE8E1 100%);">
+    <div class="hero__content">
+      <p class="eyebrow">Commercial Grade</p>
+      <h1>Made To Order <em>Custom Cylinders</em></h1>
+      <p class="hero__subtext">Perfect for large feature trees and commercial precincts. Commercial-grade fibreglass, waterproofed, primed, and available in custom colours. Lead time: 4-14 weeks.</p>
+      <a href="#enquiry-form" class="btn btn--dark">Start Your Enquiry <span class="arrow-link">→</span></a>
+    </div>
+    <div class="hero__image" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 600%22><rect fill=%22%237A8C5E%22 width=%22800%22 height=%22600%22/></rect></svg>')"></div>
+  </section>
+
+  <!-- KEY FEATURES SECTION -->
+  <section style="padding: clamp(5rem, 8vw, 8rem) 0; background: #fff;">
+    <div class="container">
+      <div class="section-head fadein">
+        <h2>Why Custom Cylinders</h2>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2.5rem; margin-top: 3rem;">
+        <div class="fadein delay-1" style="padding: 2rem; background: var(--c-bg); border-radius: 2px; border: 1px solid var(--c-border);">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">💧</div>
+          <h3 style="margin-bottom: 0.5rem; font-family: var(--font-heading); color: var(--c-brown-dk);">Waterproofed</h3>
+          <p style="color: var(--c-brown); line-height: 1.6;">Fully sealed and waterproofed for durability in outdoor environments.</p>
+        </div>
+
+        <div class="fadein delay-2" style="padding: 2rem; background: var(--c-bg); border-radius: 2px; border: 1px solid var(--c-border);">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏗️</div>
+          <h3 style="margin-bottom: 0.5rem; font-family: var(--font-heading); color: var(--c-brown-dk);">Commercial Grade</h3>
+          <p style="color: var(--c-brown); line-height: 1.6;">UV-resistant, lightweight fibreglass engineered for commercial projects.</p>
+        </div>
+
+        <div class="fadein delay-3" style="padding: 2rem; background: var(--c-bg); border-radius: 2px; border: 1px solid var(--c-border);">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎨</div>
+          <h3 style="margin-bottom: 0.5rem; font-family: var(--font-heading); color: var(--c-brown-dk);">Custom Colours</h3>
+          <p style="color: var(--c-brown); line-height: 1.6;">Primed and ready for custom colour specifications from Dulux palette.</p>
+        </div>
+
+        <div class="fadein delay-4" style="padding: 2rem; background: var(--c-bg); border-radius: 2px; border: 1px solid var(--c-border);">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚡</div>
+          <h3 style="margin-bottom: 0.5rem; font-family: var(--font-heading); color: var(--c-brown-dk);">Fast Lead Time</h3>
+          <p style="color: var(--c-brown); line-height: 1.6;">4-14 weeks depending on material availability and project scope.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIFICATIONS SECTION -->
+  <section style="padding: clamp(5rem, 8vw, 8rem) 0; background: var(--c-dark); color: white;">
+    <div class="container">
+      <div class="section-head fadein" style="color: white;">
+        <h2 style="color: white;">Specifications</h2>
+        <p style="color: rgba(255,255,255,0.8);">Choose from our standard diameters and custom heights.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
+        <div class="fadein delay-1" style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 2px; border: 1px solid rgba(255,255,255,0.1);">
+          <h3 style="margin-bottom: 1rem; font-size: 1.1rem;">Available Diameters</h3>
+          <ul style="list-style: none; padding: 0; line-height: 2;">
+            <li>600mm</li>
+            <li>800mm</li>
+            <li>1000mm</li>
+            <li>1200mm</li>
+            <li>1500mm</li>
+            <li>1800mm</li>
+            <li>2000mm</li>
+          </ul>
+        </div>
+
+        <div class="fadein delay-2" style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 2px; border: 1px solid rgba(255,255,255,0.1);">
+          <h3 style="margin-bottom: 1rem; font-size: 1.1rem;">Height Options</h3>
+          <p style="margin-bottom: 1rem; line-height: 1.6;">Customizable heights up to <strong>1000mm</strong></p>
+          <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">Specify your exact height requirement in the enquiry form.</p>
+        </div>
+
+        <div class="fadein delay-3" style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 2px; border: 1px solid rgba(255,255,255,0.1);">
+          <h3 style="margin-bottom: 1rem; font-size: 1.1rem;">Material & Finish</h3>
+          <p style="line-height: 1.8;">
+            <strong>Material:</strong> Commercial-grade fibreglass<br>
+            <strong>Finish:</strong> Waterproofed + primed<br>
+            <strong>Colour:</strong> Custom on request
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS SECTION -->
+  <section style="padding: clamp(5rem, 8vw, 8rem) 0;">
+    <div class="container">
+      <div class="section-head fadein">
+        <h2>How It Works</h2>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem; position: relative;">
+        <div class="fadein delay-1" style="text-align: center; padding: 2rem;">
+          <div style="width: 50px; height: 50px; background: var(--c-sage); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin: 0 auto 1.5rem; font-size: 1.5rem;">1</div>
+          <h3 style="margin-bottom: 0.5rem; font-family: var(--font-heading); color: var(--c-brown-dk);">Submit Enquiry</h3>
+          <p style="color: var(--c-brown); font-size: 0.95rem;">Provide diameter, height, quantity, and colour preferences.</p>
+        </div>
+
+        <div class="fadein delay-2" style="text-align: center; padding: 2rem;">
+          <div style="width: 50px; height: 50px; background: var(--c-sage); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin: 0 auto 1.5rem; font-size: 1.5rem;">2</div>
+          <h3 style="margin-bottom: 0.5rem; font-family: var(--font-heading); color: var(--c-brown-dk);">Consultation</h3>
+          <p style="color: var(--c-brown); font-size: 0.95rem;">Our team confirms specifications and discusses timeline.</p>
+        </div>
+
+        <div class="fadein delay-3" style="text-align: center; padding: 2rem;">
+          <div style="width: 50px; height: 50px; background: var(--c-sage); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin: 0 auto 1.5rem; font-size: 1.5rem;">3</div>
+          <h3 style="margin-bottom: 0.5rem; font-family: var(--font-heading); color: var(--c-brown-dk);">Production</h3>
+          <p style="color: var(--c-brown); font-size: 0.95rem;">4-14 week manufacturing depending on scope and availability.</p>
+        </div>
+
+        <div class="fadein delay-4" style="text-align: center; padding: 2rem;">
+          <div style="width: 50px; height: 50px; background: var(--c-sage); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin: 0 auto 1.5rem; font-size: 1.5rem;">4</div>
+          <h3 style="margin-bottom: 0.5rem; font-family: var(--font-heading); color: var(--c-brown-dk);">Delivery</h3>
+          <p style="color: var(--c-brown); font-size: 0.95rem;">Cylinders delivered to your specified location.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENQUIRY FORM SECTION -->
+  <section id="enquiry-form" style="padding: clamp(5rem, 8vw, 8rem) 0; background: var(--c-bg);">
+    <div class="container" style="max-width: 700px;">
+      <div class="section-head fadein">
+        <h2>Get Your Custom Cylinders Quote</h2>
+        <p>Fill in your requirements below. We'll contact you within 24 hours.</p>
+      </div>
+
+      <form id="customCylindersForm" style="margin-top: 3rem;">
+        <!-- Row 1: Name, Email -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+          <div>
+            <label for="name" style="display: block; font-size: 0.9rem; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.5rem;">Name <span style="color: red;">*</span></label>
+            <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--c-border); border-radius: 2px; font-size: 1rem;" />
+          </div>
+          <div>
+            <label for="email" style="display: block; font-size: 0.9rem; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.5rem;">Email <span style="color: red;">*</span></label>
+            <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--c-border); border-radius: 2px; font-size: 1rem;" />
+          </div>
+        </div>
+
+        <!-- Row 2: Phone, Company -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+          <div>
+            <label for="phone" style="display: block; font-size: 0.9rem; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.5rem;">Contact / Phone <span style="color: red;">*</span></label>
+            <input type="tel" id="phone" name="phone" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--c-border); border-radius: 2px; font-size: 1rem;" />
+          </div>
+          <div>
+            <label for="company" style="display: block; font-size: 0.9rem; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.5rem;">Company Name (Optional)</label>
+            <input type="text" id="company" name="company" style="width: 100%; padding: 0.75rem; border: 1px solid var(--c-border); border-radius: 2px; font-size: 1rem;" />
+          </div>
+        </div>
+
+        <!-- Row 3: ABN -->
+        <div style="margin-bottom: 1.5rem;">
+          <label for="abn" style="display: block; font-size: 0.9rem; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.5rem;">ABN (Optional)</label>
+          <input type="text" id="abn" name="abn" placeholder="Australian Business Number" style="width: 100%; padding: 0.75rem; border: 1px solid var(--c-border); border-radius: 2px; font-size: 1rem;" />
+        </div>
+
+        <!-- Row 4: Diameter, Quantity -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+          <div>
+            <label for="diameter" style="display: block; font-size: 0.9rem; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.5rem;">Diameter Required <span style="color: red;">*</span></label>
+            <select id="diameter" name="diameter" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--c-border); border-radius: 2px; font-size: 1rem;">
+              <option value="">-- Select a diameter --</option>
+              <option value="600mm">600mm</option>
+              <option value="800mm">800mm</option>
+              <option value="1000mm">1000mm</option>
+              <option value="1200mm">1200mm</option>
+              <option value="1500mm">1500mm</option>
+              <option value="1800mm">1800mm</option>
+              <option value="2000mm">2000mm</option>
+            </select>
+          </div>
+          <div>
+            <label for="quantity" style="display: block; font-size: 0.9rem; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.5rem;">Quantity <span style="color: red;">*</span></label>
+            <input type="number" id="quantity" name="quantity" min="1" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--c-border); border-radius: 2px; font-size: 1rem;" />
+          </div>
+        </div>
+
+        <!-- Row 5: Height -->
+        <div style="margin-bottom: 1.5rem;">
+          <label for="height" style="display: block; font-size: 0.9rem; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.5rem;">Height Required <span style="color: red;">*</span> (Up to 1000mm)</label>
+          <input type="text" id="height" name="height" placeholder="e.g., 500mm, 750mm, custom specification" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--c-border); border-radius: 2px; font-size: 1rem;" />
+        </div>
+
+        <!-- Row 6: Colour -->
+        <div style="margin-bottom: 1.5rem;">
+          <label for="colourSelect" style="display: block; font-size: 0.9rem; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.5rem;">Colour - Preset Options</label>
+          <select id="colourSelect" name="colourSelect" style="width: 100%; padding: 0.75rem; border: 1px solid var(--c-border); border-radius: 2px; font-size: 1rem; margin-bottom: 0.75rem;">
+            <option value="">-- Select or specify custom below --</option>
+            <option value="Lexicon Half">Lexicon Half (Dulux)</option>
+            <option value="Stone">Stone (Dulux Dune)</option>
+            <option value="Sage">Sage (Urban Pots)</option>
+            <option value="Monument">Monument (Dulux)</option>
+            <option value="Domino">Domino (Dulux)</option>
+            <option value="Custom">Custom colour - describe below</option>
+          </select>
+          <label for="colourCustom" style="display: block; font-size: 0.9rem; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.5rem; margin-top: 1rem;">Custom Colour Description</label>
+          <input type="text" id="colourCustom" name="colourCustom" placeholder="e.g., 'Dark grey', 'Dulux Monument', or hex code #4A4A48" style="width: 100%; padding: 0.75rem; border: 1px solid var(--c-border); border-radius: 2px; font-size: 1rem;" />
+        </div>
+
+        <!-- Row 7: Special Requirements -->
+        <div style="margin-bottom: 1.5rem;">
+          <label for="requirements" style="display: block; font-size: 0.9rem; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.5rem;">Special Requirements (Optional)</label>
+          <textarea id="requirements" name="requirements" rows="4" placeholder="Describe any additional specifications, design notes, or project details..." style="width: 100%; padding: 0.75rem; border: 1px solid var(--c-border); border-radius: 2px; font-size: 1rem; font-family: inherit; resize: vertical;"></textarea>
+        </div>
+
+        <!-- Terms & Submit -->
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: flex; align-items: flex-start; font-size: 0.9rem; color: var(--c-brown); cursor: pointer;">
+            <input type="checkbox" id="terms" name="terms" required style="margin-right: 0.75rem; margin-top: 0.25rem; cursor: pointer;" />
+            <span>I've reviewed my requirements and authorize submission of this enquiry. <span style="color: red;">*</span></span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn--dark" style="width: 100%; padding: 1rem; font-size: 1rem;">Submit Enquiry <span class="arrow-link">→</span></button>
+
+        <div id="formMessage" style="margin-top: 1rem; padding: 1rem; text-align: center; display: none; border-radius: 2px;"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section style="background: var(--c-dark); color: white; padding: clamp(3rem, 6vw, 5rem) 0; text-align: center;">
+    <div class="container">
+      <h2 style="color: white; margin-bottom: 1.5rem;">Ready to order?</h2>
+      <p style="margin-bottom: 2rem; font-size: 1.1rem; color: rgba(255,255,255,0.9);">Get in touch with our team to discuss your custom cylinder project.</p>
+      <a href="tel:0433132406" class="btn btn--stone">Call Us: 0433 132 406</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="https://cdn.shopify.com/s/files/1/0748/4152/2498/files/urban_pots_logo__sage_150.png?v=1684274691" alt="Urban Pots" class="footer-brand__logo" width="120" />
+        <p class="footer-brand__tagline">Your best space. Our planters.</p>
+        <p>An Australian family-owned planter manufacturer. Custom-built in Western Sydney. Trusted by developers, architects, and landscapers nationwide.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="LinkedIn">LI</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="/pages/custom-planter-boxes.html">Custom Planter Boxes</a></li>
+          <li><a href="/pages/custom-cylinders.html">Custom Cylinders</a></li>
+          <li><a href="/shop.html">Shop Now</a></li>
+          <li><a href="/pages/commercial-planters.html">Commercial Planters</a></li>
+          <li><a href="/pages/grc-planters.html">GRC Planters</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/pages/about.html">About Us</a></li>
+          <li><a href="/pages/trade.html">Trade</a></li>
+          <li><a href="/pages/contact.html">Contact</a></li>
+          <li><a href="/pages/find-us.html">Find Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:0433132406">0433 132 406</a></li>
+          <li><a href="mailto:info@urbanpots.com.au">info@urbanpots.com.au</a></li>
+          <li><a href="/pages/find-us.html">Sydney Showroom</a></li>
+          <li><a href="/pages/find-us.html">Tue–Sat 9am–4pm</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Urban Pots Australia. All rights reserved.</span>
+      <span>
+        <a href="/">Privacy</a> &nbsp;·&nbsp;
+        <a href="/">Terms</a> &nbsp;·&nbsp;
+        Website by <a href="#" style="color:var(--c-stone)">Sowah Studio</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script type="module">
+  import * as animations from '../js/animations.js';
+  import * as ui from '../js/ui.js';
+
+  // Initialize animations and scroll
+  animations.initLenis();
+  animations.initFadein();
+  animations.initNavScroll();
+  animations.fixIOSParallax();
+
+  // Initialize UI
+  ui.initMobileNav(animations.lenis);
+
+  // Form handling
+  const form = document.getElementById('customCylindersForm');
+  const formMessage = document.getElementById('formMessage');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Collect form data
+    const formData = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      phone: document.getElementById('phone').value,
+      company: document.getElementById('company').value,
+      abn: document.getElementById('abn').value,
+      diameter: document.getElementById('diameter').value,
+      quantity: document.getElementById('quantity').value,
+      height: document.getElementById('height').value,
+      colourSelect: document.getElementById('colourSelect').value,
+      colourCustom: document.getElementById('colourCustom').value,
+      requirements: document.getElementById('requirements').value,
+    };
+
+    try {
+      // Send to API
+      const response = await fetch('/api/custom-cylinders-enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        formMessage.style.display = 'block';
+        formMessage.style.background = '#E8F5E9';
+        formMessage.style.color = '#2E7D32';
+        formMessage.style.border = '1px solid #4CAF50';
+        formMessage.innerHTML = '✓ Thank you! We\'ll contact you within 24 hours to discuss your custom cylinder order.';
+        form.reset();
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      formMessage.style.display = 'block';
+      formMessage.style.background = '#FFEBEE';
+      formMessage.style.color = '#C62828';
+      formMessage.style.border = '1px solid #EF5350';
+      formMessage.innerHTML = '✗ Error submitting form. Please try again or call 0433 132 406.';
+      console.error('Form error:', error);
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1007,7 +1007,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <div class="nav-links">
       <a href="/shop.html">Shop Now</a>
       <a href="/pages/custom-planter-boxes.html">Custom Planters</a>
-      <a href="/pages/custom-cylinders.html">Custom Cylinders</a>
       <a href="/pages/commercial-planters.html">Commercial</a>
       <a href="/pages/trade.html">Trade</a>
       <a href="/pages/contact.html">Contact</a>
@@ -1028,7 +1027,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   <ul class="nav-mobile__links">
     <li><a href="/shop.html">Shop Now</a></li>
     <li><a href="/pages/custom-planter-boxes.html">Custom Planters</a></li>
-    <li><a href="/pages/custom-cylinders.html">Custom Cylinders</a></li>
     <li><a href="/pages/commercial-planters.html">Commercial</a></li>
     <li><a href="/pages/trade.html">Trade</a></li>
     <li><a href="/pages/contact.html">Contact</a></li>

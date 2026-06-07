@@ -24,7 +24,6 @@
     <div class="nav-links">
       <a href="/shop.html">Shop</a>
       <a href="/pages/custom-planter-boxes.html">Custom Planters</a>
-      <a href="/pages/custom-cylinders.html">Custom Cylinders</a>
       <a href="/pages/commercial-planters.html">Projects</a>
       <a href="/pages/grc-planters.html">Materials</a>
       <a href="/pages/about.html">About</a>
@@ -43,7 +42,6 @@
   <ul class="nav-mobile__links">
     <li><a href="/shop.html">Shop</a></li>
     <li><a href="/pages/custom-planter-boxes.html">Custom Planters</a></li>
-    <li><a href="/pages/custom-cylinders.html">Custom Cylinders</a></li>
     <li><a href="/pages/commercial-planters.html">Projects</a></li>
     <li><a href="/pages/grc-planters.html">Materials</a></li>
     <li><a href="/pages/about.html">About</a></li>
