@@ -1,403 +1,506 @@
-// ── THREE.JS SCENE SETUP ───────────────────────────────────
-export function setupScene(container) {
-  const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0xF7F7F3);
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js';
+import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/controls/OrbitControls.js';
+import { CSS2DRenderer, CSS2DObject } from 'https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/renderers/CSS2DRenderer.js';
 
-  // Camera
-  const camera = new THREE.PerspectiveCamera(
-    45,
-    container.clientWidth / container.clientHeight,
-    0.1,
-    1000
-  );
-  camera.position.set(10, 8, 10);
-  camera.lookAt(0, 2, 0);
-
-  // Renderer
-  const renderer = new THREE.WebGLRenderer({ antialias: true });
-  renderer.setSize(container.clientWidth, container.clientHeight);
-  renderer.shadowMap.enabled = true;
-  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-  container.appendChild(renderer.domElement);
-
-  // Lighting (warm, architectural)
-  const ambientLight = new THREE.AmbientLight(0xFFF8F0, 0.6);
-  scene.add(ambientLight);
-
-  const directionalLight = new THREE.DirectionalLight(0xFFF5E6, 2.2);
-  directionalLight.position.set(8, 12, 6);
-  directionalLight.target.position.set(0, 2, 0);
-  directionalLight.castShadow = true;
-  directionalLight.shadow.mapSize.width = 2048;
-  directionalLight.shadow.mapSize.height = 2048;
-  scene.add(directionalLight);
-  scene.add(directionalLight.target);
-
-  const hemisphereLight = new THREE.HemisphereLight(0xF7F3EE, 0x8C7B6A, 0.4);
-  scene.add(hemisphereLight);
-
-  // Ground plane (24×24 units)
-  const groundGeom = new THREE.PlaneGeometry(24, 24);
-  const groundMat = new THREE.MeshStandardMaterial({
-    color: 0xEDE8E1,
-    roughness: 0.85,
-    metalness: 0,
-  });
-  const ground = new THREE.Mesh(groundGeom, groundMat);
-  ground.rotation.x = -Math.PI / 2;
-  ground.receiveShadow = true;
-  scene.add(ground);
-
-  // OrbitControls
-  const controls = new THREE.OrbitControls(camera, renderer.domElement);
-  controls.enableDamping = true;
-  controls.dampingFactor = 0.06;
-  controls.minPolarAngle = 0.2;
-  controls.maxPolarAngle = Math.PI / 2.1;
-  controls.enablePan = false;
-
-  // CSS2DRenderer (for dimension labels)
-  const labelRenderer = new THREE.CSS2DRenderer();
-  labelRenderer.setSize(container.clientWidth, container.clientHeight);
-  labelRenderer.domElement.style.position = 'absolute';
-  labelRenderer.domElement.style.top = '0';
-  container.appendChild(labelRenderer.domElement);
-
-  return { scene, camera, renderer, controls, labelRenderer, ground };
-}
-
-// ── STRAIGHT EDGE CONFIGURATOR CLASS ───────────────────────
-export class StraightEdgeConfigurator {
-  constructor(sceneSetup) {
-    this.sceneSetup = sceneSetup;
-    this.scene = sceneSetup.scene;
-    this.renderer = sceneSetup.renderer;
-    this.controls = sceneSetup.controls;
-    this.labelRenderer = sceneSetup.labelRenderer;
-
-    // Default dimensions (in scene units, 1 unit = 100mm)
-    this.dims = { L: 6, W: 4, H: 4.5 };
-    this.T = 0.5; // Wall thickness (50mm)
-
-    // Material and colour
-    this.material = new THREE.MeshStandardMaterial({
-      color: 0xF2EFE9,
-      roughness: 0.88,
-      metalness: 0.02,
-    });
-
-    // Container for planter panels
-    this.planterGroup = new THREE.Group();
-    this.scene.add(this.planterGroup);
-
-    // Labels array
-    this.labels = [];
-
-    this.buildPlanter();
-    this.animate();
-  }
-
-  buildPlanter() {
-    // Clear existing geometry and labels
-    this.planterGroup.clear();
-    this.labels.forEach(label => label.element.parentNode?.removeChild(label.element));
-    this.labels = [];
-
-    const { L, W, H } = this.dims;
-    const T = this.T;
-
-    // Front wall
-    const frontGeom = new THREE.BoxGeometry(L, H, T);
-    const front = new THREE.Mesh(frontGeom, this.material);
-    front.position.set(0, H / 2, W / 2 - T / 2);
-    front.castShadow = true;
-    this.planterGroup.add(front);
-
-    // Back wall
-    const backGeom = new THREE.BoxGeometry(L, H, T);
-    const back = new THREE.Mesh(backGeom, this.material);
-    back.position.set(0, H / 2, -W / 2 + T / 2);
-    back.castShadow = true;
-    this.planterGroup.add(back);
-
-    // Left wall
-    const leftGeom = new THREE.BoxGeometry(T, H, W - 2 * T);
-    const left = new THREE.Mesh(leftGeom, this.material);
-    left.position.set(-L / 2 + T / 2, H / 2, 0);
-    left.castShadow = true;
-    this.planterGroup.add(left);
-
-    // Right wall
-    const rightGeom = new THREE.BoxGeometry(T, H, W - 2 * T);
-    const right = new THREE.Mesh(rightGeom, this.material);
-    right.position.set(L / 2 - T / 2, H / 2, 0);
-    right.castShadow = true;
-    this.planterGroup.add(right);
-
-    // Base
-    const baseGeom = new THREE.BoxGeometry(L, T, W);
-    const base = new THREE.Mesh(baseGeom, this.material);
-    base.position.set(0, T / 2, 0);
-    base.castShadow = true;
-    this.planterGroup.add(base);
-
-    // Soil cap (dark material)
-    const soilCapMat = new THREE.MeshStandardMaterial({ color: 0x5C4033 });
-    const soilCapGeom = new THREE.BoxGeometry(L - 2 * T, 0.04, W - 2 * T);
-    const soilCap = new THREE.Mesh(soilCapGeom, soilCapMat);
-    soilCap.position.set(0, H - T - 0.02, 0);
-    this.planterGroup.add(soilCap);
-
-    // Add dimension labels
-    this.addLabels();
-  }
-
-  addLabels() {
-    const { L, W, H } = this.dims;
-    const T = this.T;
-
-    // Length label (bottom-front edge)
-    const lengthLabel = this.createLabel(`${Math.round(L * 100)}mm`);
-    lengthLabel.position.set(0, -0.5, W / 2 + 0.8);
-    this.planterGroup.add(lengthLabel);
-    this.labels.push({ element: lengthLabel.element, object: lengthLabel });
-
-    // Width label (bottom-right edge)
-    const widthLabel = this.createLabel(`${Math.round(W * 100)}mm`);
-    widthLabel.position.set(L / 2 + 0.8, -0.5, 0);
-    this.planterGroup.add(widthLabel);
-    this.labels.push({ element: widthLabel.element, object: widthLabel });
-
-    // Height label (left-front edge top)
-    const heightLabel = this.createLabel(`${Math.round(H * 100)}mm`);
-    heightLabel.position.set(-L / 2 - 0.8, H / 2, W / 2 - T / 2);
-    this.planterGroup.add(heightLabel);
-    this.labels.push({ element: heightLabel.element, object: heightLabel });
-  }
-
-  createLabel(text) {
-    const div = document.createElement('div');
-    div.textContent = text;
-    div.style.backgroundColor = 'rgba(28, 26, 24, 0.9)';
-    div.style.color = '#fff';
-    div.style.padding = '0.35rem 0.75rem';
-    div.style.borderRadius = '2px';
-    div.style.fontSize = '0.7rem';
-    div.style.fontWeight = '600';
-    div.style.pointerEvents = 'none';
-    div.style.whiteSpace = 'nowrap';
-
-    const label = new THREE.CSS2DObject(div);
-    label.element = div;
-    return label;
-  }
-
-  setDimensions(length, width, height) {
-    const newL = length / 100;
-    const newW = width / 100;
-    const newH = height / 100;
-
-    gsap.to(this.dims, {
-      L: newL,
-      W: newW,
-      H: newH,
-      duration: 0.55,
-      ease: 'power2.out',
-      onUpdate: () => this.buildPlanter(),
-    });
-  }
-
-  setMaterial(material) {
-    const props = material === 'fibre-cement'
-      ? { roughness: 0.88, metalness: 0.02 }
-      : { roughness: 0.35, metalness: 0.05 };
-
-    this.material.roughness = props.roughness;
-    this.material.metalness = props.metalness;
-  }
-
-  setColour(hex) {
-    this.material.color.set(hex);
-  }
-
-  animate() {
-    requestAnimationFrame(() => this.animate());
-    this.controls.update();
-    this.renderer.render(this.scene, this.sceneSetup.camera);
-    this.labelRenderer.render(this.scene, this.sceneSetup.camera);
-  }
-}
-
-// ── CYLINDRICAL CONFIGURATOR CLASS ──────────────────────────
-export class CylindricalConfigurator {
-  constructor(sceneSetup) {
-    this.sceneSetup = sceneSetup;
-    this.scene = sceneSetup.scene;
-    this.renderer = sceneSetup.renderer;
-    this.controls = sceneSetup.controls;
-    this.labelRenderer = sceneSetup.labelRenderer;
-
-    // Default dimensions (in scene units)
-    this.dims = { D: 5, H: 4.5 }; // D = diameter in units (500mm), H = height
-    this.T = 0.5; // Wall thickness (50mm)
-
-    // Material and colour
-    this.material = new THREE.MeshStandardMaterial({
-      color: 0xF2EFE9,
-      roughness: 0.88,
-      metalness: 0.02,
-    });
-
-    // Container for planter
-    this.planterGroup = new THREE.Group();
-    this.scene.add(this.planterGroup);
-
-    // Labels array
-    this.labels = [];
-
-    this.buildPlanter();
-    this.animate();
-  }
-
-  buildPlanter() {
-    // Clear existing geometry and labels
-    this.planterGroup.clear();
-    this.labels.forEach(label => label.element.parentNode?.removeChild(label.element));
-    this.labels = [];
-
-    const { D, H } = this.dims;
-    const T = this.T;
-    const R = D / 2; // Radius
-    const innerR = R - T; // Inner radius
-
-    // Wall (using LatheGeometry for hollow cylinder)
-    const points = [
-      new THREE.Vector2(innerR, 0),
-      new THREE.Vector2(R, 0),
-      new THREE.Vector2(R, H - T),
-      new THREE.Vector2(innerR, H - T),
-      new THREE.Vector2(innerR, 0),
-    ];
-
-    const wallGeom = new THREE.LatheGeometry(points, 32);
-    const wall = new THREE.Mesh(wallGeom, this.material);
-    wall.scale.y = 1;
-    wall.castShadow = true;
-    this.planterGroup.add(wall);
-
-    // Base
-    const baseGeom = new THREE.CylinderGeometry(R, R, T, 32);
-    const base = new THREE.Mesh(baseGeom, this.material);
-    base.position.y = T / 2;
-    base.castShadow = true;
-    this.planterGroup.add(base);
-
-    // Soil cap
-    const soilCapMat = new THREE.MeshStandardMaterial({ color: 0x5C4033 });
-    const soilCapGeom = new THREE.CylinderGeometry(innerR, innerR, 0.04, 32);
-    const soilCap = new THREE.Mesh(soilCapGeom, soilCapMat);
-    soilCap.position.y = H - T - 0.02;
-    this.planterGroup.add(soilCap);
-
-    // Add dimension labels
-    this.addLabels();
-  }
-
-  addLabels() {
-    const { D, H } = this.dims;
-
-    // Diameter label
-    const diamLabel = this.createLabel(`Ø${Math.round(D * 100)}mm`);
-    diamLabel.position.set(D / 2 + 0.8, -0.5, 0);
-    this.planterGroup.add(diamLabel);
-    this.labels.push({ element: diamLabel.element, object: diamLabel });
-
-    // Height label
-    const heightLabel = this.createLabel(`${Math.round(H * 100)}mm`);
-    heightLabel.position.set(-(D / 2) - 0.8, H / 2, 0);
-    this.planterGroup.add(heightLabel);
-    this.labels.push({ element: heightLabel.element, object: heightLabel });
-  }
-
-  createLabel(text) {
-    const div = document.createElement('div');
-    div.textContent = text;
-    div.style.backgroundColor = 'rgba(28, 26, 24, 0.9)';
-    div.style.color = '#fff';
-    div.style.padding = '0.35rem 0.75rem';
-    div.style.borderRadius = '2px';
-    div.style.fontSize = '0.7rem';
-    div.style.fontWeight = '600';
-    div.style.pointerEvents = 'none';
-    div.style.whiteSpace = 'nowrap';
-
-    const label = new THREE.CSS2DObject(div);
-    label.element = div;
-    return label;
-  }
-
-  setDimensions(diameter, height) {
-    const newD = diameter / 100;
-    const newH = height / 100;
-
-    gsap.to(this.dims, {
-      D: newD,
-      H: newH,
-      duration: 0.55,
-      ease: 'power2.out',
-      onUpdate: () => this.buildPlanter(),
-    });
-  }
-
-  setMaterial(material) {
-    const props = material === 'fibre-cement'
-      ? { roughness: 0.88, metalness: 0.02 }
-      : { roughness: 0.35, metalness: 0.05 };
-
-    this.material.roughness = props.roughness;
-    this.material.metalness = props.metalness;
-  }
-
-  setColour(hex) {
-    this.material.color.set(hex);
-  }
-
-  animate() {
-    requestAnimationFrame(() => this.animate());
-    this.controls.update();
-    this.renderer.render(this.scene, this.sceneSetup.camera);
-    this.labelRenderer.render(this.scene, this.sceneSetup.camera);
-  }
-}
-
-// ── COLOUR PALETTE ──────────────────────────────────────────
-export const COLORS = [
+// Color palette: Colorbond + Dulux
+const COLORBOND_DULUX_COLORS = [
   { name: 'Lexicon Half', hex: '#F2EFE9', code: 'Dulux Lexicon Half' },
-  { name: 'Antique White', hex: '#D5D0C8', code: 'Dulux Antique White USA' },
+  { name: 'Antique White', hex: '#D5D0C8', code: 'Dulux Antique White' },
   { name: 'Stone', hex: '#C9B99A', code: 'Dulux Dune' },
   { name: 'Sage', hex: '#7A8C5E', code: 'Urban Pots Sage' },
   { name: 'Monument', hex: '#4A4A48', code: 'Dulux Monument' },
   { name: 'Domino', hex: '#1C1A18', code: 'Dulux Domino' },
 ];
 
-// ── MATERIAL PROPERTIES ─────────────────────────────────────
-export const MATERIAL_PROPS = {
+// Material properties
+const MATERIAL_PROPS = {
   'fibre-cement': { roughness: 0.88, metalness: 0.02 },
   'fibreglass': { roughness: 0.35, metalness: 0.05 },
 };
 
-// ── PRESET SIZES ────────────────────────────────────────────
-export const PRESETS = {
-  straight: [
-    { name: 'Small', L: 600, W: 400, H: 450 },
-    { name: 'Medium', L: 900, W: 450, H: 500 },
-    { name: 'Large', L: 1200, W: 600, H: 600 },
-    { name: 'XL', L: 1800, W: 600, H: 600 },
+// Preset sizes
+const PRESETS = {
+  'straight-edge': [
+    { name: 'Small', length: 600, width: 400, height: 450, thickness: 50 },
+    { name: 'Medium', length: 900, width: 450, height: 500, thickness: 50 },
+    { name: 'Large', length: 1200, width: 600, height: 600, thickness: 50 },
+    { name: 'XL', length: 1800, width: 600, height: 600, thickness: 50 },
   ],
-  cylindrical: [
-    { name: 'Small', D: 600, H: 450 },
-    { name: 'Medium', D: 800, H: 500 },
-    { name: 'Large', D: 1200, H: 600 },
-    { name: 'XL', D: 1600, H: 600 },
+  'cylindrical': [
+    { name: 'Small', height: 450 },
+    { name: 'Medium', height: 550 },
+    { name: 'Large', height: 700 },
+    { name: 'XL', height: 900 },
   ],
 };
+
+// Base prices (in cents AUD)
+const BASE_PRICES = {
+  'straight-edge': {
+    'fibre-cement': 18500,
+    'fibreglass': 22000,
+  },
+  'cylindrical': {
+    'fibre-cement': 15000,
+    'fibreglass': 18500,
+  },
+};
+
+const THICKNESS_INCREMENT = 500;
+const RGB_COLOUR_COST = 2500;
+
+class StraightEdgeConfigurator {
+  constructor(containerId, onUpdate) {
+    this.containerId = containerId;
+    this.onUpdate = onUpdate;
+    this.dims = { L: 600, W: 400, H: 450, T: 50 };
+    this.material = 'fibre-cement';
+    this.colour = COLORBOND_DULUX_COLORS[0].hex;
+    this.isRGB = false;
+    this.init();
+  }
+
+  init() {
+    const container = document.getElementById(this.containerId);
+    this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    this.renderer.setSize(container.clientWidth, container.clientHeight);
+    this.renderer.shadowMap.enabled = true;
+    this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    container.appendChild(this.renderer.domElement);
+
+    this.scene = new THREE.Scene();
+    this.scene.background = new THREE.Color(0xfaf8f3);
+
+    this.camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+    this.camera.position.set(10, 8, 10);
+    this.camera.lookAt(0, 2, 0);
+
+    const ambientLight = new THREE.AmbientLight(0xFFF8F0, 0.6);
+    this.scene.add(ambientLight);
+
+    const directionalLight = new THREE.DirectionalLight(0xFFF5E6, 2.2);
+    directionalLight.position.set(8, 12, 6);
+    directionalLight.target.position.set(0, 0, 0);
+    directionalLight.castShadow = true;
+    directionalLight.shadow.camera.left = -20;
+    directionalLight.shadow.camera.right = 20;
+    directionalLight.shadow.camera.top = 20;
+    directionalLight.shadow.camera.bottom = -20;
+    directionalLight.shadow.mapSize.width = 2048;
+    directionalLight.shadow.mapSize.height = 2048;
+    this.scene.add(directionalLight);
+
+    const hemisphereLight = new THREE.HemisphereLight(0xF7F3EE, 0x8C7B6A, 0.4);
+    this.scene.add(hemisphereLight);
+
+    const groundGeo = new THREE.PlaneGeometry(24, 24);
+    const groundMat = new THREE.MeshStandardMaterial({ color: 0xE8E3DA, roughness: 0.8, metalness: 0 });
+    const ground = new THREE.Mesh(groundGeo, groundMat);
+    ground.rotation.x = -Math.PI / 2;
+    ground.receiveShadow = true;
+    this.scene.add(ground);
+
+    this.planterGroup = new THREE.Group();
+    this.scene.add(this.planterGroup);
+
+    this.planterMaterial = new THREE.MeshStandardMaterial({
+      color: new THREE.Color(this.colour),
+      ...MATERIAL_PROPS[this.material],
+    });
+
+    this.soilMaterial = new THREE.MeshStandardMaterial({ color: 0x5C4033, roughness: 0.9, metalness: 0 });
+
+    this.controls = new OrbitControls(this.camera, this.renderer.domElement);
+    this.controls.enableDamping = true;
+    this.controls.dampingFactor = 0.06;
+    this.controls.minPolarAngle = 0.2;
+    this.controls.maxPolarAngle = Math.PI / 2.1;
+    this.controls.enablePan = false;
+
+    this.labelRenderer = new CSS2DRenderer();
+    this.labelRenderer.setSize(container.clientWidth, container.clientHeight);
+    this.labelRenderer.domElement.style.position = 'absolute';
+    this.labelRenderer.domElement.style.top = '0px';
+    this.labelRenderer.domElement.style.pointerEvents = 'none';
+    container.appendChild(this.labelRenderer.domElement);
+
+    this.rebuildPlanter();
+    this.animate();
+    window.addEventListener('resize', () => this.onWindowResize());
+  }
+
+  rebuildPlanter() {
+    while (this.planterGroup.children.length > 0) {
+      const child = this.planterGroup.children[0];
+      if (child.geometry) child.geometry.dispose();
+      this.planterGroup.remove(child);
+    }
+
+    const L = this.dims.L / 100;
+    const W = this.dims.W / 100;
+    const H = this.dims.H / 100;
+    const T = this.dims.T / 100;
+
+    const frontGeo = new THREE.BoxGeometry(L, H, T);
+    const front = new THREE.Mesh(frontGeo, this.planterMaterial);
+    front.position.y = H / 2;
+    front.position.z = W / 2 - T / 2;
+    front.castShadow = true;
+    this.planterGroup.add(front);
+
+    const backGeo = new THREE.BoxGeometry(L, H, T);
+    const back = new THREE.Mesh(backGeo, this.planterMaterial);
+    back.position.y = H / 2;
+    back.position.z = -W / 2 + T / 2;
+    back.castShadow = true;
+    this.planterGroup.add(back);
+
+    const leftGeo = new THREE.BoxGeometry(T, H, W - 2 * T);
+    const left = new THREE.Mesh(leftGeo, this.planterMaterial);
+    left.position.x = -L / 2 + T / 2;
+    left.position.y = H / 2;
+    left.castShadow = true;
+    this.planterGroup.add(left);
+
+    const rightGeo = new THREE.BoxGeometry(T, H, W - 2 * T);
+    const right = new THREE.Mesh(rightGeo, this.planterMaterial);
+    right.position.x = L / 2 - T / 2;
+    right.position.y = H / 2;
+    right.castShadow = true;
+    this.planterGroup.add(right);
+
+    const baseGeo = new THREE.BoxGeometry(L, T, W);
+    const base = new THREE.Mesh(baseGeo, this.planterMaterial);
+    base.position.y = T / 2;
+    base.castShadow = true;
+    this.planterGroup.add(base);
+
+    const soilCapGeo = new THREE.PlaneGeometry(L - 2 * T, W - 2 * T);
+    const soilCap = new THREE.Mesh(soilCapGeo, this.soilMaterial);
+    soilCap.position.y = H - T - 0.02;
+    soilCap.rotation.x = -Math.PI / 2;
+    this.planterGroup.add(soilCap);
+
+    this.updateLabels(L, W, H);
+    if (this.onUpdate) {
+      this.onUpdate({
+        length: this.dims.L,
+        width: this.dims.W,
+        height: this.dims.H,
+        thickness: this.dims.T,
+        material: this.material,
+        colour: this.colour,
+        price: this.calculatePrice(),
+      });
+    }
+  }
+
+  updateLabels(L, W, H) {
+    this.planterGroup.children.forEach(child => {
+      if (child instanceof CSS2DObject) this.planterGroup.remove(child);
+    });
+
+    const lengthDiv = document.createElement('div');
+    lengthDiv.textContent = `${this.dims.L} mm`;
+    lengthDiv.style.color = '#5C5B57';
+    lengthDiv.style.fontSize = '12px';
+    lengthDiv.style.fontWeight = 'bold';
+    const lengthLabel = new CSS2DObject(lengthDiv);
+    lengthLabel.position.set(0, -0.5, W / 2 + 0.5);
+    this.planterGroup.add(lengthLabel);
+
+    const widthDiv = document.createElement('div');
+    widthDiv.textContent = `${this.dims.W} mm`;
+    widthDiv.style.color = '#5C5B57';
+    widthDiv.style.fontSize = '12px';
+    widthDiv.style.fontWeight = 'bold';
+    const widthLabel = new CSS2DObject(widthDiv);
+    widthLabel.position.set(L / 2 + 0.5, -0.5, 0);
+    this.planterGroup.add(widthLabel);
+
+    const heightDiv = document.createElement('div');
+    heightDiv.textContent = `${this.dims.H} mm`;
+    heightDiv.style.color = '#5C5B57';
+    heightDiv.style.fontSize = '12px';
+    heightDiv.style.fontWeight = 'bold';
+    const heightLabel = new CSS2DObject(heightDiv);
+    heightLabel.position.set(-L / 2 - 0.5, H / 2, W / 2 - T);
+    this.planterGroup.add(heightLabel);
+  }
+
+  calculatePrice() {
+    const basePrice = BASE_PRICES['straight-edge'][this.material];
+    const thicknessLevels = (this.dims.T - 25) / 25;
+    const thicknessCost = thicknessLevels * THICKNESS_INCREMENT;
+    const rgbCost = this.isRGB ? RGB_COLOUR_COST : 0;
+    return basePrice + thicknessCost + rgbCost;
+  }
+
+  setDimension(key, value) {
+    this.dims[key] = value;
+    this.rebuildPlanter();
+  }
+
+  setMaterial(material) {
+    this.material = material;
+    this.planterMaterial.roughness = MATERIAL_PROPS[material].roughness;
+    this.planterMaterial.metalness = MATERIAL_PROPS[material].metalness;
+    if (this.onUpdate) {
+      this.onUpdate({
+        length: this.dims.L,
+        width: this.dims.W,
+        height: this.dims.H,
+        thickness: this.dims.T,
+        material: this.material,
+        colour: this.colour,
+        price: this.calculatePrice(),
+      });
+    }
+  }
+
+  setColour(hex, isRGB = false) {
+    this.colour = hex;
+    this.isRGB = isRGB;
+    this.planterMaterial.color.setHex(parseInt(hex.replace('#', ''), 16));
+    if (this.onUpdate) {
+      this.onUpdate({
+        length: this.dims.L,
+        width: this.dims.W,
+        height: this.dims.H,
+        thickness: this.dims.T,
+        material: this.material,
+        colour: this.colour,
+        price: this.calculatePrice(),
+      });
+    }
+  }
+
+  applyPreset(presetName) {
+    const preset = PRESETS['straight-edge'].find(p => p.name === presetName);
+    if (preset) {
+      this.dims.L = preset.length;
+      this.dims.W = preset.width;
+      this.dims.H = preset.height;
+      this.dims.T = preset.thickness;
+      this.rebuildPlanter();
+    }
+  }
+
+  animate() {
+    requestAnimationFrame(() => this.animate());
+    this.controls.update();
+    this.renderer.render(this.scene, this.camera);
+    this.labelRenderer.render(this.scene, this.camera);
+  }
+
+  onWindowResize() {
+    const container = document.getElementById(this.containerId);
+    const width = container.clientWidth;
+    const height = container.clientHeight;
+    this.camera.aspect = width / height;
+    this.camera.updateProjectionMatrix();
+    this.renderer.setSize(width, height);
+    this.labelRenderer.setSize(width, height);
+  }
+}
+
+class CylindricalConfigurator {
+  constructor(containerId, onUpdate) {
+    this.containerId = containerId;
+    this.onUpdate = onUpdate;
+    this.dims = { H: 450 };
+    this.material = 'fibre-cement';
+    this.colour = COLORBOND_DULUX_COLORS[0].hex;
+    this.isRGB = false;
+    this.init();
+  }
+
+  init() {
+    const container = document.getElementById(this.containerId);
+    this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    this.renderer.setSize(container.clientWidth, container.clientHeight);
+    this.renderer.shadowMap.enabled = true;
+    this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    container.appendChild(this.renderer.domElement);
+
+    this.scene = new THREE.Scene();
+    this.scene.background = new THREE.Color(0xfaf8f3);
+
+    this.camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+    this.camera.position.set(10, 8, 10);
+    this.camera.lookAt(0, 2, 0);
+
+    const ambientLight = new THREE.AmbientLight(0xFFF8F0, 0.6);
+    this.scene.add(ambientLight);
+
+    const directionalLight = new THREE.DirectionalLight(0xFFF5E6, 2.2);
+    directionalLight.position.set(8, 12, 6);
+    directionalLight.target.position.set(0, 0, 0);
+    directionalLight.castShadow = true;
+    directionalLight.shadow.camera.left = -20;
+    directionalLight.shadow.camera.right = 20;
+    directionalLight.shadow.camera.top = 20;
+    directionalLight.shadow.camera.bottom = -20;
+    directionalLight.shadow.mapSize.width = 2048;
+    directionalLight.shadow.mapSize.height = 2048;
+    this.scene.add(directionalLight);
+
+    const hemisphereLight = new THREE.HemisphereLight(0xF7F3EE, 0x8C7B6A, 0.4);
+    this.scene.add(hemisphereLight);
+
+    const groundGeo = new THREE.PlaneGeometry(24, 24);
+    const groundMat = new THREE.MeshStandardMaterial({ color: 0xE8E3DA, roughness: 0.8, metalness: 0 });
+    const ground = new THREE.Mesh(groundGeo, groundMat);
+    ground.rotation.x = -Math.PI / 2;
+    ground.receiveShadow = true;
+    this.scene.add(ground);
+
+    this.cylinderGroup = new THREE.Group();
+    this.scene.add(this.cylinderGroup);
+
+    this.cylinderMaterial = new THREE.MeshStandardMaterial({
+      color: new THREE.Color(this.colour),
+      ...MATERIAL_PROPS[this.material],
+    });
+
+    this.soilMaterial = new THREE.MeshStandardMaterial({ color: 0x5C4033, roughness: 0.9, metalness: 0 });
+
+    this.controls = new OrbitControls(this.camera, this.renderer.domElement);
+    this.controls.enableDamping = true;
+    this.controls.dampingFactor = 0.06;
+    this.controls.minPolarAngle = 0.2;
+    this.controls.maxPolarAngle = Math.PI / 2.1;
+    this.controls.enablePan = false;
+
+    this.labelRenderer = new CSS2DRenderer();
+    this.labelRenderer.setSize(container.clientWidth, container.clientHeight);
+    this.labelRenderer.domElement.style.position = 'absolute';
+    this.labelRenderer.domElement.style.top = '0px';
+    this.labelRenderer.domElement.style.pointerEvents = 'none';
+    container.appendChild(this.labelRenderer.domElement);
+
+    this.rebuildCylinder();
+    this.animate();
+    window.addEventListener('resize', () => this.onWindowResize());
+  }
+
+  rebuildCylinder() {
+    while (this.cylinderGroup.children.length > 0) {
+      const child = this.cylinderGroup.children[0];
+      if (child.geometry) child.geometry.dispose();
+      this.cylinderGroup.remove(child);
+    }
+
+    const H = this.dims.H / 100;
+    const radius = 2.5;
+    const thickness = 0.5;
+
+    const outerGeo = new THREE.CylinderGeometry(radius, radius, H, 32);
+    const outer = new THREE.Mesh(outerGeo, this.cylinderMaterial);
+    outer.position.y = H / 2;
+    outer.castShadow = true;
+    this.cylinderGroup.add(outer);
+
+    const baseGeo = new THREE.CylinderGeometry(radius, radius, thickness, 32);
+    const base = new THREE.Mesh(baseGeo, this.cylinderMaterial);
+    base.position.y = thickness / 2;
+    base.castShadow = true;
+    this.cylinderGroup.add(base);
+
+    const soilCapGeo = new THREE.CylinderGeometry(radius - thickness, radius - thickness, 0.04, 32);
+    const soilCap = new THREE.Mesh(soilCapGeo, this.soilMaterial);
+    soilCap.position.y = H - 0.02;
+    this.cylinderGroup.add(soilCap);
+
+    this.updateLabels(H);
+    if (this.onUpdate) {
+      this.onUpdate({
+        height: this.dims.H,
+        material: this.material,
+        colour: this.colour,
+        price: this.calculatePrice(),
+      });
+    }
+  }
+
+  updateLabels(H) {
+    this.cylinderGroup.children.forEach(child => {
+      if (child instanceof CSS2DObject) this.cylinderGroup.remove(child);
+    });
+
+    const heightDiv = document.createElement('div');
+    heightDiv.textContent = `${this.dims.H} mm`;
+    heightDiv.style.color = '#5C5B57';
+    heightDiv.style.fontSize = '12px';
+    heightDiv.style.fontWeight = 'bold';
+    const heightLabel = new CSS2DObject(heightDiv);
+    heightLabel.position.set(-3.5, H / 2, 0);
+    this.cylinderGroup.add(heightLabel);
+  }
+
+  calculatePrice() {
+    const basePrice = BASE_PRICES['cylindrical'][this.material];
+    const rgbCost = this.isRGB ? RGB_COLOUR_COST : 0;
+    return basePrice + rgbCost;
+  }
+
+  setHeight(value) {
+    this.dims.H = value;
+    this.rebuildCylinder();
+  }
+
+  setMaterial(material) {
+    this.material = material;
+    this.cylinderMaterial.roughness = MATERIAL_PROPS[material].roughness;
+    this.cylinderMaterial.metalness = MATERIAL_PROPS[material].metalness;
+    if (this.onUpdate) {
+      this.onUpdate({
+        height: this.dims.H,
+        material: this.material,
+        colour: this.colour,
+        price: this.calculatePrice(),
+      });
+    }
+  }
+
+  setColour(hex, isRGB = false) {
+    this.colour = hex;
+    this.isRGB = isRGB;
+    this.cylinderMaterial.color.setHex(parseInt(hex.replace('#', ''), 16));
+    if (this.onUpdate) {
+      this.onUpdate({
+        height: this.dims.H,
+        material: this.material,
+        colour: this.colour,
+        price: this.calculatePrice(),
+      });
+    }
+  }
+
+  applyPreset(presetName) {
+    const preset = PRESETS['cylindrical'].find(p => p.name === presetName);
+    if (preset) {
+      this.dims.H = preset.height;
+      this.rebuildCylinder();
+    }
+  }
+
+  animate() {
+    requestAnimationFrame(() => this.animate());
+    this.controls.update();
+    this.renderer.render(this.scene, this.camera);
+    this.labelRenderer.render(this.scene, this.camera);
+  }
+
+  onWindowResize() {
+    const container = document.getElementById(this.containerId);
+    const width = container.clientWidth;
+    const height = container.clientHeight;
+    this.camera.aspect = width / height;
+    this.camera.updateProjectionMatrix();
+    this.renderer.setSize(width, height);
+    this.labelRenderer.setSize(width, height);
+  }
+}
+
+export { StraightEdgeConfigurator, CylindricalConfigurator, COLORBOND_DULUX_COLORS, PRESETS, BASE_PRICES, THICKNESS_INCREMENT, RGB_COLOUR_COST };
