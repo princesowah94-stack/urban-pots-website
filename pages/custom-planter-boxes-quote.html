@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, max-scale=1" />
+  <title>Quote Review — Urban Pots</title>
+
+  <link rel="stylesheet" href="../css/components.css" />
+  <style>
+    .page-header {
+      background: var(--c-dark);
+      color: #fff;
+      padding: clamp(3rem, 6vw, 5rem) 0;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .page-header p {
+      font-size: 1.05rem;
+      opacity: 0.9;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+    .quote-section {
+      padding: clamp(4rem, 8vw, 6rem) 0;
+    }
+
+    .quote-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .design-card {
+      background: #fff;
+      border: 1px solid #E8E3DA;
+      border-radius: 2px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .design-card h3 {
+      font-family: var(--font-head);
+      font-size: 1.1rem;
+      color: var(--c-brown-dk);
+      margin-bottom: 1rem;
+    }
+
+    .design-specs {
+      font-size: 0.9rem;
+      color: var(--c-brown);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .design-specs strong { color: var(--c-brown-dk); }
+
+    .design-actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: auto;
+    }
+
+    .design-actions button {
+      flex: 1;
+      padding: 0.75rem;
+      border: 1px solid #E8E3DA;
+      background: #fff;
+      border-radius: 2px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .design-actions button:hover {
+      background: var(--c-bg);
+      border-color: var(--c-sage);
+    }
+
+    .design-actions .delete-btn {
+      color: #d32f2f;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 3rem 2rem;
+      color: var(--c-brown);
+    }
+
+    .empty-state p { font-size: 1rem; margin-bottom: 1.5rem; }
+
+    .empty-state a {
+      display: inline-block;
+      padding: 0.85rem 1.9rem;
+      background: var(--c-dark);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 2px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .empty-state a:hover { background: #333; }
+
+    .form-section {
+      background: var(--c-bg);
+      padding: 2.5rem;
+      border-radius: 2px;
+      margin-top: 3rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .form-section h2 {
+      font-family: var(--font-head);
+      font-size: 1.5rem;
+      color: var(--c-brown-dk);
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--c-brown-dk);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #E8E3DA;
+      border-radius: 2px;
+      font-size: 0.95rem;
+      font-family: inherit;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 1rem;
+      background: var(--c-sage);
+      color: #fff;
+      border: none;
+      border-radius: 2px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .submit-btn:hover { background: #6b7d52; }
+    .submit-btn:disabled { background: #ccc; cursor: not-allowed; }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 2rem;
+      color: var(--c-sage);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--c-brown-dk); }
+
+    @media (max-width: 768px) {
+      .quote-grid { grid-template-columns: 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav" id="siteNav">
+  <div class="container site-nav__inner">
+    <a href="/" class="nav-logo">
+      <img src="https://cdn.shopify.com/s/files/1/0748/4152/2498/files/urban_pots_logo__white_150.png?v=1684274691" alt="Urban Pots" width="120" height="30" />
+    </a>
+    <div class="nav-links">
+      <a href="/shop.html">Shop Now</a>
+      <a href="/pages/custom-planter-boxes.html">Custom Planters</a>
+      <a href="/pages/custom-cylinders.html">Custom Cylinders</a>
+      <a href="/pages/commercial-planters.html">Commercial</a>
+      <a href="/pages/trade.html">Trade</a>
+      <a href="/pages/contact.html">Contact</a>
+      <a href="/pages/find-us.html">Find Us</a>
+      <a href="/pages/about.html">About Us</a>
+    </div>
+    <div class="nav-actions">
+      <a href="mailto:info@urbanpots.com.au" class="nav-cta">Get a Quote</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="nav-mobile" id="navMobile" aria-hidden="true">
+  <ul class="nav-mobile__links">
+    <li><a href="/shop.html">Shop Now</a></li>
+    <li><a href="/pages/custom-planter-boxes.html">Custom Planters</a></li>
+    <li><a href="/pages/custom-cylinders.html">Custom Cylinders</a></li>
+    <li><a href="/pages/commercial-planters.html">Commercial</a></li>
+    <li><a href="/pages/trade.html">Trade</a></li>
+    <li><a href="/pages/contact.html">Contact</a></li>
+    <li><a href="/pages/find-us.html">Find Us</a></li>
+    <li><a href="/pages/about.html">About Us</a></li>
+  </ul>
+  <div class="nav-mobile__footer">
+    <a href="mailto:info@urbanpots.com.au" class="btn btn--stone">Get a Quote</a>
+    <div class="nav-mobile__footer-meta">
+      <a href="tel:0433132406">0433 132 406</a> &nbsp;·&nbsp; Tue–Sat 9am–4pm
+    </div>
+  </div>
+</div>
+
+<!-- PAGE HEADER -->
+<header class="page-header">
+  <div class="container">
+    <h1>Your Custom Planter Quote</h1>
+    <p>Review your designs and submit your quote request</p>
+  </div>
+</header>
+
+<main>
+
+<!-- QUOTE SECTION -->
+<section class="quote-section">
+  <div class="container">
+    <a href="/pages/custom-planter-boxes.html" class="back-link">← Back to Designer</a>
+
+    <div id="designsContainer">
+      <!-- Designs will be populated here -->
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-section">
+      <h2>Submit Your Quote Request</h2>
+      <form id="quoteForm">
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone *</label>
+          <input type="tel" id="phone" name="phone" required />
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" />
+          </div>
+
+          <div class="form-group">
+            <label for="abn">ABN</label>
+            <input type="text" id="abn" name="abn" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="projectType">Project Type</label>
+          <select id="projectType" name="projectType">
+            <option value="">Select...</option>
+            <option value="Residential">Residential</option>
+            <option value="Commercial">Commercial</option>
+            <option value="Landscaping">Landscaping</option>
+            <option value="Hospitality">Hospitality</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="timeline">Timeline</label>
+          <select id="timeline" name="timeline">
+            <option value="">Select...</option>
+            <option value="ASAP">ASAP</option>
+            <option value="1-2 months">1-2 months</option>
+            <option value="3+ months">3+ months</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Project Notes</label>
+          <textarea id="notes" name="notes" placeholder="Any special requirements or additional details..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">Submit Quote Request</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="https://cdn.shopify.com/s/files/1/0748/4152/2498/files/urban_pots_logo__sage_150.png?v=1684274691" alt="Urban Pots" class="footer-brand__logo" width="120" />
+        <p class="footer-brand__tagline">Your best space. Our planters.</p>
+        <p>An Australian family-owned planter manufacturer. Custom-built in Western Sydney. Trusted by developers, architects, and landscapers nationwide.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="LinkedIn">LI</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="/pages/custom-planter-boxes.html">Custom Planter Boxes</a></li>
+          <li><a href="/pages/custom-cylinders.html">Custom Cylinders</a></li>
+          <li><a href="/shop.html">Shop Now</a></li>
+          <li><a href="/pages/commercial-planters.html">Commercial Planters</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/pages/about.html">About Us</a></li>
+          <li><a href="/pages/trade.html">Trade</a></li>
+          <li><a href="/pages/contact.html">Contact</a></li>
+          <li><a href="/pages/find-us.html">Find Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:0433132406">0433 132 406</a></li>
+          <li><a href="mailto:info@urbanpots.com.au">info@urbanpots.com.au</a></li>
+          <li><a href="/pages/find-us.html">Sydney Showroom</a></li>
+          <li><a href="/pages/find-us.html">Tue–Sat 9am–4pm</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Urban Pots Australia. All rights reserved.</span>
+      <span>
+        <a href="/">Privacy</a> &nbsp;·&nbsp;
+        <a href="/">Terms</a> &nbsp;·&nbsp;
+        Website by <a href="#" style="color:var(--c-stone)">Sowah Studio</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script type="module">
+  import DesignCart from '../js/design-cart.js';
+  import * as animations from '../js/animations.js';
+  import * as ui from '../js/ui.js';
+
+  animations.initLenis();
+  animations.initNavScroll();
+  ui.initMobileNav(animations.lenis);
+
+  // Load and display designs from localStorage
+  function loadDesigns() {
+    const designs = DesignCart.getCart();
+    const container = document.getElementById('designsContainer');
+
+    if (designs.length === 0) {
+      container.innerHTML = `
+        <div class="empty-state">
+          <p>No designs in your quote yet. Start designing!</p>
+          <a href="/pages/custom-planter-boxes.html">Back to Designer</a>
+        </div>
+      `;
+      document.getElementById('submitBtn').disabled = true;
+      return;
+    }
+
+    container.innerHTML = `
+      <h2 style="font-family: var(--font-head); font-size: 1.5rem; color: var(--c-brown-dk); margin-bottom: 2rem;">
+        Your Designs (${designs.length})
+      </h2>
+      <div class="quote-grid">
+        ${designs.map((design, idx) => `
+          <div class="design-card">
+            <h3>Design ${idx + 1}</h3>
+            <div class="design-specs">
+              <strong>${design.length} × ${design.width} × ${design.height} mm</strong><br>
+              Wall Thickness: ${design.thickness} mm<br>
+              Material: ${design.material === 'fibre-cement' ? 'Fibre Cement' : 'Fibreglass'}<br>
+              Colour: ${design.colour}<br>
+              Quantity: ${design.quantity}<br>
+              <strong style="color: var(--c-sage); font-size: 1.05rem;">$${(design.price / 100).toFixed(2)}</strong>
+            </div>
+            <div class="design-actions">
+              <button class="edit-btn" onclick="editDesign('${design.id}')">Edit</button>
+              <button class="delete-btn" onclick="deleteDesign('${design.id}')">Delete</button>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  }
+
+  window.editDesign = function(id) {
+    const design = DesignCart.getDesignById(id);
+    if (design) {
+      const params = new URLSearchParams({
+        length: design.length,
+        width: design.width,
+        height: design.height,
+        thickness: design.thickness,
+        material: design.material,
+        colour: design.colour,
+      }).toString();
+      window.location.href = `/pages/custom-planter-boxes.html?${params}`;
+    }
+  };
+
+  window.deleteDesign = function(id) {
+    if (confirm('Remove this design from your quote?')) {
+      DesignCart.removeFromCart(id);
+      loadDesigns();
+    }
+  };
+
+  // Form submission
+  document.getElementById('quoteForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const designs = DesignCart.getCart();
+    const formData = {
+      designs: designs,
+      formData: {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        company: document.getElementById('company').value || '',
+        abn: document.getElementById('abn').value || '',
+        projectType: document.getElementById('projectType').value || '',
+        timeline: document.getElementById('timeline').value || '',
+        notes: document.getElementById('notes').value || '',
+      },
+    };
+
+    try {
+      const response = await fetch('/api/custom-planter-quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        DesignCart.clearCart();
+        alert('✓ Quote submitted! We\'ll contact you within 24 hours.');
+        window.location.href = '/pages/custom-planter-boxes.html';
+      } else {
+        alert('Error submitting quote. Please try again or contact us directly.');
+      }
+    } catch (error) {
+      console.error('Quote submission error:', error);
+      alert('Error submitting quote. Please contact info@urbanpots.com.au');
+    }
+  });
+
+  loadDesigns();
+</script>
+
+</body>
+</html>
