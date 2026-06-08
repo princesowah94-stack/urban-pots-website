@@ -856,17 +856,25 @@
   import * as animations from '../js/animations.js';
   import * as ui from '../js/ui.js';
 
-  // Initialize animations
-  animations.initLenis();
-  animations.initFadein();
-  animations.initNavScroll();
-  animations.fixIOSParallax();
+  // Wait for DOM to be ready before initializing
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPage);
+  } else {
+    initPage();
+  }
 
-  // Initialize UI
-  ui.initMobileNav(animations.lenis);
+  function initPage() {
+    // Initialize animations
+    animations.initLenis();
+    animations.initFadein();
+    animations.initNavScroll();
+    animations.fixIOSParallax();
 
-  // Create configurator instance
-  let configurator = new CylindricalConfigurator('threeCanvas', updateUI);
+    // Initialize UI
+    ui.initMobileNav(animations.lenis);
+
+    // Create configurator instance
+    let configurator = new CylindricalConfigurator('threeCanvas', updateUI);
 
   // Populate colour swatches
   const swatchesContainer = document.getElementById('colourSwatches');
@@ -969,11 +977,12 @@
     }
   });
 
-  function updateUI(config) {
-    document.getElementById('summaryHeight').textContent = `${config.height} mm`;
-    document.getElementById('summaryMaterial').textContent = config.material === 'fibre-cement' ? 'Fibre Cement' : 'Fibreglass';
-    const colourName = COLORBOND_DULUX_COLORS.find(c => c.hex.toLowerCase() === config.colour.toLowerCase())?.name || config.colour;
-    document.getElementById('summaryColour').textContent = colourName;
+    function updateUI(config) {
+      document.getElementById('summaryHeight').textContent = `${config.height} mm`;
+      document.getElementById('summaryMaterial').textContent = config.material === 'fibre-cement' ? 'Fibre Cement' : 'Fibreglass';
+      const colourName = COLORBOND_DULUX_COLORS.find(c => c.hex.toLowerCase() === config.colour.toLowerCase())?.name || config.colour;
+      document.getElementById('summaryColour').textContent = colourName;
+    }
   }
 </script>
 

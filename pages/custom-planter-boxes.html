@@ -948,17 +948,25 @@
   import * as animations from '../js/animations.js';
   import * as ui from '../js/ui.js';
 
-  // Initialize animations
-  animations.initLenis();
-  animations.initFadein();
-  animations.initNavScroll();
-  animations.fixIOSParallax();
+  // Wait for DOM to be ready before initializing
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPage);
+  } else {
+    initPage();
+  }
 
-  // Initialize UI
-  ui.initMobileNav(animations.lenis);
+  function initPage() {
+    // Initialize animations
+    animations.initLenis();
+    animations.initFadein();
+    animations.initNavScroll();
+    animations.fixIOSParallax();
 
-  // Create configurator instance
-  let configurator = new StraightEdgeConfigurator('threeCanvas', updateUI);
+    // Initialize UI
+    ui.initMobileNav(animations.lenis);
+
+    // Create configurator instance
+    let configurator = new StraightEdgeConfigurator('threeCanvas', updateUI);
 
   // Populate colour swatches
   const swatchesContainer = document.getElementById('colourSwatches');
@@ -1060,16 +1068,17 @@
     window.location.href = '/pages/custom-planter-boxes-quote.html';
   });
 
-  function updateUI(config) {
-    document.getElementById('summaryDims').textContent = `${config.length} × ${config.width} × ${config.height} mm`;
-    document.getElementById('summaryThickness').textContent = `${config.thickness} mm`;
-    document.getElementById('summaryMaterial').textContent = config.material === 'fibre-cement' ? 'Fibre Cement' : 'Fibreglass';
-    const colourName = COLORBOND_DULUX_COLORS.find(c => c.hex.toLowerCase() === config.colour.toLowerCase())?.name || config.colour;
-    document.getElementById('summaryColour').textContent = colourName;
-    document.getElementById('summaryPrice').textContent = '$' + (config.price / 100).toFixed(2);
-    
-    if (DesignCart.getCart().length > 0) {
-      document.getElementById('viewQuoteBtn').disabled = false;
+    function updateUI(config) {
+      document.getElementById('summaryDims').textContent = `${config.length} × ${config.width} × ${config.height} mm`;
+      document.getElementById('summaryThickness').textContent = `${config.thickness} mm`;
+      document.getElementById('summaryMaterial').textContent = config.material === 'fibre-cement' ? 'Fibre Cement' : 'Fibreglass';
+      const colourName = COLORBOND_DULUX_COLORS.find(c => c.hex.toLowerCase() === config.colour.toLowerCase())?.name || config.colour;
+      document.getElementById('summaryColour').textContent = colourName;
+      document.getElementById('summaryPrice').textContent = '$' + (config.price / 100).toFixed(2);
+
+      if (DesignCart.getCart().length > 0) {
+        document.getElementById('viewQuoteBtn').disabled = false;
+      }
     }
   }
 </script>
