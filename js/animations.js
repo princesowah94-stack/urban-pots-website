@@ -1,14 +1,19 @@
 // ── LENIS SMOOTH SCROLL ────────────────────────────────────
-export const lenis = new Lenis({
-  duration: 0.8,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -8 * t)),
-  orientation: 'vertical',
-  smoothWheel: true,
-  mouseMultiplier: 1,
-  touchMultiplier: 1.5,
-});
+export let lenis = null;
 
 export function initLenis() {
+  // Create Lenis only when DOM is ready
+  if (!lenis) {
+    lenis = new Lenis({
+      duration: 0.8,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -8 * t)),
+      orientation: 'vertical',
+      smoothWheel: true,
+      mouseMultiplier: 1,
+      touchMultiplier: 1.5,
+    });
+  }
+
   function raf(time) {
     lenis.raf(time);
     requestAnimationFrame(raf);
