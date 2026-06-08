@@ -1,0 +1,244 @@
+{
+  "spec": "hero",
+  "dimensions": [
+    1920,
+    800
+  ],
+  "total_images": 13,
+  "images": [
+    {
+      "original": "Images/Putney /URBAN POTS-4546.jpg",
+      "spec": "hero",
+      "size": [
+        1920,
+        800
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/heroes/URBAN POTS-4546-hero.jpg",
+          "size_bytes": 224109
+        },
+        "webp": {
+          "path": "curated-images/heroes/URBAN POTS-4546-hero.webp",
+          "size_bytes": 162540
+        }
+      }
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4627.jpg",
+      "spec": "hero",
+      "size": [
+        1920,
+        800
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/heroes/URBAN POTS-4627-hero.jpg",
+          "size_bytes": 296894
+        },
+        "webp": {
+          "path": "curated-images/heroes/URBAN POTS-4627-hero.webp",
+          "size_bytes": 231322
+        }
+      }
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4551.jpg",
+      "spec": "hero",
+      "size": [
+        1920,
+        800
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/heroes/URBAN POTS-4551-hero.jpg",
+          "size_bytes": 242328
+        },
+        "webp": {
+          "path": "curated-images/heroes/URBAN POTS-4551-hero.webp",
+          "size_bytes": 162210
+        }
+      }
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4544.jpg",
+      "spec": "hero",
+      "size": [
+        1920,
+        800
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/heroes/URBAN POTS-4544-hero.jpg",
+          "size_bytes": 351274
+        },
+        "webp": {
+          "path": "curated-images/heroes/URBAN POTS-4544-hero.webp",
+          "size_bytes": 296808
+        }
+      }
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4541.jpg",
+      "spec": "hero",
+      "size": [
+        1920,
+        800
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/heroes/URBAN POTS-4541-hero.jpg",
+          "size_bytes": 460502
+        },
+        "webp": {
+          "path": "curated-images/heroes/URBAN POTS-4541-hero.webp",
+          "size_bytes": 412702
+        }
+      }
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4595.jpg",
+      "spec": "hero",
+      "size": [
+        1920,
+        800
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/heroes/URBAN POTS-4595-hero.jpg",
+          "size_bytes": 221126
+        },
+        "webp": {
+          "path": "curated-images/heroes/URBAN POTS-4595-hero.webp",
+          "size_bytes": 158006
+        }
+      }
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4608.jpg",
+      "spec": "hero",
+      "size": [
+        1920,
+        800
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/heroes/URBAN POTS-4608-hero.jpg",
+          "size_bytes": 244470
+        },
+        "webp": {
+          "path": "curated-images/heroes/URBAN POTS-4608-hero.webp",
+          "size_bytes": 214800
+        }
+      }
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4566.jpg",
+      "spec": "hero",
+      "size": [
+        1920,
+        800
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/heroes/URBAN POTS-4566-hero.jpg",
+          "size_bytes": 277595
+        },
+        "webp": {
+          "path": "curated-images/heroes/URBAN POTS-4566-hero.webp",
+          "size_bytes": 205188
+        }
+      }
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4604.jpg",
+      "spec": "hero",
+      "size": [
+        1920,
+        800
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/heroes/URBAN POTS-4604-hero.jpg",
+          "size_bytes": 171112
+        },
+        "webp": {
+          "path": "curated-images/heroes/URBAN POTS-4604-hero.webp",
+          "size_bytes": 116982
+        }
+      }
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4606.jpg",
+      "spec": "hero",
+      "size": [
+        1920,
+        800
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/heroes/URBAN POTS-4606-hero.jpg",
+          "size_bytes": 249305
+        },
+        "webp": {
+          "path": "curated-images/heroes/URBAN POTS-4606-hero.webp",
+          "size_bytes": 190698
+        }
+      }
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4613.jpg",
+      "spec": "hero",
+      "size": [
+        1920,
+        800
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/heroes/URBAN POTS-4613-hero.jpg",
+          "size_bytes": 211586
+        },
+        "webp": {
+          "path": "curated-images/heroes/URBAN POTS-4613-hero.webp",
+          "size_bytes": 151774
+        }
+      }
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4617.jpg",
+      "spec": "hero",
+      "size": [
+        1920,
+        800
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/heroes/URBAN POTS-4617-hero.jpg",
+          "size_bytes": 154035
+        },
+        "webp": {
+          "path": "curated-images/heroes/URBAN POTS-4617-hero.webp",
+          "size_bytes": 106110
+        }
+      }
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4574.jpg",
+      "spec": "hero",
+      "size": [
+        1920,
+        800
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/heroes/URBAN POTS-4574-hero.jpg",
+          "size_bytes": 358248
+        },
+        "webp": {
+          "path": "curated-images/heroes/URBAN POTS-4574-hero.webp",
+          "size_bytes": 278374
+        }
+      }
+    }
+  ]
+}

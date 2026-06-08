@@ -34,11 +34,18 @@
     .hero__bg {
       position: absolute;
       inset: 0;
-      background-image: url('https://www.urbanpots.com.au/cdn/shop/files/3d4b103a-ef37-42e6-9690-867543cbd071_1200x.jpg?v=1758677890');
       background-size: cover;
       background-position: center;
       transform: scale(1.06);
       transition: transform 10s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      overflow: hidden;
+    }
+
+    .hero__bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .hero__bg.loaded { transform: scale(1); }
@@ -584,7 +591,14 @@
 
 <!-- 1. HERO SECTION -->
 <section class="hero">
-  <div class="hero__bg"></div>
+  <div class="hero__bg">
+    <picture>
+      <source srcset="../curated-images/heroes/URBAN POTS-4546-hero.webp" type="image/webp">
+      <img src="../curated-images/heroes/URBAN POTS-4546-hero.jpg"
+           alt="Sydney garden transformation: from bare patio to thriving custom planter installation"
+           width="1920" height="800" loading="eager" />
+    </picture>
+  </div>
   <div class="hero__overlay"></div>
   <div class="container">
     <div class="hero__content">
@@ -796,6 +810,94 @@
         <div class="process-step__number">4</div>
         <h3>Delivery</h3>
         <p>Your finished planters arrive on schedule, ready for installation. Fully waterproofed and primed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. TESTIMONIALS SECTION -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="section-head fadein">
+      <h2>Real Transformations from <em>Real Customers</em></h2>
+      <p>See how custom planters have changed Sydney gardens.</p>
+    </div>
+
+    <div class="testimonials-grid fadein" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
+      <figure class="testimonial-card" style="text-align: center;">
+        <picture>
+          <source srcset="../curated-images/testimonials/URBAN POTS-4541-testimonial.webp" type="image/webp">
+          <img src="../curated-images/testimonials/URBAN POTS-4541-testimonial.jpg" alt="Sarah, Sydney homeowner" width="180" height="180" style="border-radius: 50%; display: block; margin: 0 auto 1.5rem; aspect-ratio: 1;" />
+        </picture>
+        <blockquote style="font-style: italic; margin: 0 0 1rem; color: var(--c-brown); line-height: 1.6;">"My patio was empty and unused for years. Custom Urban Pots filled with native plants transformed it into my favorite weekend retreat where we gather with family."</blockquote>
+        <figcaption style="font-weight: 600; color: var(--c-dark);">Sarah</figcaption>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--c-stone);">Parramatta, Sydney</p>
+      </figure>
+
+      <figure class="testimonial-card" style="text-align: center;">
+        <picture>
+          <source srcset="../curated-images/testimonials/URBAN POTS-4566-testimonial.webp" type="image/webp">
+          <img src="../curated-images/testimonials/URBAN POTS-4566-testimonial.jpg" alt="James, inner-city gardener" width="180" height="180" style="border-radius: 50%; display: block; margin: 0 auto 1.5rem; aspect-ratio: 1;" />
+        </picture>
+        <blockquote style="font-style: italic; margin: 0 0 1rem; color: var(--c-brown); line-height: 1.6;">"My tiny balcony was a dead space. Custom Urban Pots filled with fresh herbs and succulents transformed it into my daily sanctuary."</blockquote>
+        <figcaption style="font-weight: 600; color: var(--c-dark);">James</figcaption>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--c-stone);">Inner City, Sydney</p>
+      </figure>
+
+      <figure class="testimonial-card" style="text-align: center;">
+        <picture>
+          <source srcset="../curated-images/testimonials/URBAN POTS-4595-testimonial.webp" type="image/webp">
+          <img src="../curated-images/testimonials/URBAN POTS-4595-testimonial.jpg" alt="Maria, landscape enthusiast" width="180" height="180" style="border-radius: 50%; display: block; margin: 0 auto 1.5rem; aspect-ratio: 1;" />
+        </picture>
+        <blockquote style="font-style: italic; margin: 0 0 1rem; color: var(--c-brown); line-height: 1.6;">"Designing custom planters was easier than expected. The result is exactly what I envisioned—my garden finally looks complete."</blockquote>
+        <figcaption style="font-weight: 600; color: var(--c-dark);">Maria</figcaption>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--c-stone);">Inner West, Sydney</p>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 5B. BEFORE/AFTER SECTION -->
+<section class="section section--light">
+  <div class="container">
+    <div class="section-head fadein">
+      <h2>The <em>Transformation</em> Story</h2>
+      <p>From empty space to thriving garden. See the difference custom planters make.</p>
+    </div>
+
+    <div class="before-after-pairs fadein" style="display: grid; gap: 3rem; margin-top: 3rem;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+        <figure>
+          <picture>
+            <source srcset="../curated-images/testimonials/URBAN POTS-4544-testimonial.webp" type="image/webp">
+            <img src="../curated-images/testimonials/URBAN POTS-4544-testimonial.jpg" alt="Before: empty patio with no plants" width="400" height="400" style="width: 100%; display: block; border-radius: 4px; aspect-ratio: 1;" />
+          </picture>
+          <figcaption style="margin-top: 1rem; text-align: center; font-weight: 600; color: var(--c-dark);">Before</figcaption>
+        </figure>
+        <figure>
+          <picture>
+            <source srcset="../curated-images/testimonials/URBAN POTS-4608-testimonial.webp" type="image/webp">
+            <img src="../curated-images/testimonials/URBAN POTS-4608-testimonial.jpg" alt="After: same patio now thriving with custom planters" width="400" height="400" style="width: 100%; display: block; border-radius: 4px; aspect-ratio: 1;" />
+          </picture>
+          <figcaption style="margin-top: 1rem; text-align: center; font-weight: 600; color: var(--c-dark);">After</figcaption>
+        </figure>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+        <figure>
+          <picture>
+            <source srcset="../curated-images/testimonials/URBAN POTS-4551-testimonial.webp" type="image/webp">
+            <img src="../curated-images/testimonials/URBAN POTS-4551-testimonial.jpg" alt="Before: bare corner" width="400" height="400" style="width: 100%; display: block; border-radius: 4px; aspect-ratio: 1;" />
+          </picture>
+          <figcaption style="margin-top: 1rem; text-align: center; font-weight: 600; color: var(--c-dark);">Before</figcaption>
+        </figure>
+        <figure>
+          <picture>
+            <source srcset="../curated-images/testimonials/URBAN POTS-4606-testimonial.webp" type="image/webp">
+            <img src="../curated-images/testimonials/URBAN POTS-4606-testimonial.jpg" alt="After: focal point with plants" width="400" height="400" style="width: 100%; display: block; border-radius: 4px; aspect-ratio: 1;" />
+          </picture>
+          <figcaption style="margin-top: 1rem; text-align: center; font-weight: 600; color: var(--c-dark);">After</figcaption>
+        </figure>
       </div>
     </div>
   </div>

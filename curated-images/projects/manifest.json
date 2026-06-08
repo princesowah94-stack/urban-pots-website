@@ -1,0 +1,532 @@
+{
+  "spec": "project",
+  "dimensions": [
+    1200,
+    600
+  ],
+  "total_images": 29,
+  "images": [
+    {
+      "original": "Images/Final Images and Video/UP CRONULLA-10.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/UP CRONULLA-10-project.jpg",
+          "size_bytes": 138761
+        },
+        "webp": {
+          "path": "curated-images/projects/UP CRONULLA-10-project.webp",
+          "size_bytes": 102216
+        }
+      }
+    },
+    {
+      "original": "Images/Final Images and Video/UP CRONULLA-6.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/UP CRONULLA-6-project.jpg",
+          "size_bytes": 160778
+        },
+        "webp": {
+          "path": "curated-images/projects/UP CRONULLA-6-project.webp",
+          "size_bytes": 132968
+        }
+      }
+    },
+    {
+      "original": "Images/Final Images and Video/UP CRONULLA-7.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/UP CRONULLA-7-project.jpg",
+          "size_bytes": 138014
+        },
+        "webp": {
+          "path": "curated-images/projects/UP CRONULLA-7-project.webp",
+          "size_bytes": 100912
+        }
+      }
+    },
+    {
+      "original": "Images/Final Images and Video/UP CRONULLA-11.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/UP CRONULLA-11-project.jpg",
+          "size_bytes": 135824
+        },
+        "webp": {
+          "path": "curated-images/projects/UP CRONULLA-11-project.webp",
+          "size_bytes": 99254
+        }
+      }
+    },
+    {
+      "original": "Images/Final Images and Video/UP CRONULLA-13.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/UP CRONULLA-13-project.jpg",
+          "size_bytes": 150766
+        },
+        "webp": {
+          "path": "curated-images/projects/UP CRONULLA-13-project.webp",
+          "size_bytes": 121150
+        }
+      }
+    },
+    {
+      "original": "Images/Final Images and Video/UP CRONULLA-5.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/UP CRONULLA-5-project.jpg",
+          "size_bytes": 132097
+        },
+        "webp": {
+          "path": "curated-images/projects/UP CRONULLA-5-project.webp",
+          "size_bytes": 95256
+        }
+      }
+    },
+    {
+      "original": "Images/Final Images and Video/UP CRONULLA-4.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/UP CRONULLA-4-project.jpg",
+          "size_bytes": 106042
+        },
+        "webp": {
+          "path": "curated-images/projects/UP CRONULLA-4-project.webp",
+          "size_bytes": 68974
+        }
+      }
+    },
+    {
+      "original": "Images/Final Images and Video/UP CRONULLA-12.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/UP CRONULLA-12-project.jpg",
+          "size_bytes": 113657
+        },
+        "webp": {
+          "path": "curated-images/projects/UP CRONULLA-12-project.webp",
+          "size_bytes": 80242
+        }
+      }
+    },
+    {
+      "original": "Images/Final Images and Video/UP CRONULLA-16.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/UP CRONULLA-16-project.jpg",
+          "size_bytes": 148190
+        },
+        "webp": {
+          "path": "curated-images/projects/UP CRONULLA-16-project.webp",
+          "size_bytes": 109654
+        }
+      }
+    },
+    {
+      "original": "Images/Final Images and Video/UP CRONULLA-1.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/UP CRONULLA-1-project.jpg",
+          "size_bytes": 158936
+        },
+        "webp": {
+          "path": "curated-images/projects/UP CRONULLA-1-project.webp",
+          "size_bytes": 129916
+        }
+      }
+    },
+    {
+      "original": "Images/Final Images and Video/UP CRONULLA-17.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/UP CRONULLA-17-project.jpg",
+          "size_bytes": 212657
+        },
+        "webp": {
+          "path": "curated-images/projects/UP CRONULLA-17-project.webp",
+          "size_bytes": 185764
+        }
+      }
+    },
+    {
+      "original": "Images/Final Images and Video/UP CRONULLA-29.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/UP CRONULLA-29-project.jpg",
+          "size_bytes": 79142
+        },
+        "webp": {
+          "path": "curated-images/projects/UP CRONULLA-29-project.webp",
+          "size_bytes": 53728
+        }
+      }
+    },
+    {
+      "original": "Images/Final Images and Video/UP CRONULLA-15.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/UP CRONULLA-15-project.jpg",
+          "size_bytes": 150072
+        },
+        "webp": {
+          "path": "curated-images/projects/UP CRONULLA-15-project.webp",
+          "size_bytes": 114460
+        }
+      }
+    },
+    {
+      "original": "Images/Final Images and Video/UP CRONULLA-3.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/UP CRONULLA-3-project.jpg",
+          "size_bytes": 153162
+        },
+        "webp": {
+          "path": "curated-images/projects/UP CRONULLA-3-project.webp",
+          "size_bytes": 111836
+        }
+      }
+    },
+    {
+      "original": "Images/Final Images and Video/UP CRONULLA-2.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/UP CRONULLA-2-project.jpg",
+          "size_bytes": 152425
+        },
+        "webp": {
+          "path": "curated-images/projects/UP CRONULLA-2-project.webp",
+          "size_bytes": 122116
+        }
+      }
+    },
+    {
+      "original": "Images/Final Images and Video/UP CRONULLA-14.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/UP CRONULLA-14-project.jpg",
+          "size_bytes": 155470
+        },
+        "webp": {
+          "path": "curated-images/projects/UP CRONULLA-14-project.webp",
+          "size_bytes": 116870
+        }
+      }
+    },
+    {
+      "original": "Images/Final Images and Video/UP CRONULLA-28.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/UP CRONULLA-28-project.jpg",
+          "size_bytes": 50930
+        },
+        "webp": {
+          "path": "curated-images/projects/UP CRONULLA-28-project.webp",
+          "size_bytes": 32572
+        }
+      }
+    },
+    {
+      "original": "Images/Final Images and Video/UP CRONULLA-25.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/UP CRONULLA-25-project.jpg",
+          "size_bytes": 192363
+        },
+        "webp": {
+          "path": "curated-images/projects/UP CRONULLA-25-project.webp",
+          "size_bytes": 176024
+        }
+      }
+    },
+    {
+      "original": "Images/Final Images and Video/UP CRONULLA-19.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/UP CRONULLA-19-project.jpg",
+          "size_bytes": 144408
+        },
+        "webp": {
+          "path": "curated-images/projects/UP CRONULLA-19-project.webp",
+          "size_bytes": 112312
+        }
+      }
+    },
+    {
+      "original": "Images/Final Images and Video/UP CRONULLA-18.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/UP CRONULLA-18-project.jpg",
+          "size_bytes": 185136
+        },
+        "webp": {
+          "path": "curated-images/projects/UP CRONULLA-18-project.webp",
+          "size_bytes": 145940
+        }
+      }
+    },
+    {
+      "original": "Images/Final Images and Video/UP CRONULLA-24.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/UP CRONULLA-24-project.jpg",
+          "size_bytes": 119925
+        },
+        "webp": {
+          "path": "curated-images/projects/UP CRONULLA-24-project.webp",
+          "size_bytes": 95860
+        }
+      }
+    },
+    {
+      "original": "Images/Final Images and Video/UP CRONULLA-26.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/UP CRONULLA-26-project.jpg",
+          "size_bytes": 131651
+        },
+        "webp": {
+          "path": "curated-images/projects/UP CRONULLA-26-project.webp",
+          "size_bytes": 91292
+        }
+      }
+    },
+    {
+      "original": "Images/Final Images and Video/UP CRONULLA-27.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/UP CRONULLA-27-project.jpg",
+          "size_bytes": 180022
+        },
+        "webp": {
+          "path": "curated-images/projects/UP CRONULLA-27-project.webp",
+          "size_bytes": 149236
+        }
+      }
+    },
+    {
+      "original": "Images/Final Images and Video/UP CRONULLA-23.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/UP CRONULLA-23-project.jpg",
+          "size_bytes": 112871
+        },
+        "webp": {
+          "path": "curated-images/projects/UP CRONULLA-23-project.webp",
+          "size_bytes": 89346
+        }
+      }
+    },
+    {
+      "original": "Images/Final Images and Video/UP CRONULLA-9.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/UP CRONULLA-9-project.jpg",
+          "size_bytes": 142570
+        },
+        "webp": {
+          "path": "curated-images/projects/UP CRONULLA-9-project.webp",
+          "size_bytes": 115544
+        }
+      }
+    },
+    {
+      "original": "Images/Final Images and Video/UP CRONULLA-8.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/UP CRONULLA-8-project.jpg",
+          "size_bytes": 138585
+        },
+        "webp": {
+          "path": "curated-images/projects/UP CRONULLA-8-project.webp",
+          "size_bytes": 109570
+        }
+      }
+    },
+    {
+      "original": "Images/Final Images and Video/UP CRONULLA-22.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/UP CRONULLA-22-project.jpg",
+          "size_bytes": 68804
+        },
+        "webp": {
+          "path": "curated-images/projects/UP CRONULLA-22-project.webp",
+          "size_bytes": 41738
+        }
+      }
+    },
+    {
+      "original": "Images/Final Images and Video/UP CRONULLA-20.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/UP CRONULLA-20-project.jpg",
+          "size_bytes": 149449
+        },
+        "webp": {
+          "path": "curated-images/projects/UP CRONULLA-20-project.webp",
+          "size_bytes": 115760
+        }
+      }
+    },
+    {
+      "original": "Images/Final Images and Video/UP CRONULLA-21.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/UP CRONULLA-21-project.jpg",
+          "size_bytes": 37276
+        },
+        "webp": {
+          "path": "curated-images/projects/UP CRONULLA-21-project.webp",
+          "size_bytes": 21194
+        }
+      }
+    }
+  ]
+}

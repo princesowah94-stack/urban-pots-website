@@ -1,0 +1,244 @@
+{
+  "spec": "testimonial",
+  "dimensions": [
+    180,
+    180
+  ],
+  "total_images": 13,
+  "images": [
+    {
+      "original": "Images/Putney /URBAN POTS-4546.jpg",
+      "spec": "testimonial",
+      "size": [
+        180,
+        180
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/testimonials/URBAN POTS-4546-testimonial.jpg",
+          "size_bytes": 11187
+        },
+        "webp": {
+          "path": "curated-images/testimonials/URBAN POTS-4546-testimonial.webp",
+          "size_bytes": 9574
+        }
+      }
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4627.jpg",
+      "spec": "testimonial",
+      "size": [
+        180,
+        180
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/testimonials/URBAN POTS-4627-testimonial.jpg",
+          "size_bytes": 13324
+        },
+        "webp": {
+          "path": "curated-images/testimonials/URBAN POTS-4627-testimonial.webp",
+          "size_bytes": 11498
+        }
+      }
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4551.jpg",
+      "spec": "testimonial",
+      "size": [
+        180,
+        180
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/testimonials/URBAN POTS-4551-testimonial.jpg",
+          "size_bytes": 12594
+        },
+        "webp": {
+          "path": "curated-images/testimonials/URBAN POTS-4551-testimonial.webp",
+          "size_bytes": 11038
+        }
+      }
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4544.jpg",
+      "spec": "testimonial",
+      "size": [
+        180,
+        180
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/testimonials/URBAN POTS-4544-testimonial.jpg",
+          "size_bytes": 13597
+        },
+        "webp": {
+          "path": "curated-images/testimonials/URBAN POTS-4544-testimonial.webp",
+          "size_bytes": 12142
+        }
+      }
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4541.jpg",
+      "spec": "testimonial",
+      "size": [
+        180,
+        180
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/testimonials/URBAN POTS-4541-testimonial.jpg",
+          "size_bytes": 16828
+        },
+        "webp": {
+          "path": "curated-images/testimonials/URBAN POTS-4541-testimonial.webp",
+          "size_bytes": 15726
+        }
+      }
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4595.jpg",
+      "spec": "testimonial",
+      "size": [
+        180,
+        180
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/testimonials/URBAN POTS-4595-testimonial.jpg",
+          "size_bytes": 12583
+        },
+        "webp": {
+          "path": "curated-images/testimonials/URBAN POTS-4595-testimonial.webp",
+          "size_bytes": 11170
+        }
+      }
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4608.jpg",
+      "spec": "testimonial",
+      "size": [
+        180,
+        180
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/testimonials/URBAN POTS-4608-testimonial.jpg",
+          "size_bytes": 6101
+        },
+        "webp": {
+          "path": "curated-images/testimonials/URBAN POTS-4608-testimonial.webp",
+          "size_bytes": 4092
+        }
+      }
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4566.jpg",
+      "spec": "testimonial",
+      "size": [
+        180,
+        180
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/testimonials/URBAN POTS-4566-testimonial.jpg",
+          "size_bytes": 12334
+        },
+        "webp": {
+          "path": "curated-images/testimonials/URBAN POTS-4566-testimonial.webp",
+          "size_bytes": 10730
+        }
+      }
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4604.jpg",
+      "spec": "testimonial",
+      "size": [
+        180,
+        180
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/testimonials/URBAN POTS-4604-testimonial.jpg",
+          "size_bytes": 12441
+        },
+        "webp": {
+          "path": "curated-images/testimonials/URBAN POTS-4604-testimonial.webp",
+          "size_bytes": 10884
+        }
+      }
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4606.jpg",
+      "spec": "testimonial",
+      "size": [
+        180,
+        180
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/testimonials/URBAN POTS-4606-testimonial.jpg",
+          "size_bytes": 11977
+        },
+        "webp": {
+          "path": "curated-images/testimonials/URBAN POTS-4606-testimonial.webp",
+          "size_bytes": 10682
+        }
+      }
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4613.jpg",
+      "spec": "testimonial",
+      "size": [
+        180,
+        180
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/testimonials/URBAN POTS-4613-testimonial.jpg",
+          "size_bytes": 13600
+        },
+        "webp": {
+          "path": "curated-images/testimonials/URBAN POTS-4613-testimonial.webp",
+          "size_bytes": 11812
+        }
+      }
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4617.jpg",
+      "spec": "testimonial",
+      "size": [
+        180,
+        180
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/testimonials/URBAN POTS-4617-testimonial.jpg",
+          "size_bytes": 10560
+        },
+        "webp": {
+          "path": "curated-images/testimonials/URBAN POTS-4617-testimonial.webp",
+          "size_bytes": 8524
+        }
+      }
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4574.jpg",
+      "spec": "testimonial",
+      "size": [
+        180,
+        180
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/testimonials/URBAN POTS-4574-testimonial.jpg",
+          "size_bytes": 13975
+        },
+        "webp": {
+          "path": "curated-images/testimonials/URBAN POTS-4574-testimonial.webp",
+          "size_bytes": 12732
+        }
+      }
+    }
+  ]
+}

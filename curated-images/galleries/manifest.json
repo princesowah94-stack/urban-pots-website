@@ -1,0 +1,208 @@
+{
+  "spec": "gallery",
+  "dimensions": [
+    400,
+    400
+  ],
+  "total_images": 11,
+  "images": [
+    {
+      "original": "Images/Custom Cylinders /1C9A0486.JPG",
+      "spec": "gallery",
+      "size": [
+        400,
+        400
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/galleries/1C9A0486-gallery.jpg",
+          "size_bytes": 24776
+        },
+        "webp": {
+          "path": "curated-images/galleries/1C9A0486-gallery.webp",
+          "size_bytes": 15682
+        }
+      }
+    },
+    {
+      "original": "Images/Custom Cylinders /1C9A0468.JPG",
+      "spec": "gallery",
+      "size": [
+        400,
+        400
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/galleries/1C9A0468-gallery.jpg",
+          "size_bytes": 32054
+        },
+        "webp": {
+          "path": "curated-images/galleries/1C9A0468-gallery.webp",
+          "size_bytes": 26330
+        }
+      }
+    },
+    {
+      "original": "Images/Custom Cylinders /1C9A0483.JPG",
+      "spec": "gallery",
+      "size": [
+        400,
+        400
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/galleries/1C9A0483-gallery.jpg",
+          "size_bytes": 36783
+        },
+        "webp": {
+          "path": "curated-images/galleries/1C9A0483-gallery.webp",
+          "size_bytes": 30974
+        }
+      }
+    },
+    {
+      "original": "Images/Custom Cylinders /1C9A0464.JPG",
+      "spec": "gallery",
+      "size": [
+        400,
+        400
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/galleries/1C9A0464-gallery.jpg",
+          "size_bytes": 22116
+        },
+        "webp": {
+          "path": "curated-images/galleries/1C9A0464-gallery.webp",
+          "size_bytes": 13826
+        }
+      }
+    },
+    {
+      "original": "Images/Custom Cylinders /1C9A0470.JPG",
+      "spec": "gallery",
+      "size": [
+        400,
+        400
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/galleries/1C9A0470-gallery.jpg",
+          "size_bytes": 33939
+        },
+        "webp": {
+          "path": "curated-images/galleries/1C9A0470-gallery.webp",
+          "size_bytes": 28152
+        }
+      }
+    },
+    {
+      "original": "Images/Custom Cylinders /1C9A0465.JPG",
+      "spec": "gallery",
+      "size": [
+        400,
+        400
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/galleries/1C9A0465-gallery.jpg",
+          "size_bytes": 28758
+        },
+        "webp": {
+          "path": "curated-images/galleries/1C9A0465-gallery.webp",
+          "size_bytes": 22354
+        }
+      }
+    },
+    {
+      "original": "Images/Custom Cylinders /1C9A0467.JPG",
+      "spec": "gallery",
+      "size": [
+        400,
+        400
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/galleries/1C9A0467-gallery.jpg",
+          "size_bytes": 30023
+        },
+        "webp": {
+          "path": "curated-images/galleries/1C9A0467-gallery.webp",
+          "size_bytes": 22856
+        }
+      }
+    },
+    {
+      "original": "Images/Custom Cylinders /1C9A0466.JPG",
+      "spec": "gallery",
+      "size": [
+        400,
+        400
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/galleries/1C9A0466-gallery.jpg",
+          "size_bytes": 29242
+        },
+        "webp": {
+          "path": "curated-images/galleries/1C9A0466-gallery.webp",
+          "size_bytes": 22442
+        }
+      }
+    },
+    {
+      "original": "Images/Custom Cylinders /1C9A0462.JPG",
+      "spec": "gallery",
+      "size": [
+        400,
+        400
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/galleries/1C9A0462-gallery.jpg",
+          "size_bytes": 26274
+        },
+        "webp": {
+          "path": "curated-images/galleries/1C9A0462-gallery.webp",
+          "size_bytes": 18008
+        }
+      }
+    },
+    {
+      "original": "Images/Custom Cylinders /1C9A0463.JPG",
+      "spec": "gallery",
+      "size": [
+        400,
+        400
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/galleries/1C9A0463-gallery.jpg",
+          "size_bytes": 21305
+        },
+        "webp": {
+          "path": "curated-images/galleries/1C9A0463-gallery.webp",
+          "size_bytes": 12420
+        }
+      }
+    },
+    {
+      "original": "Images/Custom Cylinders /1C9A0461.JPG",
+      "spec": "gallery",
+      "size": [
+        400,
+        400
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/galleries/1C9A0461-gallery.jpg",
+          "size_bytes": 14533
+        },
+        "webp": {
+          "path": "curated-images/galleries/1C9A0461-gallery.webp",
+          "size_bytes": 7600
+        }
+      }
+    }
+  ]
+}
