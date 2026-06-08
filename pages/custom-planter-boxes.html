@@ -136,218 +136,388 @@
       line-height: 1.85;
     }
 
-    .section--dark .section-head h2 {
-      color: #fff;
-    }
-
+    .section--dark .section-head h2 { color: #fff; }
     .section--dark .section-head h2 em { color: var(--c-stone); }
+    .section--dark .section-head p { color: rgba(255,255,255,0.62); }
 
-    .section--dark .section-head p {
-      color: rgba(255,255,255,0.62);
-    }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
 
-    /* Benefits grid */
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
-
-    .benefit-card {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .benefit-icon {
-      width: 48px;
-      height: 48px;
-      background: var(--c-stone);
-      border-radius: 2px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      color: #fff;
-    }
-
-    .benefit-card h3 {
-      font-family: var(--font-head);
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--c-brown-dk);
-    }
-
-    .benefit-card p {
-      font-size: 0.9rem;
-      color: var(--c-brown);
-      line-height: 1.8;
-    }
-
-    /* Process timeline */
-    .process-steps {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-    }
-
-    .process-step {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      border-top: 1px solid var(--c-border);
-      padding-top: 1.5rem;
-    }
-
-    .process-step__num {
-      font-family: var(--font-head);
-      font-size: 2.8rem;
-      font-weight: 300;
-      color: var(--c-stone);
-      line-height: 1;
-    }
-
-    .process-step h3 {
-      font-family: var(--font-body);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--c-brown-dk);
-    }
-
-    .process-step p {
-      font-size: 0.9rem;
-      color: var(--c-brown);
-      line-height: 1.8;
-    }
-
-    /* Gallery */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-
-    .gallery-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 2px;
-      aspect-ratio: 1;
-      cursor: pointer;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    .gallery-item:hover img { transform: scale(1.05); }
-
-    /* Info cards */
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-    }
-
-    .info-card {
-      background: rgba(255,255,255,0.05);
-      padding: 2rem;
-      border-radius: 2px;
-      border: 1px solid rgba(255,255,255,0.1);
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      color: rgba(255,255,255,0.85);
-    }
-
-    .info-card h3 {
-      font-family: var(--font-body);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #fff;
-    }
-
-    .info-card p {
-      font-size: 0.95rem;
-      line-height: 1.7;
-      color: rgba(255,255,255,0.72);
-    }
-
-    /* CTA strip */
-    .cta-strip {
-      background: var(--c-sage);
-      padding: clamp(3rem, 6vw, 5rem) 0;
-    }
-
-    .cta-strip__inner {
+    /* Pain point section */
+    .pain-point {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
       align-items: center;
     }
 
-    .cta-strip h2 {
-      font-family: var(--font-head);
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 600;
-      line-height: 0.93;
-      color: #fff;
-      margin-bottom: 1rem;
+    .pain-point__content { color: var(--c-brown); }
+    .pain-point__content h3 { font-family: var(--font-head); font-size: 1.3rem; margin: 1.5rem 0 0.8rem; color: var(--c-brown-dk); }
+    .pain-point__content p { line-height: 1.8; margin-bottom: 1rem; }
+    .pain-point__image { width: 100%; height: 400px; background: linear-gradient(135deg, #E8E3DA 0%, #D5D0C8 100%); border-radius: 2px; }
+
+    @media (max-width: 768px) {
+      .pain-point { grid-template-columns: 1fr; }
+      .section-head { grid-template-columns: 1fr; gap: 2rem; }
     }
 
-    .cta-strip p {
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.75);
-      line-height: 1.8;
+    /* Benefits grid */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .benefit-card {
+      padding: 2rem;
+      background: #fff;
+      border-radius: 2px;
+      border: 1px solid #E8E3DA;
+    }
+
+    .benefit-card h3 {
+      font-family: var(--font-head);
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+      color: var(--c-brown-dk);
+    }
+
+    .benefit-card p { color: var(--c-brown); line-height: 1.7; }
+
+    /* Configurator section */
+    .configurator-section {
+      padding: clamp(5rem, 8vw, 7rem) 0;
+      background: var(--c-cream);
+    }
+
+    .configurator-wrapper {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 3rem;
+      align-items: flex-start;
+      margin-top: 2rem;
+    }
+
+    .three-canvas-container {
+      width: 100%;
+      height: 600px;
+      background: #faf8f3;
+      border-radius: 2px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .controls-panel {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 2px;
+      border: 1px solid #E8E3DA;
+      overflow-y: auto;
+      max-height: 600px;
+    }
+
+    .slider-group {
       margin-bottom: 1.5rem;
     }
 
-    .cta-strip__btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.85rem 1.9rem;
-      background: var(--c-dark);
-      color: #fff;
-      font-size: 0.72rem;
+    .slider-group label {
+      display: block;
+      font-size: 0.85rem;
       font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border-radius: 2px;
-      text-decoration: none;
-      transition: background 0.25s, transform 0.2s;
+      color: var(--c-brown-dk);
+      margin-bottom: 0.5rem;
     }
 
-    .cta-strip__btn:hover { background: #333; transform: translateY(-2px); }
+    .slider-group input[type="range"],
+    .slider-group input[type="number"] {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #E8E3DA;
+      border-radius: 2px;
+      font-size: 0.9rem;
+    }
 
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .section-head { grid-template-columns: 1fr; gap: 2rem; }
-      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
-      .process-steps { grid-template-columns: repeat(2, 1fr); }
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-      .info-grid { grid-template-columns: repeat(2, 1fr); }
-      .cta-strip__inner { grid-template-columns: 1fr; gap: 2rem; }
+    .slider-group .value-display {
+      display: inline-block;
+      margin-left: 0.5rem;
+      font-weight: 600;
+      color: var(--c-sage);
+    }
+
+    .slider-group.thickness {
+      border-top: 2px solid var(--c-sage);
+      padding-top: 1rem;
+      margin-top: 1rem;
+    }
+
+    /* Material toggle */
+    .material-toggle {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .material-toggle label {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem;
+      border: 1px solid #E8E3DA;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .material-toggle input[type="radio"] { cursor: pointer; }
+    .material-toggle input[type="radio"]:checked + span { color: var(--c-sage); font-weight: 600; }
+
+    /* Colour system */
+    .colour-section h4 { font-size: 0.9rem; font-weight: 600; color: var(--c-brown-dk); margin: 1.5rem 0 0.75rem; }
+
+    .colour-swatches {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .colour-swatch {
+      width: 100%;
+      aspect-ratio: 1;
+      border: 2px solid transparent;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .colour-swatch:hover { transform: scale(1.05); }
+    .colour-swatch.active { border-color: var(--c-brown-dk); box-shadow: 0 0 0 3px rgba(122, 140, 94, 0.2); }
+
+    .rgb-input {
+      border-top: 1px solid #E8E3DA;
+      padding-top: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .rgb-input input {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #E8E3DA;
+      border-radius: 2px;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .rgb-cost-note {
+      font-size: 0.8rem;
+      color: var(--c-brown);
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
+    /* Presets */
+    .preset-buttons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .preset-btn {
+      padding: 0.75rem;
+      background: #fff;
+      border: 1px solid #E8E3DA;
+      border-radius: 2px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+
+    .preset-btn:hover { border-color: var(--c-sage); }
+    .preset-btn.active { background: var(--c-dark); color: #fff; border-color: var(--c-dark); }
+
+    /* Summary card */
+    .summary-card {
+      background: var(--c-bg);
+      padding: 1.5rem;
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+    }
+
+    .summary-card h4 { font-size: 0.9rem; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 1rem; }
+    .summary-item { display: flex; justify-content: space-between; padding: 0.5rem 0; font-size: 0.9rem; color: var(--c-brown); }
+    .summary-item strong { color: var(--c-brown-dk); }
+    .price-total { border-top: 1px solid #E8E3DA; margin-top: 0.75rem; padding-top: 0.75rem; font-weight: 600; }
+
+    .get-quote-btn {
+      width: 100%;
+      padding: 1rem;
+      background: var(--c-dark);
+      color: #fff;
+      border: none;
+      border-radius: 2px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .get-quote-btn:hover { background: #333; }
+
+    /* Process section */
+    .process-timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .process-step {
+      text-align: center;
+    }
+
+    .process-step__number {
+      width: 50px;
+      height: 50px;
+      background: var(--c-sage);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      margin: 0 auto 1rem;
+    }
+
+    .process-step h3 { font-family: var(--font-head); font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--c-brown-dk); }
+    .process-step p { font-size: 0.95rem; color: var(--c-brown); line-height: 1.6; }
+
+    /* FAQ Accordion */
+    .faq-section {
+      background: var(--c-dark);
+      color: #fff;
+      padding: clamp(5rem, 8vw, 7rem) 0;
+    }
+
+    .faq-section .section-head h2 { color: #fff; }
+    .faq-section .section-head h2 em { color: var(--c-stone); }
+    .faq-section .section-head p { color: rgba(255,255,255,0.8); }
+
+    .faq-item {
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 1.5rem;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .faq-toggle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.5rem 0;
+    }
+
+    .faq-toggle:hover { color: var(--c-sage); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0;
+      opacity: 0;
+    }
+
+    .faq-answer.open {
+      max-height: 500px;
+      opacity: 1;
+      padding: 1rem 0;
+    }
+
+    .faq-answer p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: var(--c-sage);
+      color: #fff;
+      padding: clamp(4rem, 6vw, 5rem) 0;
+      text-align: center;
+    }
+
+    .cta-section h2 { color: #fff; margin-bottom: 1rem; }
+    .cta-section p { font-size: 1.05rem; margin-bottom: 2rem; }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-btn {
+      padding: 0.9rem 2rem;
+      border: none;
+      border-radius: 2px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .cta-btn--primary {
+      background: #fff;
+      color: var(--c-dark);
+    }
+
+    .cta-btn--primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .cta-btn--secondary {
+      background: transparent;
+      color: #fff;
+      border: 1px solid #fff;
+    }
+
+    .cta-btn--secondary:hover {
+      background: rgba(255,255,255,0.1);
     }
 
     @media (max-width: 768px) {
-      .hero { height: 60vh; }
-      .benefits-grid { grid-template-columns: 1fr; }
-      .process-steps { grid-template-columns: 1fr; }
-      .gallery-grid { grid-template-columns: 1fr; }
-      .info-grid { grid-template-columns: 1fr; }
+      .configurator-wrapper { grid-template-columns: 1fr; }
+      .three-canvas-container { height: 400px; }
+      .controls-panel { max-height: 100%; }
+      .cta-buttons { flex-direction: column; }
     }
-  </style>
 
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    .fadein {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+
+    .fadein.inView {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+    .delay-4 { transition-delay: 0.4s; }
+  </style>
 </head>
 <body>
 
@@ -396,168 +566,317 @@
   </div>
 </div>
 
-<!-- HERO -->
+<!-- PAGE CONTENT -->
+<main>
+
+<!-- 1. HERO SECTION -->
 <section class="hero">
-  <div class="hero__bg" id="heroBg"></div>
+  <div class="hero__bg"></div>
   <div class="hero__overlay"></div>
   <div class="container">
     <div class="hero__content">
-      <p class="hero__eyebrow">Custom Solutions</p>
-      <h1 class="hero__h1">Bespoke Planter Boxes Built to <em>Your Spec</em></h1>
-      <p class="hero__sub">Tell us your dimensions and we'll manufacture custom planters in your choice of material and colour. 2–8 week turnaround.</p>
-      <a href="/design-custom-planter.html" class="hero__cta">Design Now →</a>
+      <p class="hero__eyebrow">Bespoke Planter Boxes</p>
+      <h1 class="hero__h1">Your Space Deserves <em>Perfect Fit</em></h1>
+      <p class="hero__sub">Off-the-shelf planters never match your vision. Design custom planter boxes that fit your space, your style, your budget.</p>
+      <a href="#configurator" class="hero__cta">See It In Action →</a>
     </div>
   </div>
 </section>
 
-<!-- WHY CUSTOM -->
+<!-- 2. PROBLEM/PAIN POINT SECTION -->
 <section class="section section--light">
   <div class="container">
-    <div class="section-head">
-      <h2>Why Choose <em>Custom</em></h2>
-      <p>Off-the-shelf planters often don't fit your vision. Custom planters are built to exact specifications, giving architects, developers, and landscapers the flexibility to create truly unique outdoor spaces.</p>
-    </div>
-    <div class="benefits-grid">
-      <div class="benefit-card fadein">
-        <div class="benefit-icon">📐</div>
-        <h3>Exact Dimensions</h3>
-        <p>No compromises. Your space needs 1.5m × 800mm × 600mm? We build it. No minimum order.</p>
+    <div class="pain-point fadein">
+      <div class="pain-point__content">
+        <h2 style="font-family: var(--font-head); font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--c-brown-dk); line-height: 1.1; margin-bottom: 1.5rem;">
+          Why <em style="color: var(--c-sage); font-style: italic;">Custom</em> Matters
+        </h2>
+        <h3>Off-the-shelf planters never fit your space perfectly</h3>
+        <p>Standard sizes force compromise. Your layout, lighting, and design vision deserve solutions built to spec — not mass-produced shortcuts.</p>
+        
+        <h3>Colour options are always limited</h3>
+        <p>Choose from six premium Dulux & Colorbond colours, or specify your own RGB match. Your planter, your colour palette.</p>
+        
+        <h3>Sizing is always a compromise</h3>
+        <p>Control every dimension: length (300–3000mm), width (200–1500mm), height (200–1200mm), and wall thickness (25–100mm). Design exactly what you need.</p>
       </div>
-      <div class="benefit-card fadein delay-1">
-        <div class="benefit-icon">🎨</div>
-        <h3>Unlimited Colour</h3>
-        <p>Dulux colour matching on all materials. Integrate your planters with any design aesthetic.</p>
-      </div>
-      <div class="benefit-card fadein delay-2">
-        <div class="benefit-icon">⚡</div>
-        <h3>Fast Turnaround</h3>
-        <p>2–8 weeks from brief to delivery. No 16-week delays. We control the entire manufacturing process.</p>
-      </div>
+      <div class="pain-point__image"></div>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="section section--light">
-  <div class="container">
-    <div class="section-head">
-      <h2>Our <em>Process</em></h2>
-    </div>
-    <div class="process-steps">
-      <div class="process-step fadein">
-        <div class="process-step__num">1</div>
-        <h3>Design Brief</h3>
-        <p>Share your dimensions, material preference, and colour. Use our 3D configurator or email your specs.</p>
-      </div>
-      <div class="process-step fadein delay-1">
-        <div class="process-step__num">2</div>
-        <h3>Consultation</h3>
-        <p>We review your brief, confirm lead time and pricing, and answer any technical questions about materials and installation.</p>
-      </div>
-      <div class="process-step fadein delay-2">
-        <div class="process-step__num">3</div>
-        <h3>Manufacturing</h3>
-        <p>Our team builds your planters in our Western Sydney workshop with rigorous quality control. 3 layers of Dulux paint. Every piece checked.</p>
-      </div>
-      <div class="process-step fadein delay-3">
-        <div class="process-step__num">4</div>
-        <h3>Delivery</h3>
-        <p>Safely shipped nationwide or collected from our showroom. We handle logistics so you focus on installation.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 3D CONFIGURATOR -->
+<!-- 3. SOLUTION SECTION -->
 <section class="section section--light">
   <div class="container">
     <div class="section-head fadein">
       <div>
-        <p class="eyebrow" style="margin-bottom: 0.75rem;">Design Your Planter</p>
-        <h2>Visualise Your Custom Box <em>in 3D</em></h2>
+        <h2>Our <em>Approach</em></h2>
       </div>
-      <p>Drag to rotate 360°, adjust dimensions in real time, swap colours and materials, then submit your exact specification for a quote. No guesswork.</p>
+      <div>
+        <p>We solve what off-the-shelf can't. Exact dimensions, unlimited colours, fast turnaround, and commercial-grade durability.</p>
+      </div>
     </div>
-  </div>
-  <div class="fadein delay-1" style="margin: 3rem clamp(1.5rem, 4vw, 4rem) 0;">
-    <iframe
-      src="/design-custom-planter.html"
-      title="3D Planter Configurator"
-      style="width: 100%; height: 700px; border: none; display: block; border-radius: 3px; box-shadow: 0 8px 40px rgba(0,0,0,0.08);"
-      loading="lazy">
-    </iframe>
+
+    <div class="benefits-grid fadein">
+      <div class="benefit-card delay-1">
+        <h3>Exact Dimensions</h3>
+        <p>Every millimetre matters. Control length, width, height, and wall thickness to fit your space perfectly.</p>
+      </div>
+      <div class="benefit-card delay-2">
+        <h3>Unlimited Colours</h3>
+        <p>Choose from our premium Dulux & Colorbond palette, or specify your own RGB match (+$25 for custom sourcing).</p>
+      </div>
+      <div class="benefit-card delay-3">
+        <h3>Fast Turnaround</h3>
+        <p>From brief to delivery in 8-14 weeks. No compromise on quality or timeline.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- GALLERY -->
-<section class="section section--cream">
+<!-- 4. 3D CONFIGURATOR SECTION -->
+<section class="configurator-section" id="configurator">
   <div class="container">
-    <h2 style="margin-bottom: 2rem; color: var(--c-brown-dk);">Past Projects</h2>
-    <div class="gallery-grid">
-      <div class="gallery-item fadein">
-        <img src="https://www.urbanpots.com.au/cdn/shop/files/Screenshot_2025-09-29_at_8.22.00_pm_1200x.png?v=1759164065" alt="Commercial development" loading="lazy" />
+    <div class="section-head fadein">
+      <div>
+        <h2>Design in <em>3D</em></h2>
       </div>
-      <div class="gallery-item fadein delay-1">
-        <img src="https://www.urbanpots.com.au/cdn/shop/files/image0_1200x.jpg?v=1761812045" alt="Residential landscaping" loading="lazy" />
+      <div>
+        <p>Rotate your planter, adjust every dimension in real time, and see exactly what you're ordering. The future of custom furniture design.</p>
       </div>
-      <div class="gallery-item fadein delay-2">
-        <img src="https://www.urbanpots.com.au/cdn/shop/collections/Urban_pots_73_of_93_600x.jpg?v=1756432404" alt="Designer collection" loading="lazy" />
+    </div>
+
+    <div class="configurator-wrapper fadein delay-1">
+      <!-- 3D Canvas -->
+      <div class="three-canvas-container" id="threeCanvas"></div>
+
+      <!-- Controls Panel -->
+      <div class="controls-panel">
+        <h3 style="font-family: var(--font-head); color: var(--c-brown-dk); margin-bottom: 1.5rem;">Configure Your Planter</h3>
+
+        <!-- Dimension Sliders -->
+        <div class="slider-group">
+          <label>Length <span class="value-display" id="lengthValue">600</span> mm</label>
+          <input type="range" id="lengthSlider" min="300" max="3000" step="50" value="600" />
+          <input type="number" id="lengthInput" min="300" max="3000" step="50" value="600" />
+        </div>
+
+        <div class="slider-group">
+          <label>Width <span class="value-display" id="widthValue">400</span> mm</label>
+          <input type="range" id="widthSlider" min="200" max="1500" step="50" value="400" />
+          <input type="number" id="widthInput" min="200" max="1500" step="50" value="400" />
+        </div>
+
+        <div class="slider-group">
+          <label>Height <span class="value-display" id="heightValue">450</span> mm</label>
+          <input type="range" id="heightSlider" min="200" max="1200" step="50" value="450" />
+          <input type="number" id="heightInput" min="200" max="1200" step="50" value="450" />
+        </div>
+
+        <div class="slider-group thickness">
+          <label>Wall Thickness <span class="value-display" id="thicknessValue">50</span> mm</label>
+          <input type="range" id="thicknessSlider" min="25" max="100" step="25" value="50" />
+          <input type="number" id="thicknessInput" min="25" max="100" step="25" value="50" />
+          <div style="font-size: 0.8rem; color: var(--c-brown); margin-top: 0.5rem;">← Controls price (+$5 per 25mm)</div>
+        </div>
+
+        <!-- Material Toggle -->
+        <div style="margin-bottom: 1.5rem; margin-top: 1.5rem;">
+          <h4 style="font-size: 0.9rem; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.75rem;">Material</h4>
+          <div class="material-toggle">
+            <label>
+              <input type="radio" name="material" value="fibre-cement" checked />
+              <span>Fibre Cement</span>
+            </label>
+            <label>
+              <input type="radio" name="material" value="fibreglass" />
+              <span>Fibreglass</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Colours -->
+        <div class="colour-section">
+          <h4>Colour — Preset Options</h4>
+          <div class="colour-swatches" id="colourSwatches"></div>
+          
+          <div class="rgb-input">
+            <h4>Custom RGB Colour</h4>
+            <input type="text" id="rgbColour" placeholder="e.g., #4A4A48 or 'Dark Grey'" />
+            <div class="rgb-cost-note">RGB colour matching: +$25 (custom sourcing)</div>
+          </div>
+        </div>
+
+        <!-- Presets -->
+        <div style="margin-bottom: 1.5rem;">
+          <h4 style="font-size: 0.9rem; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.75rem;">Quick Presets</h4>
+          <div class="preset-buttons">
+            <button class="preset-btn" data-preset="Small">Small (600×400×450)</button>
+            <button class="preset-btn" data-preset="Medium">Medium (900×450×500)</button>
+            <button class="preset-btn" data-preset="Large">Large (1200×600×600)</button>
+            <button class="preset-btn" data-preset="XL">XL (1800×600×600)</button>
+          </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="summary-card">
+          <h4>Your Design</h4>
+          <div class="summary-item">
+            <span>Dimensions:</span>
+            <strong id="summaryDims">600 × 400 × 450 mm</strong>
+          </div>
+          <div class="summary-item">
+            <span>Wall Thickness:</span>
+            <strong id="summaryThickness">50 mm</strong>
+          </div>
+          <div class="summary-item">
+            <span>Material:</span>
+            <strong id="summaryMaterial">Fibre Cement</strong>
+          </div>
+          <div class="summary-item">
+            <span>Colour:</span>
+            <strong id="summaryColour">Lexicon Half</strong>
+          </div>
+          <div class="summary-item price-total">
+            <span>Price:</span>
+            <strong id="summaryPrice">$185.00</strong>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <button class="get-quote-btn" id="addToQuoteBtn">+ Add This Design to Quote</button>
+        <button class="get-quote-btn" style="background: var(--c-stone); margin-top: 0.75rem;" id="viewQuoteBtn" disabled>View Quote</button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SPECS -->
-<section class="section section--dark">
-  <div class="container">
-    <h2 style="color: #fff; margin-bottom: 3rem;">What You Need to Know</h2>
-    <div class="info-grid">
-      <div class="info-card fadein">
-        <h3>Materials</h3>
-        <p>Fibre Cement, Fibreglass, or GRC. Each has unique aesthetics and durability profiles.</p>
-      </div>
-      <div class="info-card fadein delay-1">
-        <h3>Lead Time</h3>
-        <p>Standard: 6–8 weeks. Rush (small orders): 2–4 weeks. Custom colours may add 1–2 weeks.</p>
-      </div>
-      <div class="info-card fadein delay-2">
-        <h3>Size Range</h3>
-        <p>L: 300–3000mm | W: 200–1500mm | H: 200–1200mm. Larger sizes available on request.</p>
-      </div>
-      <div class="info-card fadein delay-3">
-        <h3>Delivery</h3>
-        <p>Australia-wide shipping. Sydney metro pickup available. Freight included for orders over 5 units.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CATALOGUE -->
+<!-- 5. PROCESS SECTION -->
 <section class="section section--light">
   <div class="container">
-    <div style="text-align: center; max-width: 600px; margin: 0 auto;">
-      <h2 style="margin-bottom: 1rem;">Detailed Specs & Pricing</h2>
-      <p style="color: var(--c-brown); margin-bottom: 2rem;">Download our comprehensive catalogue with material specifications, lead times, and price guides.</p>
-      <a href="/data/catalogue.pdf" target="_blank" class="btn btn--dark">Download Catalogue PDF →</a>
+    <div class="section-head fadein">
+      <div>
+        <h2>From Vision to <em>Installation</em></h2>
+      </div>
+      <div>
+        <p>A straightforward four-step process. You design, we consult, we build, we deliver.</p>
+      </div>
+    </div>
+
+    <div class="process-timeline fadein">
+      <div class="process-step delay-1">
+        <div class="process-step__number">1</div>
+        <h3>Design</h3>
+        <p>Use our 3D configurator to design your perfect planter box. Every dimension, colour, and material choice is yours.</p>
+      </div>
+      <div class="process-step delay-2">
+        <div class="process-step__number">2</div>
+        <h3>Consultation</h3>
+        <p>Our team confirms your specs, discusses timeline, and answers any questions. No surprises.</p>
+      </div>
+      <div class="process-step delay-3">
+        <div class="process-step__number">3</div>
+        <h3>Manufacturing</h3>
+        <p>Your planter boxes are precision-built in our Western Sydney facility. 8-14 week lead time depending on material.</p>
+      </div>
+      <div class="process-step delay-4">
+        <div class="process-step__number">4</div>
+        <h3>Delivery</h3>
+        <p>Your finished planters arrive on schedule, ready for installation. Fully waterproofed and primed.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CTA STRIP -->
-<section class="cta-strip fadein">
+<!-- 6. FAQ SECTION -->
+<section class="faq-section">
   <div class="container">
-    <div class="cta-strip__inner">
+    <div class="section-head fadein">
       <div>
-        <h2>Ready to <em>design?</em></h2>
-        <p>Use our 3D configurator to customize dimensions, material, and colour in real time. Get a quote in minutes.</p>
+        <h2>Frequently <em>Asked</em></h2>
       </div>
       <div>
-        <a href="/design-custom-planter.html" class="cta-strip__btn">Start Designing →</a>
-        <p style="font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-top: 1rem;">Or call us: <strong style="color: #fff;">0433 132 406</strong></p>
+        <p>Answers to common questions about custom planter boxes, pricing, timeline, and materials.</p>
+      </div>
+    </div>
+
+    <div style="max-width: 800px; margin-top: 3rem;" class="fadein">
+      <div class="faq-item">
+        <div class="faq-toggle" onclick="this.parentElement.querySelector('.faq-answer').classList.toggle('open')">
+          <span>What's the lead time?</span>
+          <span style="font-size: 1.4rem;">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>8-14 weeks from order confirmation to delivery, depending on material availability and manufacturing capacity. We'll confirm an exact date during consultation.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-toggle" onclick="this.parentElement.querySelector('.faq-answer').classList.toggle('open')">
+          <span>What materials are available?</span>
+          <span style="font-size: 1.4rem;">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>We manufacture in commercial-grade fibre cement and fibreglass. Both are waterproofed and primed, ready for your finishing touches.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-toggle" onclick="this.parentElement.querySelector('.faq-answer').classList.toggle('open')">
+          <span>Can I change my order after submitting?</span>
+          <span style="font-size: 1.4rem;">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes. We'll confirm your specs during consultation before manufacturing begins. Changes after production starts may incur additional fees.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-toggle" onclick="this.parentElement.querySelector('.faq-answer').classList.toggle('open')">
+          <span>How is pricing calculated?</span>
+          <span style="font-size: 1.4rem;">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Base price depends on material and finished size. Wall thickness adds $5 per 25mm increment. Custom RGB colours add $25 for sourcing and colour matching.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-toggle" onclick="this.parentElement.querySelector('.faq-answer').classList.toggle('open')">
+          <span>What's the warranty?</span>
+          <span style="font-size: 1.4rem;">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>All custom planters come with a 2-year manufacturing defect warranty. Waterproofing is guaranteed for 5 years under normal conditions.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-toggle" onclick="this.parentElement.querySelector('.faq-answer').classList.toggle('open')">
+          <span>Do you offer trade / bulk discounts?</span>
+          <span style="font-size: 1.4rem;">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes. Landscapers, designers, and architects can access wholesale pricing. <a href="/pages/trade.html" style="color: var(--c-sage); text-decoration: underline;">View our trade program.</a></p>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- 7. FINAL CTA SECTION -->
+<section class="cta-section">
+  <div class="container">
+    <h2 style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem;">Ready to Design Your Perfect Planter?</h2>
+    <p>Use our 3D configurator to create exactly what you need. Or contact our team for personalized consultation.</p>
+    <div class="cta-buttons">
+      <button class="cta-btn cta-btn--primary" onclick="document.getElementById('configurator').scrollIntoView({behavior: 'smooth'});">Design Now</button>
+      <a href="mailto:info@urbanpots.com.au?subject=Custom Planter Consultation" class="cta-btn cta-btn--secondary">Request Consultation</a>
+    </div>
+  </div>
+</section>
+
+</main>
 
 <!-- FOOTER -->
 <footer class="site-footer">
@@ -566,20 +885,30 @@
       <div class="footer-brand">
         <img src="https://cdn.shopify.com/s/files/1/0748/4152/2498/files/urban_pots_logo__sage_150.png?v=1684274691" alt="Urban Pots" class="footer-brand__logo" width="120" />
         <p class="footer-brand__tagline">Your best space. Our planters.</p>
-        <p>Custom-built in Western Sydney. Trusted by developers, architects, and landscapers.</p>
+        <p>An Australian family-owned planter manufacturer. Custom-built in Western Sydney. Trusted by developers, architects, and landscapers nationwide.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="LinkedIn">LI</a>
+        </div>
       </div>
       <div class="footer-col">
         <h4>Products</h4>
         <ul>
           <li><a href="/pages/custom-planter-boxes.html">Custom Planter Boxes</a></li>
-          <li><a href="/shop.html">All Collections</a></li>
+          <li><a href="/pages/custom-cylinders.html">Custom Cylinders</a></li>
+          <li><a href="/shop.html">Shop Now</a></li>
+          <li><a href="/pages/commercial-planters.html">Commercial Planters</a></li>
+          <li><a href="/pages/grc-planters.html">GRC Planters</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="/">Home</a></li>
           <li><a href="/pages/about.html">About Us</a></li>
+          <li><a href="/pages/trade.html">Trade</a></li>
+          <li><a href="/pages/contact.html">Contact</a></li>
+          <li><a href="/pages/find-us.html">Find Us</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -587,28 +916,153 @@
         <ul>
           <li><a href="tel:0433132406">0433 132 406</a></li>
           <li><a href="mailto:info@urbanpots.com.au">info@urbanpots.com.au</a></li>
+          <li><a href="/pages/find-us.html">Sydney Showroom</a></li>
+          <li><a href="/pages/find-us.html">Tue–Sat 9am–4pm</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Urban Pots Australia. All rights reserved.</span>
+      <span>
+        <a href="/">Privacy</a> &nbsp;·&nbsp;
+        <a href="/">Terms</a> &nbsp;·&nbsp;
+        Website by <a href="#" style="color:var(--c-stone)">Sowah Studio</a>
+      </span>
     </div>
   </div>
 </footer>
 
+<!-- SCRIPTS -->
 <script type="module">
-  import { lenis, initLenis, initFadein, initNavScroll } from '../js/animations.js';
-  import { initMobileNav } from '../js/ui.js';
+  import { StraightEdgeConfigurator, COLORBOND_DULUX_COLORS, PRESETS, BASE_PRICES, THICKNESS_INCREMENT, RGB_COLOUR_COST } from '../js/three-configurator.js';
+  import DesignCart from '../js/design-cart.js';
+  import * as animations from '../js/animations.js';
+  import * as ui from '../js/ui.js';
 
-  initLenis();
-  initFadein();
-  initNavScroll();
-  initMobileNav(lenis);
+  // Initialize animations
+  animations.initLenis();
+  animations.initFadein();
+  animations.initNavScroll();
+  animations.fixIOSParallax();
 
-  // Hero background load
-  setTimeout(() => {
-    document.getElementById('heroBg').classList.add('loaded');
-  }, 60);
+  // Initialize UI
+  ui.initMobileNav(animations.lenis);
+
+  // Create configurator instance
+  let configurator = new StraightEdgeConfigurator('threeCanvas', updateUI);
+
+  // Populate colour swatches
+  const swatchesContainer = document.getElementById('colourSwatches');
+  COLORBOND_DULUX_COLORS.forEach((colour, idx) => {
+    const swatch = document.createElement('button');
+    swatch.className = 'colour-swatch' + (idx === 0 ? ' active' : '');
+    swatch.style.backgroundColor = colour.hex;
+    swatch.title = colour.code;
+    swatch.onclick = () => {
+      document.querySelectorAll('.colour-swatch').forEach(s => s.classList.remove('active'));
+      swatch.classList.add('active');
+      configurator.setColour(colour.hex, false);
+    };
+    swatchesContainer.appendChild(swatch);
+  });
+
+  // Slider and input sync
+  ['length', 'width', 'height', 'thickness'].forEach(dim => {
+    const slider = document.getElementById(dim + 'Slider');
+    const input = document.getElementById(dim + 'Input');
+    const display = document.getElementById(dim + 'Value');
+
+    slider.addEventListener('input', (e) => {
+      const val = e.target.value;
+      input.value = val;
+      display.textContent = val;
+      const key = dim === 'length' ? 'L' : dim === 'width' ? 'W' : dim === 'height' ? 'H' : 'T';
+      configurator.setDimension(key, parseInt(val));
+    });
+
+    input.addEventListener('input', (e) => {
+      const val = Math.max(slider.min, Math.min(slider.max, e.target.value));
+      slider.value = val;
+      input.value = val;
+      display.textContent = val;
+      const key = dim === 'length' ? 'L' : dim === 'width' ? 'W' : dim === 'height' ? 'H' : 'T';
+      configurator.setDimension(key, parseInt(val));
+    });
+  });
+
+  // Material toggle
+  document.querySelectorAll('input[name="material"]').forEach(radio => {
+    radio.addEventListener('change', (e) => {
+      configurator.setMaterial(e.target.value);
+    });
+  });
+
+  // RGB colour input
+  document.getElementById('rgbColour').addEventListener('input', (e) => {
+    if (e.target.value) {
+      configurator.setColour(e.target.value, true);
+    }
+  });
+
+  // Presets
+  document.querySelectorAll('.preset-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const preset = btn.dataset.preset;
+      const presetData = PRESETS['straight-edge'].find(p => p.name === preset);
+      if (presetData) {
+        document.getElementById('lengthSlider').value = presetData.length;
+        document.getElementById('lengthInput').value = presetData.length;
+        document.getElementById('lengthValue').textContent = presetData.length;
+        document.getElementById('widthSlider').value = presetData.width;
+        document.getElementById('widthInput').value = presetData.width;
+        document.getElementById('widthValue').textContent = presetData.width;
+        document.getElementById('heightSlider').value = presetData.height;
+        document.getElementById('heightInput').value = presetData.height;
+        document.getElementById('heightValue').textContent = presetData.height;
+        document.getElementById('thicknessSlider').value = presetData.thickness;
+        document.getElementById('thicknessInput').value = presetData.thickness;
+        document.getElementById('thicknessValue').textContent = presetData.thickness;
+        configurator.applyPreset(preset);
+      }
+    });
+  });
+
+  // Add to quote button
+  document.getElementById('addToQuoteBtn').addEventListener('click', () => {
+    const config = {
+      length: parseInt(document.getElementById('lengthInput').value),
+      width: parseInt(document.getElementById('widthInput').value),
+      height: parseInt(document.getElementById('heightInput').value),
+      thickness: parseInt(document.getElementById('thicknessInput').value),
+      material: document.querySelector('input[name="material"]:checked').value,
+      colour: document.getElementById('rgbColour').value || COLORBOND_DULUX_COLORS[0].hex,
+      quantity: 1,
+      price: configurator.calculatePrice(),
+    };
+    DesignCart.addToCart(config);
+    document.getElementById('viewQuoteBtn').disabled = false;
+    alert('✓ Design added to quote! View it on the quote page.');
+  });
+
+  // View quote button
+  document.getElementById('viewQuoteBtn').addEventListener('click', () => {
+    window.location.href = '/pages/custom-planter-boxes-quote.html';
+  });
+
+  function updateUI(config) {
+    document.getElementById('summaryDims').textContent = `${config.length} × ${config.width} × ${config.height} mm`;
+    document.getElementById('summaryThickness').textContent = `${config.thickness} mm`;
+    document.getElementById('summaryMaterial').textContent = config.material === 'fibre-cement' ? 'Fibre Cement' : 'Fibreglass';
+    const colourName = COLORBOND_DULUX_COLORS.find(c => c.hex.toLowerCase() === config.colour.toLowerCase())?.name || config.colour;
+    document.getElementById('summaryColour').textContent = colourName;
+    document.getElementById('summaryPrice').textContent = '$' + (config.price / 100).toFixed(2);
+    
+    if (DesignCart.getCart().length > 0) {
+      document.getElementById('viewQuoteBtn').disabled = false;
+    }
+  }
 </script>
 
 </body>
