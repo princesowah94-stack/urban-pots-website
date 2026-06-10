@@ -266,30 +266,71 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   padding-bottom: clamp(3.5rem, 7vw, 7rem);
   overflow: hidden;
 }
-.hero__bg {
-  position: absolute; inset: 0;
-  background-image: url('https://www.urbanpots.com.au/cdn/shop/files/3d4b103a-ef37-42e6-9690-867543cbd071_1200x.jpg?v=1758677890');
+
+/* Carousel Slides */
+.hero__carousel {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.hero__slide {
+  position: absolute;
+  inset: 0;
   background-size: cover;
   background-position: center;
-  transform: scale(1.06);
-  transition: transform 10s var(--ease);
-  will-change: transform;
+  opacity: 0;
+  transition: opacity 0.8s ease;
 }
-.hero__bg.loaded { transform: scale(1); }
+.hero__slide--active {
+  opacity: 1;
+}
+
+/* Navigation Dots */
+.hero__nav {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: 1rem;
+}
+.hero__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.hero__dot--active {
+  width: 24px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.9);
+}
+.hero__dot:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
 .hero__overlay {
-  position: absolute; inset: 0;
+  position: absolute;
+  inset: 0;
   background: linear-gradient(
     155deg,
-    rgba(12,10,8,0.04) 0%,
-    rgba(12,10,8,0.48) 50%,
-    rgba(12,10,8,0.82) 100%
+    rgba(12, 10, 8, 0.04) 0%,
+    rgba(12, 10, 8, 0.48) 50%,
+    rgba(12, 10, 8, 0.82) 100%
   );
+  z-index: 2;
 }
+
 .hero__content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   max-width: 840px;
 }
+
 .hero__eyebrow {
   display: inline-flex;
   align-items: center;
@@ -302,50 +343,133 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: var(--c-stone);
   margin-bottom: 1.5rem;
 }
+
 .hero__eyebrow::before {
   content: '';
-  width: 24px; height: 1px;
+  width: 24px;
+  height: 1px;
   background: var(--c-stone);
 }
+
 .hero__h1 {
   font-family: var(--font-head);
-  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  font-size: clamp(2.5rem, 6vw, 5rem);
   font-weight: 600;
-  line-height: 0.93;
+  line-height: 1.1;
   letter-spacing: -0.025em;
   color: #fff;
-  margin-bottom: 1.75rem;
+  margin-bottom: 2rem;
 }
-.hero__h1 em { font-style: italic; font-weight: 300; color: var(--c-stone); }
-.hero__word { display: inline-block; }
-.hero__sub {
-  font-size: clamp(0.88rem, 1.3vw, 1rem);
-  font-weight: 300;
-  color: rgba(255,255,255,0.62);
-  max-width: 460px;
-  line-height: 1.8;
-  margin-bottom: 2.5rem;
+
+.hero__h1-line {
+  display: block;
+  margin-bottom: 0.5rem;
 }
-.hero__actions { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
 .hero__scroll {
   position: absolute;
-  bottom: 2.5rem; right: 2.5rem;
-  z-index: 2;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.6rem;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255, 255, 255, 0.35);
   font-size: 0.58rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
+
 .scroll-line {
-  width: 1px; height: 48px;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
   animation: scrollPulse 2.4s ease-in-out infinite;
 }
-@keyframes scrollPulse { 0%,100%{opacity:0.25} 50%{opacity:0.9} }
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 0.9; }
+}
+
+/* ─── CUSTOM SHOWCASE (NEW) ────────────────────────────────────── */
+.custom-showcase {
+  background: var(--c-bg);
+  padding: clamp(4rem, 8vw, 6rem) 0;
+}
+
+.custom-showcase__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 3rem;
+}
+
+.custom-showcase__card {
+  background: #fff;
+  border: 1px solid var(--c-border);
+  border-radius: 2px;
+  overflow: hidden;
+  transition: all 0.3s var(--ease);
+}
+
+.custom-showcase__card:hover {
+  border-color: var(--c-sage);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.custom-showcase__image {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  background: var(--c-bg);
+}
+
+.custom-showcase__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s var(--ease);
+}
+
+.custom-showcase__card:hover .custom-showcase__image img {
+  transform: scale(1.04);
+}
+
+.custom-showcase__content {
+  padding: 2rem;
+}
+
+.custom-showcase__title {
+  font-family: var(--font-head);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--c-brown-dk);
+  margin-bottom: 0.5rem;
+}
+
+.custom-showcase__desc {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--c-sage);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.custom-showcase__text {
+  font-size: 0.95rem;
+  color: var(--c-brown);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
 
 /* ─── TRUST BAR ────────────────────────────────────────────── */
 .trust-bar {
@@ -1043,30 +1167,82 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   </div>
 </div>
 
-<!-- HERO -->
+<!-- HERO WITH ROTATING CAROUSEL -->
 <section class="hero" id="hero">
-  <div class="hero__bg" id="heroBg"></div>
+  <!-- Carousel Container -->
+  <div class="hero__carousel" id="heroCarousel">
+    <div class="hero__slide hero__slide--active" style="background-image: url('images/hero/hero-1.jpg')"></div>
+    <div class="hero__slide" style="background-image: url('images/hero/hero-2.jpg')"></div>
+    <div class="hero__slide" style="background-image: url('images/hero/hero-3.jpg')"></div>
+    <div class="hero__slide" style="background-image: url('images/hero/hero-4.jpg')"></div>
+    <div class="hero__slide" style="background-image: url('images/hero/hero-5.jpg')"></div>
+  </div>
+
+  <!-- Navigation Dots -->
+  <div class="hero__nav" id="heroNav">
+    <button class="hero__dot hero__dot--active" data-slide="0" aria-label="Slide 1"></button>
+    <button class="hero__dot" data-slide="1" aria-label="Slide 2"></button>
+    <button class="hero__dot" data-slide="2" aria-label="Slide 3"></button>
+    <button class="hero__dot" data-slide="3" aria-label="Slide 4"></button>
+    <button class="hero__dot" data-slide="4" aria-label="Slide 5"></button>
+  </div>
+
   <div class="hero__overlay"></div>
   <div class="container">
     <div class="hero__content">
-      <p class="hero__eyebrow" id="heroEyebrow">Handcrafted in Western Sydney</p>
-      <h1 class="hero__h1" id="heroH1">
-        <span class="hero__word">Spaces</span>&nbsp;<span class="hero__word">That</span><br>
-        <em class="hero__word">Demand</em><br>
-        <span class="hero__word">to</span>&nbsp;<span class="hero__word">Be</span>&nbsp;<span class="hero__word">Noticed</span>
+      <p class="hero__eyebrow">Premium Collection</p>
+      <h1 class="hero__h1">
+        <span class="hero__h1-line">Designer Pots for Every Space</span>
+        <span class="hero__h1-line">Premium Locally Made Custom Planters</span>
+        <span class="hero__h1-line">Commercial Planter Solutions</span>
       </h1>
-      <p class="hero__sub" id="heroSub">
-        Australian-made planters for Sydney homes and businesses. Trusted by architects, developers, landscapers, and designers across Greater Western Sydney.
-      </p>
-      <div class="hero__actions" id="heroActions">
-        <a href="/pages/custom-planter-boxes.html" class="btn btn--stone">Explore Custom Planters</a>
-        <a href="/pages/commercial-planters.html" class="arrow-link arrow-link--light">View Projects →</a>
+      <div class="hero__actions">
+        <a href="/shop.html" class="btn btn--dark">Shop Designer Pots</a>
+        <a href="/pages/custom-planter-boxes.html" class="btn btn--stone">Custom Planter Boxes</a>
+        <a href="/pages/commercial-planters.html" class="btn btn--stone">Commercial Solutions</a>
       </div>
     </div>
   </div>
   <div class="hero__scroll">
     <div class="scroll-line"></div>
     <span>Scroll</span>
+  </div>
+</section>
+
+<!-- SECTION 2: CUSTOM PLANTERS SHOWCASE (NEW) -->
+<section class="custom-showcase">
+  <div class="container">
+    <div class="custom-showcase__grid">
+      <div class="custom-showcase__card fadein">
+        <div class="custom-showcase__image">
+          <picture>
+            <source srcset="curated-images/heroes/URBAN POTS-4608-hero.webp" type="image/webp">
+            <img src="curated-images/heroes/URBAN POTS-4608-hero.jpg" alt="Custom planter boxes installation trusted by developers" loading="lazy" />
+          </picture>
+        </div>
+        <div class="custom-showcase__content">
+          <h3 class="custom-showcase__title">Custom Planter Boxes</h3>
+          <p class="custom-showcase__desc">Bespoke Solutions Trusted by Developers & Architects</p>
+          <p class="custom-showcase__text">Precision-built rectangular and modular planters custom-designed for commercial projects, residential installations, and landscape architects.</p>
+          <a href="/pages/custom-planter-boxes.html" class="arrow-link">Explore Boxes →</a>
+        </div>
+      </div>
+
+      <div class="custom-showcase__card fadein delay-1">
+        <div class="custom-showcase__image">
+          <picture>
+            <source srcset="curated-images/heroes/URBAN POTS-4546-hero.webp" type="image/webp">
+            <img src="curated-images/heroes/URBAN POTS-4546-hero.jpg" alt="Custom cylinder planter with palm tree" loading="lazy" />
+          </picture>
+        </div>
+        <div class="custom-showcase__content">
+          <h3 class="custom-showcase__title">Custom Cylinders</h3>
+          <p class="custom-showcase__desc">Dramatic Focal Points for High-Impact Projects</p>
+          <p class="custom-showcase__text">Statement pieces designed for feature trees and commercial precincts. Bold, sculptural, and engineered for maximum visual impact.</p>
+          <a href="/pages/custom-cylinders.html" class="arrow-link">Explore Cylinders →</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1556,15 +1732,67 @@ lenis.on('scroll', ({ scroll }) => {
   nav.classList.toggle('scrolled', scroll > 80);
 });
 
-// ── HERO ENTRANCE (GSAP word stagger) ───────────────────────
-setTimeout(() => document.getElementById('heroBg').classList.add('loaded'), 60);
+// ── HERO CAROUSEL ───────────────────────────────────────────
+(function() {
+  const carousel = document.getElementById('heroCarousel');
+  const slides = carousel.querySelectorAll('.hero__slide');
+  const dots = document.querySelectorAll('.hero__dot');
+  const nav = document.getElementById('heroNav');
 
+  let currentSlide = 0;
+  let autoTimer;
+  let isPaused = false;
+
+  function showSlide(n) {
+    slides.forEach((slide, idx) => {
+      slide.classList.toggle('hero__slide--active', idx === n);
+    });
+    dots.forEach((dot, idx) => {
+      dot.classList.toggle('hero__dot--active', idx === n);
+    });
+    currentSlide = n;
+  }
+
+  function nextSlide() {
+    if (!isPaused) {
+      showSlide((currentSlide + 1) % slides.length);
+    }
+  }
+
+  function startAuto() {
+    autoTimer = setInterval(nextSlide, 5500);
+  }
+
+  function pauseAuto() {
+    clearInterval(autoTimer);
+    isPaused = true;
+    setTimeout(() => {
+      isPaused = false;
+      startAuto();
+    }, 8000);
+  }
+
+  // Dot navigation
+  dots.forEach((dot, idx) => {
+    dot.addEventListener('click', () => {
+      showSlide(idx);
+      pauseAuto();
+    });
+  });
+
+  // Hover pause/resume
+  nav.addEventListener('mouseenter', () => clearInterval(autoTimer));
+  nav.addEventListener('mouseleave', startAuto);
+
+  startAuto();
+})();
+
+// ── HERO ENTRANCE (GSAP word stagger) ───────────────────────
 gsap.registerPlugin(ScrollTrigger);
 gsap.timeline({ defaults: { ease: 'power3.out' } })
-  .from('#heroEyebrow', { opacity: 0, y: 18, duration: 0.8, delay: 0.3 })
-  .from('.hero__word',  { opacity: 0, y: 36, stagger: 0.07, duration: 0.95 }, '-=0.4')
-  .from('#heroSub',     { opacity: 0, y: 18, duration: 0.8 }, '-=0.5')
-  .from('#heroActions', { opacity: 0, y: 18, duration: 0.75 }, '-=0.4');
+  .from('.hero__eyebrow', { opacity: 0, y: 18, duration: 0.8, delay: 0.3 })
+  .from('.hero__h1-line',  { opacity: 0, y: 36, stagger: 0.12, duration: 0.95 }, '-=0.4')
+  .from('.hero__actions', { opacity: 0, y: 18, duration: 0.75 }, '-=0.4');
 
 // ── INTERSECTIONOBSERVER .fadein → .inView (Spaceful exact) ──
 const fadeObserver = new IntersectionObserver((entries) => {
