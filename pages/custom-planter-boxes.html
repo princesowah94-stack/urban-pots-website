@@ -121,6 +121,87 @@
 
     .hero__cta:hover { background: #333; transform: translateY(-2px); }
 
+    /* Hero Carousel */
+    .hero__carousel {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .hero__slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+    }
+
+    .hero__slide--active {
+      opacity: 1;
+    }
+
+    .hero__nav {
+      position: absolute;
+      bottom: clamp(1.5rem, 3vw, 2.5rem);
+      right: clamp(2rem, 5vw, 3rem);
+      z-index: 10;
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .hero__dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      padding: 0;
+    }
+
+    .hero__dot:hover {
+      background: rgba(255, 255, 255, 0.75);
+      transform: scale(1.2);
+    }
+
+    .hero__dot--active {
+      background: rgba(255, 255, 255, 1);
+      width: 24px;
+      border-radius: 6px;
+    }
+
+    /* Logos Section */
+    .logos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+
+    .logo-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      background: #fff;
+      border-radius: 2px;
+      border: 1px solid #E8E3DA;
+      transition: all 0.3s ease;
+      height: 120px;
+    }
+
+    .logo-card:hover {
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
+
+    .logo-card img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
     /* Section styles */
     .section {
       padding: clamp(4rem, 8vw, 7rem) 0;
@@ -468,6 +549,113 @@
       color: rgba(255,255,255,0.8);
     }
 
+    /* Gallery Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 2px;
+      background: #f5f5f5;
+      aspect-ratio: 1;
+      transition: all 0.3s ease;
+    }
+
+    .gallery-item--large {
+      grid-column: span 2;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      display: block;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      color: #fff;
+      padding: 1rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin: 0;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-caption {
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+      }
+
+      .gallery-item--large {
+        grid-column: span 1;
+      }
+    }
+
+    /* Manufacturing Features */
+    .manufacturing-features {
+      margin-top: 3rem;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .feature-item {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .feature-icon {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      background: var(--c-sage);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    .feature-content h4 {
+      font-family: var(--font-head);
+      font-size: 1rem;
+      color: var(--c-brown-dk);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .feature-content p {
+      color: var(--c-brown);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
     /* CTA Section */
     .cta-section {
       background: var(--c-sage);
@@ -591,26 +779,74 @@
 
 <!-- 1. HERO SECTION -->
 <section class="hero">
-  <div class="hero__bg">
-    <picture>
-      <source srcset="../curated-images/heroes/URBAN POTS-4546-hero.webp" type="image/webp">
-      <img src="../curated-images/heroes/URBAN POTS-4546-hero.jpg"
-           alt="Sydney garden transformation: from bare patio to thriving custom planter installation"
-           width="1920" height="800" loading="eager" />
-    </picture>
+  <div class="hero__carousel" id="heroCarousel">
+    <div class="hero__bg hero__slide hero__slide--active">
+      <picture>
+        <source srcset="../curated-images/heroes/URBAN POTS-4608-hero.webp" type="image/webp">
+        <img src="../curated-images/heroes/URBAN POTS-4608-hero.jpg" alt="Custom planter box installation in Sydney" width="1920" height="800" loading="eager" />
+      </picture>
+    </div>
+    <div class="hero__bg hero__slide">
+      <picture>
+        <source srcset="../curated-images/heroes/URBAN POTS-4617-hero.webp" type="image/webp">
+        <img src="../curated-images/heroes/URBAN POTS-4617-hero.jpg" alt="Manufacturing custom planters in Sydney yard" width="1920" height="800" loading="eager" />
+      </picture>
+    </div>
+    <div class="hero__bg hero__slide">
+      <picture>
+        <source srcset="../curated-images/heroes/URBAN POTS-4546-hero.webp" type="image/webp">
+        <img src="../curated-images/heroes/URBAN POTS-4546-hero.jpg" alt="Completed planter project installation" width="1920" height="800" loading="eager" />
+      </picture>
+    </div>
   </div>
   <div class="hero__overlay"></div>
   <div class="container">
     <div class="hero__content">
-      <p class="hero__eyebrow">Bespoke Planter Boxes</p>
-      <h1 class="hero__h1">Your Space Deserves <em>Perfect Fit</em></h1>
-      <p class="hero__sub">Off-the-shelf planters never match your vision. Design custom planter boxes that fit your space, your style, your budget.</p>
-      <a href="#configurator" class="hero__cta">See It In Action →</a>
+      <p class="hero__eyebrow">Locally Manufactured</p>
+      <h1 class="hero__h1">Premium Custom Made <em>Planter Boxes</em></h1>
+      <p class="hero__sub">Locally Manufactured in Our Sydney Yard</p>
+      <p class="hero__sub">Trusted by Sydney's Leading Developers, Builders & Landscapers</p>
+      <a href="#quote-form" class="hero__cta">Get a FREE Quote →</a>
+    </div>
+  </div>
+  <!-- Carousel Navigation -->
+  <div class="hero__nav">
+    <button class="hero__dot hero__dot--active" data-slide="0" aria-label="Slide 1"></button>
+    <button class="hero__dot" data-slide="1" aria-label="Slide 2"></button>
+    <button class="hero__dot" data-slide="2" aria-label="Slide 3"></button>
+  </div>
+</section>
+
+<!-- 2. COMPANY LOGOS SECTION (NEW) -->
+<section class="section section--light">
+  <div class="container">
+    <div class="section-head fadein">
+      <div>
+        <h2>Trusted by <em>Leading Companies</em></h2>
+      </div>
+      <div>
+        <p>Proven partner for Australia's top developers, builders, and landscapers.</p>
+      </div>
+    </div>
+
+    <div class="logos-grid fadein">
+      <div class="logo-card">
+        <img src="https://via.placeholder.com/200x100?text=Logo+1" alt="Company logo" width="200" height="100" />
+      </div>
+      <div class="logo-card">
+        <img src="https://via.placeholder.com/200x100?text=Logo+2" alt="Company logo" width="200" height="100" />
+      </div>
+      <div class="logo-card">
+        <img src="https://via.placeholder.com/200x100?text=Logo+3" alt="Company logo" width="200" height="100" />
+      </div>
+      <div class="logo-card">
+        <img src="https://via.placeholder.com/200x100?text=Logo+4" alt="Company logo" width="200" height="100" />
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 2. PROBLEM/PAIN POINT SECTION -->
+<!-- 3. PROBLEM/PAIN POINT SECTION -->
 <section class="section section--light">
   <div class="container">
     <div class="pain-point fadein">
@@ -931,7 +1167,153 @@
   </div>
 </section>
 
-<!-- 6. FAQ SECTION -->
+<!-- 6. HOW IT WORKS SECTION (NEW) -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="section-head fadein">
+      <div>
+        <h2>How It <em>Works</em></h2>
+      </div>
+      <div>
+        <p>From concept to installation, we handle every detail with commercial-grade precision.</p>
+      </div>
+    </div>
+
+    <div class="process-timeline fadein">
+      <div class="process-step delay-1">
+        <div class="process-step__number">1</div>
+        <h3>Request a FREE Quote</h3>
+        <p>Send your drawings, plans, dimensions, quantities, and preferred finish. Quotes typically provided within 1–3 business days depending on project scope.</p>
+      </div>
+      <div class="process-step delay-2">
+        <div class="process-step__number">2</div>
+        <h3>Confirm Project Details</h3>
+        <p>Review and approve the proposal, then secure your order with a deposit. Finalise planter dimensions, material selection, and finish requirements.</p>
+      </div>
+      <div class="process-step delay-3">
+        <div class="process-step__number">3</div>
+        <h3>Production & Lead Time</h3>
+        <p>Our team begins manufacturing your planter boxes in our Sydney yard. Lead times generally range between 4–16 weeks depending on project scope, material availability, and production requirements.</p>
+      </div>
+      <div class="process-step delay-4">
+        <div class="process-step__number">4</div>
+        <h3>Delivery or Collection</h3>
+        <p>Once completed, planter boxes are quality checked, securely wrapped, palletised, and prepared for either collection or delivery.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. WHAT GOES INTO OUR PLANTER BOXES (NEW) -->
+<section class="section section--light">
+  <div class="container">
+    <div class="section-head fadein">
+      <div>
+        <h2>What Goes Into <em>Our Planter Boxes</em></h2>
+      </div>
+      <div>
+        <p>Commercial-grade manufacturing meets meticulous craftsmanship. Every planter built to outlast the competition.</p>
+      </div>
+    </div>
+
+    <div class="manufacturing-features fadein">
+      <div class="feature-list">
+        <div class="feature-item delay-1">
+          <div class="feature-icon">✓</div>
+          <div class="feature-content">
+            <h4>Fibreglass, Fibre Cement or GRC Construction</h4>
+            <p>Choose the material that fits your project: lightweight fibreglass, durable fibre cement, or premium GRC for heritage and luxury installations.</p>
+          </div>
+        </div>
+        <div class="feature-item delay-2">
+          <div class="feature-icon">✓</div>
+          <div class="feature-content">
+            <h4>Waterproofing System and Primer Coating</h4>
+            <p>Complete waterproofing and primer coat ensure long-lasting protection from Sydney's harsh weather.</p>
+          </div>
+        </div>
+        <div class="feature-item delay-3">
+          <div class="feature-icon">✓</div>
+          <div class="feature-content">
+            <h4>Three Coats of Dulux Paint</h4>
+            <p>Standard or custom colour finish. Every planter gets three coats of premium Dulux paint for durability and aesthetic perfection.</p>
+          </div>
+        </div>
+        <div class="feature-item delay-4">
+          <div class="feature-icon">✓</div>
+          <div class="feature-content">
+            <h4>Cut, Glued & Riveted for Structural Support</h4>
+            <p>Precision cut to size, professionally glued, and riveted throughout for long-lasting structural integrity.</p>
+          </div>
+        </div>
+        <div class="feature-item delay-1">
+          <div class="feature-icon">✓</div>
+          <div class="feature-content">
+            <h4>Integrated Drainage Holes</h4>
+            <p>Strategic drainage placement prevents water pooling and extends planter lifespan.</p>
+          </div>
+        </div>
+        <div class="feature-item delay-2">
+          <div class="feature-icon">✓</div>
+          <div class="feature-content">
+            <h4>Thick Reinforced Edging</h4>
+            <p>Heavy-duty edging resists damage from impact, weather, and installation handling.</p>
+          </div>
+        </div>
+        <div class="feature-item delay-3">
+          <div class="feature-icon">✓</div>
+          <div class="feature-content">
+            <h4>Internal Structural Reinforcement</h4>
+            <p>Planters exceeding 2 metres in length include internal reinforcement for maximum stability and durability.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. PROJECT GALLERY SECTION (NEW) -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="section-head fadein">
+      <div>
+        <h2>Manufacturing & <em>Completed Projects</em></h2>
+      </div>
+      <div>
+        <p>See our work in action: from our Sydney yard to finished installations across Australia.</p>
+      </div>
+    </div>
+
+    <div class="gallery-grid fadein">
+      <div class="gallery-item gallery-item--large delay-1">
+        <img src="../curated-images/galleries/1C9A0461-gallery.jpg" alt="Custom planter boxes installed in completed project" width="400" height="400" loading="lazy" />
+        <p class="gallery-caption">Custom planter installation</p>
+      </div>
+      <div class="gallery-item delay-2">
+        <img src="../curated-images/galleries/1C9A0462-gallery.jpg" alt="Manufacturing planter boxes in Sydney yard" width="400" height="400" loading="lazy" />
+        <p class="gallery-caption">Manufacturing process</p>
+      </div>
+      <div class="gallery-item delay-3">
+        <img src="../curated-images/galleries/1C9A0463-gallery.jpg" alt="Team painting custom planter boxes" width="400" height="400" loading="lazy" />
+        <p class="gallery-caption">Finishing touches</p>
+      </div>
+      <div class="gallery-item delay-4">
+        <img src="../curated-images/heroes/URBAN POTS-4608-hero.jpg" alt="Completed planter project delivery" width="400" height="400" loading="lazy" />
+        <p class="gallery-caption">Project delivery</p>
+      </div>
+      <div class="gallery-item delay-1">
+        <img src="../curated-images/heroes/URBAN POTS-4617-hero.jpg" alt="Installation of custom planters on site" width="400" height="400" loading="lazy" />
+        <p class="gallery-caption">On-site installation</p>
+      </div>
+      <div class="gallery-item gallery-item--large delay-2">
+        <img src="../curated-images/heroes/URBAN POTS-4546-hero.jpg" alt="Finished custom planter installation in Sydney" width="400" height="400" loading="lazy" />
+        <p class="gallery-caption">Final result</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. FAQ SECTION -->
 <section class="faq-section">
   <div class="container">
     <div class="section-head fadein">
@@ -1015,6 +1397,144 @@
     <div class="cta-buttons">
       <button class="cta-btn cta-btn--primary" onclick="document.getElementById('configurator').scrollIntoView({behavior: 'smooth'});">Design Now</button>
       <a href="mailto:info@urbanpots.com.au?subject=Custom Planter Consultation" class="cta-btn cta-btn--secondary">Request Consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- 10. ENHANCED QUOTE FORM SECTION (NEW) -->
+<section class="section section--light" id="quote-form">
+  <div class="container">
+    <div class="section-head fadein">
+      <div>
+        <h2>Get Your <em>FREE Quote</em></h2>
+      </div>
+      <div>
+        <p>Share your project details and dimensions. Our team will provide a tailored quote within 1–3 business days.</p>
+      </div>
+    </div>
+
+    <div class="quote-form-wrapper fadein" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; align-items: flex-start;">
+      <form class="quote-form" id="quoteForm" style="background: #fff; padding: 2rem; border-radius: 2px; border: 1px solid #E8E3DA;">
+        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+          <div class="form-group">
+            <label for="name" style="display: block; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.5rem; font-size: 0.9rem;">Name *</label>
+            <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; border: 1px solid #E8E3DA; border-radius: 2px; font-size: 0.95rem;" />
+          </div>
+          <div class="form-group">
+            <label for="email" style="display: block; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.5rem; font-size: 0.9rem;">Email *</label>
+            <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 1px solid #E8E3DA; border-radius: 2px; font-size: 0.95rem;" />
+          </div>
+        </div>
+
+        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+          <div class="form-group">
+            <label for="phone" style="display: block; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.5rem; font-size: 0.9rem;">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" required style="width: 100%; padding: 0.75rem; border: 1px solid #E8E3DA; border-radius: 2px; font-size: 0.95rem;" />
+          </div>
+          <div class="form-group">
+            <label for="company" style="display: block; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.5rem; font-size: 0.9rem;">Company Name</label>
+            <input type="text" id="company" name="company" style="width: 100%; padding: 0.75rem; border: 1px solid #E8E3DA; border-radius: 2px; font-size: 0.95rem;" />
+          </div>
+        </div>
+
+        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+          <div class="form-group">
+            <label for="abn" style="display: block; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.5rem; font-size: 0.9rem;">ABN (Australian Business Number)</label>
+            <input type="text" id="abn" name="abn" style="width: 100%; padding: 0.75rem; border: 1px solid #E8E3DA; border-radius: 2px; font-size: 0.95rem;" />
+          </div>
+          <div class="form-group">
+            <label for="position" style="display: block; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.5rem; font-size: 0.9rem;">Position</label>
+            <input type="text" id="position" name="position" style="width: 100%; padding: 0.75rem; border: 1px solid #E8E3DA; border-radius: 2px; font-size: 0.95rem;" />
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1.5rem;">
+          <label for="website" style="display: block; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.5rem; font-size: 0.9rem;">Website</label>
+          <input type="url" id="website" name="website" style="width: 100%; padding: 0.75rem; border: 1px solid #E8E3DA; border-radius: 2px; font-size: 0.95rem;" />
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1.5rem;">
+          <label for="material" style="display: block; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.5rem; font-size: 0.9rem;">Preferred Material *</label>
+          <select id="material" name="material" required style="width: 100%; padding: 0.75rem; border: 1px solid #E8E3DA; border-radius: 2px; font-size: 0.95rem;">
+            <option value="">Select a material</option>
+            <option value="fibreglass">Fibreglass</option>
+            <option value="fibre-cement">Fibre Cement</option>
+            <option value="grc">GRC (3–4 month lead time)</option>
+          </select>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1.5rem;">
+          <label for="project" style="display: block; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.5rem; font-size: 0.9rem;">Describe Your Project *</label>
+          <textarea id="project" name="project" required rows="5" style="width: 100%; padding: 0.75rem; border: 1px solid #E8E3DA; border-radius: 2px; font-size: 0.95rem; font-family: inherit;"></textarea>
+        </div>
+
+        <button type="submit" style="width: 100%; padding: 1rem; background: var(--c-dark); color: #fff; border: none; border-radius: 2px; font-weight: 600; cursor: pointer; font-size: 0.9rem; transition: background 0.2s;">Get a FREE Quote</button>
+      </form>
+
+      <div class="quote-form-sidebar" style="background: var(--c-bg); padding: 2rem; border-radius: 2px;">
+        <h3 style="font-family: var(--font-head); font-size: 1.2rem; color: var(--c-brown-dk); margin-bottom: 1.5rem;">3D Planter Sizing</h3>
+        <p style="color: var(--c-brown); font-size: 0.95rem; margin-bottom: 1.5rem;">Use the form on the left to enter your preferred dimensions. Our team will calculate exact measurements and confirm technical specifications during consultation.</p>
+
+        <div style="background: #fff; padding: 1.5rem; border-radius: 2px; border: 1px solid #E8E3DA;">
+          <h4 style="font-weight: 600; color: var(--c-brown-dk); margin-bottom: 1rem;">Size Guidelines</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; color: var(--c-brown); line-height: 1.8;">
+            <li style="margin-bottom: 0.75rem;"><strong>Length:</strong> 300–3000mm</li>
+            <li style="margin-bottom: 0.75rem;"><strong>Width:</strong> 200–1500mm</li>
+            <li style="margin-bottom: 0.75rem;"><strong>Height:</strong> 200–1200mm</li>
+            <li style="margin-bottom: 0.75rem;"><strong>Wall Thickness:</strong> 25–100mm</li>
+            <li><strong>Lead Time:</strong> 4–16 weeks</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11. GOOGLE REVIEWS SECTION (NEW) -->
+<section class="section section--light">
+  <div class="container">
+    <div class="section-head fadein">
+      <div>
+        <h2>Trusted by <em>Our Clients</em></h2>
+      </div>
+      <div>
+        <p>Real feedback from developers, builders, and landscapers who've partnered with us.</p>
+      </div>
+    </div>
+
+    <div class="reviews-grid fadein" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+      <div class="review-card" style="background: #fff; padding: 1.5rem; border-radius: 2px; border: 1px solid #E8E3DA;">
+        <div class="review-rating" style="display: flex; gap: 0.25rem; margin-bottom: 1rem; color: #FFB81C;">
+          ★★★★★
+        </div>
+        <p style="margin: 0 0 1rem 0; color: var(--c-brown); line-height: 1.7; font-size: 0.95rem;">"Urban Pots delivered exactly what we needed for our commercial development. Professional, reliable, and the quality is outstanding."</p>
+        <p style="margin: 0; font-weight: 600; color: var(--c-brown-dk); font-size: 0.9rem;">David M. — Developer, Sydney</p>
+        <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #999;">Verified Review</p>
+      </div>
+
+      <div class="review-card" style="background: #fff; padding: 1.5rem; border-radius: 2px; border: 1px solid #E8E3DA;">
+        <div class="review-rating" style="display: flex; gap: 0.25rem; margin-bottom: 1rem; color: #FFB81C;">
+          ★★★★★
+        </div>
+        <p style="margin: 0 0 1rem 0; color: var(--c-brown); line-height: 1.7; font-size: 0.95rem;">"Local manufacturing means faster turnaround and personalized attention. Highly recommend Urban Pots for any custom project."</p>
+        <p style="margin: 0; font-weight: 600; color: var(--c-brown-dk); font-size: 0.9rem;">Sarah L. — Landscape Designer, NSW</p>
+        <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #999;">Verified Review</p>
+      </div>
+
+      <div class="review-card" style="background: #fff; padding: 1.5rem; border-radius: 2px; border: 1px solid #E8E3DA;">
+        <div class="review-rating" style="display: flex; gap: 0.25rem; margin-bottom: 1rem; color: #FFB81C;">
+          ★★★★★
+        </div>
+        <p style="margin: 0 0 1rem 0; color: var(--c-brown); line-height: 1.7; font-size: 0.95rem;">"We've used Urban Pots for multiple projects. Consistent quality, excellent communication, and they always deliver on time."</p>
+        <p style="margin: 0; font-weight: 600; color: var(--c-brown-dk); font-size: 0.9rem;">Michael T. — Builder, Western Sydney</p>
+        <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #999;">Verified Review</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="https://share.google/yCBFgZFLhsBjtKJwI" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.75rem; padding: 1rem 2rem; background: var(--c-dark); color: #fff; text-decoration: none; border-radius: 2px; font-weight: 600; transition: background 0.2s;">
+        View All Reviews on Google →
+      </a>
     </div>
   </div>
 </section>
@@ -1215,6 +1735,55 @@
       }
     }
   }
+
+  // Hero Carousel
+  (function() {
+    const carousel = document.getElementById('heroCarousel');
+    const slides = document.querySelectorAll('.hero__slide');
+    const dots = document.querySelectorAll('.hero__dot');
+    let currentSlide = 0;
+    let autoplayInterval;
+
+    function goToSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('hero__slide--active', i === index);
+      });
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('hero__dot--active', i === index);
+      });
+      currentSlide = index;
+    }
+
+    function nextSlide() {
+      goToSlide((currentSlide + 1) % slides.length);
+    }
+
+    function startAutoplay() {
+      autoplayInterval = setInterval(nextSlide, 5500);
+    }
+
+    function stopAutoplay() {
+      clearInterval(autoplayInterval);
+    }
+
+    function resetAutoplay() {
+      stopAutoplay();
+      startAutoplay();
+    }
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', (e) => {
+        const slideIndex = parseInt(e.target.dataset.slide);
+        goToSlide(slideIndex);
+        resetAutoplay();
+      });
+    });
+
+    carousel.addEventListener('mouseenter', stopAutoplay);
+    carousel.addEventListener('mouseleave', startAutoplay);
+
+    startAutoplay();
+  })();
 </script>
 
 </body>
