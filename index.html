@@ -1019,6 +1019,226 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .cta-strip__actions .btn { align-self: flex-start; }
 .cta-strip__contact { font-size: 0.72rem; color: rgba(255,255,255,0.42); margin-top: 0.5rem; }
 
+/* ─── COMMERCIAL SOLUTIONS (NEW) ──────────────────────────────── */
+.commercial-solutions {
+  background: var(--c-dark);
+  color: #fff;
+  padding: clamp(4rem, 8vw, 6rem) 0;
+}
+
+.commercial-solutions__header {
+  max-width: 720px;
+  margin-bottom: 4rem;
+}
+
+.commercial-solutions__title {
+  font-family: var(--font-head);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.commercial-solutions__subheading {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--c-stone);
+  margin-bottom: 1rem;
+}
+
+.commercial-solutions__desc {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.commercial-solutions__features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+}
+
+.commercial-feature {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.commercial-feature__icon {
+  font-family: var(--font-head);
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--c-stone);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.commercial-feature h3 {
+  font-family: var(--font-head);
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+}
+
+.commercial-feature p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ─── DESIGNER COLLECTIONS (NEW) ─────────────────────────────── */
+.designer-collections {
+  background: var(--c-bg);
+  padding: clamp(4rem, 8vw, 6rem) 0;
+}
+
+.designer-collections__header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.designer-collections__title {
+  font-family: var(--font-head);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 600;
+  color: var(--c-brown-dk);
+  margin-bottom: 1rem;
+}
+
+.designer-collections__desc {
+  font-size: 1rem;
+  color: var(--c-brown);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.designer-collections__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.collection-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: flex-end;
+  text-decoration: none;
+  transition: all 0.3s var(--ease);
+  border: 1px solid var(--c-border);
+}
+
+.collection-card__bg {
+  position: absolute;
+  inset: 0;
+  background: var(--c-stone);
+  opacity: 0.6;
+  z-index: 0;
+  transition: opacity 0.3s var(--ease);
+}
+
+.collection-card--1 .collection-card__bg { background: linear-gradient(135deg, #C9B99A 0%, #B89F7B 100%); }
+.collection-card--2 .collection-card__bg { background: linear-gradient(135deg, #7A8C5E 0%, #5C6D48 100%); }
+.collection-card--3 .collection-card__bg { background: linear-gradient(135deg, #7F593E 0%, #5C3D27 100%); }
+.collection-card--4 .collection-card__bg { background: linear-gradient(135deg, #B8A68A 0%, #9A8C78 100%); }
+.collection-card--coming .collection-card__bg { background: linear-gradient(135deg, #E0D5C7 0%, #D1C8BA 100%); opacity: 0.4; }
+
+.collection-card:hover .collection-card__bg {
+  opacity: 0.8;
+}
+
+.collection-card__content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  color: #fff;
+  width: 100%;
+}
+
+.collection-card--coming .collection-card__content {
+  color: var(--c-brown);
+}
+
+.collection-card h3 {
+  font-family: var(--font-head);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.collection-card p {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+/* ─── GOOGLE REVIEWS (NEW) ────────────────────────────────────── */
+.google-reviews {
+  background: #fff;
+  padding: clamp(4rem, 8vw, 6rem) 0;
+}
+
+.google-reviews__header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.google-reviews__title {
+  font-family: var(--font-head);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 600;
+  color: var(--c-brown-dk);
+  margin-bottom: 1rem;
+}
+
+.google-reviews__desc {
+  font-size: 1rem;
+  color: var(--c-brown);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.google-reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.review-card {
+  background: var(--c-bg);
+  padding: 2rem;
+  border-radius: 2px;
+  border: 1px solid var(--c-border);
+}
+
+.review-rating {
+  color: #FFB81C;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.15em;
+}
+
+.review-text {
+  font-size: 0.95rem;
+  color: var(--c-brown);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.review-author {
+  font-weight: 600;
+  color: var(--c-brown-dk);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.review-badge {
+  font-size: 0.8rem;
+  color: #999;
+  margin: 0;
+}
+
 /* ─── FOOTER ─────────────────────────────────────────────────── */
 .site-footer { background: #0F0D0B; color: rgba(255,255,255,0.45); padding: 5.5rem 0 2.5rem; }
 .footer-top {
@@ -1643,6 +1863,137 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         <a href="tel:0433132406" class="arrow-link arrow-link--light">Call 0433 132 406 →</a>
         <div class="cta-strip__contact">Sydney Showroom — Tue to Sat, 9am–4pm</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: COMMERCIAL PLANTER SOLUTIONS (NEW) -->
+<section class="commercial-solutions">
+  <div class="container">
+    <div class="commercial-solutions__header fadein">
+      <h2 class="commercial-solutions__title">Commercial Planter Solutions</h2>
+      <p class="commercial-solutions__subheading">Trusted by Sydney's Leading Developers, Builders, Landscapers & Architects</p>
+      <p class="commercial-solutions__desc">From concept to installation, we deliver bespoke planter solutions at scale. Local Sydney manufacturing ensures quality control, reliability, and support throughout your project.</p>
+    </div>
+
+    <div class="commercial-solutions__features fadein">
+      <div class="commercial-feature">
+        <div class="commercial-feature__icon">01</div>
+        <h3>Custom Manufacturing at Scale</h3>
+        <p>We handle projects of any size, from single installations to large commercial precincts. Our Western Sydney facility is equipped for rapid prototyping and bulk production.</p>
+      </div>
+      <div class="commercial-feature">
+        <div class="commercial-feature__icon">02</div>
+        <h3>Project Consultation & Support</h3>
+        <p>Work with our team from brief to installation. We review specifications, suggest material options, and manage timelines with precision.</p>
+      </div>
+      <div class="commercial-feature">
+        <div class="commercial-feature__icon">03</div>
+        <h3>Local Sydney Production</h3>
+        <p>Manufactured in our Western Sydney yard — never imported. Full visibility into your project from design through to final delivery.</p>
+      </div>
+      <div class="commercial-feature">
+        <div class="commercial-feature__icon">04</div>
+        <h3>Proven Track Record</h3>
+        <p>500+ projects delivered across residential, commercial, and hospitality sectors. Trusted by architects, developers, and landscape designers.</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="/pages/commercial-planters.html" class="btn btn--dark">Explore Commercial Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: DESIGNER POTS COLLECTIONS (NEW) -->
+<section class="designer-collections">
+  <div class="container">
+    <div class="designer-collections__header fadein">
+      <h2 class="designer-collections__title">Shop Designer Pots</h2>
+      <p class="designer-collections__desc">Curated imported collections for discerning homeowners and designers.</p>
+    </div>
+
+    <div class="designer-collections__grid fadein">
+      <a href="/shop.html?collection=lightweight" class="collection-card collection-card--1">
+        <div class="collection-card__bg"></div>
+        <div class="collection-card__content">
+          <h3>Lightweight Designer Collection</h3>
+          <p>Versatile & Modern</p>
+        </div>
+      </a>
+
+      <a href="/shop.html?collection=terrazzo" class="collection-card collection-card--2">
+        <div class="collection-card__bg"></div>
+        <div class="collection-card__content">
+          <h3>Terrazzo Collection</h3>
+          <p>Contemporary Elegance</p>
+        </div>
+      </a>
+
+      <a href="/shop.html?collection=atlantis" class="collection-card collection-card--3">
+        <div class="collection-card__bg"></div>
+        <div class="collection-card__content">
+          <h3>Modern Atlantis Collection</h3>
+          <p>Sculptural Design</p>
+        </div>
+      </a>
+
+      <a href="/shop.html?collection=thai-limestone" class="collection-card collection-card--4">
+        <div class="collection-card__bg"></div>
+        <div class="collection-card__content">
+          <h3>Thai Limestone Collection</h3>
+          <p>Natural Texture</p>
+        </div>
+      </a>
+
+      <div class="collection-card collection-card--coming">
+        <div class="collection-card__bg"></div>
+        <div class="collection-card__content">
+          <h3>Zion Series</h3>
+          <p>Coming Soon</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="/shop.html" class="arrow-link">Browse All Collections →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: GOOGLE REVIEWS (NEW) -->
+<section class="google-reviews">
+  <div class="container">
+    <div class="google-reviews__header fadein">
+      <h2 class="google-reviews__title">Trusted by Our Clients</h2>
+      <p class="google-reviews__desc">Real feedback from developers, builders, and homeowners who've partnered with us.</p>
+    </div>
+
+    <div class="google-reviews__grid fadein">
+      <div class="review-card">
+        <div class="review-rating">★★★★★</div>
+        <p class="review-text">"Urban Pots delivered exactly what we needed for our commercial development. Professional, reliable, and the quality is outstanding."</p>
+        <p class="review-author">David M. — Developer, Sydney</p>
+        <p class="review-badge">Verified Review</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-rating">★★★★★</div>
+        <p class="review-text">"Local manufacturing means faster turnaround and personalized attention. Highly recommend Urban Pots for any custom project."</p>
+        <p class="review-author">Sarah L. — Landscape Designer, NSW</p>
+        <p class="review-badge">Verified Review</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-rating">★★★★★</div>
+        <p class="review-text">"We've used Urban Pots for multiple projects. Consistent quality, excellent communication, and they always deliver on time."</p>
+        <p class="review-author">Michael T. — Builder, Western Sydney</p>
+        <p class="review-badge">Verified Review</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 2.5rem;">
+      <a href="https://share.google/yCBFgZFLhsBjtKJwI" target="_blank" rel="noopener noreferrer" class="btn btn--dark">View All Reviews on Google</a>
     </div>
   </div>
 </section>
