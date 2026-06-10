@@ -595,9 +595,9 @@ input[type="radio"] {
 }
 
 .hero__content h1 em {
-  font-style: italic;
+  font-weight: 600;
   color: var(--c-sage);
-  font-weight: 400;
+  letter-spacing: -0.02em;
 }
 
 .hero__subtext {
@@ -2016,8 +2016,9 @@ input[type="radio"] {
 }
 
 .policy-text em {
-  font-style: italic;
+  font-weight: 600;
   color: var(--c-brown);
+  letter-spacing: -0.02em;
 }
 
 .policy-text a {
