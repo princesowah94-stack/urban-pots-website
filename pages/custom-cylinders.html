@@ -994,6 +994,19 @@
           </div>
         </div>
 
+        <div class="form-group">
+          <label for="diameter">Diameter *</label>
+          <select id="diameter" name="diameter" required>
+            <option value="">Select diameter...</option>
+            <option value="300mm">300mm</option>
+            <option value="400mm">400mm</option>
+            <option value="500mm">500mm</option>
+            <option value="600mm">600mm</option>
+            <option value="800mm">800mm</option>
+            <option value="1000mm">1000mm</option>
+          </select>
+        </div>
+
         <div class="form-grid">
           <div class="form-group">
             <label for="quantity">Quantity *</label>
@@ -1118,6 +1131,13 @@
     // Create configurator instance
     let configurator = new CylindricalConfigurator('threeCanvas', updateUI);
 
+    // Pause Lenis when user interacts with 3D canvas so OrbitControls receives scroll/touch events
+    const canvasWrap = document.getElementById('threeCanvas');
+    canvasWrap.addEventListener('pointerenter', () => animations.lenis?.stop());
+    canvasWrap.addEventListener('pointerleave', () => animations.lenis?.start());
+    canvasWrap.addEventListener('touchstart', () => animations.lenis?.stop(), { passive: true });
+    canvasWrap.addEventListener('touchend', () => animations.lenis?.start(), { passive: true });
+
   // Populate colour swatches
   const swatchesContainer = document.getElementById('colourSwatches');
   COLORBOND_DULUX_COLORS.forEach((colour, idx) => {
@@ -1139,6 +1159,7 @@
   const heightDisplay = document.getElementById('heightValue');
 
   heightSlider.addEventListener('input', (e) => {
+    document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
     const val = e.target.value;
     heightInput.value = val;
     heightDisplay.textContent = val;
@@ -1160,9 +1181,9 @@
     });
   });
 
-  // RGB colour input
+  // RGB colour input — validate full 6-digit hex before applying to avoid NaN in colour math
   document.getElementById('rgbColour').addEventListener('input', (e) => {
-    if (e.target.value) {
+    if (/^#[0-9A-Fa-f]{6}$/.test(e.target.value)) {
       configurator.setColour(e.target.value, true);
     }
   });
@@ -1188,14 +1209,17 @@
   document.getElementById('cylindersEnquiryForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     
+    const colourVal = document.getElementById('colour').value;
     const formData = {
       name: document.getElementById('name').value,
       email: document.getElementById('email').value,
       phone: document.getElementById('phone').value,
       company: document.getElementById('company').value || '',
       abn: document.getElementById('abn').value || '',
+      diameter: document.getElementById('diameter').value,
       height: document.getElementById('formHeight').value,
-      colour: document.getElementById('colour').value === 'Custom RGB' ? document.getElementById('customColour').value : document.getElementById('colour').value,
+      colourSelect: colourVal !== 'Custom RGB' ? colourVal : '',
+      colourCustom: colourVal === 'Custom RGB' ? document.getElementById('customColour').value : '',
       quantity: document.getElementById('quantity').value,
       requirements: document.getElementById('requirements').value || '',
     };

@@ -62,6 +62,7 @@ class StraightEdgeConfigurator {
 
   init() {
     const container = document.getElementById(this.containerId);
+    if (!container) throw new Error(`[Configurator] Canvas container #${this.containerId} not found`);
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     this.renderer.setSize(container.clientWidth, container.clientHeight);
     this.renderer.shadowMap.enabled = true;
@@ -317,6 +318,7 @@ class CylindricalConfigurator {
 
   init() {
     const container = document.getElementById(this.containerId);
+    if (!container) throw new Error(`[Configurator] Canvas container #${this.containerId} not found`);
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     this.renderer.setSize(container.clientWidth, container.clientHeight);
     this.renderer.shadowMap.enabled = true;

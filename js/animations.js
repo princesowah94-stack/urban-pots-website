@@ -70,23 +70,23 @@ export function initNavScroll() {
 
 // ── HERO ENTRANCE ──────────────────────────────────────────
 export function initHeroEntrance() {
+  // Support both ID-based (mockup/index) and class-based (custom pages) hero elements
   const heroBg = document.getElementById('heroBg');
-  if (heroBg) {
-    setTimeout(() => heroBg.classList.add('loaded'), 60);
-  }
+  if (heroBg) setTimeout(() => heroBg.classList.add('loaded'), 60);
 
   gsap.registerPlugin(ScrollTrigger);
 
-  const heroEyebrow = document.getElementById('heroEyebrow');
-  const heroSub = document.getElementById('heroSub');
-  const heroActions = document.getElementById('heroActions');
+  const heroEyebrow = document.getElementById('heroEyebrow') || document.querySelector('.hero__eyebrow');
+  const heroSub = document.getElementById('heroSub') || document.querySelector('.hero__sub');
+  const heroActions = document.getElementById('heroActions') || document.querySelector('.hero__actions, .hero__cta');
 
-  if (heroEyebrow && heroSub && heroActions) {
-    gsap.timeline({ defaults: { ease: 'power3.out' } })
-      .from(heroEyebrow, { opacity: 0, y: 18, duration: 0.8, delay: 0.3 })
-      .from('.hero__word', { opacity: 0, y: 36, stagger: 0.07, duration: 0.95 }, '-=0.4')
-      .from(heroSub, { opacity: 0, y: 18, duration: 0.8 }, '-=0.5')
-      .from(heroActions, { opacity: 0, y: 18, duration: 0.75 }, '-=0.4');
+  if (heroEyebrow) {
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    tl.from(heroEyebrow, { opacity: 0, y: 18, duration: 0.8, delay: 0.3 });
+    const words = document.querySelectorAll('.hero__word, .hero__h1-line');
+    if (words.length) tl.from(words, { opacity: 0, y: 36, stagger: 0.07, duration: 0.95 }, '-=0.4');
+    if (heroSub) tl.from(heroSub, { opacity: 0, y: 18, duration: 0.8 }, '-=0.5');
+    if (heroActions) tl.from(heroActions, { opacity: 0, y: 18, duration: 0.75 }, '-=0.4');
   }
 }
 

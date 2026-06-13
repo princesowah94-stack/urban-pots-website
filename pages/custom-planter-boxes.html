@@ -1634,6 +1634,13 @@
     // Create configurator instance
     let configurator = new StraightEdgeConfigurator('threeCanvas', updateUI);
 
+    // Pause Lenis when user interacts with 3D canvas so OrbitControls receives scroll/touch events
+    const canvasWrap = document.getElementById('threeCanvas');
+    canvasWrap.addEventListener('pointerenter', () => animations.lenis?.stop());
+    canvasWrap.addEventListener('pointerleave', () => animations.lenis?.start());
+    canvasWrap.addEventListener('touchstart', () => animations.lenis?.stop(), { passive: true });
+    canvasWrap.addEventListener('touchend', () => animations.lenis?.start(), { passive: true });
+
   // Populate colour swatches
   const swatchesContainer = document.getElementById('colourSwatches');
   COLORBOND_DULUX_COLORS.forEach((colour, idx) => {
@@ -1656,6 +1663,7 @@
     const display = document.getElementById(dim + 'Value');
 
     slider.addEventListener('input', (e) => {
+      document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
       const val = e.target.value;
       input.value = val;
       display.textContent = val;
@@ -1680,9 +1688,9 @@
     });
   });
 
-  // RGB colour input
+  // RGB colour input — validate full 6-digit hex before applying to avoid NaN in colour math
   document.getElementById('rgbColour').addEventListener('input', (e) => {
-    if (e.target.value) {
+    if (/^#[0-9A-Fa-f]{6}$/.test(e.target.value)) {
       configurator.setColour(e.target.value, true);
     }
   });
@@ -1732,6 +1740,49 @@
   // View quote button
   document.getElementById('viewQuoteBtn').addEventListener('click', () => {
     window.location.href = '/pages/custom-planter-boxes-quote.html';
+  });
+
+  // Quote form submission — POST to API with form fields + any saved configurator designs
+  document.getElementById('quoteForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const submitBtn = e.target.querySelector('[type="submit"]');
+    const originalLabel = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    const formData = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      phone: document.getElementById('phone').value,
+      company: document.getElementById('company').value || '',
+      abn: document.getElementById('abn').value || '',
+      position: document.getElementById('position').value || '',
+      website: document.getElementById('website').value || '',
+      projectType: document.getElementById('project').value,
+      material: document.getElementById('material').value,
+    };
+    const designs = JSON.parse(localStorage.getItem('urbanPotsCart') || '[]');
+
+    try {
+      const res = await fetch('/api/custom-planter-quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ formData, designs }),
+      });
+      if (res.ok) {
+        ui.showToast('Quote submitted! We\'ll contact you within 24 hours.');
+        e.target.reset();
+        localStorage.removeItem('urbanPotsCart');
+      } else {
+        ui.showToast('Something went wrong. Please email info@urbanpots.com.au');
+      }
+    } catch (err) {
+      console.error('Quote form error:', err);
+      ui.showToast('Submission failed. Please contact info@urbanpots.com.au');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalLabel;
+    }
   });
 
     function updateUI(config) {
@@ -1793,6 +1844,17 @@
 
     carousel.addEventListener('mouseenter', stopAutoplay);
     carousel.addEventListener('mouseleave', startAutoplay);
+
+    // Touch swipe support
+    let touchStartX = 0;
+    carousel.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    carousel.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) {
+        diff > 0 ? goToSlide((currentSlide + 1) % slides.length) : goToSlide((currentSlide - 1 + slides.length) % slides.length);
+        resetAutoplay();
+      }
+    });
 
     startAutoplay();
   })();
