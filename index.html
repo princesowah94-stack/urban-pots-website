@@ -259,9 +259,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* ─── HERO ─────────────────────────────────────────────────── */
 .hero {
   position: relative;
-  height: 70vh;
-  min-height: 480px;
-  aspect-ratio: 16 / 9;
+  height: 100vh;
+  min-height: 620px;
   display: flex;
   align-items: flex-end;
   padding-bottom: clamp(3.5rem, 7vw, 7rem);
@@ -277,8 +276,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .hero__slide {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center 40%;
+  background-size: contain;
+  background-position: center center;
+  background-color: var(--c-dark);
   background-repeat: no-repeat;
   opacity: 0;
   transition: opacity 0.8s ease;
@@ -1392,11 +1392,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <section class="hero" id="hero">
   <!-- Carousel Container -->
   <div class="hero__carousel" id="heroCarousel">
-    <div class="hero__slide hero__slide--active" style="background-image: url('curated-images/heroes/URBAN POTS-4608-hero.jpg')"></div>
-    <div class="hero__slide" style="background-image: url('curated-images/heroes/URBAN POTS-4617-hero.jpg')"></div>
-    <div class="hero__slide" style="background-image: url('curated-images/heroes/URBAN POTS-4546-hero.jpg')"></div>
-    <div class="hero__slide" style="background-image: url('curated-images/heroes/URBAN POTS-4551-hero.jpg')"></div>
-    <div class="hero__slide" style="background-image: url('curated-images/heroes/URBAN POTS-4566-hero.jpg')"></div>
+    <div class="hero__slide hero__slide--active" style="background-image: url('curated-images/heroes/URBAN%20POTS-4608-hero.jpg')"></div>
+    <div class="hero__slide" style="background-image: url('curated-images/heroes/URBAN%20POTS-4617-hero.jpg')"></div>
+    <div class="hero__slide" style="background-image: url('curated-images/heroes/URBAN%20POTS-4546-hero.jpg')"></div>
+    <div class="hero__slide" style="background-image: url('curated-images/heroes/URBAN%20POTS-4551-hero.jpg')"></div>
+    <div class="hero__slide" style="background-image: url('curated-images/heroes/URBAN%20POTS-4566-hero.jpg')"></div>
   </div>
 
   <!-- Navigation Dots -->
@@ -1437,8 +1437,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <div class="custom-showcase__card fadein">
         <div class="custom-showcase__image">
           <picture>
-            <source srcset="curated-images/heroes/URBAN POTS-4608-hero.webp" type="image/webp">
-            <img src="curated-images/heroes/URBAN POTS-4608-hero.jpg" alt="Custom planter boxes installation trusted by developers" loading="lazy" />
+            <source srcset="curated-images/heroes/URBAN%20POTS-4608-hero.webp" type="image/webp">
+            <img src="curated-images/heroes/URBAN%20POTS-4608-hero.jpg" alt="Custom planter boxes installation trusted by developers" loading="lazy" />
           </picture>
         </div>
         <div class="custom-showcase__content">
@@ -1452,8 +1452,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <div class="custom-showcase__card fadein delay-1">
         <div class="custom-showcase__image">
           <picture>
-            <source srcset="curated-images/heroes/URBAN POTS-4546-hero.webp" type="image/webp">
-            <img src="curated-images/heroes/URBAN POTS-4546-hero.jpg" alt="Custom cylinder planter with palm tree" loading="lazy" />
+            <source srcset="curated-images/heroes/URBAN%20POTS-4546-hero.webp" type="image/webp">
+            <img src="curated-images/heroes/URBAN%20POTS-4546-hero.jpg" alt="Custom cylinder planter with palm tree" loading="lazy" />
           </picture>
         </div>
         <div class="custom-showcase__content">
@@ -1535,12 +1535,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   <div class="custom-feature__grid">
     <div class="custom-feature__img">
       <picture>
-        <source srcset="curated-images/heroes/URBAN POTS-4608-hero.webp" type="image/webp">
-        <img class="img-primary" src="curated-images/heroes/URBAN POTS-4608-hero.jpg" alt="Custom planter box installation with thriving garden" loading="lazy" />
+        <source srcset="curated-images/heroes/URBAN%20POTS-4608-hero.webp" type="image/webp">
+        <img class="img-primary" src="curated-images/heroes/URBAN%20POTS-4608-hero.jpg" alt="Custom planter box installation with thriving garden" loading="lazy" />
       </picture>
       <picture>
-        <source srcset="curated-images/heroes/URBAN POTS-4617-hero.webp" type="image/webp">
-        <img class="img-hover" src="curated-images/heroes/URBAN POTS-4617-hero.jpg" alt="Stunning custom planter project in progress" loading="lazy" />
+        <source srcset="curated-images/heroes/URBAN%20POTS-4617-hero.webp" type="image/webp">
+        <img class="img-hover" src="curated-images/heroes/URBAN%20POTS-4617-hero.jpg" alt="Stunning custom planter project in progress" loading="lazy" />
       </picture>
       <span class="custom-feature__img-caption">Custom Fibre Cement — Commercial Project</span>
     </div>
@@ -1646,12 +1646,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <div class="work__item work__item--large fadein">
         <div class="work__item-inner">
           <picture>
-            <source srcset="curated-images/projects/UP CRONULLA-6-project.webp" type="image/webp">
-            <img class="img-primary" src="curated-images/projects/UP CRONULLA-6-project.jpg" alt="Cronulla Commercial Plaza Installation" loading="lazy" />
+            <source srcset="curated-images/projects/UP%20CRONULLA-6-project.webp" type="image/webp">
+            <img class="img-primary" src="curated-images/projects/UP%20CRONULLA-6-project.jpg" alt="Cronulla Commercial Plaza Installation" loading="lazy" />
           </picture>
           <picture>
-            <source srcset="curated-images/projects/UP CRONULLA-10-project.webp" type="image/webp">
-            <img class="img-hover" src="curated-images/projects/UP CRONULLA-10-project.jpg" alt="Cronulla Landscape Design Detail" loading="lazy" />
+            <source srcset="curated-images/projects/UP%20CRONULLA-10-project.webp" type="image/webp">
+            <img class="img-hover" src="curated-images/projects/UP%20CRONULLA-10-project.jpg" alt="Cronulla Landscape Design Detail" loading="lazy" />
           </picture>
         </div>
         <div class="work__item-content">
@@ -1663,12 +1663,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <div class="work__item work__item--small fadein delay-1">
         <div class="work__item-inner">
           <picture>
-            <source srcset="curated-images/projects/UP CRONULLA-12-project.webp" type="image/webp">
-            <img class="img-primary" src="curated-images/projects/UP CRONULLA-12-project.jpg" alt="Urban Landscaping Project Showcase" loading="lazy" />
+            <source srcset="curated-images/projects/UP%20CRONULLA-12-project.webp" type="image/webp">
+            <img class="img-primary" src="curated-images/projects/UP%20CRONULLA-12-project.jpg" alt="Urban Landscaping Project Showcase" loading="lazy" />
           </picture>
           <picture>
-            <source srcset="curated-images/projects/UP CRONULLA-14-project.webp" type="image/webp">
-            <img class="img-hover" src="curated-images/projects/UP CRONULLA-14-project.jpg" alt="Custom Planter Integration" loading="lazy" />
+            <source srcset="curated-images/projects/UP%20CRONULLA-14-project.webp" type="image/webp">
+            <img class="img-hover" src="curated-images/projects/UP%20CRONULLA-14-project.jpg" alt="Custom Planter Integration" loading="lazy" />
           </picture>
         </div>
         <div class="work__item-content">
@@ -1680,12 +1680,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <div class="work__item work__item--small fadein delay-2">
         <div class="work__item-inner">
           <picture>
-            <source srcset="curated-images/projects/UP CRONULLA-16-project.webp" type="image/webp">
-            <img class="img-primary" src="curated-images/projects/UP CRONULLA-16-project.jpg" alt="Residential Garden Transformation" loading="lazy" />
+            <source srcset="curated-images/projects/UP%20CRONULLA-16-project.webp" type="image/webp">
+            <img class="img-primary" src="curated-images/projects/UP%20CRONULLA-16-project.jpg" alt="Residential Garden Transformation" loading="lazy" />
           </picture>
           <picture>
-            <source srcset="curated-images/projects/UP CRONULLA-18-project.webp" type="image/webp">
-            <img class="img-hover" src="curated-images/projects/UP CRONULLA-18-project.jpg" alt="Commercial Lobby Planter Installation" loading="lazy" />
+            <source srcset="curated-images/projects/UP%20CRONULLA-18-project.webp" type="image/webp">
+            <img class="img-hover" src="curated-images/projects/UP%20CRONULLA-18-project.jpg" alt="Commercial Lobby Planter Installation" loading="lazy" />
           </picture>
         </div>
         <div class="work__item-content">
@@ -1697,12 +1697,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <div class="work__item work__item--small fadein delay-1">
         <div class="work__item-inner">
           <picture>
-            <source srcset="curated-images/projects/UP CRONULLA-20-project.webp" type="image/webp">
-            <img class="img-primary" src="curated-images/projects/UP CRONULLA-20-project.jpg" alt="Premium Fibreglass Installation" loading="lazy" />
+            <source srcset="curated-images/projects/UP%20CRONULLA-20-project.webp" type="image/webp">
+            <img class="img-primary" src="curated-images/projects/UP%20CRONULLA-20-project.jpg" alt="Premium Fibreglass Installation" loading="lazy" />
           </picture>
           <picture>
-            <source srcset="curated-images/projects/UP CRONULLA-24-project.webp" type="image/webp">
-            <img class="img-hover" src="curated-images/projects/UP CRONULLA-24-project.jpg" alt="Large Format Planter Collection" loading="lazy" />
+            <source srcset="curated-images/projects/UP%20CRONULLA-24-project.webp" type="image/webp">
+            <img class="img-hover" src="curated-images/projects/UP%20CRONULLA-24-project.jpg" alt="Large Format Planter Collection" loading="lazy" />
           </picture>
         </div>
         <div class="work__item-content">
@@ -1714,12 +1714,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <div class="work__item work__item--small fadein delay-2">
         <div class="work__item-inner">
           <picture>
-            <source srcset="curated-images/projects/UP CRONULLA-26-project.webp" type="image/webp">
-            <img class="img-primary" src="curated-images/projects/UP CRONULLA-26-project.jpg" alt="GRC Lobby Planter Installation" loading="lazy" />
+            <source srcset="curated-images/projects/UP%20CRONULLA-26-project.webp" type="image/webp">
+            <img class="img-primary" src="curated-images/projects/UP%20CRONULLA-26-project.jpg" alt="GRC Lobby Planter Installation" loading="lazy" />
           </picture>
           <picture>
-            <source srcset="curated-images/projects/UP CRONULLA-28-project.webp" type="image/webp">
-            <img class="img-hover" src="curated-images/projects/UP CRONULLA-28-project.jpg" alt="Fibre Cement Premium Collection" loading="lazy" />
+            <source srcset="curated-images/projects/UP%20CRONULLA-28-project.webp" type="image/webp">
+            <img class="img-hover" src="curated-images/projects/UP%20CRONULLA-28-project.jpg" alt="Fibre Cement Premium Collection" loading="lazy" />
           </picture>
         </div>
         <div class="work__item-content">
