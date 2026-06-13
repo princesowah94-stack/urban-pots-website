@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, max-scale=1" />
-<title>Urban Pots — Redesign Mockup v3 (Spaceful-style)</title>
+<title>Urban Pots — Redesign Mockup v4 (Sowah Studio)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -266,30 +266,73 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   padding-bottom: clamp(3.5rem, 7vw, 7rem);
   overflow: hidden;
 }
-.hero__bg {
-  position: absolute; inset: 0;
-  background-image: url('https://www.urbanpots.com.au/cdn/shop/files/3d4b103a-ef37-42e6-9690-867543cbd071_1200x.jpg?v=1758677890');
-  background-size: cover;
-  background-position: center;
-  transform: scale(1.06);
-  transition: transform 10s var(--ease);
-  will-change: transform;
+
+/* Carousel Slides */
+.hero__carousel {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
-.hero__bg.loaded { transform: scale(1); }
+.hero__slide {
+  position: absolute;
+  inset: 0;
+  background-size: contain;
+  background-position: center center;
+  background-color: var(--c-dark);
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+.hero__slide--active {
+  opacity: 1;
+}
+
+/* Navigation Dots */
+.hero__nav {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: 1rem;
+}
+.hero__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.hero__dot--active {
+  width: 24px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.9);
+}
+.hero__dot:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
 .hero__overlay {
-  position: absolute; inset: 0;
+  position: absolute;
+  inset: 0;
   background: linear-gradient(
     155deg,
-    rgba(12,10,8,0.04) 0%,
-    rgba(12,10,8,0.48) 50%,
-    rgba(12,10,8,0.82) 100%
+    rgba(12, 10, 8, 0.04) 0%,
+    rgba(12, 10, 8, 0.48) 50%,
+    rgba(12, 10, 8, 0.82) 100%
   );
+  z-index: 2;
 }
+
 .hero__content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   max-width: 840px;
 }
+
 .hero__eyebrow {
   display: inline-flex;
   align-items: center;
@@ -302,50 +345,133 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: var(--c-stone);
   margin-bottom: 1.5rem;
 }
+
 .hero__eyebrow::before {
   content: '';
-  width: 24px; height: 1px;
+  width: 24px;
+  height: 1px;
   background: var(--c-stone);
 }
+
 .hero__h1 {
   font-family: var(--font-head);
-  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  font-size: clamp(2.5rem, 6vw, 5rem);
   font-weight: 600;
-  line-height: 0.93;
+  line-height: 1.1;
   letter-spacing: -0.025em;
   color: #fff;
-  margin-bottom: 1.75rem;
+  margin-bottom: 2rem;
 }
-.hero__h1 em { font-weight: 600; letter-spacing: -0.02em; color: var(--c-stone); }
-.hero__word { display: inline-block; }
-.hero__sub {
-  font-size: clamp(0.88rem, 1.3vw, 1rem);
-  font-weight: 300;
-  color: rgba(255,255,255,0.62);
-  max-width: 460px;
-  line-height: 1.8;
-  margin-bottom: 2.5rem;
+
+.hero__h1-line {
+  display: block;
+  margin-bottom: 0.5rem;
 }
-.hero__actions { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
 .hero__scroll {
   position: absolute;
-  bottom: 2.5rem; right: 2.5rem;
-  z-index: 2;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.6rem;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255, 255, 255, 0.35);
   font-size: 0.58rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
+
 .scroll-line {
-  width: 1px; height: 48px;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
   animation: scrollPulse 2.4s ease-in-out infinite;
 }
-@keyframes scrollPulse { 0%,100%{opacity:0.25} 50%{opacity:0.9} }
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 0.9; }
+}
+
+/* ─── CUSTOM SHOWCASE (NEW) ────────────────────────────────────── */
+.custom-showcase {
+  background: var(--c-bg);
+  padding: clamp(4rem, 8vw, 6rem) 0;
+}
+
+.custom-showcase__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 3rem;
+}
+
+.custom-showcase__card {
+  background: #fff;
+  border: 1px solid var(--c-border);
+  border-radius: 2px;
+  overflow: hidden;
+  transition: all 0.3s var(--ease);
+}
+
+.custom-showcase__card:hover {
+  border-color: var(--c-sage);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.custom-showcase__image {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  background: var(--c-bg);
+}
+
+.custom-showcase__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s var(--ease);
+}
+
+.custom-showcase__card:hover .custom-showcase__image img {
+  transform: scale(1.04);
+}
+
+.custom-showcase__content {
+  padding: 2rem;
+}
+
+.custom-showcase__title {
+  font-family: var(--font-head);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--c-brown-dk);
+  margin-bottom: 0.5rem;
+}
+
+.custom-showcase__desc {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--c-sage);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.custom-showcase__text {
+  font-size: 0.95rem;
+  color: var(--c-brown);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
 
 /* ─── TRUST BAR ────────────────────────────────────────────── */
 .trust-bar {
@@ -404,7 +530,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   letter-spacing: -0.025em;
   color: var(--c-brown-dk);
 }
-.methodology__h2 em { font-weight: 600; letter-spacing: -0.02em; color: var(--c-sage); }
+.methodology__h2 em { font-weight: 600; color: var(--c-sage); letter-spacing: -0.02em; }
 .methodology__right p {
   font-size: 0.95rem;
   font-weight: 300;
@@ -500,7 +626,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: #fff;
   margin-bottom: 1.5rem;
 }
-.custom-feature__body h2 em { font-weight: 600; letter-spacing: -0.02em; color: var(--c-stone); }
+.custom-feature__body h2 em { font-weight: 600; color: var(--c-stone); letter-spacing: -0.02em; }
 .custom-feature__body > p {
   font-size: 0.9rem;
   font-weight: 300;
@@ -549,7 +675,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   letter-spacing: -0.025em;
   color: var(--c-brown-dk);
 }
-.section-head h2 em { font-weight: 600; letter-spacing: -0.02em; color: var(--c-sage); }
+.section-head h2 em { font-weight: 600; color: var(--c-sage); letter-spacing: -0.02em; }
 .section-head p {
   font-size: 0.93rem;
   font-weight: 300;
@@ -617,7 +743,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   letter-spacing: -0.025em;
   color: var(--c-brown-dk);
 }
-.work__head h2 em { font-weight: 600; letter-spacing: -0.02em; color: var(--c-sage); }
+.work__head h2 em { font-weight: 600; color: var(--c-sage); letter-spacing: -0.02em; }
 .work-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -715,7 +841,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: #fff;
   margin-bottom: 1.5rem;
 }
-.locally-made__content h2 em { font-weight: 600; letter-spacing: -0.02em; color: var(--c-stone); }
+.locally-made__content h2 em { font-weight: 600; color: var(--c-stone); letter-spacing: -0.02em; }
 .locally-made__content p {
   font-size: 0.92rem;
   font-weight: 300;
@@ -750,7 +876,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: var(--c-brown-dk);
   margin-top: 0.75rem;
 }
-.testimonials__head h2 em { font-weight: 600; letter-spacing: -0.02em; color: var(--c-sage); }
+.testimonials__head h2 em { font-weight: 600; color: var(--c-sage); letter-spacing: -0.02em; }
 .testimonials__track-wrap { overflow: hidden; }
 .testimonials__track {
   display: flex;
@@ -773,8 +899,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .testimonial-card__quote {
   font-family: var(--font-head);
   font-size: 1.12rem;
-  font-weight: 400;
-  font-weight: 600; letter-spacing: -0.02em;
+  font-weight: 500;
   line-height: 1.7;
   color: var(--c-brown-dk);
   margin-bottom: 1.75rem;
@@ -895,6 +1020,226 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .cta-strip__actions .btn { align-self: flex-start; }
 .cta-strip__contact { font-size: 0.72rem; color: rgba(255,255,255,0.42); margin-top: 0.5rem; }
 
+/* ─── COMMERCIAL SOLUTIONS (NEW) ──────────────────────────────── */
+.commercial-solutions {
+  background: var(--c-dark);
+  color: #fff;
+  padding: clamp(4rem, 8vw, 6rem) 0;
+}
+
+.commercial-solutions__header {
+  max-width: 720px;
+  margin-bottom: 4rem;
+}
+
+.commercial-solutions__title {
+  font-family: var(--font-head);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.commercial-solutions__subheading {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--c-stone);
+  margin-bottom: 1rem;
+}
+
+.commercial-solutions__desc {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.commercial-solutions__features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+}
+
+.commercial-feature {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.commercial-feature__icon {
+  font-family: var(--font-head);
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--c-stone);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.commercial-feature h3 {
+  font-family: var(--font-head);
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+}
+
+.commercial-feature p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ─── DESIGNER COLLECTIONS (NEW) ─────────────────────────────── */
+.designer-collections {
+  background: var(--c-bg);
+  padding: clamp(4rem, 8vw, 6rem) 0;
+}
+
+.designer-collections__header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.designer-collections__title {
+  font-family: var(--font-head);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 600;
+  color: var(--c-brown-dk);
+  margin-bottom: 1rem;
+}
+
+.designer-collections__desc {
+  font-size: 1rem;
+  color: var(--c-brown);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.designer-collections__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.collection-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: flex-end;
+  text-decoration: none;
+  transition: all 0.3s var(--ease);
+  border: 1px solid var(--c-border);
+}
+
+.collection-card__bg {
+  position: absolute;
+  inset: 0;
+  background: var(--c-stone);
+  opacity: 0.6;
+  z-index: 0;
+  transition: opacity 0.3s var(--ease);
+}
+
+.collection-card--1 .collection-card__bg { background: linear-gradient(135deg, #C9B99A 0%, #B89F7B 100%); }
+.collection-card--2 .collection-card__bg { background: linear-gradient(135deg, #7A8C5E 0%, #5C6D48 100%); }
+.collection-card--3 .collection-card__bg { background: linear-gradient(135deg, #7F593E 0%, #5C3D27 100%); }
+.collection-card--4 .collection-card__bg { background: linear-gradient(135deg, #B8A68A 0%, #9A8C78 100%); }
+.collection-card--coming .collection-card__bg { background: linear-gradient(135deg, #E0D5C7 0%, #D1C8BA 100%); opacity: 0.4; }
+
+.collection-card:hover .collection-card__bg {
+  opacity: 0.8;
+}
+
+.collection-card__content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  color: #fff;
+  width: 100%;
+}
+
+.collection-card--coming .collection-card__content {
+  color: var(--c-brown);
+}
+
+.collection-card h3 {
+  font-family: var(--font-head);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.collection-card p {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+/* ─── GOOGLE REVIEWS (NEW) ────────────────────────────────────── */
+.google-reviews {
+  background: #fff;
+  padding: clamp(4rem, 8vw, 6rem) 0;
+}
+
+.google-reviews__header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.google-reviews__title {
+  font-family: var(--font-head);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 600;
+  color: var(--c-brown-dk);
+  margin-bottom: 1rem;
+}
+
+.google-reviews__desc {
+  font-size: 1rem;
+  color: var(--c-brown);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.google-reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.review-card {
+  background: var(--c-bg);
+  padding: 2rem;
+  border-radius: 2px;
+  border: 1px solid var(--c-border);
+}
+
+.review-rating {
+  color: #FFB81C;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.15em;
+}
+
+.review-text {
+  font-size: 0.95rem;
+  color: var(--c-brown);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.review-author {
+  font-weight: 600;
+  color: var(--c-brown-dk);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.review-badge {
+  font-size: 0.8rem;
+  color: #999;
+  margin: 0;
+}
+
 /* ─── FOOTER ─────────────────────────────────────────────────── */
 .site-footer { background: #0F0D0B; color: rgba(255,255,255,0.45); padding: 5.5rem 0 2.5rem; }
 .footer-top {
@@ -909,7 +1254,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .footer-brand__tagline {
   font-family: var(--font-head);
   font-size: 1.05rem;
-  font-weight: 600; letter-spacing: -0.02em;
+  font-weight: 500;
   color: var(--c-stone);
   margin-bottom: 0.75rem;
 }
@@ -995,7 +1340,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 <!-- MOCKUP BANNER -->
 <div class="mockup-banner">
-  ✦ DESIGN MOCKUP v3 — Sowah Studio × Urban Pots &nbsp;·&nbsp; Spaceful-inspired &nbsp;·&nbsp; Lenis smooth scroll &nbsp;·&nbsp; Dual-image hover on project cards &nbsp;·&nbsp; Logos + testimonials are placeholders
+  ✦ DESIGN MOCKUP v4 — Sowah Studio × Urban Pots &nbsp;·&nbsp; Poppins typography &nbsp;·&nbsp; Hero carousel &nbsp;·&nbsp; Custom showcase &nbsp;·&nbsp; Commercial solutions &nbsp;·&nbsp; Google reviews &nbsp;·&nbsp; Logos + testimonials are placeholders
 </div>
 
 <!-- NAV -->
@@ -1005,11 +1350,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <img src="https://cdn.shopify.com/s/files/1/0748/4152/2498/files/urban_pots_logo__white_150.png?v=1684274691" alt="Urban Pots" width="120" height="30" />
     </a>
     <div class="nav-links">
-      <a href="/shop.html">Shop</a>
+      <a href="/shop.html">Shop Now</a>
       <a href="/pages/custom-planter-boxes.html">Custom Planters</a>
-      <a href="/pages/commercial-planters.html">Projects</a>
-      <a href="/pages/grc-planters.html">Materials</a>
-      <a href="/pages/about.html">About</a>
+      <a href="/pages/custom-cylinders.html">Custom Cylinders</a>
+      <a href="/pages/commercial-planters.html">Commercial</a>
+      <a href="/pages/trade.html">Trade</a>
+      <a href="/pages/contact.html">Contact</a>
+      <a href="/pages/find-us.html">Find Us</a>
+      <a href="/pages/about.html">About Us</a>
     </div>
     <div class="nav-actions">
       <a href="mailto:info@urbanpots.com.au" class="nav-cta">Get a Quote</a>
@@ -1023,11 +1371,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <!-- MOBILE NAV -->
 <div class="nav-mobile" id="navMobile" aria-hidden="true">
   <ul class="nav-mobile__links">
-    <li><a href="/shop.html">Shop</a></li>
+    <li><a href="/shop.html">Shop Now</a></li>
     <li><a href="/pages/custom-planter-boxes.html">Custom Planters</a></li>
-    <li><a href="/pages/commercial-planters.html">Projects</a></li>
-    <li><a href="/pages/grc-planters.html">Materials</a></li>
-    <li><a href="/pages/about.html">About</a></li>
+    <li><a href="/pages/custom-cylinders.html">Custom Cylinders</a></li>
+    <li><a href="/pages/commercial-planters.html">Commercial</a></li>
+    <li><a href="/pages/trade.html">Trade</a></li>
+    <li><a href="/pages/contact.html">Contact</a></li>
+    <li><a href="/pages/find-us.html">Find Us</a></li>
+    <li><a href="/pages/about.html">About Us</a></li>
   </ul>
   <div class="nav-mobile__footer">
     <a href="mailto:info@urbanpots.com.au" class="btn btn--stone">Get a Quote</a>
@@ -1037,30 +1388,82 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   </div>
 </div>
 
-<!-- HERO -->
+<!-- HERO WITH ROTATING CAROUSEL -->
 <section class="hero" id="hero">
-  <div class="hero__bg" id="heroBg"></div>
+  <!-- Carousel Container -->
+  <div class="hero__carousel" id="heroCarousel">
+    <div class="hero__slide hero__slide--active" style="background-image: url('curated-images/heroes/URBAN%20POTS-4608-hero.jpg')"></div>
+    <div class="hero__slide" style="background-image: url('curated-images/heroes/URBAN%20POTS-4617-hero.jpg')"></div>
+    <div class="hero__slide" style="background-image: url('curated-images/heroes/URBAN%20POTS-4546-hero.jpg')"></div>
+    <div class="hero__slide" style="background-image: url('curated-images/heroes/URBAN%20POTS-4551-hero.jpg')"></div>
+    <div class="hero__slide" style="background-image: url('curated-images/heroes/URBAN%20POTS-4566-hero.jpg')"></div>
+  </div>
+
+  <!-- Navigation Dots -->
+  <div class="hero__nav" id="heroNav">
+    <button class="hero__dot hero__dot--active" data-slide="0" aria-label="Slide 1"></button>
+    <button class="hero__dot" data-slide="1" aria-label="Slide 2"></button>
+    <button class="hero__dot" data-slide="2" aria-label="Slide 3"></button>
+    <button class="hero__dot" data-slide="3" aria-label="Slide 4"></button>
+    <button class="hero__dot" data-slide="4" aria-label="Slide 5"></button>
+  </div>
+
   <div class="hero__overlay"></div>
   <div class="container">
     <div class="hero__content">
-      <p class="hero__eyebrow" id="heroEyebrow">Handcrafted in Western Sydney</p>
-      <h1 class="hero__h1" id="heroH1">
-        <span class="hero__word">Spaces</span>&nbsp;<span class="hero__word">That</span><br>
-        <em class="hero__word">Demand</em><br>
-        <span class="hero__word">to</span>&nbsp;<span class="hero__word">Be</span>&nbsp;<span class="hero__word">Noticed</span>
+      <p class="hero__eyebrow">Premium Collection</p>
+      <h1 class="hero__h1">
+        <span class="hero__h1-line">Designer Pots for Every Space</span>
+        <span class="hero__h1-line">Premium Locally Made Custom Planters</span>
+        <span class="hero__h1-line">Commercial Planter Solutions</span>
       </h1>
-      <p class="hero__sub" id="heroSub">
-        Premium custom planter boxes for property developers, architects, landscapers, and discerning homeowners. Manufactured locally in Western Sydney.
-      </p>
-      <div class="hero__actions" id="heroActions">
-        <a href="/pages/custom-planter-boxes.html" class="btn btn--stone">Explore Custom Planters</a>
-        <a href="/pages/commercial-planters.html" class="arrow-link arrow-link--light">View Projects →</a>
+      <div class="hero__actions">
+        <a href="/shop.html" class="btn btn--dark">Shop Designer Pots</a>
+        <a href="/pages/custom-planter-boxes.html" class="btn btn--stone">Custom Planter Boxes</a>
+        <a href="/pages/commercial-planters.html" class="btn btn--stone">Commercial Solutions</a>
       </div>
     </div>
   </div>
   <div class="hero__scroll">
     <div class="scroll-line"></div>
     <span>Scroll</span>
+  </div>
+</section>
+
+<!-- SECTION 2: CUSTOM PLANTERS SHOWCASE (NEW) -->
+<section class="custom-showcase">
+  <div class="container">
+    <div class="custom-showcase__grid">
+      <div class="custom-showcase__card fadein">
+        <div class="custom-showcase__image">
+          <picture>
+            <source srcset="curated-images/heroes/URBAN%20POTS-4608-hero.webp" type="image/webp">
+            <img src="curated-images/heroes/URBAN%20POTS-4608-hero.jpg" alt="Custom planter boxes installation trusted by developers" loading="lazy" />
+          </picture>
+        </div>
+        <div class="custom-showcase__content">
+          <h3 class="custom-showcase__title">Custom Planter Boxes</h3>
+          <p class="custom-showcase__desc">Bespoke Solutions Trusted by Developers & Architects</p>
+          <p class="custom-showcase__text">Precision-built rectangular and modular planters custom-designed for commercial projects, residential installations, and landscape architects.</p>
+          <a href="/pages/custom-planter-boxes.html" class="arrow-link">Explore Boxes →</a>
+        </div>
+      </div>
+
+      <div class="custom-showcase__card fadein delay-1">
+        <div class="custom-showcase__image">
+          <picture>
+            <source srcset="curated-images/heroes/URBAN%20POTS-4546-hero.webp" type="image/webp">
+            <img src="curated-images/heroes/URBAN%20POTS-4546-hero.jpg" alt="Custom cylinder planter with palm tree" loading="lazy" />
+          </picture>
+        </div>
+        <div class="custom-showcase__content">
+          <h3 class="custom-showcase__title">Custom Cylinders</h3>
+          <p class="custom-showcase__desc">Dramatic Focal Points for High-Impact Projects</p>
+          <p class="custom-showcase__text">Statement pieces designed for feature trees and commercial precincts. Bold, sculptural, and engineered for maximum visual impact.</p>
+          <a href="/pages/custom-cylinders.html" class="arrow-link">Explore Cylinders →</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1131,8 +1534,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <section class="custom-feature" id="custom">
   <div class="custom-feature__grid">
     <div class="custom-feature__img">
-      <img class="img-primary" src="https://www.urbanpots.com.au/cdn/shop/files/Urbanpots_-_54_1200x.jpg?v=1758676406" alt="Custom planter box installation" loading="lazy" />
-      <img class="img-hover" src="https://www.urbanpots.com.au/cdn/shop/files/Screenshot_2025-09-29_at_8.22.00_pm_1200x.png?v=1759164065" alt="Custom planter box project" loading="lazy" />
+      <picture>
+        <source srcset="curated-images/heroes/URBAN%20POTS-4608-hero.webp" type="image/webp">
+        <img class="img-primary" src="curated-images/heroes/URBAN%20POTS-4608-hero.jpg" alt="Custom planter box installation with thriving garden" loading="lazy" />
+      </picture>
+      <picture>
+        <source srcset="curated-images/heroes/URBAN%20POTS-4617-hero.webp" type="image/webp">
+        <img class="img-hover" src="curated-images/heroes/URBAN%20POTS-4617-hero.jpg" alt="Stunning custom planter project in progress" loading="lazy" />
+      </picture>
       <span class="custom-feature__img-caption">Custom Fibre Cement — Commercial Project</span>
     </div>
     <div class="custom-feature__body">
@@ -1184,7 +1593,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <div class="materials-grid">
       <div class="material-card fadein">
         <div class="material-card__img-wrap">
-          <img class="material-card__img" src="https://www.urbanpots.com.au/cdn/shop/files/cdeab9b6-40a0-4863-8a96-4b3992d02594_1200x.jpg?v=1758677744" alt="Fibre Cement Planters" loading="lazy" />
+          <picture>
+            <source srcset="curated-images/galleries/1C9A0461-gallery.webp" type="image/webp">
+            <img class="material-card__img" src="curated-images/galleries/1C9A0461-gallery.jpg" alt="Premium Fibre Cement Planter Finish" loading="lazy" />
+          </picture>
         </div>
         <div class="material-card__body">
           <span class="material-card__tag">Standard</span>
@@ -1194,7 +1606,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       </div>
       <div class="material-card fadein delay-1">
         <div class="material-card__img-wrap">
-          <img class="material-card__img" src="https://www.urbanpots.com.au/cdn/shop/files/d8ce80d0d3d5e79873da05216af0bff4_1200x.jpg?v=1758865110" alt="Fibreglass Planters" loading="lazy" />
+          <picture>
+            <source srcset="curated-images/galleries/1C9A0462-gallery.webp" type="image/webp">
+            <img class="material-card__img" src="curated-images/galleries/1C9A0462-gallery.jpg" alt="Durable Fibreglass Planter Material" loading="lazy" />
+          </picture>
         </div>
         <div class="material-card__body">
           <span class="material-card__tag">Premium</span>
@@ -1204,7 +1619,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       </div>
       <div class="material-card fadein delay-2">
         <div class="material-card__img-wrap">
-          <img class="material-card__img" src="https://www.urbanpots.com.au/cdn/shop/collections/Urban_pots_87_of_93_600x.jpg?v=1756447923" alt="GRC Planters" loading="lazy" />
+          <picture>
+            <source srcset="curated-images/galleries/1C9A0463-gallery.webp" type="image/webp">
+            <img class="material-card__img" src="curated-images/galleries/1C9A0463-gallery.jpg" alt="Elegant GRC Planter Collection" loading="lazy" />
+          </picture>
         </div>
         <div class="material-card__body">
           <span class="material-card__tag">On Request</span>
@@ -1227,8 +1645,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <!-- Large card -->
       <div class="work__item work__item--large fadein">
         <div class="work__item-inner">
-          <img class="img-primary" src="https://www.urbanpots.com.au/cdn/shop/files/Screenshot_2025-09-29_at_8.22.00_pm_1200x.png?v=1759164065" alt="Commercial development" loading="lazy" />
-          <img class="img-hover" src="https://www.urbanpots.com.au/cdn/shop/files/Screenshot_2025-09-10_at_8.04.29_pm_1200x.png?v=1758642141" alt="Commercial development detail" loading="lazy" />
+          <picture>
+            <source srcset="curated-images/projects/UP%20CRONULLA-6-project.webp" type="image/webp">
+            <img class="img-primary" src="curated-images/projects/UP%20CRONULLA-6-project.jpg" alt="Cronulla Commercial Plaza Installation" loading="lazy" />
+          </picture>
+          <picture>
+            <source srcset="curated-images/projects/UP%20CRONULLA-10-project.webp" type="image/webp">
+            <img class="img-hover" src="curated-images/projects/UP%20CRONULLA-10-project.jpg" alt="Cronulla Landscape Design Detail" loading="lazy" />
+          </picture>
         </div>
         <div class="work__item-content">
           <div class="work__item-meta">Commercial Development <span class="delimeter">|</span> Sydney CBD</div>
@@ -1238,8 +1662,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <!-- Small card 1 -->
       <div class="work__item work__item--small fadein delay-1">
         <div class="work__item-inner">
-          <img class="img-primary" src="https://www.urbanpots.com.au/cdn/shop/files/image0_1200x.jpg?v=1761812045" alt="Urban landscaping" loading="lazy" />
-          <img class="img-hover" src="https://www.urbanpots.com.au/cdn/shop/files/Urbanpots_-_54_1200x.jpg?v=1758676406" alt="Custom planters" loading="lazy" />
+          <picture>
+            <source srcset="curated-images/projects/UP%20CRONULLA-12-project.webp" type="image/webp">
+            <img class="img-primary" src="curated-images/projects/UP%20CRONULLA-12-project.jpg" alt="Urban Landscaping Project Showcase" loading="lazy" />
+          </picture>
+          <picture>
+            <source srcset="curated-images/projects/UP%20CRONULLA-14-project.webp" type="image/webp">
+            <img class="img-hover" src="curated-images/projects/UP%20CRONULLA-14-project.jpg" alt="Custom Planter Integration" loading="lazy" />
+          </picture>
         </div>
         <div class="work__item-content">
           <div class="work__item-meta">Landscaping <span class="delimeter">|</span> North Shore</div>
@@ -1249,8 +1679,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <!-- Small card 2 -->
       <div class="work__item work__item--small fadein delay-2">
         <div class="work__item-inner">
-          <img class="img-primary" src="https://www.urbanpots.com.au/cdn/shop/collections/Urban_pots_73_of_93_600x.jpg?v=1756432404" alt="Residential project" loading="lazy" />
-          <img class="img-hover" src="https://www.urbanpots.com.au/cdn/shop/collections/Urban_pots_6_of_93_600x.jpg?v=1756447708" alt="Commercial lobby planters" loading="lazy" />
+          <picture>
+            <source srcset="curated-images/projects/UP%20CRONULLA-16-project.webp" type="image/webp">
+            <img class="img-primary" src="curated-images/projects/UP%20CRONULLA-16-project.jpg" alt="Residential Garden Transformation" loading="lazy" />
+          </picture>
+          <picture>
+            <source srcset="curated-images/projects/UP%20CRONULLA-18-project.webp" type="image/webp">
+            <img class="img-hover" src="curated-images/projects/UP%20CRONULLA-18-project.jpg" alt="Commercial Lobby Planter Installation" loading="lazy" />
+          </picture>
         </div>
         <div class="work__item-content">
           <div class="work__item-meta">Residential <span class="delimeter">|</span> Eastern Suburbs</div>
@@ -1260,8 +1696,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <!-- Small card 3 -->
       <div class="work__item work__item--small fadein delay-1">
         <div class="work__item-inner">
-          <img class="img-primary" src="https://www.urbanpots.com.au/cdn/shop/files/d8ce80d0d3d5e79873da05216af0bff4_1200x.jpg?v=1758865110" alt="Fibreglass planters" loading="lazy" />
-          <img class="img-hover" src="https://www.urbanpots.com.au/cdn/shop/collections/Urban_pots_21_of_93_600x.jpg?v=1687499552" alt="Large format collection" loading="lazy" />
+          <picture>
+            <source srcset="curated-images/projects/UP%20CRONULLA-20-project.webp" type="image/webp">
+            <img class="img-primary" src="curated-images/projects/UP%20CRONULLA-20-project.jpg" alt="Premium Fibreglass Installation" loading="lazy" />
+          </picture>
+          <picture>
+            <source srcset="curated-images/projects/UP%20CRONULLA-24-project.webp" type="image/webp">
+            <img class="img-hover" src="curated-images/projects/UP%20CRONULLA-24-project.jpg" alt="Large Format Planter Collection" loading="lazy" />
+          </picture>
         </div>
         <div class="work__item-content">
           <div class="work__item-meta">Developer Project <span class="delimeter">|</span> Western Sydney</div>
@@ -1271,8 +1713,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <!-- Small card 4 -->
       <div class="work__item work__item--small fadein delay-2">
         <div class="work__item-inner">
-          <img class="img-primary" src="https://www.urbanpots.com.au/cdn/shop/collections/Urban_pots_6_of_93_600x.jpg?v=1756447708" alt="GRC lobby planters" loading="lazy" />
-          <img class="img-hover" src="https://www.urbanpots.com.au/cdn/shop/files/cdeab9b6-40a0-4863-8a96-4b3992d02594_1200x.jpg?v=1758677744" alt="Fibre cement collection" loading="lazy" />
+          <picture>
+            <source srcset="curated-images/projects/UP%20CRONULLA-26-project.webp" type="image/webp">
+            <img class="img-primary" src="curated-images/projects/UP%20CRONULLA-26-project.jpg" alt="GRC Lobby Planter Installation" loading="lazy" />
+          </picture>
+          <picture>
+            <source srcset="curated-images/projects/UP%20CRONULLA-28-project.webp" type="image/webp">
+            <img class="img-hover" src="curated-images/projects/UP%20CRONULLA-28-project.jpg" alt="Fibre Cement Premium Collection" loading="lazy" />
+          </picture>
         </div>
         <div class="work__item-content">
           <div class="work__item-meta">Commercial <span class="delimeter">|</span> Sydney CBD</div>
@@ -1420,6 +1868,137 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   </div>
 </section>
 
+<!-- SECTION 3: COMMERCIAL PLANTER SOLUTIONS (NEW) -->
+<section class="commercial-solutions">
+  <div class="container">
+    <div class="commercial-solutions__header fadein">
+      <h2 class="commercial-solutions__title">Commercial Planter Solutions</h2>
+      <p class="commercial-solutions__subheading">Trusted by Sydney's Leading Developers, Builders, Landscapers & Architects</p>
+      <p class="commercial-solutions__desc">From concept to installation, we deliver bespoke planter solutions at scale. Local Sydney manufacturing ensures quality control, reliability, and support throughout your project.</p>
+    </div>
+
+    <div class="commercial-solutions__features fadein">
+      <div class="commercial-feature">
+        <div class="commercial-feature__icon">01</div>
+        <h3>Custom Manufacturing at Scale</h3>
+        <p>We handle projects of any size, from single installations to large commercial precincts. Our Western Sydney facility is equipped for rapid prototyping and bulk production.</p>
+      </div>
+      <div class="commercial-feature">
+        <div class="commercial-feature__icon">02</div>
+        <h3>Project Consultation & Support</h3>
+        <p>Work with our team from brief to installation. We review specifications, suggest material options, and manage timelines with precision.</p>
+      </div>
+      <div class="commercial-feature">
+        <div class="commercial-feature__icon">03</div>
+        <h3>Local Sydney Production</h3>
+        <p>Manufactured in our Western Sydney yard — never imported. Full visibility into your project from design through to final delivery.</p>
+      </div>
+      <div class="commercial-feature">
+        <div class="commercial-feature__icon">04</div>
+        <h3>Proven Track Record</h3>
+        <p>500+ projects delivered across residential, commercial, and hospitality sectors. Trusted by architects, developers, and landscape designers.</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="/pages/commercial-planters.html" class="btn btn--dark">Explore Commercial Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: DESIGNER POTS COLLECTIONS (NEW) -->
+<section class="designer-collections">
+  <div class="container">
+    <div class="designer-collections__header fadein">
+      <h2 class="designer-collections__title">Shop Designer Pots</h2>
+      <p class="designer-collections__desc">Curated imported collections for discerning homeowners and designers.</p>
+    </div>
+
+    <div class="designer-collections__grid fadein">
+      <a href="/shop.html?collection=lightweight" class="collection-card collection-card--1">
+        <div class="collection-card__bg"></div>
+        <div class="collection-card__content">
+          <h3>Lightweight Designer Collection</h3>
+          <p>Versatile & Modern</p>
+        </div>
+      </a>
+
+      <a href="/shop.html?collection=terrazzo" class="collection-card collection-card--2">
+        <div class="collection-card__bg"></div>
+        <div class="collection-card__content">
+          <h3>Terrazzo Collection</h3>
+          <p>Contemporary Elegance</p>
+        </div>
+      </a>
+
+      <a href="/shop.html?collection=atlantis" class="collection-card collection-card--3">
+        <div class="collection-card__bg"></div>
+        <div class="collection-card__content">
+          <h3>Modern Atlantis Collection</h3>
+          <p>Sculptural Design</p>
+        </div>
+      </a>
+
+      <a href="/shop.html?collection=thai-limestone" class="collection-card collection-card--4">
+        <div class="collection-card__bg"></div>
+        <div class="collection-card__content">
+          <h3>Thai Limestone Collection</h3>
+          <p>Natural Texture</p>
+        </div>
+      </a>
+
+      <div class="collection-card collection-card--coming">
+        <div class="collection-card__bg"></div>
+        <div class="collection-card__content">
+          <h3>Zion Series</h3>
+          <p>Coming Soon</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="/shop.html" class="arrow-link">Browse All Collections →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: GOOGLE REVIEWS (NEW) -->
+<section class="google-reviews">
+  <div class="container">
+    <div class="google-reviews__header fadein">
+      <h2 class="google-reviews__title">Trusted by Our Clients</h2>
+      <p class="google-reviews__desc">Real feedback from developers, builders, and homeowners who've partnered with us.</p>
+    </div>
+
+    <div class="google-reviews__grid fadein">
+      <div class="review-card">
+        <div class="review-rating">★★★★★</div>
+        <p class="review-text">"Urban Pots delivered exactly what we needed for our commercial development. Professional, reliable, and the quality is outstanding."</p>
+        <p class="review-author">David M. — Developer, Sydney</p>
+        <p class="review-badge">Verified Review</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-rating">★★★★★</div>
+        <p class="review-text">"Local manufacturing means faster turnaround and personalized attention. Highly recommend Urban Pots for any custom project."</p>
+        <p class="review-author">Sarah L. — Landscape Designer, NSW</p>
+        <p class="review-badge">Verified Review</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-rating">★★★★★</div>
+        <p class="review-text">"We've used Urban Pots for multiple projects. Consistent quality, excellent communication, and they always deliver on time."</p>
+        <p class="review-author">Michael T. — Builder, Western Sydney</p>
+        <p class="review-badge">Verified Review</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 2.5rem;">
+      <a href="https://share.google/yCBFgZFLhsBjtKJwI" target="_blank" rel="noopener noreferrer" class="btn btn--dark">View All Reviews on Google</a>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer class="site-footer">
   <div class="container">
@@ -1505,15 +2084,67 @@ lenis.on('scroll', ({ scroll }) => {
   nav.classList.toggle('scrolled', scroll > 80);
 });
 
-// ── HERO ENTRANCE (GSAP word stagger) ───────────────────────
-setTimeout(() => document.getElementById('heroBg').classList.add('loaded'), 60);
+// ── HERO CAROUSEL ───────────────────────────────────────────
+(function() {
+  const carousel = document.getElementById('heroCarousel');
+  const slides = carousel.querySelectorAll('.hero__slide');
+  const dots = document.querySelectorAll('.hero__dot');
+  const nav = document.getElementById('heroNav');
 
+  let currentSlide = 0;
+  let autoTimer;
+  let isPaused = false;
+
+  function showSlide(n) {
+    slides.forEach((slide, idx) => {
+      slide.classList.toggle('hero__slide--active', idx === n);
+    });
+    dots.forEach((dot, idx) => {
+      dot.classList.toggle('hero__dot--active', idx === n);
+    });
+    currentSlide = n;
+  }
+
+  function nextSlide() {
+    if (!isPaused) {
+      showSlide((currentSlide + 1) % slides.length);
+    }
+  }
+
+  function startAuto() {
+    autoTimer = setInterval(nextSlide, 5500);
+  }
+
+  function pauseAuto() {
+    clearInterval(autoTimer);
+    isPaused = true;
+    setTimeout(() => {
+      isPaused = false;
+      startAuto();
+    }, 8000);
+  }
+
+  // Dot navigation
+  dots.forEach((dot, idx) => {
+    dot.addEventListener('click', () => {
+      showSlide(idx);
+      pauseAuto();
+    });
+  });
+
+  // Hover pause/resume
+  nav.addEventListener('mouseenter', () => clearInterval(autoTimer));
+  nav.addEventListener('mouseleave', startAuto);
+
+  startAuto();
+})();
+
+// ── HERO ENTRANCE (GSAP word stagger) ───────────────────────
 gsap.registerPlugin(ScrollTrigger);
 gsap.timeline({ defaults: { ease: 'power3.out' } })
-  .from('#heroEyebrow', { opacity: 0, y: 18, duration: 0.8, delay: 0.3 })
-  .from('.hero__word',  { opacity: 0, y: 36, stagger: 0.07, duration: 0.95 }, '-=0.4')
-  .from('#heroSub',     { opacity: 0, y: 18, duration: 0.8 }, '-=0.5')
-  .from('#heroActions', { opacity: 0, y: 18, duration: 0.75 }, '-=0.4');
+  .from('.hero__eyebrow', { opacity: 0, y: 18, duration: 0.8, delay: 0.3 })
+  .from('.hero__h1-line',  { opacity: 0, y: 36, stagger: 0.12, duration: 0.95 }, '-=0.4')
+  .from('.hero__actions', { opacity: 0, y: 18, duration: 0.75 }, '-=0.4');
 
 // ── INTERSECTIONOBSERVER .fadein → .inView (Spaceful exact) ──
 const fadeObserver = new IntersectionObserver((entries) => {
