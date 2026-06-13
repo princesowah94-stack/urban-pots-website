@@ -449,6 +449,77 @@
     .delay-1 { transition-delay: 0.1s; }
     .delay-2 { transition-delay: 0.2s; }
     .delay-3 { transition-delay: 0.3s; }
+
+    .logos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+      align-items: center;
+    }
+
+    .logo-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      background: #fff;
+      border: 1px solid #E8E3DA;
+      border-radius: 2px;
+      filter: grayscale(1);
+      opacity: 0.65;
+      transition: filter 0.25s, opacity 0.25s;
+    }
+
+    .logo-card:hover { filter: grayscale(0); opacity: 1; }
+    .logo-card img { max-width: 130px; height: auto; display: block; }
+
+    .manufacturing-features { margin-top: 3rem; }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .feature-item {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      padding: 1.5rem;
+      background: #fff;
+      border: 1px solid #E8E3DA;
+      border-radius: 2px;
+    }
+
+    .feature-icon {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: var(--c-sage);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .feature-content h4 {
+      font-family: var(--font-head);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--c-brown-dk);
+      margin: 0 0 0.4rem;
+    }
+
+    .feature-content p {
+      font-size: 0.9rem;
+      color: var(--c-brown);
+      line-height: 1.65;
+      margin: 0;
+    }
   </style>
 </head>
 <body>
@@ -508,8 +579,37 @@
     <div class="hero__content">
       <p class="hero__eyebrow">Made To Order</p>
       <h1 class="hero__h1">Custom <em>Cylinders</em></h1>
-      <p class="hero__sub">Perfect for large feature trees and commercial precincts. Design your custom cylinder in 3D, then submit your enquiry.</p>
+      <p class="hero__sub">Premium custom cylinders manufactured in Sydney. Locally built to spec for developers, landscapers, and commercial projects.</p>
       <a href="#configurator" class="hero__cta">Design Now →</a>
+    </div>
+  </div>
+</section>
+
+<!-- 1B. COMPANY LOGOS SECTION -->
+<section class="section section--light">
+  <div class="container">
+    <div class="section-head fadein">
+      <div>
+        <h2>Trusted by <em>Leading Companies</em></h2>
+      </div>
+      <div>
+        <p>Proven partner for Sydney's top developers, builders, and landscapers.</p>
+      </div>
+    </div>
+
+    <div class="logos-grid fadein">
+      <div class="logo-card">
+        <img src="https://via.placeholder.com/200x100?text=Logo+1" alt="Company logo" width="200" height="100" />
+      </div>
+      <div class="logo-card">
+        <img src="https://via.placeholder.com/200x100?text=Logo+2" alt="Company logo" width="200" height="100" />
+      </div>
+      <div class="logo-card">
+        <img src="https://via.placeholder.com/200x100?text=Logo+3" alt="Company logo" width="200" height="100" />
+      </div>
+      <div class="logo-card">
+        <img src="https://via.placeholder.com/200x100?text=Logo+4" alt="Company logo" width="200" height="100" />
+      </div>
     </div>
   </div>
 </section>
@@ -742,6 +842,117 @@
         </tr>
       </tbody>
     </table>
+  </div>
+</section>
+
+<!-- 5B. WHAT GOES INTO OUR CYLINDERS -->
+<section class="section section--light">
+  <div class="container">
+    <div class="section-head fadein">
+      <div>
+        <h2>What Goes Into <em>Our Cylinders</em></h2>
+      </div>
+      <div>
+        <p>Commercial-grade manufacturing meets meticulous craftsmanship. Every cylinder built to outlast the competition.</p>
+      </div>
+    </div>
+
+    <div class="manufacturing-features fadein">
+      <div class="feature-list">
+        <div class="feature-item delay-1">
+          <div class="feature-icon">✓</div>
+          <div class="feature-content">
+            <h4>Fibreglass, Fibre Cement or GRC Construction</h4>
+            <p>Choose the material that fits your project: lightweight fibreglass, durable fibre cement, or premium GRC for heritage and luxury installations.</p>
+          </div>
+        </div>
+        <div class="feature-item delay-2">
+          <div class="feature-icon">✓</div>
+          <div class="feature-content">
+            <h4>Waterproofing System and Primer Coating</h4>
+            <p>Complete waterproofing and primer coat ensure long-lasting protection from Sydney's harsh weather.</p>
+          </div>
+        </div>
+        <div class="feature-item delay-3">
+          <div class="feature-icon">✓</div>
+          <div class="feature-content">
+            <h4>Three Coats of Dulux Paint</h4>
+            <p>Standard or custom colour finish. Every cylinder gets three coats of premium Dulux paint for durability and aesthetic perfection.</p>
+          </div>
+        </div>
+        <div class="feature-item delay-4">
+          <div class="feature-icon">✓</div>
+          <div class="feature-content">
+            <h4>Precision Cut, Glued &amp; Reinforced</h4>
+            <p>Precision cut to size, professionally glued, and reinforced for long-lasting structural integrity under commercial loads.</p>
+          </div>
+        </div>
+        <div class="feature-item delay-1">
+          <div class="feature-icon">✓</div>
+          <div class="feature-content">
+            <h4>Integrated Drainage Holes</h4>
+            <p>Strategic drainage placement prevents water pooling and extends cylinder lifespan.</p>
+          </div>
+        </div>
+        <div class="feature-item delay-2">
+          <div class="feature-icon">✓</div>
+          <div class="feature-content">
+            <h4>Thick Reinforced Edging</h4>
+            <p>Heavy-duty edging resists damage from impact, weather, and installation handling.</p>
+          </div>
+        </div>
+        <div class="feature-item delay-3">
+          <div class="feature-icon">✓</div>
+          <div class="feature-content">
+            <h4>Large-Format Internal Reinforcement</h4>
+            <p>Cylinders exceeding 1 metre in diameter include internal structural reinforcement for maximum stability.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5C. GOOGLE REVIEWS SECTION -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="section-head fadein">
+      <div>
+        <h2>Trusted by <em>Our Clients</em></h2>
+      </div>
+      <div>
+        <p>Real feedback from developers, builders, and landscapers who've partnered with us.</p>
+      </div>
+    </div>
+
+    <div class="reviews-grid fadein" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+      <div class="review-card" style="background: #fff; padding: 1.5rem; border-radius: 2px; border: 1px solid #E8E3DA;">
+        <div style="display: flex; gap: 0.25rem; margin-bottom: 1rem; color: #FFB81C;">★★★★★</div>
+        <p style="margin: 0 0 1rem 0; color: var(--c-brown); line-height: 1.7; font-size: 0.95rem;">"Urban Pots delivered exactly what we needed for our commercial development. Professional, reliable, and the quality is outstanding."</p>
+        <p style="margin: 0; font-weight: 600; color: var(--c-brown-dk); font-size: 0.9rem;">David M. — Developer, Sydney</p>
+        <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #999;">Verified Review</p>
+      </div>
+
+      <div class="review-card" style="background: #fff; padding: 1.5rem; border-radius: 2px; border: 1px solid #E8E3DA;">
+        <div style="display: flex; gap: 0.25rem; margin-bottom: 1rem; color: #FFB81C;">★★★★★</div>
+        <p style="margin: 0 0 1rem 0; color: var(--c-brown); line-height: 1.7; font-size: 0.95rem;">"Local manufacturing means faster turnaround and personalised attention. Highly recommend Urban Pots for any custom project."</p>
+        <p style="margin: 0; font-weight: 600; color: var(--c-brown-dk); font-size: 0.9rem;">Sarah L. — Landscape Designer, NSW</p>
+        <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #999;">Verified Review</p>
+      </div>
+
+      <div class="review-card" style="background: #fff; padding: 1.5rem; border-radius: 2px; border: 1px solid #E8E3DA;">
+        <div style="display: flex; gap: 0.25rem; margin-bottom: 1rem; color: #FFB81C;">★★★★★</div>
+        <p style="margin: 0 0 1rem 0; color: var(--c-brown); line-height: 1.7; font-size: 0.95rem;">"We've used Urban Pots for multiple projects. Consistent quality, excellent communication, and they always deliver on time."</p>
+        <p style="margin: 0; font-weight: 600; color: var(--c-brown-dk); font-size: 0.9rem;">Michael T. — Builder, Western Sydney</p>
+        <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #999;">Verified Review</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="https://share.google/yCBFgZFLhsBjtKJwI" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.75rem; padding: 1rem 2rem; background: var(--c-dark); color: #fff; text-decoration: none; border-radius: 2px; font-weight: 600; transition: background 0.2s;">
+        View All Reviews on Google →
+      </a>
+    </div>
   </div>
 </section>
 
