@@ -429,7 +429,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .custom-showcase__image {
   width: 100%;
-  height: 280px;
+  aspect-ratio: 16/9;
   overflow: hidden;
   background: var(--c-bg);
 }
@@ -695,7 +695,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .material-card__img-wrap { overflow: hidden; }
 .material-card__img {
   width: 100%;
-  height: 260px;
+  aspect-ratio: 1;
+  height: auto;
   object-fit: cover;
   transition: transform 0.7s var(--ease);
   display: block;
@@ -756,8 +757,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border-radius: 2px;
   cursor: pointer;
 }
-.work__item--large { grid-column: span 8; min-height: 540px; }
-.work__item--small { grid-column: span 4; min-height: 260px; }
+.work__item--large { grid-column: span 6; grid-row: span 2; }
+.work__item--small { grid-column: span 3; aspect-ratio: 3 / 2; }
 .work__item img {
   width: 100%;
   height: 100%;
@@ -1308,8 +1309,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .materials-grid      { grid-template-columns: 1fr; }
   .cta-strip__inner    { grid-template-columns: 1fr; gap: 3rem; }
   .footer-top          { grid-template-columns: 1fr 1fr; gap: 3rem; }
-  .work__item--large   { grid-column: span 12; min-height: 400px; }
-  .work__item--small   { grid-column: span 6; min-height: 260px; }
+  .work__item--large   { grid-column: span 12; grid-row: auto; aspect-ratio: 16 / 9; }
+  .work__item--small   { grid-column: span 6; }
 }
 @media (max-width: 768px) {
   .nav-links  { display: none; }
