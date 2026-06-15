@@ -362,6 +362,7 @@ class CylindricalConfigurator {
 
     this.cylinderMaterial = new THREE.MeshStandardMaterial({
       color: new THREE.Color(this.colour),
+      side: THREE.DoubleSide,
       ...MATERIAL_PROPS[this.material],
     });
 
@@ -396,22 +397,40 @@ class CylindricalConfigurator {
     const H = this.dims.H / 100;
     const radius = 2.5;
     const thickness = 0.5;
+    const innerR = radius - thickness;
 
-    const outerGeo = new THREE.CylinderGeometry(radius, radius, H, 32);
+    // Outer wall — open-ended tube
+    const outerGeo = new THREE.CylinderGeometry(radius, radius, H, 48, 1, true);
     const outer = new THREE.Mesh(outerGeo, this.cylinderMaterial);
     outer.position.y = H / 2;
     outer.castShadow = true;
     this.cylinderGroup.add(outer);
 
-    const baseGeo = new THREE.CylinderGeometry(radius, radius, thickness, 32);
+    // Inner wall — open-ended tube from base up to rim, shows the hollow cavity
+    const innerGeo = new THREE.CylinderGeometry(innerR, innerR, H - thickness, 48, 1, true);
+    const inner = new THREE.Mesh(innerGeo, this.cylinderMaterial);
+    inner.position.y = thickness + (H - thickness) / 2;
+    this.cylinderGroup.add(inner);
+
+    // Top rim — flat ring capping the wall thickness
+    const rimGeo = new THREE.RingGeometry(innerR, radius, 48);
+    const rim = new THREE.Mesh(rimGeo, this.cylinderMaterial);
+    rim.position.y = H;
+    rim.rotation.x = -Math.PI / 2;
+    this.cylinderGroup.add(rim);
+
+    // Solid base disc at the bottom
+    const baseGeo = new THREE.CylinderGeometry(radius, radius, thickness, 48);
     const base = new THREE.Mesh(baseGeo, this.cylinderMaterial);
     base.position.y = thickness / 2;
     base.castShadow = true;
     this.cylinderGroup.add(base);
 
-    const soilCapGeo = new THREE.CylinderGeometry(radius - thickness, radius - thickness, 0.04, 32);
+    // Soil fill, recessed below the rim so the pot reads as hollow
+    const soilCapGeo = new THREE.CircleGeometry(innerR, 48);
     const soilCap = new THREE.Mesh(soilCapGeo, this.soilMaterial);
-    soilCap.position.y = H - 0.02;
+    soilCap.position.y = H - thickness;
+    soilCap.rotation.x = -Math.PI / 2;
     this.cylinderGroup.add(soilCap);
 
     this.updateLabels(H);
