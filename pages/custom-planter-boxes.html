@@ -912,107 +912,12 @@
       </div>
     </div>
 
-    <div class="configurator-wrapper fadein delay-1">
-      <!-- 3D Canvas -->
-      <div class="three-canvas-container" id="threeCanvas"></div>
-
-      <!-- Controls Panel -->
-      <div class="controls-panel">
-        <h3 style="font-family: var(--font-head); color: var(--c-brown-dk); margin-bottom: 1.5rem;">Configure Your Planter</h3>
-
-        <!-- Dimension Sliders -->
-        <div class="slider-group">
-          <label>Length <span class="value-display" id="lengthValue">600</span> mm</label>
-          <input type="range" id="lengthSlider" min="300" max="3000" step="50" value="600" />
-          <input type="number" id="lengthInput" min="300" max="3000" step="50" value="600" />
-        </div>
-
-        <div class="slider-group">
-          <label>Width <span class="value-display" id="widthValue">400</span> mm</label>
-          <input type="range" id="widthSlider" min="200" max="1500" step="50" value="400" />
-          <input type="number" id="widthInput" min="200" max="1500" step="50" value="400" />
-        </div>
-
-        <div class="slider-group">
-          <label>Height <span class="value-display" id="heightValue">450</span> mm</label>
-          <input type="range" id="heightSlider" min="200" max="1200" step="50" value="450" />
-          <input type="number" id="heightInput" min="200" max="1200" step="50" value="450" />
-        </div>
-
-        <div class="slider-group thickness">
-          <label>Wall Thickness <span class="value-display" id="thicknessValue">50</span> mm</label>
-          <input type="range" id="thicknessSlider" min="25" max="100" step="25" value="50" />
-          <input type="number" id="thicknessInput" min="25" max="100" step="25" value="50" />
-          <div style="font-size: 0.8rem; color: var(--c-brown); margin-top: 0.5rem;">← Controls price (+$5 per 25mm)</div>
-        </div>
-
-        <!-- Material Toggle -->
-        <div style="margin-bottom: 1.5rem; margin-top: 1.5rem;">
-          <h4 style="font-size: 0.9rem; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.75rem;">Material</h4>
-          <div class="material-toggle">
-            <label>
-              <input type="radio" name="material" value="fibre-cement" checked />
-              <span>Fibre Cement</span>
-            </label>
-            <label>
-              <input type="radio" name="material" value="fibreglass" />
-              <span>Fibreglass</span>
-            </label>
-          </div>
-        </div>
-
-        <!-- Colours -->
-        <div class="colour-section">
-          <h4>Colour — Preset Options</h4>
-          <div class="colour-swatches" id="colourSwatches"></div>
-          
-          <div class="rgb-input">
-            <h4>Custom RGB Colour</h4>
-            <input type="text" id="rgbColour" placeholder="e.g., #4A4A48 or 'Dark Grey'" />
-            <div class="rgb-cost-note">RGB colour matching: +$25 (custom sourcing)</div>
-          </div>
-        </div>
-
-        <!-- Presets -->
-        <div style="margin-bottom: 1.5rem;">
-          <h4 style="font-size: 0.9rem; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.75rem;">Quick Presets</h4>
-          <div class="preset-buttons">
-            <button class="preset-btn" data-preset="Small">Small (600×400×450)</button>
-            <button class="preset-btn" data-preset="Medium">Medium (900×450×500)</button>
-            <button class="preset-btn" data-preset="Large">Large (1200×600×600)</button>
-            <button class="preset-btn" data-preset="XL">XL (1800×600×600)</button>
-          </div>
-        </div>
-
-        <!-- Summary -->
-        <div class="summary-card">
-          <h4>Your Design</h4>
-          <div class="summary-item">
-            <span>Dimensions:</span>
-            <strong id="summaryDims">600 × 400 × 450 mm</strong>
-          </div>
-          <div class="summary-item">
-            <span>Wall Thickness:</span>
-            <strong id="summaryThickness">50 mm</strong>
-          </div>
-          <div class="summary-item">
-            <span>Material:</span>
-            <strong id="summaryMaterial">Fibre Cement</strong>
-          </div>
-          <div class="summary-item">
-            <span>Colour:</span>
-            <strong id="summaryColour">Lexicon Half</strong>
-          </div>
-          <div class="summary-item price-total">
-            <span>Price:</span>
-            <strong id="summaryPrice">$185.00</strong>
-          </div>
-        </div>
-
-        <!-- CTA -->
-        <button class="get-quote-btn" id="addToQuoteBtn">+ Add This Design to Quote</button>
-        <button class="get-quote-btn" style="background: var(--c-stone); margin-top: 0.75rem;" id="viewQuoteBtn" disabled>View Quote</button>
-      </div>
+    <div class="fadein delay-1">
+      <iframe
+        src="../planter-configurator.html"
+        title="3D Planter Box Configurator"
+        style="width:100%;height:680px;border:none;display:block;border-radius:3px;box-shadow:0 8px 40px rgba(0,0,0,0.1);"
+        loading="lazy"></iframe>
     </div>
   </div>
 </section>
@@ -1609,8 +1514,6 @@
 
 <!-- SCRIPTS -->
 <script type="module">
-  import { StraightEdgeConfigurator, COLORBOND_DULUX_COLORS, PRESETS, BASE_PRICES, THICKNESS_INCREMENT, RGB_COLOUR_COST } from '../js/three-configurator.js';
-  import DesignCart from '../js/design-cart.js';
   import * as animations from '../js/animations.js';
   import * as ui from '../js/ui.js';
 
@@ -1631,116 +1534,7 @@
     // Initialize UI
     ui.initMobileNav(animations.lenis);
 
-    // Create configurator instance
-    let configurator = new StraightEdgeConfigurator('threeCanvas', updateUI);
-
-    // Pause Lenis when user interacts with 3D canvas so OrbitControls receives scroll/touch events
-    const canvasWrap = document.getElementById('threeCanvas');
-    canvasWrap.addEventListener('pointerenter', () => animations.lenis?.stop());
-    canvasWrap.addEventListener('pointerleave', () => animations.lenis?.start());
-    canvasWrap.addEventListener('touchstart', () => animations.lenis?.stop(), { passive: true });
-    canvasWrap.addEventListener('touchend', () => animations.lenis?.start(), { passive: true });
-
-  // Populate colour swatches
-  const swatchesContainer = document.getElementById('colourSwatches');
-  COLORBOND_DULUX_COLORS.forEach((colour, idx) => {
-    const swatch = document.createElement('button');
-    swatch.className = 'colour-swatch' + (idx === 0 ? ' active' : '');
-    swatch.style.backgroundColor = colour.hex;
-    swatch.title = colour.code;
-    swatch.onclick = () => {
-      document.querySelectorAll('.colour-swatch').forEach(s => s.classList.remove('active'));
-      swatch.classList.add('active');
-      configurator.setColour(colour.hex, false);
-    };
-    swatchesContainer.appendChild(swatch);
-  });
-
-  // Slider and input sync
-  ['length', 'width', 'height', 'thickness'].forEach(dim => {
-    const slider = document.getElementById(dim + 'Slider');
-    const input = document.getElementById(dim + 'Input');
-    const display = document.getElementById(dim + 'Value');
-
-    slider.addEventListener('input', (e) => {
-      document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
-      const val = e.target.value;
-      input.value = val;
-      display.textContent = val;
-      const key = dim === 'length' ? 'L' : dim === 'width' ? 'W' : dim === 'height' ? 'H' : 'T';
-      configurator.setDimension(key, parseInt(val));
-    });
-
-    input.addEventListener('input', (e) => {
-      const val = Math.max(slider.min, Math.min(slider.max, e.target.value));
-      slider.value = val;
-      input.value = val;
-      display.textContent = val;
-      const key = dim === 'length' ? 'L' : dim === 'width' ? 'W' : dim === 'height' ? 'H' : 'T';
-      configurator.setDimension(key, parseInt(val));
-    });
-  });
-
-  // Material toggle
-  document.querySelectorAll('input[name="material"]').forEach(radio => {
-    radio.addEventListener('change', (e) => {
-      configurator.setMaterial(e.target.value);
-    });
-  });
-
-  // RGB colour input — validate full 6-digit hex before applying to avoid NaN in colour math
-  document.getElementById('rgbColour').addEventListener('input', (e) => {
-    if (/^#[0-9A-Fa-f]{6}$/.test(e.target.value)) {
-      configurator.setColour(e.target.value, true);
-    }
-  });
-
-  // Presets
-  document.querySelectorAll('.preset-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const preset = btn.dataset.preset;
-      const presetData = PRESETS['straight-edge'].find(p => p.name === preset);
-      if (presetData) {
-        document.getElementById('lengthSlider').value = presetData.length;
-        document.getElementById('lengthInput').value = presetData.length;
-        document.getElementById('lengthValue').textContent = presetData.length;
-        document.getElementById('widthSlider').value = presetData.width;
-        document.getElementById('widthInput').value = presetData.width;
-        document.getElementById('widthValue').textContent = presetData.width;
-        document.getElementById('heightSlider').value = presetData.height;
-        document.getElementById('heightInput').value = presetData.height;
-        document.getElementById('heightValue').textContent = presetData.height;
-        document.getElementById('thicknessSlider').value = presetData.thickness;
-        document.getElementById('thicknessInput').value = presetData.thickness;
-        document.getElementById('thicknessValue').textContent = presetData.thickness;
-        configurator.applyPreset(preset);
-      }
-    });
-  });
-
-  // Add to quote button
-  document.getElementById('addToQuoteBtn').addEventListener('click', () => {
-    const config = {
-      length: parseInt(document.getElementById('lengthInput').value),
-      width: parseInt(document.getElementById('widthInput').value),
-      height: parseInt(document.getElementById('heightInput').value),
-      thickness: parseInt(document.getElementById('thicknessInput').value),
-      material: document.querySelector('input[name="material"]:checked').value,
-      colour: document.getElementById('rgbColour').value || COLORBOND_DULUX_COLORS[0].hex,
-      quantity: 1,
-      price: configurator.calculatePrice(),
-    };
-    DesignCart.addToCart(config);
-    document.getElementById('viewQuoteBtn').disabled = false;
-    alert('✓ Design added to quote! View it on the quote page.');
-  });
-
-  // View quote button
-  document.getElementById('viewQuoteBtn').addEventListener('click', () => {
-    window.location.href = '/pages/custom-planter-boxes-quote.html';
-  });
+    // 3D configurator is embedded via iframe (../planter-configurator.html) — no inline init needed.
 
   // Quote form submission — POST to API with form fields + any saved configurator designs
   document.getElementById('quoteForm').addEventListener('submit', async (e) => {
@@ -1784,19 +1578,6 @@
       submitBtn.textContent = originalLabel;
     }
   });
-
-    function updateUI(config) {
-      document.getElementById('summaryDims').textContent = `${config.length} × ${config.width} × ${config.height} mm`;
-      document.getElementById('summaryThickness').textContent = `${config.thickness} mm`;
-      document.getElementById('summaryMaterial').textContent = config.material === 'fibre-cement' ? 'Fibre Cement' : 'Fibreglass';
-      const colourName = COLORBOND_DULUX_COLORS.find(c => c.hex.toLowerCase() === config.colour.toLowerCase())?.name || config.colour;
-      document.getElementById('summaryColour').textContent = colourName;
-      document.getElementById('summaryPrice').textContent = '$' + (config.price / 100).toFixed(2);
-
-      if (DesignCart.getCart().length > 0) {
-        document.getElementById('viewQuoteBtn').disabled = false;
-      }
-    }
   }
 
   // Hero Carousel
