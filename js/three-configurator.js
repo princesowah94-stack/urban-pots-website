@@ -117,6 +117,7 @@ class StraightEdgeConfigurator {
     this.controls.minPolarAngle = 0.2;
     this.controls.maxPolarAngle = Math.PI / 2.1;
     this.controls.enablePan = false;
+    this.controls.enableZoom = false; // let the mouse wheel scroll the page instead of trapping it to zoom
 
     this.labelRenderer = new CSS2DRenderer();
     this.labelRenderer.setSize(container.clientWidth, container.clientHeight);
@@ -374,6 +375,7 @@ class CylindricalConfigurator {
     this.controls.minPolarAngle = 0.2;
     this.controls.maxPolarAngle = Math.PI / 2.1;
     this.controls.enablePan = false;
+    this.controls.enableZoom = false; // let the mouse wheel scroll the page instead of trapping it to zoom
 
     this.labelRenderer = new CSS2DRenderer();
     this.labelRenderer.setSize(container.clientWidth, container.clientHeight);

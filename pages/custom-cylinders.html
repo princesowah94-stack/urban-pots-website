@@ -649,23 +649,23 @@
   <div class="container">
     <div class="section-head fadein">
       <h2>Explore Our <em>Cylinder Range</em></h2>
-      <p>Commercial-grade fibreglass planters in action across Sydney projects.</p>
+      <p>Commercial-grade fibreglass cylinders, custom-made in our Sydney yard.</p>
     </div>
 
     <div class="gallery-grid fadein" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 3rem;">
       <picture>
-        <source srcset="../curated-images/galleries/1C9A0461-gallery.webp" type="image/webp">
-        <img src="../curated-images/galleries/1C9A0461-gallery.jpg" alt="Custom cylindrical planter showing material quality and finish" width="400" height="400" loading="lazy" style="width: 100%; display: block; border-radius: 4px; aspect-ratio: 1;" />
+        <source srcset="../curated-images/galleries/cylinder-finished.webp" type="image/webp">
+        <img src="../curated-images/galleries/cylinder-finished.jpg" alt="Finished white fibreglass cylinder planter" width="620" height="620" loading="lazy" style="width: 100%; display: block; border-radius: 4px; aspect-ratio: 1;" />
       </picture>
 
       <picture>
-        <source srcset="../curated-images/galleries/1C9A0462-gallery.webp" type="image/webp">
-        <img src="../curated-images/galleries/1C9A0462-gallery.jpg" alt="Fibreglass cylinder planter with smooth finish" width="400" height="400" loading="lazy" style="width: 100%; display: block; border-radius: 4px; aspect-ratio: 1;" />
+        <source srcset="../curated-images/galleries/cylinder-range.webp" type="image/webp">
+        <img src="../curated-images/galleries/cylinder-range.jpg" alt="Custom cylinders in a range of sizes in our Sydney yard" width="620" height="620" loading="lazy" style="width: 100%; display: block; border-radius: 4px; aspect-ratio: 1;" />
       </picture>
 
       <picture>
-        <source srcset="../curated-images/galleries/1C9A0463-gallery.webp" type="image/webp">
-        <img src="../curated-images/galleries/1C9A0463-gallery.jpg" alt="Large-scale commercial cylinder installation" width="400" height="400" loading="lazy" style="width: 100%; display: block; border-radius: 4px; aspect-ratio: 1;" />
+        <source srcset="../curated-images/galleries/cylinder-detail.webp" type="image/webp">
+        <img src="../curated-images/galleries/cylinder-detail.jpg" alt="Close-up of the thick fibreglass wall and rim finish" width="620" height="620" loading="lazy" style="width: 100%; display: block; border-radius: 4px; aspect-ratio: 1;" />
       </picture>
     </div>
   </div>
@@ -1131,13 +1131,8 @@
 
     // Create configurator instance
     let configurator = new CylindricalConfigurator('threeCanvas', updateUI);
-
-    // Pause Lenis when user interacts with 3D canvas so OrbitControls receives scroll/touch events
-    const canvasWrap = document.getElementById('threeCanvas');
-    canvasWrap.addEventListener('pointerenter', () => animations.lenis?.stop());
-    canvasWrap.addEventListener('pointerleave', () => animations.lenis?.start());
-    canvasWrap.addEventListener('touchstart', () => animations.lenis?.stop(), { passive: true });
-    canvasWrap.addEventListener('touchend', () => animations.lenis?.start(), { passive: true });
+    // Note: scroll-zoom is disabled on the configurator (see three-configurator.js) so the
+    // mouse wheel always scrolls the page — no Lenis pause needed. Drag still rotates the model.
 
   // Populate colour swatches
   const swatchesContainer = document.getElementById('colourSwatches');
