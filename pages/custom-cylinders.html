@@ -683,79 +683,12 @@
       </div>
     </div>
 
-    <div class="configurator-wrapper fadein delay-1">
-      <!-- 3D Canvas -->
-      <div class="three-canvas-container" id="threeCanvas"></div>
-
-      <!-- Controls Panel -->
-      <div class="controls-panel">
-        <h3 style="font-family: var(--font-head); color: var(--c-brown-dk); margin-bottom: 1.5rem;">Configure Your Cylinder</h3>
-
-        <!-- Dimension Slider -->
-        <div class="slider-group">
-          <label>Height <span class="value-display" id="heightValue">450</span> mm</label>
-          <input type="range" id="heightSlider" min="200" max="1200" step="50" value="450" />
-          <input type="number" id="heightInput" min="200" max="1200" step="50" value="450" />
-        </div>
-
-        <!-- Material Toggle -->
-        <div style="margin-bottom: 1.5rem; margin-top: 1.5rem;">
-          <h4 style="font-size: 0.9rem; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.75rem;">Material</h4>
-          <div class="material-toggle">
-            <label>
-              <input type="radio" name="material" value="fibre-cement" checked />
-              <span>Fibre Cement</span>
-            </label>
-            <label>
-              <input type="radio" name="material" value="fibreglass" />
-              <span>Fibreglass</span>
-            </label>
-          </div>
-        </div>
-
-        <!-- Colours -->
-        <div class="colour-section">
-          <h4>Colour — Preset Options</h4>
-          <div class="colour-swatches" id="colourSwatches"></div>
-          
-          <div class="rgb-input">
-            <h4>Custom RGB Colour</h4>
-            <input type="text" id="rgbColour" placeholder="e.g., #4A4A48 or 'Dark Grey'" />
-            <div class="rgb-cost-note">RGB colour matching: +$25 (custom sourcing)</div>
-          </div>
-        </div>
-
-        <!-- Presets -->
-        <div style="margin-bottom: 1.5rem;">
-          <h4 style="font-size: 0.9rem; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.75rem;">Quick Presets</h4>
-          <div class="preset-buttons">
-            <button class="preset-btn" data-preset="Small">Small (450mm)</button>
-            <button class="preset-btn" data-preset="Medium">Medium (550mm)</button>
-            <button class="preset-btn" data-preset="Large">Large (700mm)</button>
-            <button class="preset-btn" data-preset="XL">XL (900mm)</button>
-          </div>
-        </div>
-
-        <!-- Summary -->
-        <div class="summary-card">
-          <h4>Your Design</h4>
-          <div class="summary-item">
-            <span>Height:</span>
-            <strong id="summaryHeight">450 mm</strong>
-          </div>
-          <div class="summary-item">
-            <span>Material:</span>
-            <strong id="summaryMaterial">Fibre Cement</strong>
-          </div>
-          <div class="summary-item">
-            <span>Colour:</span>
-            <strong id="summaryColour">Lexicon Half</strong>
-          </div>
-        </div>
-
-        <!-- CTA -->
-        <button class="get-quote-btn" id="submitEnquiryBtn">Get a Quote</button>
-      </div>
+    <div class="fadein delay-1">
+      <iframe
+        src="../cylinder-configurator.html"
+        title="3D Cylinder Configurator"
+        style="width:100%;height:680px;border:none;display:block;border-radius:3px;box-shadow:0 8px 40px rgba(0,0,0,0.1);"
+        loading="lazy"></iframe>
     </div>
   </div>
 </section>
@@ -1108,7 +1041,6 @@
 
 <!-- SCRIPTS -->
 <script type="module">
-  import { CylindricalConfigurator, COLORBOND_DULUX_COLORS, PRESETS } from '../js/three-configurator.js';
   import * as animations from '../js/animations.js';
   import * as ui from '../js/ui.js';
 
@@ -1129,77 +1061,7 @@
     // Initialize UI
     ui.initMobileNav(animations.lenis);
 
-    // Create configurator instance
-    let configurator = new CylindricalConfigurator('threeCanvas', updateUI);
-    // Note: scroll-zoom is disabled on the configurator (see three-configurator.js) so the
-    // mouse wheel always scrolls the page — no Lenis pause needed. Drag still rotates the model.
-
-  // Populate colour swatches
-  const swatchesContainer = document.getElementById('colourSwatches');
-  COLORBOND_DULUX_COLORS.forEach((colour, idx) => {
-    const swatch = document.createElement('button');
-    swatch.className = 'colour-swatch' + (idx === 0 ? ' active' : '');
-    swatch.style.backgroundColor = colour.hex;
-    swatch.title = colour.code;
-    swatch.onclick = () => {
-      document.querySelectorAll('.colour-swatch').forEach(s => s.classList.remove('active'));
-      swatch.classList.add('active');
-      configurator.setColour(colour.hex, false);
-    };
-    swatchesContainer.appendChild(swatch);
-  });
-
-  // Height slider sync
-  const heightSlider = document.getElementById('heightSlider');
-  const heightInput = document.getElementById('heightInput');
-  const heightDisplay = document.getElementById('heightValue');
-
-  heightSlider.addEventListener('input', (e) => {
-    document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
-    const val = e.target.value;
-    heightInput.value = val;
-    heightDisplay.textContent = val;
-    configurator.setHeight(parseInt(val));
-  });
-
-  heightInput.addEventListener('input', (e) => {
-    const val = Math.max(heightSlider.min, Math.min(heightSlider.max, e.target.value));
-    heightSlider.value = val;
-    heightInput.value = val;
-    heightDisplay.textContent = val;
-    configurator.setHeight(parseInt(val));
-  });
-
-  // Material toggle
-  document.querySelectorAll('input[name="material"]').forEach(radio => {
-    radio.addEventListener('change', (e) => {
-      configurator.setMaterial(e.target.value);
-    });
-  });
-
-  // RGB colour input — validate full 6-digit hex before applying to avoid NaN in colour math
-  document.getElementById('rgbColour').addEventListener('input', (e) => {
-    if (/^#[0-9A-Fa-f]{6}$/.test(e.target.value)) {
-      configurator.setColour(e.target.value, true);
-    }
-  });
-
-  // Presets
-  document.querySelectorAll('.preset-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const preset = btn.dataset.preset;
-      const presetData = PRESETS['cylindrical'].find(p => p.name === preset);
-      if (presetData) {
-        document.getElementById('heightSlider').value = presetData.height;
-        document.getElementById('heightInput').value = presetData.height;
-        document.getElementById('heightValue').textContent = presetData.height;
-        document.getElementById('formHeight').value = presetData.height;
-        configurator.applyPreset(preset);
-      }
-    });
-  });
+    // 3D configurator is embedded via iframe (../cylinder-configurator.html) — no inline init needed.
 
   // Form submission
   document.getElementById('cylindersEnquiryForm').addEventListener('submit', async (e) => {
@@ -1238,13 +1100,6 @@
       alert('Error submitting form. Please contact info@urbanpots.com.au');
     }
   });
-
-    function updateUI(config) {
-      document.getElementById('summaryHeight').textContent = `${config.height} mm`;
-      document.getElementById('summaryMaterial').textContent = config.material === 'fibre-cement' ? 'Fibre Cement' : 'Fibreglass';
-      const colourName = COLORBOND_DULUX_COLORS.find(c => c.hex.toLowerCase() === config.colour.toLowerCase())?.name || config.colour;
-      document.getElementById('summaryColour').textContent = colourName;
-    }
   }
 </script>
 
