@@ -237,10 +237,17 @@ input[type="radio"] {
 }
 
 .value-card__icon {
-  font-size: 3rem;
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--c-sage);
+  color: #fff;
+  border-radius: 2px;
   margin-bottom: 1rem;
-  display: inline-block;
 }
+.value-card__icon svg { width: 22px; height: 22px; }
 
 .value-card h3 {
   font-size: 1.3rem;
@@ -779,10 +786,17 @@ input[type="radio"] {
 }
 
 .feature-item__icon {
-  font-size: 2.5rem;
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--c-sage);
+  color: #fff;
+  border-radius: 2px;
   margin-bottom: 1rem;
-  display: inline-block;
 }
+.feature-item__icon svg { width: 22px; height: 22px; }
 
 .feature-item h3 {
   font-size: 1.15rem;
@@ -1615,10 +1629,17 @@ input[type="radio"] {
 }
 
 .value-item__icon {
-  font-size: 3rem;
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--c-sage);
+  color: #fff;
+  border-radius: 2px;
   margin-bottom: 1rem;
-  display: inline-block;
 }
+.value-item__icon svg { width: 22px; height: 22px; }
 
 .value-item h3 {
   font-size: 1.2rem;
@@ -1887,10 +1908,17 @@ input[type="radio"] {
 }
 
 .contact-method__icon {
-  font-size: 3rem;
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--c-sage);
+  color: #fff;
+  border-radius: 2px;
   margin-bottom: 1rem;
-  display: inline-block;
 }
+.contact-method__icon svg { width: 22px; height: 22px; }
 
 .contact-method h3 {
   font-size: 1.2rem;
