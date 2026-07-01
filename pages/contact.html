@@ -46,7 +46,7 @@
       background: var(--c-stone);
     }
 
-    .hero__h1 {
+    .hero__content .hero__h1 {
       font-family: var(--font-head);
       font-size: clamp(2.2rem, 5vw, 4rem);
       font-weight: 600;
@@ -393,7 +393,7 @@
 
 <!-- MAP -->
 <div class="map-section fadein delay-2">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.1234567890123!2d150.89!3d-33.847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12b7c8c7c7c7c7%3A0x1234567890abcdef!2s21%2F130%20Hassall%20St%2C%20Wetherill%20Park%20NSW%202164!5e0!3m2!1sen!2sau!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <iframe src="https://www.google.com/maps?q=21%2F130%20Hassall%20St%2C%20Wetherill%20Park%20NSW%202164&output=embed" title="Urban Pots showroom — 21/130 Hassall St, Wetherill Park NSW 2164" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 
 <!-- CONTACT FORM -->
@@ -491,7 +491,7 @@
     const formData = new FormData(e.target);
     // In production, send to email service or Vercel Function
     console.log('Form data:', Object.fromEntries(formData));
-    alert('Thank you for your message. We'll be in touch soon!');
+    alert("Thank you for your message. We'll be in touch soon!");
     e.target.reset();
   });
 </script>
