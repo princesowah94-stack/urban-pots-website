@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, max-scale=1" />
+  <title>Our Projects — Urban Pots</title><meta name="description" content="See Urban Pots in action — completed custom planter installations from our Western Sydney yard to finished projects across Australia. Explore our recent work." />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/components.css" />
+
+  <!-- Lenis & GSAP from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    /* Projects page */
+    .proj-intro { padding: clamp(4rem, 7vw, 7rem) 0 clamp(2rem, 4vw, 3rem); }
+
+    .proj-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .proj-step__img {
+      aspect-ratio: 3 / 2;
+      border-radius: 4px;
+      overflow: hidden;
+      background: var(--c-cream);
+    }
+    .proj-step__img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s ease; }
+    .proj-step:hover .proj-step__img img { transform: scale(1.05); }
+    .proj-step__label {
+      display: flex; align-items: baseline; gap: 0.6rem;
+      margin-top: 1rem;
+    }
+    .proj-step__num { font-size: 0.8rem; font-weight: 700; color: var(--c-sage); letter-spacing: 0.08em; }
+    .proj-step h3 { font-family: var(--font-head); font-size: 1.05rem; color: var(--c-brown-dk); margin: 0; }
+    .proj-step p { font-size: 0.9rem; color: var(--c-brown); line-height: 1.6; margin: 0.4rem 0 0; }
+
+    .proj-gallery-section { padding: clamp(3rem, 6vw, 6rem) 0 clamp(5rem, 8vw, 8rem); }
+    .proj-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+    .proj-tile {
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+      aspect-ratio: 2 / 1;
+      background: var(--c-cream);
+    }
+    .proj-tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .7s ease; }
+    .proj-tile:hover img { transform: scale(1.06); }
+    .proj-tile--wide { grid-column: span 2; aspect-ratio: 2 / 1; }
+    @media (max-width: 720px) { .proj-tile--wide { grid-column: span 1; } }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav" id="siteNav">
+  <div class="container site-nav__inner">
+    <a href="/" class="nav-logo">
+      <img src="https://cdn.shopify.com/s/files/1/0748/4152/2498/files/urban_pots_logo__white_150.png?v=1684274691" alt="Urban Pots" width="120" height="30" />
+    </a>
+    <div class="nav-links">
+      <a href="/shop.html">Shop Now</a>
+      <a href="/pages/custom-planter-boxes.html">Custom Planters</a>
+      <a href="/pages/custom-cylinders.html">Custom Cylinders</a>
+      <a href="/pages/projects.html">Projects</a>
+      <a href="/pages/trade.html">Trade</a>
+      <a href="/pages/contact.html">Contact</a>
+      <a href="/pages/find-us.html">Find Us</a>
+      <a href="/pages/about.html">About Us</a>
+    </div>
+    <div class="nav-actions">
+      <a href="mailto:info@urbanpots.com.au" class="nav-cta">Get a Quote</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="nav-mobile" id="navMobile" aria-hidden="true">
+  <ul class="nav-mobile__links">
+    <li><a href="/shop.html">Shop Now</a></li>
+    <li><a href="/pages/custom-planter-boxes.html">Custom Planters</a></li>
+    <li><a href="/pages/custom-cylinders.html">Custom Cylinders</a></li>
+    <li><a href="/pages/projects.html">Projects</a></li>
+    <li><a href="/pages/trade.html">Trade</a></li>
+    <li><a href="/pages/contact.html">Contact</a></li>
+    <li><a href="/pages/find-us.html">Find Us</a></li>
+    <li><a href="/pages/about.html">About Us</a></li>
+  </ul>
+  <div class="nav-mobile__footer">
+    <a href="mailto:info@urbanpots.com.au" class="btn btn--stone">Get a Quote</a>
+    <div class="nav-mobile__footer-meta">
+      <a href="tel:0433132406">0433 132 406</a> &nbsp;·&nbsp; Tue–Sat 9am–4pm
+    </div>
+  </div>
+</div>
+
+<!-- PAGE CONTENT -->
+<main>
+
+  <!-- HERO SECTION -->
+  <section class="hero" style="background: linear-gradient(135deg, #F7F7F3 0%, #EDE8E1 100%);">
+    <div class="hero__content">
+      <p class="eyebrow">Our Work</p>
+      <h1>Completed <em>Projects</em></h1>
+      <p class="hero__subtext">From our Western Sydney yard to finished installations across Australia. A look at the custom planters we've designed, built, and delivered for residential and commercial projects.</p>
+      <a href="mailto:info@urbanpots.com.au?subject=Project Enquiry" class="btn btn--dark">Start Your Project <span class="arrow-link">→</span></a>
+    </div>
+    <div class="hero__image" style="background-image: url('../curated-images/heroes/URBAN%20POTS-4617-hero.jpg'); background-size: cover; background-position: center;"></div>
+  </section>
+
+  <!-- PROCESS / YARD-TO-INSTALL STRIP -->
+  <section class="proj-intro">
+    <div class="container">
+      <div class="section-head fadein">
+        <h2>From Our Yard to <em>Your Space</em></h2>
+        <p>Every project is designed, manufactured, and finished in-house before we deliver and install it on site.</p>
+      </div>
+
+      <div class="proj-steps fadein delay-1">
+        <div class="proj-step">
+          <div class="proj-step__img">
+            <picture>
+              <source srcset="../curated-images/projects/project-manufacturing.webp" type="image/webp">
+              <img src="../curated-images/projects/project-manufacturing.jpg" alt="Custom planters being manufactured in the Urban Pots Western Sydney workshop" loading="lazy" />
+            </picture>
+          </div>
+          <div class="proj-step__label"><span class="proj-step__num">01</span><h3>Manufacturing</h3></div>
+          <p>Built to spec in our Western Sydney yard, unit by unit.</p>
+        </div>
+        <div class="proj-step">
+          <div class="proj-step__img">
+            <picture>
+              <source srcset="../curated-images/projects/project-finishing.webp" type="image/webp">
+              <img src="../curated-images/projects/project-finishing.jpg" alt="Hand-finishing and colour-matching a custom planter before delivery" loading="lazy" />
+            </picture>
+          </div>
+          <div class="proj-step__label"><span class="proj-step__num">02</span><h3>Finishing</h3></div>
+          <p>Sealed, colour-matched, and quality-checked by hand.</p>
+        </div>
+        <div class="proj-step">
+          <div class="proj-step__img">
+            <picture>
+              <source srcset="../curated-images/projects/project-delivery.webp" type="image/webp">
+              <img src="../curated-images/projects/project-delivery.jpg" alt="Finished planters loaded for delivery to a project site" loading="lazy" />
+            </picture>
+          </div>
+          <div class="proj-step__label"><span class="proj-step__num">03</span><h3>Delivery</h3></div>
+          <p>Carefully transported to your site anywhere in Australia.</p>
+        </div>
+        <div class="proj-step">
+          <div class="proj-step__img">
+            <picture>
+              <source srcset="../curated-images/projects/project-installation.webp" type="image/webp">
+              <img src="../curated-images/projects/project-installation.jpg" alt="Custom planters being positioned and installed on site" loading="lazy" />
+            </picture>
+          </div>
+          <div class="proj-step__label"><span class="proj-step__num">04</span><h3>Installation</h3></div>
+          <p>Positioned and installed, ready to plant out.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECT GALLERY -->
+  <section class="proj-gallery-section">
+    <div class="container">
+      <div class="section-head fadein">
+        <h2>Featured Project — <em>Cronulla</em></h2>
+        <p>A large-scale commercial supply and install: custom cylindrical and box planters, manufactured in our Western Sydney yard and craned into place across a coastal Sydney development.</p>
+      </div>
+
+      <div class="proj-gallery fadein delay-1">
+        <div class="proj-tile proj-tile--wide">
+          <picture>
+            <source srcset="../curated-images/projects/UP%20CRONULLA-22-project.webp" type="image/webp">
+            <img src="../curated-images/projects/UP%20CRONULLA-22-project.jpg" alt="Custom planters craned into position on a multi-level Cronulla development" width="1200" height="600" loading="lazy" />
+          </picture>
+        </div>
+        <div class="proj-tile">
+          <picture>
+            <source srcset="../curated-images/projects/UP%20CRONULLA-17-project.webp" type="image/webp">
+            <img src="../curated-images/projects/UP%20CRONULLA-17-project.jpg" alt="Custom cylindrical planters on site at the Cronulla development" width="1200" height="600" loading="lazy" />
+          </picture>
+        </div>
+        <div class="proj-tile">
+          <picture>
+            <source srcset="../curated-images/projects/UP%20CRONULLA-26-project.webp" type="image/webp">
+            <img src="../curated-images/projects/UP%20CRONULLA-26-project.jpg" alt="Finished cylindrical planters installed at the building base" width="1200" height="600" loading="lazy" />
+          </picture>
+        </div>
+        <div class="proj-tile">
+          <picture>
+            <source srcset="../curated-images/projects/UP%20CRONULLA-8-project.webp" type="image/webp">
+            <img src="../curated-images/projects/UP%20CRONULLA-8-project.jpg" alt="Custom cylinder planter forms being manufactured in our Western Sydney yard" width="1200" height="600" loading="lazy" />
+          </picture>
+        </div>
+        <div class="proj-tile">
+          <picture>
+            <source srcset="../curated-images/projects/UP%20CRONULLA-4-project.webp" type="image/webp">
+            <img src="../curated-images/projects/UP%20CRONULLA-4-project.jpg" alt="Custom planters loaded for delivery to the Cronulla site" width="1200" height="600" loading="lazy" />
+          </picture>
+        </div>
+        <div class="proj-tile">
+          <picture>
+            <source srcset="../curated-images/projects/UP%20CRONULLA-3-project.webp" type="image/webp">
+            <img src="../curated-images/projects/UP%20CRONULLA-3-project.jpg" alt="Craning a custom cylinder planter during the Cronulla install" width="1200" height="600" loading="lazy" />
+          </picture>
+        </div>
+        <div class="proj-tile">
+          <picture>
+            <source srcset="../curated-images/projects/UP%20CRONULLA-13-project.webp" type="image/webp">
+            <img src="../curated-images/projects/UP%20CRONULLA-13-project.jpg" alt="A truckload of custom planters bound for the Cronulla project" width="1200" height="600" loading="lazy" />
+          </picture>
+        </div>
+        <div class="proj-tile">
+          <picture>
+            <source srcset="../curated-images/projects/UP%20CRONULLA-21-project.webp" type="image/webp">
+            <img src="../curated-images/projects/UP%20CRONULLA-21-project.jpg" alt="Large custom planters craned into place at the Cronulla development" width="1200" height="600" loading="lazy" />
+          </picture>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="cta-strip" style="background: var(--c-sage); color: white; padding: clamp(3rem, 6vw, 5rem) 0;">
+    <div class="container">
+      <div class="cta-strip__content">
+        <h2>Have a project in mind?</h2>
+        <p>Tell us what you're building. We'll help you spec, make, and deliver the right planters for it.</p>
+      </div>
+      <div class="cta-strip__contact">
+        <a href="tel:0433132406" class="btn btn--outline" style="border-color: white; color: white;">Call: 0433 132 406</a>
+        <a href="mailto:info@urbanpots.com.au" class="btn btn--outline" style="border-color: white; color: white;">Email: info@urbanpots.com.au</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="https://cdn.shopify.com/s/files/1/0748/4152/2498/files/urban_pots_logo__sage_150.png?v=1684274691" alt="Urban Pots" class="footer-brand__logo" width="120" />
+        <p class="footer-brand__tagline">Your best space. Our planters.</p>
+        <p>An Australian family-owned planter manufacturer. Custom-built in Western Sydney. Trusted by developers, architects, and landscapers nationwide.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="LinkedIn">LI</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="/pages/custom-planter-boxes.html">Custom Planter Boxes</a></li>
+          <li><a href="/shop.html">Fibreglass Planters</a></li>
+          <li><a href="/shop.html">Fibre Cement</a></li>
+          <li><a href="/pages/grc-planters.html">Thai Limestone Planters</a></li>
+          <li><a href="/shop.html">Designer Pots</a></li>
+          <li><a href="/shop.html">All Collections</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/pages/about.html">About Us</a></li>
+          <li><a href="/pages/about.html">Our Workshop</a></li>
+          <li><a href="/pages/projects.html">Projects</a></li>
+          <li><a href="/pages/trade.html">Trade Account</a></li>
+          <li><a href="/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:0433132406">0433 132 406</a></li>
+          <li><a href="mailto:info@urbanpots.com.au">info@urbanpots.com.au</a></li>
+          <li><a href="/">Sydney Showroom</a></li>
+          <li><a href="/">Tue–Sat 9am–4pm</a></li>
+          <li><a href="/">Get Directions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Urban Pots Australia. All rights reserved.</span>
+      <span>
+        <a href="/pages/privacy-policy.html">Privacy</a> &nbsp;·&nbsp;
+        <a href="/">Terms</a> &nbsp;·&nbsp;
+        Website by <a href="#" style="color:var(--c-stone)">Sowah Studio</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script type="module">
+  import * as animations from '../js/animations.js';
+  import * as ui from '../js/ui.js';
+
+  // Initialize animations and scroll
+  animations.initLenis();
+  animations.initFadein();
+  animations.initNavScroll();
+  animations.fixIOSParallax();
+
+  // Initialize UI
+  ui.initMobileNav(animations.lenis);
+</script>
+
+</body>
+</html>
