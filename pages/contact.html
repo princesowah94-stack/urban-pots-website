@@ -295,6 +295,19 @@
       }
     }
   </style>
+  <link rel="canonical" href="https://urbanpots.com.au/pages/contact.html" />
+  <meta property="og:title" content="Contact Urban Pots — Sydney Planter Specialists" />
+  <meta property="og:description" content="Get in touch with Urban Pots. Contact our Sydney-based team for custom planter solutions, quotes, and showroom visits." />
+  <meta name="twitter:description" content="Get in touch with Urban Pots. Contact our Sydney-based team for custom planter solutions, quotes, and showroom visits." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://urbanpots.com.au/pages/contact.html" />
+  <meta property="og:image" content="https://urbanpots.com.au/curated-images/og-social-card.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact Urban Pots — Sydney Planter Specialists" />
+  <meta name="twitter:image" content="https://urbanpots.com.au/curated-images/og-social-card.jpg" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/curated-images/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/curated-images/apple-touch-icon-180.png" />
 </head>
 <body>
 <!-- NAV (inherited from index.html) -->
@@ -401,7 +414,7 @@
   <div class="container">
     <div class="form-section fadein">
       <h2>Send us a Message</h2>
-      <form id="contactForm" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+      <form id="contactForm">
         <div class="form-grid">
           <div class="form-group">
             <label for="name">Full Name</label>
@@ -485,14 +498,35 @@
 
   document.querySelectorAll('.fadein').forEach(el => fadeObserver.observe(el));
 
-  // Form submission
-  document.getElementById('contactForm').addEventListener('submit', (e) => {
+  // Form submission → POST to the /api/quote Vercel Function (nodemailer).
+  const contactForm = document.getElementById('contactForm');
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
-    // In production, send to email service or Vercel Function
-    console.log('Form data:', Object.fromEntries(formData));
-    alert("Thank you for your message. We'll be in touch soon!");
-    e.target.reset();
+    const form = e.target;
+    const btn = form.querySelector('button[type="submit"]');
+    const data = Object.fromEntries(new FormData(form));
+    data.source = 'Contact form';
+    const label = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    try {
+      const res = await fetch('/api/quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error('Request failed');
+      form.innerHTML = '<p style="font-size:1.05rem;color:var(--c-brown-dk);">Thanks — your message has been sent. We\'ll be in touch within 24 hours.</p>';
+    } catch (err) {
+      // Graceful fallback: open the visitor's email client pre-filled.
+      btn.disabled = false;
+      btn.textContent = label;
+      const subject = encodeURIComponent(`Website enquiry${data.subject ? ': ' + data.subject : ''}`);
+      const body = encodeURIComponent(
+        `Name: ${data.name || ''}\nEmail: ${data.email || ''}\nPhone: ${data.phone || ''}\nCompany: ${data.company || ''}\n\n${data.message || ''}`
+      );
+      window.location.href = `mailto:info@urbanpots.com.au?subject=${subject}&body=${body}`;
+    }
   });
 </script>
 </body>

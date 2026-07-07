@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /mockup.html
+Disallow: /base-template.html
 
 Sitemap: https://urbanpots.com.au/sitemap.xml

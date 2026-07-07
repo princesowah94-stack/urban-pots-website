@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" role="img" aria-label="Partner logo placeholder">
+  <g fill="none" stroke="#C9B99A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.7">
+    <circle cx="100" cy="40" r="17"/>
+    <path d="M79 64 h42"/>
+  </g>
+  <text x="100" y="86" text-anchor="middle" font-family="Inter, Helvetica, sans-serif" font-size="10" letter-spacing="2" fill="#C9B99A" opacity="0.85">PARTNER</text>
+</svg>

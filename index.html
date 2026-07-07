@@ -118,21 +118,6 @@ h1 em, h2 em, h3 em, h4 em { font-style: normal; } /* accent words stay upright 
 .fadein.delay-4 { transition-delay: 0.40s; }
 .fadein.delay-5 { transition-delay: 0.50s; }
 
-/* ─── MOCKUP BANNER ────────────────────────────────────────── */
-.mockup-banner {
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  z-index: 9999;
-  background: var(--c-sage);
-  color: #fff;
-  text-align: center;
-  padding: 0.55rem 1rem;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.07em;
-  border-top: 1px solid rgba(255,255,255,0.2);
-}
-
 /* ─── NAV ──────────────────────────────────────────────────── */
 .site-nav {
   position: fixed;
@@ -1345,7 +1330,13 @@ h1 em, h2 em, h3 em, h4 em { font-style: normal; } /* accent words stay upright 
 </style>
 
 <!-- GEO/AEO: tells search engines + AI models exactly what this business is, where, and what it sells. -->
-<script type="application/ld+json">
+  <meta property="og:image" content="https://urbanpots.com.au/curated-images/og-social-card.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://urbanpots.com.au/curated-images/og-social-card.jpg" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/curated-images/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/curated-images/apple-touch-icon-180.png" />
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": ["Organization", "LocalBusiness"],
@@ -1386,11 +1377,6 @@ h1 em, h2 em, h3 em, h4 em { font-style: normal; } /* accent words stay upright 
 </script>
 </head>
 <body>
-
-<!-- MOCKUP BANNER -->
-<div class="mockup-banner">
-  ✦ DESIGN MOCKUP v3 — Sowah Studio × Urban Pots &nbsp;·&nbsp; Spaceful-inspired &nbsp;·&nbsp; Lenis smooth scroll &nbsp;·&nbsp; Dual-image hover on project cards &nbsp;·&nbsp; Logos + testimonials are placeholders
-</div>
 
 <!-- NAV -->
 <nav class="site-nav" id="siteNav">
