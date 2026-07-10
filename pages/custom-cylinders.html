@@ -177,6 +177,22 @@
       background: var(--c-cream);
     }
 
+    .configurator-layout {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .configurator-enquiry {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 3px;
+      border: 1px solid #E8E3DA;
+      position: sticky;
+      top: 100px;
+    }
+
     .configurator-wrapper {
       display: grid;
       grid-template-columns: 1.5fr 1fr;
@@ -436,6 +452,8 @@
       .controls-panel { max-height: 100%; }
       .section-head { grid-template-columns: 1fr; gap: 2rem; }
       .form-grid { grid-template-columns: 1fr; }
+      .configurator-layout { grid-template-columns: 1fr; }
+      .configurator-enquiry { position: static; }
     }
 
     .fadein {
@@ -716,12 +734,44 @@
       </div>
     </div>
 
-    <div class="fadein delay-1">
-      <iframe
-        src="../cylinder-configurator.html"
-        title="3D Cylinder Configurator"
-        style="width:100%;height:680px;border:none;display:block;border-radius:3px;box-shadow:0 8px 40px rgba(0,0,0,0.1);"
-        loading="lazy"></iframe>
+    <div class="configurator-layout fadein delay-1">
+      <div>
+        <iframe
+          src="../cylinder-configurator.html"
+          title="3D Cylinder Configurator"
+          style="width:100%;height:680px;border:none;display:block;border-radius:3px;box-shadow:0 8px 40px rgba(0,0,0,0.1);"
+          loading="lazy"></iframe>
+      </div>
+
+      <!-- Quick enquiry: posts to /api/quote on this site; once this theme is uploaded to
+           Shopify, /api/quote won't exist so the form falls back to submitting natively to
+           Shopify's built-in /contact form handler — no code changes needed at migration. -->
+      <div class="configurator-enquiry">
+        <h3 style="font-family: var(--font-head); font-size: 1.3rem; color: var(--c-brown-dk); margin-bottom: 0.5rem;">Ready to Enquire?</h3>
+        <p style="font-size: 0.9rem; color: var(--c-brown); margin-bottom: 1.5rem; line-height: 1.6;">Designed something you love? Send us your details and we'll follow up with a tailored quote.</p>
+        <form id="cylConfiguratorForm" action="/contact#ContactForm" method="post">
+          <input type="hidden" name="form_type" value="contact" />
+          <input type="hidden" name="utf8" value="✓" />
+          <div style="margin-bottom: 1rem;">
+            <label for="cylCfgName" style="display: block; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.4rem; font-size: 0.85rem;">Name *</label>
+            <input type="text" id="cylCfgName" name="contact[name]" required style="width: 100%; padding: 0.7rem; border: 1px solid #E8E3DA; border-radius: 2px; font-size: 0.9rem;" />
+          </div>
+          <div style="margin-bottom: 1rem;">
+            <label for="cylCfgEmail" style="display: block; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.4rem; font-size: 0.85rem;">Email *</label>
+            <input type="email" id="cylCfgEmail" name="contact[email]" required style="width: 100%; padding: 0.7rem; border: 1px solid #E8E3DA; border-radius: 2px; font-size: 0.9rem;" />
+          </div>
+          <div style="margin-bottom: 1rem;">
+            <label for="cylCfgPhone" style="display: block; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.4rem; font-size: 0.85rem;">Phone</label>
+            <input type="tel" id="cylCfgPhone" name="contact[phone]" placeholder="04XX XXX XXX" style="width: 100%; padding: 0.7rem; border: 1px solid #E8E3DA; border-radius: 2px; font-size: 0.9rem;" />
+          </div>
+          <div style="margin-bottom: 1.25rem;">
+            <label for="cylCfgMessage" style="display: block; font-weight: 600; color: var(--c-brown-dk); margin-bottom: 0.4rem; font-size: 0.85rem;">Message</label>
+            <textarea id="cylCfgMessage" name="contact[body]" rows="4" placeholder="Tell us about your project, quantities, and timeline..." style="width: 100%; padding: 0.7rem; border: 1px solid #E8E3DA; border-radius: 2px; font-size: 0.9rem; resize: vertical;"></textarea>
+          </div>
+          <button type="submit" class="btn btn--dark" style="width: 100%; justify-content: center;">Send Enquiry <span class="arrow-link">→</span></button>
+        </form>
+        <div id="cylConfiguratorFormStatus" style="display: none; margin-top: 1rem;"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1133,6 +1183,42 @@
       alert('Error submitting form. Please contact info@urbanpots.com.au');
     }
   });
+
+  // Configurator quick-enquiry form. Tries /api/quote first (works on this Vercel site);
+  // if that route doesn't exist (e.g. after this theme is uploaded to Shopify), it falls
+  // back to submitting the form natively so Shopify's built-in /contact handler takes over.
+  const cylCfgForm = document.getElementById('cylConfiguratorForm');
+  if (cylCfgForm) {
+    cylCfgForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = cylCfgForm.querySelector('[type="submit"]');
+      const label = btn.textContent;
+      const data = {
+        name: cylCfgForm.querySelector('[name="contact[name]"]').value,
+        email: cylCfgForm.querySelector('[name="contact[email]"]').value,
+        phone: cylCfgForm.querySelector('[name="contact[phone]"]').value,
+        notes: cylCfgForm.querySelector('[name="contact[body]"]').value,
+        source: 'Custom Cylinder Configurator',
+      };
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      try {
+        const res = await fetch('/api/quote', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+        if (!res.ok) throw new Error('api/quote unavailable');
+        ui.showToast('Enquiry sent! We\'ll be in touch within 24 hours.');
+        cylCfgForm.reset();
+        btn.disabled = false;
+        btn.textContent = label;
+      } catch (err) {
+        // /api/quote isn't available (likely running on Shopify) — submit natively to /contact.
+        cylCfgForm.submit();
+      }
+    });
+  }
   }
 </script>
 
