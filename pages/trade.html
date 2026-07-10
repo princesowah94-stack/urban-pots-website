@@ -46,6 +46,17 @@
       background: var(--c-stone);
     }
 
+    /* base.css isn't linked on this page — restore the shared eyebrow style.
+       Scoped to .section-head to out-specificity the .section-head p rule below. */
+    .section-head .eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--c-sage);
+    }
+
     .hero__content .hero__h1 {
       font-family: var(--font-head);
       font-size: clamp(2.2rem, 5vw, 4rem);
@@ -464,7 +475,7 @@
     <div class="section-head fadein">
       <div>
         <p class="eyebrow" style="margin-bottom: 0.75rem;">Who We Work With</p>
-        <h2>Sydney's Top <em>Design & Build</em> Professionals</h2>
+        <h2>Sydney's Top <em>Design & Build Professionals</em></h2>
       </div>
       <p>We serve a broad range of professionals across residential, commercial, hospitality, and events sectors.</p>
     </div>
