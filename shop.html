@@ -7,6 +7,52 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/components.css" />
+  <style>
+    .shop-hero {
+      position: relative;
+      height: 60vh;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 0;
+    }
+    .shop-hero__bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('curated-images/heroes/URBAN%20POTS-4541-hero.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .shop-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(12,10,8,0.35) 0%, rgba(12,10,8,0.6) 100%);
+    }
+    .shop-hero__content {
+      position: relative;
+      z-index: 2;
+    }
+    .shop-hero__content .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--c-stone);
+      margin-bottom: 1rem;
+    }
+    .shop-hero__content h1 {
+      color: #fff;
+    }
+    .shop-hero__content p {
+      color: rgba(255,255,255,0.75);
+    }
+  </style>
 
   <!-- Lenis & GSAP from CDN -->
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
@@ -110,7 +156,9 @@
 <main>
 
   <!-- HERO SECTION -->
-  <section class="shop-hero" style="background: linear-gradient(135deg, #F7F7F3 0%, #EDE8E1 100%); padding: clamp(4rem, 8vw, 6rem);">
+  <section class="shop-hero">
+    <div class="shop-hero__bg"></div>
+    <div class="shop-hero__overlay"></div>
     <div class="container">
       <div class="shop-hero__content fadein">
         <p class="eyebrow">Shop Our Collections</p>

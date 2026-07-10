@@ -33,13 +33,15 @@
     .hero__bg {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, #E8E3DA 0%, #D5D0C8 100%);
+      background-image: url('../curated-images/heroes/URBAN%20POTS-4613-hero.jpg');
+      background-size: cover;
+      background-position: center;
     }
 
     .hero__overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(155deg, rgba(12,10,8,0.05) 0%, rgba(12,10,8,0.15) 100%);
+      background: linear-gradient(155deg, rgba(12,10,8,0.1) 0%, rgba(12,10,8,0.5) 50%, rgba(12,10,8,0.8) 100%);
     }
 
     .hero__content {
@@ -68,13 +70,13 @@
       background: var(--c-stone);
     }
 
-    .hero__h1 {
+    .hero__content .hero__h1 {
       font-family: var(--font-head);
       font-size: clamp(2.5rem, 6vw, 5rem);
       font-weight: 600;
       line-height: 0.93;
       letter-spacing: -0.025em;
-      color: var(--c-brown-dk);
+      color: #fff;
       margin-bottom: 1.5rem;
     }
 
@@ -83,7 +85,7 @@
     .hero__sub {
       font-size: clamp(0.9rem, 1.2vw, 1rem);
       font-weight: 300;
-      color: var(--c-brown);
+      color: rgba(255,255,255,0.7);
       max-width: 420px;
       line-height: 1.8;
       margin-bottom: 2rem;

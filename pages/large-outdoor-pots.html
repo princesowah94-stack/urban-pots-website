@@ -9,6 +9,69 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="../css/components.css" />
+  <style>
+    .hero {
+      position: relative;
+      height: 80vh;
+      min-height: 620px;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: clamp(2rem, 5vw, 4rem);
+      overflow: hidden;
+    }
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('../curated-images/heroes/URBAN%20POTS-4604-hero.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(155deg, rgba(12,10,8,0.1) 0%, rgba(12,10,8,0.5) 50%, rgba(12,10,8,0.8) 100%);
+    }
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+    }
+    .hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--c-stone);
+      margin-bottom: 1.5rem;
+    }
+    .hero__eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--c-stone);
+    }
+    .hero__content .hero__h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 4.6vw, 3.6rem);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      color: #fff;
+      margin-bottom: 1.5rem;
+    }
+    .hero__h1 em { font-weight: 600; letter-spacing: -0.02em; color: var(--c-sage); }
+    .hero__sub {
+      font-size: clamp(0.9rem, 1.2vw, 1rem);
+      font-weight: 300;
+      color: rgba(255,255,255,0.7);
+      max-width: 420px;
+      line-height: 1.8;
+    }
+  </style>
 
   <!-- Lenis & GSAP from CDN -->
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
@@ -106,14 +169,17 @@
 <main>
 
   <!-- HERO SECTION -->
-  <section class="hero" style="background: linear-gradient(135deg, #F7F7F3 0%, #EDE8E1 100%);">
-    <div class="hero__content">
-      <p class="eyebrow">Large Outdoor Pots</p>
-      <h1>Large Outdoor Pots, <em>Built for Australian Conditions</em></h1>
-      <p class="hero__subtext">Oversized planters from 600mm to 1.5 metres and beyond — made to order in durable Thai limestone, fibreglass and lightweight finishes that handle full sun, wind and rain. For homes, courtyards, rooftops and commercial landscapes across Sydney.</p>
-      <a href="mailto:info@urbanpots.com.au?subject=Large Outdoor Pots Enquiry" class="btn btn--dark">Request a Quote <span class="arrow-link">→</span></a>
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+    <div class="container">
+      <div class="hero__content">
+        <p class="hero__eyebrow">Large Outdoor Pots</p>
+        <h1 class="hero__h1">Large Outdoor Pots, <em>Built for Australian Conditions</em></h1>
+        <p class="hero__sub">Oversized planters from 600mm to 1.5 metres and beyond — made to order in durable Thai limestone, fibreglass and lightweight finishes that handle full sun, wind and rain. For homes, courtyards, rooftops and commercial landscapes across Sydney.</p>
+        <a href="mailto:info@urbanpots.com.au?subject=Large Outdoor Pots Enquiry" class="btn btn--dark">Request a Quote <span class="arrow-link">→</span></a>
+      </div>
     </div>
-    <div class="hero__image" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 600%22><rect fill=%22%23D5D0C8%22 width=%22800%22 height=%22600%22/></rect></svg>')"></div>
   </section>
 
   <!-- VALUE PROPS SECTION -->
