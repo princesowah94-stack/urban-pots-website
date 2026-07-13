@@ -550,31 +550,33 @@
   <div class="container">
     <div class="form-section fadein">
       <h2>Submit Your Trade Enquiry</h2>
-      <form id="tradeForm">
+      <form id="tradeForm" action="/contact#ContactForm" method="post">
+        <input type="hidden" name="form_type" value="contact" />
+        <input type="hidden" name="utf8" value="✓" />
         <div class="form-grid">
           <div class="form-group">
             <label for="name">Full Name *</label>
-            <input type="text" id="name" name="name" required />
+            <input type="text" id="name" name="contact[name]" required />
           </div>
 
           <div class="form-group">
             <label for="email">Email Address *</label>
-            <input type="email" id="email" name="email" required />
+            <input type="email" id="email" name="contact[email]" required />
           </div>
 
           <div class="form-group">
             <label for="phone">Phone Number *</label>
-            <input type="tel" id="phone" name="phone" required />
+            <input type="tel" id="phone" name="contact[phone]" required />
           </div>
 
           <div class="form-group">
             <label for="company">Company Name *</label>
-            <input type="text" id="company" name="company" required />
+            <input type="text" id="company" name="contact[Company]" required />
           </div>
 
           <div class="form-group full">
             <label for="profession">Professional Role *</label>
-            <select id="profession" name="profession" required>
+            <select id="profession" name="contact[Professional Role]" required>
               <option value="">Select your profession...</option>
               <option value="landscaper">Landscaper / Garden Designer</option>
               <option value="interior-designer">Interior Designer</option>
@@ -590,12 +592,12 @@
 
           <div class="form-group full">
             <label for="project">Project Description *</label>
-            <textarea id="project" name="project" placeholder="Tell us about your project, the quantities needed, and timeline..." required></textarea>
+            <textarea id="project" name="contact[body]" placeholder="Tell us about your project, the quantities needed, and timeline..." required></textarea>
           </div>
 
           <div class="form-group full">
             <label for="message">Additional Information (Optional)</label>
-            <textarea id="message" name="message" placeholder="Any other details we should know..."></textarea>
+            <textarea id="message" name="contact[Additional Info]" placeholder="Any other details we should know..."></textarea>
           </div>
         </div>
 
@@ -650,14 +652,25 @@
 
   document.querySelectorAll('.fadein').forEach(el => fadeObserver.observe(el));
 
-  // Form submission → POST to the /api/quote Vercel Function (nodemailer).
+  // Form submission. Tries /api/quote first (works on this Vercel preview); if that
+  // route doesn't exist (e.g. once this theme is live on Shopify), the form falls back
+  // to submitting natively so Shopify's built-in /contact handler takes over.
   const tradeForm = document.getElementById('tradeForm');
   tradeForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const form = e.target;
     const btn = form.querySelector('button[type="submit"]');
-    const data = Object.fromEntries(new FormData(form));
-    data.source = 'Trade enquiry';
+    const professionSelect = form.querySelector('[name="contact[Professional Role]"]');
+    const data = {
+      name: form.querySelector('[name="contact[name]"]').value,
+      email: form.querySelector('[name="contact[email]"]').value,
+      phone: form.querySelector('[name="contact[phone]"]').value,
+      company: form.querySelector('[name="contact[Company]"]').value,
+      profession: professionSelect.options[professionSelect.selectedIndex].text,
+      project: form.querySelector('[name="contact[body]"]').value,
+      notes: form.querySelector('[name="contact[Additional Info]"]').value,
+      source: 'Trade enquiry',
+    };
     const label = btn.textContent;
     btn.disabled = true;
     btn.textContent = 'Sending…';
@@ -670,14 +683,12 @@
       if (!res.ok) throw new Error('Request failed');
       form.innerHTML = '<p style="font-size:1.05rem;color:var(--c-brown-dk);">Thank you — your trade enquiry has been sent. Our team will be in touch within 24 hours.</p>';
     } catch (err) {
-      // Graceful fallback: open the visitor's email client pre-filled.
-      btn.disabled = false;
-      btn.textContent = label;
-      const subject = encodeURIComponent('Trade enquiry — Urban Pots');
-      const body = encodeURIComponent(
-        Object.entries(data).map(([k, v]) => `${k}: ${v}`).join('\n')
-      );
-      window.location.href = `mailto:info@urbanpots.com.au?subject=${subject}&body=${body}`;
+      // /api/quote isn't available (likely running on Shopify). Shopify's default contact
+      // notification only reliably renders contact[body], so fold the extra fields into it
+      // before handing off to native submission — nothing gets silently dropped.
+      const bodyField = form.querySelector('[name="contact[body]"]');
+      bodyField.value = `Company: ${data.company}\nProfessional Role: ${data.profession}\n\nProject Description:\n${data.project}${data.notes ? `\n\nAdditional Information:\n${data.notes}` : ''}`;
+      form.submit();
     }
   });
 </script>
