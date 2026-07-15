@@ -15,7 +15,7 @@
 }
 
 .btn--stone { background: var(--c-stone); color: var(--c-dark); }
-.btn--stone:hover { background: #D9C9AA; transform: translateY(-2px); }
+.btn--stone:hover { background: #8B9D6F; transform: translateY(-2px); }
 
 .btn--dark { background: var(--c-dark); color: #fff; }
 .btn--dark:hover { background: #333; transform: translateY(-2px); }
@@ -1973,7 +1973,7 @@ input[type="radio"] {
 /* ── PRIVACY POLICY PAGE ────────────────────────────────────── */
 
 .policy-hero {
-  border-bottom: 1px solid var(--c-stone-light);
+  border-bottom: 1px solid var(--c-border);
 }
 
 .policy-hero__content h1 {
