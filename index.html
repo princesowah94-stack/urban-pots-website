@@ -1123,22 +1123,40 @@ h1 em, h2 em, h3 em, h4 em { font-style: normal; } /* accent words stay upright 
   border: 1px solid var(--c-border);
 }
 
+.collection-card__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transition: transform 0.4s var(--ease);
+}
+
+.collection-card:hover .collection-card__photo {
+  transform: scale(1.05);
+}
+
 .collection-card__bg {
   position: absolute;
   inset: 0;
   background: var(--c-stone);
   opacity: 0.6;
-  z-index: 0;
+  z-index: 1;
   transition: opacity 0.3s var(--ease);
 }
 
-.collection-card--1 .collection-card__bg { background: linear-gradient(135deg, #C9B99A 0%, #B89F7B 100%); }
-.collection-card--2 .collection-card__bg { background: linear-gradient(135deg, #7A8C5E 0%, #5C6D48 100%); }
-.collection-card--3 .collection-card__bg { background: linear-gradient(135deg, #7F593E 0%, #5C3D27 100%); }
-.collection-card--4 .collection-card__bg { background: linear-gradient(135deg, #B8A68A 0%, #9A8C78 100%); }
+.collection-card--1 .collection-card__bg,
+.collection-card--2 .collection-card__bg,
+.collection-card--3 .collection-card__bg,
+.collection-card--4 .collection-card__bg {
+  background: linear-gradient(180deg, rgba(20, 15, 10, 0) 35%, rgba(20, 15, 10, 0.75) 100%);
+  opacity: 1;
+}
+
 .collection-card--coming .collection-card__bg { background: linear-gradient(135deg, #E0D5C7 0%, #D1C8BA 100%); opacity: 0.4; }
 
-.collection-card:hover .collection-card__bg {
+.collection-card--coming:hover .collection-card__bg {
   opacity: 0.8;
 }
 
@@ -1471,7 +1489,7 @@ h1 em, h2 em, h3 em, h4 em { font-style: normal; } /* accent words stay upright 
         <div class="custom-showcase__image">
           <picture>
             <source srcset="curated-images/heroes/planter-boxes-row-hero.webp" type="image/webp">
-            <img src="curated-images/heroes/planter-boxes-row-hero.jpg" alt="Row of custom fibreglass planter boxes freshly wrapped in our Western Sydney yard" loading="lazy" />
+            <img src="curated-images/heroes/planter-boxes-row-hero.jpg" alt="Custom planter box being prepared for delivery on an Urban Pots project site" loading="lazy" />
           </picture>
         </div>
         <div class="custom-showcase__content">
@@ -1890,6 +1908,7 @@ h1 em, h2 em, h3 em, h4 em { font-style: normal; } /* accent words stay upright 
 
     <div class="designer-collections__grid fadein">
       <a href="/shop.html?collection=lightweight" class="collection-card collection-card--1">
+        <img class="collection-card__photo" src="https://www.urbanpots.com.au/cdn/shop/collections/Urban_pots_73_of_93.jpg?v=1756432404" alt="Lightweight Designer Collection planters" loading="lazy" />
         <div class="collection-card__bg"></div>
         <div class="collection-card__content">
           <h3>Lightweight Designer Collection</h3>
@@ -1898,6 +1917,7 @@ h1 em, h2 em, h3 em, h4 em { font-style: normal; } /* accent words stay upright 
       </a>
 
       <a href="/shop.html?collection=terrazzo" class="collection-card collection-card--2">
+        <img class="collection-card__photo" src="https://www.urbanpots.com.au/cdn/shop/collections/Urban_pots_87_of_93.jpg?v=1756447923" alt="Terrazzo Collection planters" loading="lazy" />
         <div class="collection-card__bg"></div>
         <div class="collection-card__content">
           <h3>Terrazzo Collection</h3>
@@ -1906,6 +1926,7 @@ h1 em, h2 em, h3 em, h4 em { font-style: normal; } /* accent words stay upright 
       </a>
 
       <a href="/shop.html?collection=atlantis" class="collection-card collection-card--3">
+        <img class="collection-card__photo" src="https://www.urbanpots.com.au/cdn/shop/collections/Urban_pots_6_of_93.jpg?v=1756447708" alt="Modern Atlantis Collection planters" loading="lazy" />
         <div class="collection-card__bg"></div>
         <div class="collection-card__content">
           <h3>Modern Atlantis Collection</h3>
@@ -1914,6 +1935,7 @@ h1 em, h2 em, h3 em, h4 em { font-style: normal; } /* accent words stay upright 
       </a>
 
       <a href="/shop.html?collection=thai-limestone" class="collection-card collection-card--4">
+        <img class="collection-card__photo" src="https://www.urbanpots.com.au/cdn/shop/collections/Urban_pots_21_of_93.jpg?v=1687499552" alt="Thai Limestone Collection planters" loading="lazy" />
         <div class="collection-card__bg"></div>
         <div class="collection-card__content">
           <h3>Thai Limestone Collection</h3>
