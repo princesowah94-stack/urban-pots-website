@@ -941,27 +941,22 @@ h1 em, h2 em, h3 em, h4 em { font-style: normal; } /* accent words stay upright 
 }
 .testimonials__arrow:hover { background: var(--c-sage); border-color: var(--c-sage); color: #fff; }
 
-/* ─── CLIENT LOGOS MARQUEE (Spaceful awards section style) ─── */
+/* ─── CLIENT LOGOS MARQUEE ─── */
 .logos-marquee {
   background: var(--c-dark);
-  padding: clamp(3rem, 5vw, 4.5rem) 0;
+  padding: clamp(4rem, 7vw, 6rem) 0;
   overflow: hidden;
 }
-.logos-marquee__label {
-  text-align: center;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.25);
-  margin-bottom: 2.5rem;
-}
+.logos-marquee .section-head { margin-bottom: 3rem; }
+.logos-marquee .section-head h2 { color: #fff; }
+.logos-marquee .section-head h2 em { color: var(--c-stone); }
+.logos-marquee .section-head p { color: rgba(255,255,255,0.62); }
 .logos-marquee__track-wrap { overflow: hidden; }
 .logos-marquee__track {
   display: flex;
   align-items: center;
   gap: 4rem;
-  animation: marqueeScroll 28s linear infinite;
+  animation: marqueeScroll 34s linear infinite;
   width: max-content;
 }
 .logos-marquee__track-wrap:hover .logos-marquee__track { animation-play-state: paused; }
@@ -971,19 +966,19 @@ h1 em, h2 em, h3 em, h4 em { font-style: normal; } /* accent words stay upright 
 }
 .logo-item {
   font-family: var(--font-head);
-  font-size: 1.05rem;
-  font-weight: 300;
-  letter-spacing: 0.06em;
-  color: rgba(255,255,255,0.22);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: rgba(255,255,255,0.92);
   white-space: nowrap;
   transition: color 0.3s;
   cursor: default;
 }
-.logo-item:hover { color: var(--c-stone); }
+.logo-item:hover { color: var(--c-sage); }
 .logo-sep {
   width: 4px; height: 4px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.3);
   flex-shrink: 0;
 }
 
@@ -1808,7 +1803,16 @@ h1 em, h2 em, h3 em, h4 em { font-style: normal; } /* accent words stay upright 
 
 <!-- CLIENT LOGOS MARQUEE -->
 <section class="logos-marquee">
-  <div class="logos-marquee__label">Trusted by Sydney's Developers</div>
+  <div class="container">
+    <div class="section-head fadein">
+      <div>
+        <h2>Trusted by <em>Leading Companies</em></h2>
+      </div>
+      <div>
+        <p>Proven partner for Sydney's top developers, builders, and landscapers.</p>
+      </div>
+    </div>
+  </div>
   <div class="logos-marquee__track-wrap">
     <div class="logos-marquee__track">
       <!-- First set -->

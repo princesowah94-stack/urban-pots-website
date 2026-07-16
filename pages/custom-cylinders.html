@@ -471,30 +471,6 @@
     .delay-2 { transition-delay: 0.2s; }
     .delay-3 { transition-delay: 0.3s; }
 
-    .logos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 1.5rem;
-      margin-top: 3rem;
-      align-items: center;
-    }
-
-    .logo-card {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
-      background: #fff;
-      border: 1px solid #E8E3DA;
-      border-radius: 2px;
-      filter: grayscale(1);
-      opacity: 0.65;
-      transition: filter 0.25s, opacity 0.25s;
-    }
-
-    .logo-card:hover { filter: grayscale(0); opacity: 1; }
-    .logo-card img { max-width: 130px; height: auto; display: block; }
-
     .manufacturing-features { margin-top: 3rem; }
 
     .feature-list {
@@ -637,8 +613,8 @@
   </div>
 </section>
 
-<!-- 1B. COMPANY LOGOS SECTION -->
-<section class="section section--light">
+<!-- 1B. COMPANY LOGOS MARQUEE -->
+<section class="section--dark logos-marquee">
   <div class="container">
     <div class="section-head fadein">
       <div>
@@ -648,20 +624,35 @@
         <p>Proven partner for Sydney's top developers, builders, and landscapers.</p>
       </div>
     </div>
-
-    <div class="logos-grid fadein">
-      <div class="logo-card">
-        <!-- TODO: replace with real partner logo --><img src="/curated-images/logos/placeholder.svg" alt="Partner logo" width="200" height="100" />
-      </div>
-      <div class="logo-card">
-        <!-- TODO: replace with real partner logo --><img src="/curated-images/logos/placeholder.svg" alt="Partner logo" width="200" height="100" />
-      </div>
-      <div class="logo-card">
-        <!-- TODO: replace with real partner logo --><img src="/curated-images/logos/placeholder.svg" alt="Partner logo" width="200" height="100" />
-      </div>
-      <div class="logo-card">
-        <!-- TODO: replace with real partner logo --><img src="/curated-images/logos/placeholder.svg" alt="Partner logo" width="200" height="100" />
-      </div>
+  </div>
+  <div class="logos-marquee__track-wrap">
+    <div class="logos-marquee__track">
+      <!-- First set -->
+      <span class="logo-item">Meriton Group</span>
+      <span class="logo-sep"></span>
+      <span class="logo-item">Mirvac</span>
+      <span class="logo-sep"></span>
+      <span class="logo-item">Lendlease</span>
+      <span class="logo-sep"></span>
+      <span class="logo-item">Frasers Property</span>
+      <span class="logo-sep"></span>
+      <span class="logo-item">Crown Group</span>
+      <span class="logo-sep"></span>
+      <span class="logo-item">Stockland</span>
+      <span class="logo-sep"></span>
+      <!-- Duplicate for seamless loop -->
+      <span class="logo-item">Meriton Group</span>
+      <span class="logo-sep"></span>
+      <span class="logo-item">Mirvac</span>
+      <span class="logo-sep"></span>
+      <span class="logo-item">Lendlease</span>
+      <span class="logo-sep"></span>
+      <span class="logo-item">Frasers Property</span>
+      <span class="logo-sep"></span>
+      <span class="logo-item">Crown Group</span>
+      <span class="logo-sep"></span>
+      <span class="logo-item">Stockland</span>
+      <span class="logo-sep"></span>
     </div>
   </div>
 </section>
