@@ -601,6 +601,10 @@ input[type="radio"] {
   font-family: var(--font-heading);
 }
 
+/* Accent words inside headings stay upright (not cursive/italic) — matches the
+   surrounding heading text, just carrying the bold/accent-colour treatment. */
+h1 em, h2 em, h3 em, h4 em { font-style: normal; }
+
 .hero__content h1 em {
   font-weight: 600;
   color: var(--c-sage);
@@ -2044,6 +2048,7 @@ input[type="radio"] {
 }
 
 .policy-text em {
+  font-style: normal;
   font-weight: 600;
   color: var(--c-brown);
   letter-spacing: -0.02em;
