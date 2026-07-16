@@ -347,50 +347,6 @@ input[type="range"]::-moz-range-thumb {
   font-weight: 400;
 }
 
-/* ─── SUMMARY ────────────────────────────────────────── */
-.summary-grid {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  row-gap: 0.45rem;
-  column-gap: 1rem;
-  align-items: baseline;
-}
-.s-key {
-  font-size: 0.65rem;
-  color: rgba(28,26,24,0.48);
-  letter-spacing: 0.03em;
-  white-space: nowrap;
-}
-.s-val {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--c-brown-dk);
-}
-
-/* ─── QUOTE CTA ──────────────────────────────────────── */
-.quote-cta {
-  margin-top: 1.5rem;
-  width: 100%;
-  padding: 1rem;
-  background: var(--c-stone);
-  color: var(--c-dark);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  border-radius: 2px;
-  transition: background 0.22s var(--ease), transform 0.18s;
-}
-.quote-cta:hover { background: #8B9D6F; transform: translateY(-1px); }
-
-.disclaimer {
-  margin-top: 1rem;
-  font-size: 0.62rem;
-  color: rgba(28,26,24,0.38);
-  line-height: 1.65;
-  text-align: center;
-}
-
 /* ─── RESPONSIVE ─────────────────────────────────────── */
 @media (max-width: 768px) {
   html, body { overflow: auto; }
@@ -509,7 +465,7 @@ input[type="range"]::-moz-range-thumb {
       </div>
 
       <!-- COLOUR -->
-      <div class="ctrl-section">
+      <div class="ctrl-section ctrl-section--last">
         <p class="ctrl-title">Colour</p>
         <div class="swatch-row">
           <button class="swatch active"
@@ -538,21 +494,6 @@ input[type="range"]::-moz-range-thumb {
             title="Dulux Domino" aria-label="Domino"></button>
         </div>
         <p class="swatch-name">Dulux <span id="activeSwatch">Lexicon Half</span></p>
-      </div>
-
-      <!-- SUMMARY -->
-      <div class="ctrl-section ctrl-section--last">
-        <p class="ctrl-title">Your Configuration</p>
-        <div class="summary-grid">
-          <span class="s-key">Dimensions</span>
-          <span class="s-val" id="sDims">&#216; 500 &times; 450 mm</span>
-          <span class="s-key">Material</span>
-          <span class="s-val" id="sMat">Fibre Cement</span>
-          <span class="s-key">Colour</span>
-          <span class="s-val" id="sCol">Lexicon Half</span>
-        </div>
-        <button class="quote-cta" id="quoteCta">Get a Quote &rarr;</button>
-        <p class="disclaimer">Dimensions shown are for visual guidance only. Actual product proportions may vary slightly in production. All cylinders primed and finished with 3 coats of Dulux paint.</p>
       </div>
 
     </div>
@@ -818,18 +759,37 @@ function animateTo(Dmm, Hmm) {
 let activeMat     = 'fibre-cement';
 let activeHex     = '#F2EFE9';
 let activeColName = 'Lexicon Half';
+// Target dimensions (mm) — tracked separately from the animating `dims` scene object,
+// which is mid-tween (via GSAP) at the exact moment syncReadouts fires and so can't be
+// read synchronously for an accurate postMessage payload.
+let lastDmm = 500;
+let lastHmm = 450;
 
 function syncReadouts(Dmm, Hmm) {
   readD.textContent = `${Dmm} mm`;
   readH.textContent = `${Hmm} mm`;
-  document.getElementById('sDims').textContent =
-    `Ø ${Dmm} × ${Hmm} mm`;
+  lastDmm = Dmm;
+  lastHmm = Hmm;
+  postConfigToParent();
 }
 
 function syncSummary() {
-  document.getElementById('sMat').textContent =
-    activeMat === 'fibre-cement' ? 'Fibre Cement' : 'Fibreglass';
-  document.getElementById('sCol').textContent = activeColName;
+  postConfigToParent();
+}
+
+// Broadcasts the live configuration to the parent page so its "Your Configuration"
+// quote panel stays in sync without the customer needing to click anything.
+function postConfigToParent() {
+  window.parent.postMessage({
+    type: 'urbanpots:configurator',
+    configurator: 'cylinder',
+    diameter: lastDmm,
+    height: lastHmm,
+    material: activeMat === 'fibre-cement' ? 'Fibre Cement' : 'Fibreglass',
+    materialValue: activeMat,
+    colourName: activeColName,
+    colourHex: activeHex,
+  }, '*');
 }
 
 // ──────────────────────────────────────────────────────────
@@ -917,20 +877,6 @@ document.querySelectorAll('.swatch').forEach(sw => {
     document.getElementById('activeSwatch').textContent = activeColName;
     syncSummary();
   });
-});
-
-// ──────────────────────────────────────────────────────────
-// QUOTE CTA
-// ──────────────────────────────────────────────────────────
-document.getElementById('quoteCta').addEventListener('click', () => {
-  const Dmm = Math.round(dims.D * 100);
-  const Hmm = Math.round(dims.H * 100);
-  const mat = activeMat === 'fibre-cement' ? 'Fibre+Cement' : 'Fibreglass';
-  window.open(
-    `/pages/custom-cylinders.html#enquiryForm` +
-    `?diameter=${Dmm}&height=${Hmm}&material=${mat}`,
-    '_top'
-  );
 });
 
 // ──────────────────────────────────────────────────────────

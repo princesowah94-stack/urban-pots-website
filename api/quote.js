@@ -34,6 +34,7 @@ function formatDesigns(designs) {
   const lines = designs
     .map((d, i) => {
       const parts = [
+        d.diameter && d.height ? `Dimensions: ⌀${d.diameter} × H${d.height} mm` :
         d.length && d.width && d.height ? `Dimensions: ${d.length} × ${d.width} × ${d.height} mm` : null,
         d.thickness ? `Wall Thickness: ${d.thickness} mm` : null,
         d.material ? `Material: ${d.material}` : null,
