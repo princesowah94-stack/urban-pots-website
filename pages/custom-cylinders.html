@@ -237,6 +237,61 @@
       line-height: 1.5;
     }
 
+    .cfg-add-btn {
+      width: 100%;
+      padding: 0.85rem;
+      margin-bottom: 1.5rem;
+      background: var(--c-sage);
+      color: #fff;
+      border: none;
+      border-radius: 2px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .cfg-add-btn:hover { background: #8B9D6F; }
+
+    .cfg-quote-items {
+      margin-bottom: 1.5rem;
+    }
+    .cfg-quote-items__title {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--c-brown-dk);
+      margin-bottom: 0.75rem;
+    }
+    .cfg-quote-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.7rem 0.85rem;
+      background: var(--c-bg);
+      border-radius: 2px;
+      margin-bottom: 0.5rem;
+      font-size: 0.82rem;
+      color: var(--c-brown-dk);
+    }
+    .cfg-quote-item__remove {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: none;
+      background: transparent;
+      color: rgba(28,26,24,0.4);
+      font-size: 1rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .cfg-quote-item__remove:hover { background: rgba(28,26,24,0.08); color: var(--c-dark); }
+
     .configurator-wrapper {
       display: grid;
       grid-template-columns: 1.5fr 1fr;
@@ -783,7 +838,7 @@
            to Shopify's built-in /contact form handler — no code changes needed at migration. -->
       <div class="configurator-enquiry">
         <h3 style="font-family: var(--font-head); font-size: 1.3rem; color: var(--c-brown-dk); margin-bottom: 0.5rem;">Get Your Quote</h3>
-        <p style="font-size: 0.9rem; color: var(--c-brown); margin-bottom: 1.5rem; line-height: 1.6;">Designed something you love? Send us your details and we'll follow up with a tailored quote.</p>
+        <p style="font-size: 0.9rem; color: var(--c-brown); margin-bottom: 1.5rem; line-height: 1.6;">Designed something you love? Add it to your quote — design as many cylinders as you need, then send us your details.</p>
 
         <div class="cfg-summary">
           <p class="cfg-summary__title">Your Configuration</p>
@@ -796,6 +851,13 @@
             <span class="cfg-summary__val" id="cylCfgCol">Lexicon Half</span>
           </div>
           <p class="cfg-summary__disclaimer">Dimensions shown are for visual guidance only. Actual product proportions may vary slightly in production. All cylinders primed and finished with 3 coats of Dulux paint.</p>
+        </div>
+
+        <button type="button" class="cfg-add-btn" id="cylAddToQuote">+ Add to Quote</button>
+
+        <div class="cfg-quote-items" id="cylQuoteItems" style="display: none;">
+          <p class="cfg-quote-items__title">Your Quote Items</p>
+          <div id="cylQuoteItemsList"></div>
         </div>
 
         <form id="cylConfiguratorForm" action="/contact#ContactForm" method="post">
@@ -1250,6 +1312,44 @@
     }
   });
 
+  // Add-to-quote list: lets a customer design several cylinders (different sizes,
+  // materials, colours) and send them all in one enquiry instead of just the last one.
+  let cylQuoteItems = [];
+
+  function describeCylItem(item) {
+    return `Ø${item.diameter} × H${item.height}mm — ${item.material} — ${item.colourName}`;
+  }
+
+  function renderCylQuoteItems() {
+    const wrap = document.getElementById('cylQuoteItems');
+    const list = document.getElementById('cylQuoteItemsList');
+    if (cylQuoteItems.length === 0) {
+      wrap.style.display = 'none';
+      list.innerHTML = '';
+      return;
+    }
+    wrap.style.display = 'block';
+    list.innerHTML = cylQuoteItems.map((item, i) => `
+      <div class="cfg-quote-item">
+        <span>${describeCylItem(item)}</span>
+        <button type="button" class="cfg-quote-item__remove" data-index="${i}" aria-label="Remove item">×</button>
+      </div>
+    `).join('');
+  }
+
+  document.getElementById('cylAddToQuote').addEventListener('click', () => {
+    cylQuoteItems.push({ ...cylConfig });
+    renderCylQuoteItems();
+    ui.showToast('Added to your quote');
+  });
+
+  document.getElementById('cylQuoteItemsList').addEventListener('click', (e) => {
+    const btn = e.target.closest('.cfg-quote-item__remove');
+    if (!btn) return;
+    cylQuoteItems.splice(Number(btn.dataset.index), 1);
+    renderCylQuoteItems();
+  });
+
   // Configurator quick-enquiry form. Tries /api/quote first (works on this Vercel site);
   // if that route doesn't exist (e.g. after this theme is uploaded to Shopify), it falls
   // back to submitting the form natively so Shopify's built-in /contact handler takes over.
@@ -1259,20 +1359,23 @@
       e.preventDefault();
       const btn = cylCfgForm.querySelector('[type="submit"]');
       const label = btn.textContent;
-      const configSummary = `Ø${cylConfig.diameter} × H${cylConfig.height}mm, ${cylConfig.material}, ${cylConfig.colourName}`;
+      // If nothing was explicitly added to the quote, fall back to the current live
+      // configuration so a quick one-off quote still works without an extra click.
+      const items = cylQuoteItems.length > 0 ? cylQuoteItems : [cylConfig];
+      const itemsSummary = items.map(describeCylItem).join('\n');
       const data = {
         name: cylCfgForm.querySelector('[name="contact[name]"]').value,
         email: cylCfgForm.querySelector('[name="contact[email]"]').value,
         phone: cylCfgForm.querySelector('[name="contact[phone]"]').value,
         notes: cylCfgForm.querySelector('[name="contact[body]"]').value,
         source: 'Custom Cylinder Configurator',
-        designs: [{
-          diameter: cylConfig.diameter,
-          height: cylConfig.height,
-          material: cylConfig.material,
-          colour: cylConfig.colourName,
+        designs: items.map((item) => ({
+          diameter: item.diameter,
+          height: item.height,
+          material: item.material,
+          colour: item.colourName,
           quantity: 1,
-        }],
+        })),
       };
       btn.disabled = true;
       btn.textContent = 'Sending…';
@@ -1285,6 +1388,8 @@
         if (!res.ok) throw new Error('api/quote unavailable');
         ui.showToast('Enquiry sent! We\'ll be in touch within 24 hours.');
         cylCfgForm.reset();
+        cylQuoteItems = [];
+        renderCylQuoteItems();
         btn.disabled = false;
         btn.textContent = label;
       } catch (err) {
@@ -1292,7 +1397,7 @@
         // notification only reliably renders contact[body], so fold the configuration into
         // it before handing off to native submission — nothing gets silently dropped.
         const bodyField = cylCfgForm.querySelector('[name="contact[body]"]');
-        bodyField.value = `Configuration: ${configSummary}\n\n${bodyField.value}`;
+        bodyField.value = `Quote items:\n${itemsSummary}\n\n${bodyField.value}`;
         cylCfgForm.submit();
       }
     });
