@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, max-scale=1" />
-  <title>Our Projects — Custom Planter Installations Across Sydney | Urban Pots</title><meta name="description" content="See Urban Pots in action — completed custom planter installations from our Western Sydney yard to finished projects across Australia. Explore our recent work." />
+  <title>Our Projects — Custom Planter Installations Across Sydney | Urban Pots</title><meta name="description" content="Explore Urban Pots' completed projects — custom planter installations across Sydney, from concept to finished site." />
 
   <!-- CSS -->
   <link rel="stylesheet" href="../css/components.css" />
@@ -68,7 +68,6 @@
       color: #fff;
       margin-bottom: 1.5rem;
     }
-    .hero__h1 em { font-weight: 600; letter-spacing: -0.02em; color: var(--c-sage); }
     .hero__sub {
       font-size: clamp(0.9rem, 1.2vw, 1rem);
       font-weight: 300;
@@ -77,54 +76,45 @@
       line-height: 1.8;
     }
 
-    /* Projects page */
-    .proj-intro { padding: clamp(4rem, 7vw, 7rem) 0 clamp(2rem, 4vw, 3rem); }
-
-    .proj-steps {
+    /* Projects grid */
+    .projects-grid-section { padding: clamp(4rem, 7vw, 7rem) 0 clamp(5rem, 8vw, 8rem); }
+    .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
     }
-    .proj-step__img {
-      aspect-ratio: 3 / 2;
-      border-radius: 4px;
+    .project-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+    .project-card__image {
+      aspect-ratio: 4 / 3;
+      border-radius: 2px;
       overflow: hidden;
       background: var(--c-cream);
     }
-    .proj-step__img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s ease; }
-    .proj-step:hover .proj-step__img img { transform: scale(1.05); }
-    .proj-step__label {
-      display: flex; align-items: baseline; gap: 0.6rem;
+    .project-card__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s var(--ease);
+    }
+    .project-card:hover .project-card__image img { transform: scale(1.05); }
+    .project-card__title {
       margin-top: 1rem;
+      font-family: var(--font-head);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--c-brown-dk);
     }
-    .proj-step__num { font-size: 0.8rem; font-weight: 700; color: var(--c-sage); letter-spacing: 0.08em; }
-    .proj-step h3 { font-family: var(--font-head); font-size: 1.05rem; color: var(--c-brown-dk); margin: 0; }
-    .proj-step p { font-size: 0.9rem; color: var(--c-brown); line-height: 1.6; margin: 0.4rem 0 0; }
-
-    .proj-gallery-section { padding: clamp(3rem, 6vw, 6rem) 0 clamp(5rem, 8vw, 8rem); }
-    .proj-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 1.25rem;
-      margin-top: 2.5rem;
-    }
-    .proj-tile {
-      position: relative;
-      overflow: hidden;
-      border-radius: 4px;
-      aspect-ratio: 2 / 1;
-      background: var(--c-cream);
-    }
-    .proj-tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .7s ease; }
-    .proj-tile:hover img { transform: scale(1.06); }
-    .proj-tile--wide { grid-column: span 2; aspect-ratio: 2 / 1; }
-    @media (max-width: 720px) { .proj-tile--wide { grid-column: span 1; } }
   </style>
   <link rel="canonical" href="https://urbanpots.com.au/pages/projects.html" />
   <meta property="og:title" content="Our Projects — Custom Planter Installations Across Sydney | Urban Pots" />
-  <meta property="og:description" content="See Urban Pots in action — completed custom planter installations from our Western Sydney yard to finished projects across Australia. Explore our recent work." />
-  <meta name="twitter:description" content="See Urban Pots in action — completed custom planter installations from our Western Sydney yard to finished projects across Australia. Explore our recent work." />
+  <meta property="og:description" content="Explore Urban Pots' completed projects — custom planter installations across Sydney, from concept to finished site." />
+  <meta name="twitter:description" content="Explore Urban Pots' completed projects — custom planter installations across Sydney, from concept to finished site." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://urbanpots.com.au/pages/projects.html" />
   <meta property="og:image" content="https://urbanpots.com.au/curated-images/og-social-card.jpg" />
@@ -151,6 +141,19 @@
       "name": "Projects",
       "item": "https://urbanpots.com.au/pages/projects.html"
     }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Cronulla", "url": "https://urbanpots.com.au/projects/cronulla.html" },
+    { "@type": "ListItem", "position": 2, "name": "Dee Why", "url": "https://urbanpots.com.au/projects/dee-why.html" },
+    { "@type": "ListItem", "position": 3, "name": "Parramatta", "url": "https://urbanpots.com.au/projects/parramatta.html" },
+    { "@type": "ListItem", "position": 4, "name": "Putney", "url": "https://urbanpots.com.au/projects/putney.html" },
+    { "@type": "ListItem", "position": 5, "name": "Pyrmont", "url": "https://urbanpots.com.au/projects/pyrmont.html" }
   ]
 }
   </script>
@@ -213,122 +216,70 @@
       <div class="hero__content">
         <p class="hero__eyebrow">Our Work</p>
         <h1 class="hero__h1">Completed <em>Projects</em></h1>
-        <p class="hero__sub">From our Western Sydney yard to finished installations across Australia. A look at the custom planters we've designed, built, and delivered for residential and commercial projects.</p>
+        <p class="hero__sub">From our Western Sydney yard to finished installations across Sydney. A look at the custom planters we've designed, built, and delivered for residential and commercial projects.</p>
         <a href="mailto:info@urbanpots.com.au?subject=Project Enquiry" class="btn btn--dark">Start Your Project <span class="arrow-link">→</span></a>
       </div>
     </div>
   </section>
 
-  <!-- PROCESS / YARD-TO-INSTALL STRIP -->
-  <section class="proj-intro">
+  <!-- PROJECTS GRID -->
+  <section class="projects-grid-section">
     <div class="container">
       <div class="section-head fadein">
-        <h2>From Our Yard to <em>Your Space</em></h2>
-        <p>Every project is designed, manufactured, and finished in-house before we deliver and install it on site.</p>
+        <h2>Our <em>Projects</em></h2>
+        <p>A selection of custom planter installations across Sydney — from concept to finished site.</p>
       </div>
 
-      <div class="proj-steps fadein delay-1">
-        <div class="proj-step">
-          <div class="proj-step__img">
+      <div class="projects-grid fadein delay-1">
+        <a href="/projects/cronulla.html" class="project-card">
+          <div class="project-card__image">
             <picture>
-              <source srcset="../curated-images/projects/project-manufacturing.webp" type="image/webp">
-              <img src="../curated-images/projects/project-manufacturing.jpg" alt="Custom planters being manufactured in the Urban Pots Western Sydney workshop" loading="lazy" />
+              <source srcset="../curated-images/projects/cronulla-card.webp" type="image/webp">
+              <img src="../curated-images/projects/cronulla-card.jpg" alt="Cronulla project" width="900" height="675" loading="lazy" />
             </picture>
           </div>
-          <div class="proj-step__label"><span class="proj-step__num">01</span><h3>Manufacturing</h3></div>
-          <p>Built to spec in our Western Sydney yard, unit by unit.</p>
-        </div>
-        <div class="proj-step">
-          <div class="proj-step__img">
-            <picture>
-              <source srcset="../curated-images/projects/project-finishing.webp" type="image/webp">
-              <img src="../curated-images/projects/project-finishing.jpg" alt="Hand-finishing and colour-matching a custom planter before delivery" loading="lazy" />
-            </picture>
-          </div>
-          <div class="proj-step__label"><span class="proj-step__num">02</span><h3>Finishing</h3></div>
-          <p>Sealed, colour-matched, and quality-checked by hand.</p>
-        </div>
-        <div class="proj-step">
-          <div class="proj-step__img">
-            <picture>
-              <source srcset="../curated-images/projects/project-delivery.webp" type="image/webp">
-              <img src="../curated-images/projects/project-delivery.jpg" alt="Finished planters loaded for delivery to a project site" loading="lazy" />
-            </picture>
-          </div>
-          <div class="proj-step__label"><span class="proj-step__num">03</span><h3>Delivery</h3></div>
-          <p>Carefully transported to your site anywhere in Australia.</p>
-        </div>
-        <div class="proj-step">
-          <div class="proj-step__img">
-            <picture>
-              <source srcset="../curated-images/projects/project-installation.webp" type="image/webp">
-              <img src="../curated-images/projects/project-installation.jpg" alt="Custom planters being positioned and installed on site" loading="lazy" />
-            </picture>
-          </div>
-          <div class="proj-step__label"><span class="proj-step__num">04</span><h3>Installation</h3></div>
-          <p>Positioned and installed, ready to plant out.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+          <h3 class="project-card__title">Cronulla</h3>
+        </a>
 
-  <!-- FEATURED PROJECT GALLERY -->
-  <section class="proj-gallery-section">
-    <div class="container">
-      <div class="section-head fadein">
-        <h2>Featured Project — <em>Cronulla</em></h2>
-        <p>A large-scale commercial supply and install: custom cylindrical and box planters, manufactured in our Western Sydney yard and craned into place across a coastal Sydney development.</p>
-      </div>
+        <a href="/projects/dee-why.html" class="project-card">
+          <div class="project-card__image">
+            <picture>
+              <source srcset="../curated-images/projects/dee-why-card.webp" type="image/webp">
+              <img src="../curated-images/projects/dee-why-card.jpg" alt="Dee Why project" width="900" height="675" loading="lazy" />
+            </picture>
+          </div>
+          <h3 class="project-card__title">Dee Why</h3>
+        </a>
 
-      <div class="proj-gallery fadein delay-1">
-        <div class="proj-tile proj-tile--wide">
-          <picture>
-            <source srcset="../curated-images/projects/UP%20CRONULLA-22-project.webp" type="image/webp">
-            <img src="../curated-images/projects/UP%20CRONULLA-22-project.jpg" alt="Custom planters craned into position on a multi-level Cronulla development" width="1200" height="600" loading="lazy" />
-          </picture>
-        </div>
-        <div class="proj-tile">
-          <picture>
-            <source srcset="../curated-images/projects/UP%20CRONULLA-17-project.webp" type="image/webp">
-            <img src="../curated-images/projects/UP%20CRONULLA-17-project.jpg" alt="Custom cylindrical planters on site at the Cronulla development" width="1200" height="600" loading="lazy" />
-          </picture>
-        </div>
-        <div class="proj-tile">
-          <picture>
-            <source srcset="../curated-images/projects/UP%20CRONULLA-26-project.webp" type="image/webp">
-            <img src="../curated-images/projects/UP%20CRONULLA-26-project.jpg" alt="Finished cylindrical planters installed at the building base" width="1200" height="600" loading="lazy" />
-          </picture>
-        </div>
-        <div class="proj-tile">
-          <picture>
-            <source srcset="../curated-images/projects/UP%20CRONULLA-8-project.webp" type="image/webp">
-            <img src="../curated-images/projects/UP%20CRONULLA-8-project.jpg" alt="Custom cylinder planter forms being manufactured in our Western Sydney yard" width="1200" height="600" loading="lazy" />
-          </picture>
-        </div>
-        <div class="proj-tile">
-          <picture>
-            <source srcset="../curated-images/projects/UP%20CRONULLA-4-project.webp" type="image/webp">
-            <img src="../curated-images/projects/UP%20CRONULLA-4-project.jpg" alt="Custom planters loaded for delivery to the Cronulla site" width="1200" height="600" loading="lazy" />
-          </picture>
-        </div>
-        <div class="proj-tile">
-          <picture>
-            <source srcset="../curated-images/projects/UP%20CRONULLA-3-project.webp" type="image/webp">
-            <img src="../curated-images/projects/UP%20CRONULLA-3-project.jpg" alt="Craning a custom cylinder planter during the Cronulla install" width="1200" height="600" loading="lazy" />
-          </picture>
-        </div>
-        <div class="proj-tile">
-          <picture>
-            <source srcset="../curated-images/projects/UP%20CRONULLA-13-project.webp" type="image/webp">
-            <img src="../curated-images/projects/UP%20CRONULLA-13-project.jpg" alt="A truckload of custom planters bound for the Cronulla project" width="1200" height="600" loading="lazy" />
-          </picture>
-        </div>
-        <div class="proj-tile">
-          <picture>
-            <source srcset="../curated-images/projects/UP%20CRONULLA-21-project.webp" type="image/webp">
-            <img src="../curated-images/projects/UP%20CRONULLA-21-project.jpg" alt="Large custom planters craned into place at the Cronulla development" width="1200" height="600" loading="lazy" />
-          </picture>
-        </div>
+        <a href="/projects/parramatta.html" class="project-card">
+          <div class="project-card__image">
+            <picture>
+              <source srcset="../curated-images/projects/parramatta-card.webp" type="image/webp">
+              <img src="../curated-images/projects/parramatta-card.jpg" alt="Parramatta project" width="900" height="675" loading="lazy" />
+            </picture>
+          </div>
+          <h3 class="project-card__title">Parramatta</h3>
+        </a>
+
+        <a href="/projects/putney.html" class="project-card">
+          <div class="project-card__image">
+            <picture>
+              <source srcset="../curated-images/projects/putney-card.webp" type="image/webp">
+              <img src="../curated-images/projects/putney-card.jpg" alt="Putney project" width="900" height="675" loading="lazy" />
+            </picture>
+          </div>
+          <h3 class="project-card__title">Putney</h3>
+        </a>
+
+        <a href="/projects/pyrmont.html" class="project-card">
+          <div class="project-card__image">
+            <picture>
+              <source srcset="../curated-images/projects/pyrmont-card.webp" type="image/webp">
+              <img src="../curated-images/projects/pyrmont-card.jpg" alt="Pyrmont project" width="900" height="675" loading="lazy" />
+            </picture>
+          </div>
+          <h3 class="project-card__title">Pyrmont</h3>
+        </a>
       </div>
     </div>
   </section>

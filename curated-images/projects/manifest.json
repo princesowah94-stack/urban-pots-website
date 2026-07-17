@@ -4,7 +4,14 @@
     1200,
     600
   ],
-  "total_images": 29,
+  "total_images": 115,
+  "projects": {
+    "cronulla": 29,
+    "dee-why": 28,
+    "parramatta": 13,
+    "putney": 13,
+    "pyrmont": 22
+  },
   "images": [
     {
       "original": "Images/Final Images and Video/UP CRONULLA-10.jpg",
@@ -22,7 +29,8 @@
           "path": "curated-images/projects/UP CRONULLA-10-project.webp",
           "size_bytes": 102216
         }
-      }
+      },
+      "project": "cronulla"
     },
     {
       "original": "Images/Final Images and Video/UP CRONULLA-6.jpg",
@@ -40,7 +48,8 @@
           "path": "curated-images/projects/UP CRONULLA-6-project.webp",
           "size_bytes": 132968
         }
-      }
+      },
+      "project": "cronulla"
     },
     {
       "original": "Images/Final Images and Video/UP CRONULLA-7.jpg",
@@ -58,7 +67,8 @@
           "path": "curated-images/projects/UP CRONULLA-7-project.webp",
           "size_bytes": 100912
         }
-      }
+      },
+      "project": "cronulla"
     },
     {
       "original": "Images/Final Images and Video/UP CRONULLA-11.jpg",
@@ -76,7 +86,8 @@
           "path": "curated-images/projects/UP CRONULLA-11-project.webp",
           "size_bytes": 99254
         }
-      }
+      },
+      "project": "cronulla"
     },
     {
       "original": "Images/Final Images and Video/UP CRONULLA-13.jpg",
@@ -94,7 +105,8 @@
           "path": "curated-images/projects/UP CRONULLA-13-project.webp",
           "size_bytes": 121150
         }
-      }
+      },
+      "project": "cronulla"
     },
     {
       "original": "Images/Final Images and Video/UP CRONULLA-5.jpg",
@@ -112,7 +124,8 @@
           "path": "curated-images/projects/UP CRONULLA-5-project.webp",
           "size_bytes": 95256
         }
-      }
+      },
+      "project": "cronulla"
     },
     {
       "original": "Images/Final Images and Video/UP CRONULLA-4.jpg",
@@ -130,7 +143,8 @@
           "path": "curated-images/projects/UP CRONULLA-4-project.webp",
           "size_bytes": 68974
         }
-      }
+      },
+      "project": "cronulla"
     },
     {
       "original": "Images/Final Images and Video/UP CRONULLA-12.jpg",
@@ -148,7 +162,8 @@
           "path": "curated-images/projects/UP CRONULLA-12-project.webp",
           "size_bytes": 80242
         }
-      }
+      },
+      "project": "cronulla"
     },
     {
       "original": "Images/Final Images and Video/UP CRONULLA-16.jpg",
@@ -166,7 +181,8 @@
           "path": "curated-images/projects/UP CRONULLA-16-project.webp",
           "size_bytes": 109654
         }
-      }
+      },
+      "project": "cronulla"
     },
     {
       "original": "Images/Final Images and Video/UP CRONULLA-1.jpg",
@@ -184,7 +200,8 @@
           "path": "curated-images/projects/UP CRONULLA-1-project.webp",
           "size_bytes": 129916
         }
-      }
+      },
+      "project": "cronulla"
     },
     {
       "original": "Images/Final Images and Video/UP CRONULLA-17.jpg",
@@ -202,7 +219,8 @@
           "path": "curated-images/projects/UP CRONULLA-17-project.webp",
           "size_bytes": 185764
         }
-      }
+      },
+      "project": "cronulla"
     },
     {
       "original": "Images/Final Images and Video/UP CRONULLA-29.jpg",
@@ -220,7 +238,8 @@
           "path": "curated-images/projects/UP CRONULLA-29-project.webp",
           "size_bytes": 53728
         }
-      }
+      },
+      "project": "cronulla"
     },
     {
       "original": "Images/Final Images and Video/UP CRONULLA-15.jpg",
@@ -238,7 +257,8 @@
           "path": "curated-images/projects/UP CRONULLA-15-project.webp",
           "size_bytes": 114460
         }
-      }
+      },
+      "project": "cronulla"
     },
     {
       "original": "Images/Final Images and Video/UP CRONULLA-3.jpg",
@@ -256,7 +276,8 @@
           "path": "curated-images/projects/UP CRONULLA-3-project.webp",
           "size_bytes": 111836
         }
-      }
+      },
+      "project": "cronulla"
     },
     {
       "original": "Images/Final Images and Video/UP CRONULLA-2.jpg",
@@ -274,7 +295,8 @@
           "path": "curated-images/projects/UP CRONULLA-2-project.webp",
           "size_bytes": 122116
         }
-      }
+      },
+      "project": "cronulla"
     },
     {
       "original": "Images/Final Images and Video/UP CRONULLA-14.jpg",
@@ -292,7 +314,8 @@
           "path": "curated-images/projects/UP CRONULLA-14-project.webp",
           "size_bytes": 116870
         }
-      }
+      },
+      "project": "cronulla"
     },
     {
       "original": "Images/Final Images and Video/UP CRONULLA-28.jpg",
@@ -310,7 +333,8 @@
           "path": "curated-images/projects/UP CRONULLA-28-project.webp",
           "size_bytes": 32572
         }
-      }
+      },
+      "project": "cronulla"
     },
     {
       "original": "Images/Final Images and Video/UP CRONULLA-25.jpg",
@@ -328,7 +352,8 @@
           "path": "curated-images/projects/UP CRONULLA-25-project.webp",
           "size_bytes": 176024
         }
-      }
+      },
+      "project": "cronulla"
     },
     {
       "original": "Images/Final Images and Video/UP CRONULLA-19.jpg",
@@ -346,7 +371,8 @@
           "path": "curated-images/projects/UP CRONULLA-19-project.webp",
           "size_bytes": 112312
         }
-      }
+      },
+      "project": "cronulla"
     },
     {
       "original": "Images/Final Images and Video/UP CRONULLA-18.jpg",
@@ -364,7 +390,8 @@
           "path": "curated-images/projects/UP CRONULLA-18-project.webp",
           "size_bytes": 145940
         }
-      }
+      },
+      "project": "cronulla"
     },
     {
       "original": "Images/Final Images and Video/UP CRONULLA-24.jpg",
@@ -382,7 +409,8 @@
           "path": "curated-images/projects/UP CRONULLA-24-project.webp",
           "size_bytes": 95860
         }
-      }
+      },
+      "project": "cronulla"
     },
     {
       "original": "Images/Final Images and Video/UP CRONULLA-26.jpg",
@@ -400,7 +428,8 @@
           "path": "curated-images/projects/UP CRONULLA-26-project.webp",
           "size_bytes": 91292
         }
-      }
+      },
+      "project": "cronulla"
     },
     {
       "original": "Images/Final Images and Video/UP CRONULLA-27.jpg",
@@ -418,7 +447,8 @@
           "path": "curated-images/projects/UP CRONULLA-27-project.webp",
           "size_bytes": 149236
         }
-      }
+      },
+      "project": "cronulla"
     },
     {
       "original": "Images/Final Images and Video/UP CRONULLA-23.jpg",
@@ -436,7 +466,8 @@
           "path": "curated-images/projects/UP CRONULLA-23-project.webp",
           "size_bytes": 89346
         }
-      }
+      },
+      "project": "cronulla"
     },
     {
       "original": "Images/Final Images and Video/UP CRONULLA-9.jpg",
@@ -454,7 +485,8 @@
           "path": "curated-images/projects/UP CRONULLA-9-project.webp",
           "size_bytes": 115544
         }
-      }
+      },
+      "project": "cronulla"
     },
     {
       "original": "Images/Final Images and Video/UP CRONULLA-8.jpg",
@@ -472,7 +504,8 @@
           "path": "curated-images/projects/UP CRONULLA-8-project.webp",
           "size_bytes": 109570
         }
-      }
+      },
+      "project": "cronulla"
     },
     {
       "original": "Images/Final Images and Video/UP CRONULLA-22.jpg",
@@ -490,7 +523,8 @@
           "path": "curated-images/projects/UP CRONULLA-22-project.webp",
           "size_bytes": 41738
         }
-      }
+      },
+      "project": "cronulla"
     },
     {
       "original": "Images/Final Images and Video/UP CRONULLA-20.jpg",
@@ -508,7 +542,8 @@
           "path": "curated-images/projects/UP CRONULLA-20-project.webp",
           "size_bytes": 115760
         }
-      }
+      },
+      "project": "cronulla"
     },
     {
       "original": "Images/Final Images and Video/UP CRONULLA-21.jpg",
@@ -525,6 +560,1641 @@
         "webp": {
           "path": "curated-images/projects/UP CRONULLA-21-project.webp",
           "size_bytes": 21194
+        }
+      },
+      "project": "cronulla"
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-20.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/DEEWHY-20-project.jpg",
+          "size_bytes": 170782
+        },
+        "webp": {
+          "path": "curated-images/projects/DEEWHY-20-project.webp",
+          "size_bytes": 145958
+        }
+      },
+      "project": "dee-why"
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-21.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/DEEWHY-21-project.jpg",
+          "size_bytes": 149760
+        },
+        "webp": {
+          "path": "curated-images/projects/DEEWHY-21-project.webp",
+          "size_bytes": 122750
+        }
+      },
+      "project": "dee-why"
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-23.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/DEEWHY-23-project.jpg",
+          "size_bytes": 133215
+        },
+        "webp": {
+          "path": "curated-images/projects/DEEWHY-23-project.webp",
+          "size_bytes": 96642
+        }
+      },
+      "project": "dee-why"
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-22.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/DEEWHY-22-project.jpg",
+          "size_bytes": 167164
+        },
+        "webp": {
+          "path": "curated-images/projects/DEEWHY-22-project.webp",
+          "size_bytes": 139058
+        }
+      },
+      "project": "dee-why"
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-9.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/DEEWHY-9-project.jpg",
+          "size_bytes": 177672
+        },
+        "webp": {
+          "path": "curated-images/projects/DEEWHY-9-project.webp",
+          "size_bytes": 138448
+        }
+      },
+      "project": "dee-why"
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-26.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/DEEWHY-26-project.jpg",
+          "size_bytes": 174601
+        },
+        "webp": {
+          "path": "curated-images/projects/DEEWHY-26-project.webp",
+          "size_bytes": 145232
+        }
+      },
+      "project": "dee-why"
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-27.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/DEEWHY-27-project.jpg",
+          "size_bytes": 207765
+        },
+        "webp": {
+          "path": "curated-images/projects/DEEWHY-27-project.webp",
+          "size_bytes": 180812
+        }
+      },
+      "project": "dee-why"
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-8.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/DEEWHY-8-project.jpg",
+          "size_bytes": 187299
+        },
+        "webp": {
+          "path": "curated-images/projects/DEEWHY-8-project.webp",
+          "size_bytes": 158468
+        }
+      },
+      "project": "dee-why"
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-25.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/DEEWHY-25-project.jpg",
+          "size_bytes": 139230
+        },
+        "webp": {
+          "path": "curated-images/projects/DEEWHY-25-project.webp",
+          "size_bytes": 101448
+        }
+      },
+      "project": "dee-why"
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-19.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/DEEWHY-19-project.jpg",
+          "size_bytes": 182084
+        },
+        "webp": {
+          "path": "curated-images/projects/DEEWHY-19-project.webp",
+          "size_bytes": 156700
+        }
+      },
+      "project": "dee-why"
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-18.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/DEEWHY-18-project.jpg",
+          "size_bytes": 169383
+        },
+        "webp": {
+          "path": "curated-images/projects/DEEWHY-18-project.webp",
+          "size_bytes": 135324
+        }
+      },
+      "project": "dee-why"
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-24.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/DEEWHY-24-project.jpg",
+          "size_bytes": 184930
+        },
+        "webp": {
+          "path": "curated-images/projects/DEEWHY-24-project.webp",
+          "size_bytes": 157028
+        }
+      },
+      "project": "dee-why"
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-6.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/DEEWHY-6-project.jpg",
+          "size_bytes": 220529
+        },
+        "webp": {
+          "path": "curated-images/projects/DEEWHY-6-project.webp",
+          "size_bytes": 191934
+        }
+      },
+      "project": "dee-why"
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-15.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/DEEWHY-15-project.jpg",
+          "size_bytes": 159078
+        },
+        "webp": {
+          "path": "curated-images/projects/DEEWHY-15-project.webp",
+          "size_bytes": 129216
+        }
+      },
+      "project": "dee-why"
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-14.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/DEEWHY-14-project.jpg",
+          "size_bytes": 154645
+        },
+        "webp": {
+          "path": "curated-images/projects/DEEWHY-14-project.webp",
+          "size_bytes": 118120
+        }
+      },
+      "project": "dee-why"
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-28.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/DEEWHY-28-project.jpg",
+          "size_bytes": 206548
+        },
+        "webp": {
+          "path": "curated-images/projects/DEEWHY-28-project.webp",
+          "size_bytes": 178760
+        }
+      },
+      "project": "dee-why"
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-7.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/DEEWHY-7-project.jpg",
+          "size_bytes": 146079
+        },
+        "webp": {
+          "path": "curated-images/projects/DEEWHY-7-project.webp",
+          "size_bytes": 102594
+        }
+      },
+      "project": "dee-why"
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-5.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/DEEWHY-5-project.jpg",
+          "size_bytes": 237446
+        },
+        "webp": {
+          "path": "curated-images/projects/DEEWHY-5-project.webp",
+          "size_bytes": 209382
+        }
+      },
+      "project": "dee-why"
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-16.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/DEEWHY-16-project.jpg",
+          "size_bytes": 110999
+        },
+        "webp": {
+          "path": "curated-images/projects/DEEWHY-16-project.webp",
+          "size_bytes": 76738
+        }
+      },
+      "project": "dee-why"
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-17.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/DEEWHY-17-project.jpg",
+          "size_bytes": 171740
+        },
+        "webp": {
+          "path": "curated-images/projects/DEEWHY-17-project.webp",
+          "size_bytes": 134356
+        }
+      },
+      "project": "dee-why"
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-4.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/DEEWHY-4-project.jpg",
+          "size_bytes": 163989
+        },
+        "webp": {
+          "path": "curated-images/projects/DEEWHY-4-project.webp",
+          "size_bytes": 138592
+        }
+      },
+      "project": "dee-why"
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-13.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/DEEWHY-13-project.jpg",
+          "size_bytes": 167680
+        },
+        "webp": {
+          "path": "curated-images/projects/DEEWHY-13-project.webp",
+          "size_bytes": 136562
+        }
+      },
+      "project": "dee-why"
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-12.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/DEEWHY-12-project.jpg",
+          "size_bytes": 165009
+        },
+        "webp": {
+          "path": "curated-images/projects/DEEWHY-12-project.webp",
+          "size_bytes": 130816
+        }
+      },
+      "project": "dee-why"
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-1.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/DEEWHY-1-project.jpg",
+          "size_bytes": 175529
+        },
+        "webp": {
+          "path": "curated-images/projects/DEEWHY-1-project.webp",
+          "size_bytes": 159056
+        }
+      },
+      "project": "dee-why"
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-3.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/DEEWHY-3-project.jpg",
+          "size_bytes": 157924
+        },
+        "webp": {
+          "path": "curated-images/projects/DEEWHY-3-project.webp",
+          "size_bytes": 132138
+        }
+      },
+      "project": "dee-why"
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-10.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/DEEWHY-10-project.jpg",
+          "size_bytes": 195067
+        },
+        "webp": {
+          "path": "curated-images/projects/DEEWHY-10-project.webp",
+          "size_bytes": 167154
+        }
+      },
+      "project": "dee-why"
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-11.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/DEEWHY-11-project.jpg",
+          "size_bytes": 223974
+        },
+        "webp": {
+          "path": "curated-images/projects/DEEWHY-11-project.webp",
+          "size_bytes": 198766
+        }
+      },
+      "project": "dee-why"
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-2.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/DEEWHY-2-project.jpg",
+          "size_bytes": 132409
+        },
+        "webp": {
+          "path": "curated-images/projects/DEEWHY-2-project.webp",
+          "size_bytes": 101446
+        }
+      },
+      "project": "dee-why"
+    },
+    {
+      "original": "Images/Parramatta /1C9A0492.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A0492-project.jpg",
+          "size_bytes": 77784
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A0492-project.webp",
+          "size_bytes": 47638
+        }
+      },
+      "project": "parramatta"
+    },
+    {
+      "original": "Images/Parramatta /1C9A0493.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A0493-project.jpg",
+          "size_bytes": 110185
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A0493-project.webp",
+          "size_bytes": 83430
+        }
+      },
+      "project": "parramatta"
+    },
+    {
+      "original": "Images/Parramatta /1C9A0487.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A0487-project.jpg",
+          "size_bytes": 122601
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A0487-project.webp",
+          "size_bytes": 96972
+        }
+      },
+      "project": "parramatta"
+    },
+    {
+      "original": "Images/Parramatta /1C9A0491.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A0491-project.jpg",
+          "size_bytes": 46897
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A0491-project.webp",
+          "size_bytes": 25662
+        }
+      },
+      "project": "parramatta"
+    },
+    {
+      "original": "Images/Parramatta /1C9A0490.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A0490-project.jpg",
+          "size_bytes": 53898
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A0490-project.webp",
+          "size_bytes": 29568
+        }
+      },
+      "project": "parramatta"
+    },
+    {
+      "original": "Images/Parramatta /1C9A0494.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A0494-project.jpg",
+          "size_bytes": 109249
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A0494-project.webp",
+          "size_bytes": 90652
+        }
+      },
+      "project": "parramatta"
+    },
+    {
+      "original": "Images/Parramatta /1C9A0495.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A0495-project.jpg",
+          "size_bytes": 103001
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A0495-project.webp",
+          "size_bytes": 77476
+        }
+      },
+      "project": "parramatta"
+    },
+    {
+      "original": "Images/Parramatta /1C9A0497.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A0497-project.jpg",
+          "size_bytes": 66783
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A0497-project.webp",
+          "size_bytes": 37786
+        }
+      },
+      "project": "parramatta"
+    },
+    {
+      "original": "Images/Parramatta /1C9A0496.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A0496-project.jpg",
+          "size_bytes": 61246
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A0496-project.webp",
+          "size_bytes": 39840
+        }
+      },
+      "project": "parramatta"
+    },
+    {
+      "original": "Images/Parramatta /1C9A0498.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A0498-project.jpg",
+          "size_bytes": 29013
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A0498-project.webp",
+          "size_bytes": 13934
+        }
+      },
+      "project": "parramatta"
+    },
+    {
+      "original": "Images/Parramatta /1C9A0489.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A0489-project.jpg",
+          "size_bytes": 58512
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A0489-project.webp",
+          "size_bytes": 32776
+        }
+      },
+      "project": "parramatta"
+    },
+    {
+      "original": "Images/Parramatta /1C9A0488.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A0488-project.jpg",
+          "size_bytes": 164600
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A0488-project.webp",
+          "size_bytes": 139936
+        }
+      },
+      "project": "parramatta"
+    },
+    {
+      "original": "Images/Parramatta /1C9A0500.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A0500-project.jpg",
+          "size_bytes": 121823
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A0500-project.webp",
+          "size_bytes": 93498
+        }
+      },
+      "project": "parramatta"
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4546.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/URBAN POTS-4546-project.jpg",
+          "size_bytes": 114802
+        },
+        "webp": {
+          "path": "curated-images/projects/URBAN POTS-4546-project.webp",
+          "size_bytes": 85870
+        }
+      },
+      "project": "putney"
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4627.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/URBAN POTS-4627-project.jpg",
+          "size_bytes": 163458
+        },
+        "webp": {
+          "path": "curated-images/projects/URBAN POTS-4627-project.webp",
+          "size_bytes": 133214
+        }
+      },
+      "project": "putney"
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4551.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/URBAN POTS-4551-project.jpg",
+          "size_bytes": 126635
+        },
+        "webp": {
+          "path": "curated-images/projects/URBAN POTS-4551-project.webp",
+          "size_bytes": 88992
+        }
+      },
+      "project": "putney"
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4544.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/URBAN POTS-4544-project.jpg",
+          "size_bytes": 171843
+        },
+        "webp": {
+          "path": "curated-images/projects/URBAN POTS-4544-project.webp",
+          "size_bytes": 143606
+        }
+      },
+      "project": "putney"
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4541.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/URBAN POTS-4541-project.jpg",
+          "size_bytes": 242996
+        },
+        "webp": {
+          "path": "curated-images/projects/URBAN POTS-4541-project.webp",
+          "size_bytes": 223532
+        }
+      },
+      "project": "putney"
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4595.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/URBAN POTS-4595-project.jpg",
+          "size_bytes": 125352
+        },
+        "webp": {
+          "path": "curated-images/projects/URBAN POTS-4595-project.webp",
+          "size_bytes": 95588
+        }
+      },
+      "project": "putney"
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4608.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/URBAN POTS-4608-project.jpg",
+          "size_bytes": 93496
+        },
+        "webp": {
+          "path": "curated-images/projects/URBAN POTS-4608-project.webp",
+          "size_bytes": 78910
+        }
+      },
+      "project": "putney"
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4566.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/URBAN POTS-4566-project.jpg",
+          "size_bytes": 144427
+        },
+        "webp": {
+          "path": "curated-images/projects/URBAN POTS-4566-project.webp",
+          "size_bytes": 110536
+        }
+      },
+      "project": "putney"
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4604.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/URBAN POTS-4604-project.jpg",
+          "size_bytes": 94588
+        },
+        "webp": {
+          "path": "curated-images/projects/URBAN POTS-4604-project.webp",
+          "size_bytes": 68472
+        }
+      },
+      "project": "putney"
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4606.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/URBAN POTS-4606-project.jpg",
+          "size_bytes": 132414
+        },
+        "webp": {
+          "path": "curated-images/projects/URBAN POTS-4606-project.webp",
+          "size_bytes": 106510
+        }
+      },
+      "project": "putney"
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4613.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/URBAN POTS-4613-project.jpg",
+          "size_bytes": 115240
+        },
+        "webp": {
+          "path": "curated-images/projects/URBAN POTS-4613-project.webp",
+          "size_bytes": 87944
+        }
+      },
+      "project": "putney"
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4617.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/URBAN POTS-4617-project.jpg",
+          "size_bytes": 92094
+        },
+        "webp": {
+          "path": "curated-images/projects/URBAN POTS-4617-project.webp",
+          "size_bytes": 67374
+        }
+      },
+      "project": "putney"
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4574.jpg",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/URBAN POTS-4574-project.jpg",
+          "size_bytes": 191612
+        },
+        "webp": {
+          "path": "curated-images/projects/URBAN POTS-4574-project.webp",
+          "size_bytes": 159502
+        }
+      },
+      "project": "putney"
+    },
+    {
+      "original": "/tmp/urban-pots-pyrmont-selected/1C9A9918.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A9918-project.jpg",
+          "size_bytes": 124666
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A9918-project.webp",
+          "size_bytes": 95928
+        }
+      },
+      "project": "pyrmont"
+    },
+    {
+      "original": "/tmp/urban-pots-pyrmont-selected/1C9A9893.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A9893-project.jpg",
+          "size_bytes": 96510
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A9893-project.webp",
+          "size_bytes": 68378
+        }
+      },
+      "project": "pyrmont"
+    },
+    {
+      "original": "/tmp/urban-pots-pyrmont-selected/1C9A9879.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A9879-project.jpg",
+          "size_bytes": 123648
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A9879-project.webp",
+          "size_bytes": 97228
+        }
+      },
+      "project": "pyrmont"
+    },
+    {
+      "original": "/tmp/urban-pots-pyrmont-selected/1C9A9892.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A9892-project.jpg",
+          "size_bytes": 86908
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A9892-project.webp",
+          "size_bytes": 57732
+        }
+      },
+      "project": "pyrmont"
+    },
+    {
+      "original": "/tmp/urban-pots-pyrmont-selected/1C9A9886.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A9886-project.jpg",
+          "size_bytes": 131295
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A9886-project.webp",
+          "size_bytes": 110422
+        }
+      },
+      "project": "pyrmont"
+    },
+    {
+      "original": "/tmp/urban-pots-pyrmont-selected/1C9A9931.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A9931-project.jpg",
+          "size_bytes": 110552
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A9931-project.webp",
+          "size_bytes": 76832
+        }
+      },
+      "project": "pyrmont"
+    },
+    {
+      "original": "/tmp/urban-pots-pyrmont-selected/1C9A9932.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A9932-project.jpg",
+          "size_bytes": 110777
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A9932-project.webp",
+          "size_bytes": 79454
+        }
+      },
+      "project": "pyrmont"
+    },
+    {
+      "original": "/tmp/urban-pots-pyrmont-selected/1C9A9896.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A9896-project.jpg",
+          "size_bytes": 100880
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A9896-project.webp",
+          "size_bytes": 72344
+        }
+      },
+      "project": "pyrmont"
+    },
+    {
+      "original": "/tmp/urban-pots-pyrmont-selected/1C9A9934.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A9934-project.jpg",
+          "size_bytes": 150163
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A9934-project.webp",
+          "size_bytes": 122932
+        }
+      },
+      "project": "pyrmont"
+    },
+    {
+      "original": "/tmp/urban-pots-pyrmont-selected/1C9A9953.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A9953-project.jpg",
+          "size_bytes": 151959
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A9953-project.webp",
+          "size_bytes": 131764
+        }
+      },
+      "project": "pyrmont"
+    },
+    {
+      "original": "/tmp/urban-pots-pyrmont-selected/1C9A9946.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A9946-project.jpg",
+          "size_bytes": 106645
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A9946-project.webp",
+          "size_bytes": 80130
+        }
+      },
+      "project": "pyrmont"
+    },
+    {
+      "original": "/tmp/urban-pots-pyrmont-selected/1C9A9952.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A9952-project.jpg",
+          "size_bytes": 179809
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A9952-project.webp",
+          "size_bytes": 160816
+        }
+      },
+      "project": "pyrmont"
+    },
+    {
+      "original": "/tmp/urban-pots-pyrmont-selected/1C9A9951.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A9951-project.jpg",
+          "size_bytes": 197776
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A9951-project.webp",
+          "size_bytes": 179434
+        }
+      },
+      "project": "pyrmont"
+    },
+    {
+      "original": "/tmp/urban-pots-pyrmont-selected/1C9A9956.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A9956-project.jpg",
+          "size_bytes": 191788
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A9956-project.webp",
+          "size_bytes": 175696
+        }
+      },
+      "project": "pyrmont"
+    },
+    {
+      "original": "/tmp/urban-pots-pyrmont-selected/1C9A9943.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A9943-project.jpg",
+          "size_bytes": 182098
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A9943-project.webp",
+          "size_bytes": 165808
+        }
+      },
+      "project": "pyrmont"
+    },
+    {
+      "original": "/tmp/urban-pots-pyrmont-selected/1C9A9966.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A9966-project.jpg",
+          "size_bytes": 218990
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A9966-project.webp",
+          "size_bytes": 202946
+        }
+      },
+      "project": "pyrmont"
+    },
+    {
+      "original": "/tmp/urban-pots-pyrmont-selected/1C9A9967.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A9967-project.jpg",
+          "size_bytes": 127971
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A9967-project.webp",
+          "size_bytes": 104654
+        }
+      },
+      "project": "pyrmont"
+    },
+    {
+      "original": "/tmp/urban-pots-pyrmont-selected/1C9A9959.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A9959-project.jpg",
+          "size_bytes": 187874
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A9959-project.webp",
+          "size_bytes": 164982
+        }
+      },
+      "project": "pyrmont"
+    },
+    {
+      "original": "/tmp/urban-pots-pyrmont-selected/1C9A9910.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A9910-project.jpg",
+          "size_bytes": 67941
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A9910-project.webp",
+          "size_bytes": 40272
+        }
+      },
+      "project": "pyrmont"
+    },
+    {
+      "original": "/tmp/urban-pots-pyrmont-selected/1C9A9906.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A9906-project.jpg",
+          "size_bytes": 180546
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A9906-project.webp",
+          "size_bytes": 170108
+        }
+      },
+      "project": "pyrmont"
+    },
+    {
+      "original": "/tmp/urban-pots-pyrmont-selected/1C9A9907.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A9907-project.jpg",
+          "size_bytes": 150593
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A9907-project.webp",
+          "size_bytes": 124238
+        }
+      },
+      "project": "pyrmont"
+    },
+    {
+      "original": "/tmp/urban-pots-pyrmont-selected/1C9A9903.JPG",
+      "spec": "project",
+      "size": [
+        1200,
+        600
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/1C9A9903-project.jpg",
+          "size_bytes": 169436
+        },
+        "webp": {
+          "path": "curated-images/projects/1C9A9903-project.webp",
+          "size_bytes": 144612
+        }
+      },
+      "project": "pyrmont"
+    },
+    {
+      "original": "Images/Cronulla/UP CRONULLA-15.jpg",
+      "spec": "hero",
+      "project": "cronulla",
+      "size": [
+        1920,
+        800
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/cronulla-hero.jpg",
+          "size_bytes": 251701
+        },
+        "webp": {
+          "path": "curated-images/projects/cronulla-hero.webp",
+          "size_bytes": 170356
+        }
+      }
+    },
+    {
+      "original": "Images/Cronulla/UP CRONULLA-15.jpg",
+      "spec": "card",
+      "project": "cronulla",
+      "size": [
+        900,
+        675
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/cronulla-card.jpg",
+          "size_bytes": 122749
+        },
+        "webp": {
+          "path": "curated-images/projects/cronulla-card.webp",
+          "size_bytes": 92528
+        }
+      }
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-5.jpg",
+      "spec": "hero",
+      "project": "dee-why",
+      "size": [
+        1920,
+        800
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/dee-why-hero.jpg",
+          "size_bytes": 397345
+        },
+        "webp": {
+          "path": "curated-images/projects/dee-why-hero.webp",
+          "size_bytes": 333136
+        }
+      }
+    },
+    {
+      "original": "Images/Dee Why/DEEWHY-5.jpg",
+      "spec": "card",
+      "project": "dee-why",
+      "size": [
+        900,
+        675
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/dee-why-card.jpg",
+          "size_bytes": 195310
+        },
+        "webp": {
+          "path": "curated-images/projects/dee-why-card.webp",
+          "size_bytes": 175220
+        }
+      }
+    },
+    {
+      "original": "Images/Parramatta /1C9A0500.JPG",
+      "spec": "hero",
+      "project": "parramatta",
+      "size": [
+        1920,
+        800
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/parramatta-hero.jpg",
+          "size_bytes": 203579
+        },
+        "webp": {
+          "path": "curated-images/projects/parramatta-hero.webp",
+          "size_bytes": 146346
+        }
+      }
+    },
+    {
+      "original": "Images/Parramatta /1C9A0500.JPG",
+      "spec": "card",
+      "project": "parramatta",
+      "size": [
+        900,
+        675
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/parramatta-card.jpg",
+          "size_bytes": 106070
+        },
+        "webp": {
+          "path": "curated-images/projects/parramatta-card.webp",
+          "size_bytes": 81038
+        }
+      }
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4613.jpg",
+      "spec": "hero",
+      "project": "putney",
+      "size": [
+        1920,
+        800
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/putney-hero.jpg",
+          "size_bytes": 190600
+        },
+        "webp": {
+          "path": "curated-images/projects/putney-hero.webp",
+          "size_bytes": 133992
+        }
+      }
+    },
+    {
+      "original": "Images/Putney /URBAN POTS-4613.jpg",
+      "spec": "card",
+      "project": "putney",
+      "size": [
+        900,
+        675
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/putney-card.jpg",
+          "size_bytes": 109026
+        },
+        "webp": {
+          "path": "curated-images/projects/putney-card.webp",
+          "size_bytes": 85778
+        }
+      }
+    },
+    {
+      "original": "Images/Pyrmont /1C9A9931.JPG",
+      "spec": "hero",
+      "project": "pyrmont",
+      "size": [
+        1920,
+        800
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/pyrmont-hero.jpg",
+          "size_bytes": 188602
+        },
+        "webp": {
+          "path": "curated-images/projects/pyrmont-hero.webp",
+          "size_bytes": 122696
+        }
+      }
+    },
+    {
+      "original": "Images/Pyrmont /1C9A9931.JPG",
+      "spec": "card",
+      "project": "pyrmont",
+      "size": [
+        900,
+        675
+      ],
+      "variants": {
+        "jpg": {
+          "path": "curated-images/projects/pyrmont-card.jpg",
+          "size_bytes": 95726
+        },
+        "webp": {
+          "path": "curated-images/projects/pyrmont-card.webp",
+          "size_bytes": 71192
         }
       }
     }

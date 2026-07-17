@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, max-scale=1" />
+  <title>Putney Project — Custom Planters | Urban Pots</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/components.css" />
+  <style>
+    .hero {
+      position: relative;
+      height: 60vh;
+      min-height: 420px;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: clamp(2rem, 5vw, 4rem);
+      overflow: hidden;
+    }
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('../curated-images/projects/putney-hero.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(155deg, rgba(12,10,8,0.1) 0%, rgba(12,10,8,0.5) 50%, rgba(12,10,8,0.8) 100%);
+    }
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+    }
+    .hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--c-stone);
+      margin-bottom: 1.5rem;
+    }
+    .hero__eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--c-stone);
+    }
+    .hero__content .hero__h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 600;
+      line-height: 0.95;
+      letter-spacing: -0.025em;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+    .project-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--c-sage);
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+    }
+    .project-back:hover { color: var(--c-dark); }
+    .project-intro {
+      padding: clamp(3rem, 6vw, 5rem) 0 clamp(2rem, 4vw, 3rem);
+    }
+    .project-intro p {
+      font-size: 1.05rem;
+      color: var(--c-brown);
+      line-height: 1.8;
+      max-width: 720px;
+    }
+    .project-gallery-section {
+      padding: 0 0 clamp(4rem, 7vw, 6rem);
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+  </style>
+
+  <!-- Lenis & GSAP from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="canonical" href="https://urbanpots.com.au/projects/putney.html" />
+  <meta name="description" content="A custom designer planter installed as a feature piece for a residential property in Putney, NSW, by Urban Pots." />
+  <meta property="og:title" content="Putney Project — Custom Planters | Urban Pots" />
+  <meta property="og:description" content="A custom designer planter installed as a feature piece for a residential property in Putney, NSW, by Urban Pots." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://urbanpots.com.au/projects/putney.html" />
+  <meta property="og:image" content="https://urbanpots.com.au/curated-images/og-social-card.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Putney Project — Custom Planters | Urban Pots" />
+  <meta name="twitter:description" content="A custom designer planter installed as a feature piece for a residential property in Putney, NSW, by Urban Pots." />
+  <meta name="twitter:image" content="https://urbanpots.com.au/curated-images/og-social-card.jpg" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/curated-images/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/curated-images/apple-touch-icon-180.png" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav" id="siteNav">
+  <div class="container site-nav__inner">
+    <a href="/" class="nav-logo">
+      <img src="https://cdn.shopify.com/s/files/1/0748/4152/2498/files/urban_pots_logo__white_150.png?v=1684274691" alt="Urban Pots" width="120" height="30" />
+    </a>
+    <div class="nav-links">
+      <a href="/shop.html">Shop Now</a>
+      <a href="/pages/custom-planter-boxes.html">Custom Planters</a>
+      <a href="/pages/custom-cylinders.html">Custom Cylinders</a>
+      <a href="/pages/projects.html">Projects</a>
+      <a href="/pages/trade.html">Trade</a>
+      <a href="/pages/contact.html">Contact</a>
+      <a href="/pages/find-us.html">Find Us</a>
+      <a href="/pages/about.html">About Us</a>
+    </div>
+    <div class="nav-actions">
+      <a href="mailto:info@urbanpots.com.au" class="nav-cta">Get a Quote</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="nav-mobile" id="navMobile" aria-hidden="true">
+  <ul class="nav-mobile__links">
+    <li><a href="/shop.html">Shop Now</a></li>
+    <li><a href="/pages/custom-planter-boxes.html">Custom Planters</a></li>
+    <li><a href="/pages/custom-cylinders.html">Custom Cylinders</a></li>
+    <li><a href="/pages/projects.html">Projects</a></li>
+    <li><a href="/pages/trade.html">Trade</a></li>
+    <li><a href="/pages/contact.html">Contact</a></li>
+    <li><a href="/pages/find-us.html">Find Us</a></li>
+    <li><a href="/pages/about.html">About Us</a></li>
+  </ul>
+  <div class="nav-mobile__footer">
+    <a href="mailto:info@urbanpots.com.au" class="btn btn--stone">Get a Quote</a>
+    <div class="nav-mobile__footer-meta">
+      <a href="tel:0433132406">0433 132 406</a> &nbsp;·&nbsp; Tue–Sat 9am–4pm
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__bg" role="img" aria-label="Custom Urban Pots designer planter installed at a Putney residence"></div>
+  <div class="hero__overlay"></div>
+  <div class="container">
+    <div class="hero__content">
+      <p class="hero__eyebrow">Putney, NSW</p>
+      <h1 class="hero__h1">Putney</h1>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT INTRO -->
+<section class="project-intro">
+  <div class="container">
+    <a href="/pages/projects.html" class="project-back">&larr; Back to Projects</a>
+    <p>A custom designer planter installed as a feature piece for a residential property in Putney, NSW, finished to complement the home's architecture and landscaping.</p>
+  </div>
+</section>
+
+<!-- PROJECT GALLERY -->
+<section class="project-gallery-section">
+  <div class="container">
+    <div class="gallery-grid">
+      <picture>
+        <source srcset="../curated-images/projects/URBAN%20POTS-4541-project.webp" type="image/webp">
+        <img src="../curated-images/projects/URBAN%20POTS-4541-project.jpg" alt="Putney project photo 1" width="1200" height="600" loading="lazy" style="width: 100%; display: block; border-radius: 4px; aspect-ratio: 2/1; object-fit: cover;" />
+      </picture>
+      <picture>
+        <source srcset="../curated-images/projects/URBAN%20POTS-4544-project.webp" type="image/webp">
+        <img src="../curated-images/projects/URBAN%20POTS-4544-project.jpg" alt="Putney project photo 2" width="1200" height="600" loading="lazy" style="width: 100%; display: block; border-radius: 4px; aspect-ratio: 2/1; object-fit: cover;" />
+      </picture>
+      <picture>
+        <source srcset="../curated-images/projects/URBAN%20POTS-4546-project.webp" type="image/webp">
+        <img src="../curated-images/projects/URBAN%20POTS-4546-project.jpg" alt="Putney project photo 3" width="1200" height="600" loading="lazy" style="width: 100%; display: block; border-radius: 4px; aspect-ratio: 2/1; object-fit: cover;" />
+      </picture>
+      <picture>
+        <source srcset="../curated-images/projects/URBAN%20POTS-4551-project.webp" type="image/webp">
+        <img src="../curated-images/projects/URBAN%20POTS-4551-project.jpg" alt="Putney project photo 4" width="1200" height="600" loading="lazy" style="width: 100%; display: block; border-radius: 4px; aspect-ratio: 2/1; object-fit: cover;" />
+      </picture>
+      <picture>
+        <source srcset="../curated-images/projects/URBAN%20POTS-4566-project.webp" type="image/webp">
+        <img src="../curated-images/projects/URBAN%20POTS-4566-project.jpg" alt="Putney project photo 5" width="1200" height="600" loading="lazy" style="width: 100%; display: block; border-radius: 4px; aspect-ratio: 2/1; object-fit: cover;" />
+      </picture>
+      <picture>
+        <source srcset="../curated-images/projects/URBAN%20POTS-4574-project.webp" type="image/webp">
+        <img src="../curated-images/projects/URBAN%20POTS-4574-project.jpg" alt="Putney project photo 6" width="1200" height="600" loading="lazy" style="width: 100%; display: block; border-radius: 4px; aspect-ratio: 2/1; object-fit: cover;" />
+      </picture>
+      <picture>
+        <source srcset="../curated-images/projects/URBAN%20POTS-4595-project.webp" type="image/webp">
+        <img src="../curated-images/projects/URBAN%20POTS-4595-project.jpg" alt="Putney project photo 7" width="1200" height="600" loading="lazy" style="width: 100%; display: block; border-radius: 4px; aspect-ratio: 2/1; object-fit: cover;" />
+      </picture>
+      <picture>
+        <source srcset="../curated-images/projects/URBAN%20POTS-4604-project.webp" type="image/webp">
+        <img src="../curated-images/projects/URBAN%20POTS-4604-project.jpg" alt="Putney project photo 8" width="1200" height="600" loading="lazy" style="width: 100%; display: block; border-radius: 4px; aspect-ratio: 2/1; object-fit: cover;" />
+      </picture>
+      <picture>
+        <source srcset="../curated-images/projects/URBAN%20POTS-4606-project.webp" type="image/webp">
+        <img src="../curated-images/projects/URBAN%20POTS-4606-project.jpg" alt="Putney project photo 9" width="1200" height="600" loading="lazy" style="width: 100%; display: block; border-radius: 4px; aspect-ratio: 2/1; object-fit: cover;" />
+      </picture>
+      <picture>
+        <source srcset="../curated-images/projects/URBAN%20POTS-4608-project.webp" type="image/webp">
+        <img src="../curated-images/projects/URBAN%20POTS-4608-project.jpg" alt="Putney project photo 10" width="1200" height="600" loading="lazy" style="width: 100%; display: block; border-radius: 4px; aspect-ratio: 2/1; object-fit: cover;" />
+      </picture>
+      <picture>
+        <source srcset="../curated-images/projects/URBAN%20POTS-4613-project.webp" type="image/webp">
+        <img src="../curated-images/projects/URBAN%20POTS-4613-project.jpg" alt="Putney project photo 11" width="1200" height="600" loading="lazy" style="width: 100%; display: block; border-radius: 4px; aspect-ratio: 2/1; object-fit: cover;" />
+      </picture>
+      <picture>
+        <source srcset="../curated-images/projects/URBAN%20POTS-4617-project.webp" type="image/webp">
+        <img src="../curated-images/projects/URBAN%20POTS-4617-project.jpg" alt="Putney project photo 12" width="1200" height="600" loading="lazy" style="width: 100%; display: block; border-radius: 4px; aspect-ratio: 2/1; object-fit: cover;" />
+      </picture>
+      <picture>
+        <source srcset="../curated-images/projects/URBAN%20POTS-4627-project.webp" type="image/webp">
+        <img src="../curated-images/projects/URBAN%20POTS-4627-project.jpg" alt="Putney project photo 13" width="1200" height="600" loading="lazy" style="width: 100%; display: block; border-radius: 4px; aspect-ratio: 2/1; object-fit: cover;" />
+      </picture>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="https://cdn.shopify.com/s/files/1/0748/4152/2498/files/urban_pots_logo__sage_150.png?v=1684274691" alt="Urban Pots" class="footer-brand__logo" width="120" />
+        <p class="footer-brand__tagline">Your best space. Our planters.</p>
+        <p>An Australian family-owned planter manufacturer. Custom-built in Western Sydney. Trusted by developers, architects, and landscapers nationwide.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="LinkedIn">LI</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="/pages/custom-planter-boxes.html">Custom Planter Boxes</a></li>
+          <li><a href="/pages/custom-cylinders.html">Custom Cylinders</a></li>
+          <li><a href="/shop.html">Shop Now</a></li>
+          <li><a href="/pages/projects.html">Projects</a></li>
+          <li><a href="/pages/grc-planters.html">Thai Limestone Planters</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/pages/about.html">About Us</a></li>
+          <li><a href="/pages/trade.html">Trade</a></li>
+          <li><a href="/pages/contact.html">Contact</a></li>
+          <li><a href="/pages/find-us.html">Find Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:0433132406">0433 132 406</a></li>
+          <li><a href="mailto:info@urbanpots.com.au">info@urbanpots.com.au</a></li>
+          <li><a href="/pages/find-us.html">Sydney Showroom</a></li>
+          <li><a href="/pages/find-us.html">Tue–Sat 9am–4pm</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Urban Pots Australia. All rights reserved.</span>
+      <span>
+        <a href="/">Privacy</a> &nbsp;·&nbsp;
+        <a href="/">Terms</a> &nbsp;·&nbsp;
+        Website by <a href="#" style="color:var(--c-stone)">Sowah Studio</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script type="module">
+  import * as animations from '../js/animations.js';
+  import * as ui from '../js/ui.js';
+
+  animations.initLenis();
+  animations.initFadein();
+  animations.initNavScroll();
+  animations.fixIOSParallax();
+
+  ui.initMobileNav(animations.lenis);
+</script>
+
+</body>
+</html>
